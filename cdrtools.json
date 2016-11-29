@@ -1,0 +1,33 @@
+{
+    "homepage": "http://cdrecord.org/",
+    "version": "3.01",
+    "license": "CDDL, GPL & LGPL",
+    "architecture": {
+        "64bit": {
+            "url": "http://downloads.sourceforge.net/project/tumagcc/schily-cdrtools-3.01.7z",
+            "hash": "f534062cab7585b82bd764f02bc65fb0c7c27ac1615786bfc81c35880ce4acc6",
+            "extract_dir": "win64"
+        },
+        "32bit": {
+            "url": "http://downloads.sourceforge.net/project/tumagcc/schily-cdrtools-3.01.7z",
+            "hash": "f534062cab7585b82bd764f02bc65fb0c7c27ac1615786bfc81c35880ce4acc6",
+            "extract_dir": "win32"
+        }
+    },
+    "bin": [
+        "btcflash.exe",
+        "cdda2wav.exe",
+        "cdrecord.exe",
+        "devdump.exe",
+        "isodebug.exe",
+        "isodump.exe",
+        "isoinfo.exe",
+        "isovfy.exe",
+        "mkhybrid.exe",
+        "mkisofs.exe",
+        "readcd.exe",
+        "rscsi.exe",
+        "scgcheck.exe",
+        "scgskeleton.exe"
+    ]
+}

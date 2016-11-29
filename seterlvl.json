@@ -1,0 +1,9 @@
+{
+    "homepage": "https://github.com/rasa/seterlvl",
+    "version": "1.4",
+    "license": "MIT",
+    "url": "https://github.com/rasa/seterlvl/releases/download/v1.4/seterlvl-1.4-win32.zip",
+    "hash": "d4e732fe122c16450100f964c340594c21455bf7e108529027520c2974ebb971",
+    "bin": "seterlvl.exe"
+}
+

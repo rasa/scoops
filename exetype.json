@@ -1,0 +1,8 @@
+{
+    "homepage": "https://github.com/rasa/exetype",
+    "version": "1.4",
+    "license": "MIT",
+    "url": "https://github.com/rasa/exetype/releases/download/v1.4/exetype-1.4-win32.zip",
+    "hash": "6e9ee25dae27138018c549c4abfe6007dea9d920a1c0f313b851fe4b0d368286",
+    "bin": "exetype.exe"
+}

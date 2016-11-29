@@ -1,0 +1,13 @@
+{
+		"_todo": "test once the URL works",
+    "homepage": "http://www.babelstone.co.uk/Software/BabelMap.html",
+    "version": "9.0.0.2",
+    "license": "Unknown",
+    "url": [
+        "http://www.babelstone.co.uk/Software/7907/BabelMap.zip"
+    ],
+    "hash": [
+        ""
+    ],
+    "bin": "BabelMap.exe"
+}

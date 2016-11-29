@@ -1,0 +1,52 @@
+{
+    "homepage": "http://www.ztree.com/",
+    "license": "Proprietary",
+    "version": "2.2.0",
+    "architecture": {
+        "64bit": {
+            "url": [
+                "http://www.zedtek.com/download/ztw22x64.exe",
+                "http://www.ztree.com/download/ztw24169.zip"
+            ],
+            "hash": [
+                "e7c7977abf151223725b295fc506913d0ebe290b5ee9d45dcb2dede750344056",
+                "270e1a8374e80973ac4565fd817aa99c4e64aa2792c11ac124ba8c292ad31d72"
+            ],
+            "installer": {
+                "file": "ztw22x64.exe",
+                "args": [
+                    "/S",
+                    "/D=$dir"
+                ]
+            },
+            "bin": [
+                "ztw64.exe",
+                "ztw.exe"
+            ]
+        },
+        "32bit": {
+            "url": [
+                "http://www.zedtek.com/download/ztw22x86.exe",
+                "http://www.ztree.com/download/ztw24169.zip"
+            ],
+            "hash": [
+                "",
+                "270e1a8374e80973ac4565fd817aa99c4e64aa2792c11ac124ba8c292ad31d72"
+            ],
+            "installer": {
+                "file": "ztw22x86.exe",
+                "args": [
+                    "/S",
+                    "/D=$dir"
+                ]
+            }
+            "bin": [
+                "ztw.exe"
+            ]
+        }
+    },
+    "uninstaller": {
+        "file" : "Uninstall.exe",
+        "args" : ["/S"]
+    }
+}

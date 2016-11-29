@@ -1,0 +1,8 @@
+{
+    "homepage": "https://github.com/rasa/dskwipe",
+    "version": "1.2",
+    "license": "MIT",
+    "url": "https://github.com/rasa/dskwipe/releases/download/v1.2/dskwipe-1.2-win32.zip",
+    "hash": "bc9a2b9dc180d3fe1b1e9a477595a76d1cc9231650f35ba339763c6c0218c88c",
+    "bin": "dskwipe.exe"
+}

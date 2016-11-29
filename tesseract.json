@@ -1,0 +1,20 @@
+{
+        "_todo": "support 32bit, add uninstaller",
+    "homepage": "https://github.com/UB-Mannheim/tesseract/wiki",
+    "version": "3.05.00",
+    "license": "Apache 2",
+    "url": "http://digi.bib.uni-mannheim.de/tesseract/tesseract-ocr-setup-3.05.00dev.exe",
+    "hash": "771912fa3a027925fd8d99ed99e23b03f170418f03cb5f147211d2c97dd174f8",
+    "bin": [],
+    "installer": {
+        "file": "tesseract-ocr-setup-3.05.00dev.exe",
+        "_comment": "/D option is ignored",
+        "args": [
+            "/S",
+            "/D=$dir"
+        ]
+    },
+    "post_install": '
+        [Environment]::SetEnvironmentVariable("Path", $env:Path + ";C:\\Program Files (x86)\\Tesseract-OCR", [EnvironmentVariableTarget]::Machine)
+    '
+}
