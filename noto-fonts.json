@@ -1,0 +1,8 @@
+{
+    "hash": "77decb00e17677b0f8182a9eeae7ddfaadfed064c926433bcc0c8617cd52899e",
+    "homepage": "https://noto-website-2.storage.googleapis.com/pkgs/Noto-hinted.zip",
+    "license": "SIL Open Font License 1.1",
+    "post_install": "rm $dir/NotoColorEmoji.ttf ; $fonts = (New-Object -ComObject Shell.Application).Namespace(0x14) ; dir $dir/*.ttf | %{ $fonts.CopyHere($_.fullname) }",
+    "url": "https://noto-website-2.storage.googleapis.com/pkgs/Noto-hinted.zip",
+    "version": "2016-10-26"
+}
