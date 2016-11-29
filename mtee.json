@@ -1,8 +1,8 @@
 {
-    "homepage": "http://ritchielawrence.github.io/mtee/",
-    "version": "2.21",
-    "license": "MIT",
-    "url": "https://codeload.github.com/ritchielawrence/mtee/legacy.zip/master#mtee.zip",
-    "hash": "0acf8e8602e641fc914b23537c7a90861c4b076e569e4521b95d37ad361eefa4",
-    "bin": "ritchielawrence-mtee-e4d4592\\bin\\Release\\mtee.exe"
+    "bin": "ritchielawrence-mtee-e4d4592\\bin\\Release\\mtee.exe", 
+    "hash": "0acf8e8602e641fc914b23537c7a90861c4b076e569e4521b95d37ad361eefa4", 
+    "homepage": "http://ritchielawrence.github.io/mtee/", 
+    "license": "MIT", 
+    "url": "https://codeload.github.com/ritchielawrence/mtee/legacy.zip/master#mtee.zip", 
+    "version": "2.21"
 }

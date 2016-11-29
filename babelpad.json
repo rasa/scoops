@@ -1,13 +1,9 @@
 {
-		"_todo": "test once the URL works",
-    "homepage": "http://www.babelstone.co.uk/Software/BabelPad.html",
-    "version": "9.0.0.1",
-    "license": "Unknown",
-    "url": [
-        "http://www.babelstone.co.uk/Software/7907/BabelPad.zip"
-    ],
-    "hash": [
-        ""
-    ],
-    "bin": "BabelPad.exe"
+    "_todo": "test once the URL works", 
+    "bin": "BabelPad.exe", 
+    "hash": "", 
+    "homepage": "http://www.babelstone.co.uk/Software/BabelPad.html", 
+    "license": "Unknown", 
+    "url": "http://www.babelstone.co.uk/Software/7907/BabelPad.zip", 
+    "version": "9.0.0.1"
 }
