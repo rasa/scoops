@@ -30,10 +30,8 @@
     },
     "uninstaller": {
         "file": "Uninstall-nirsoft_installer.exe",
-        "args": [
-            "/S"
-        ]
-    }
+        "args": ["/S"]
+    },
     "bin": [
         "accesspv.exe",
         "acm.exe",
@@ -262,6 +260,6 @@
         "wmc.exe",
         "WNetWatcher.exe",
         "wul.exe",
-        "zipinst.exe",
+        "zipinst.exe"
     ]
 }
