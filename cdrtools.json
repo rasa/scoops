@@ -3,12 +3,12 @@
         "32bit": {
             "extract_dir": "win32", 
             "hash": "f534062cab7585b82bd764f02bc65fb0c7c27ac1615786bfc81c35880ce4acc6", 
-            "url": "http://downloads.sourceforge.net/project/tumagcc/schily-cdrtools-3.01.7z"
+            "url": "https://sourceforge.net/projects/tumagcc/files/schily-cdrtools-3.01.7z"
         }, 
         "64bit": {
             "extract_dir": "win64", 
             "hash": "f534062cab7585b82bd764f02bc65fb0c7c27ac1615786bfc81c35880ce4acc6", 
-            "url": "http://downloads.sourceforge.net/project/tumagcc/schily-cdrtools-3.01.7z"
+            "url": "https://sourceforge.net/projects/tumagcc/files/schily-cdrtools-3.01.7z"
         }
     }, 
     "bin": [
