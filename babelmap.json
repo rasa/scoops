@@ -1,15 +1,15 @@
 {
-    "bin": "BabelMap.exe",
-    "comment": "BabelMap.zip is updated regularly so let's leave the hash empty",
-    "homepage": "http://www.babelstone.co.uk/Software/BabelMap.html",
-    "license": "Freeware",
-    "notes": "The hash for 9.0.0.2 is\ncf1af674ec759b3eee63cd441ac1ed45ae49befb6e14ad7a79df7412a7874ddb",
+    "bin": "BabelMap.exe", 
+    "comment": "BabelMap.zip is updated regularly so let's leave the hash empty", 
+    "homepage": "http://www.babelstone.co.uk/Software/BabelMap.html", 
+    "license": "Freeware", 
+    "notes": "The hash for 9.0.0.2 is\ncf1af674ec759b3eee63cd441ac1ed45ae49befb6e14ad7a79df7412a7874ddb", 
     "shortcuts": [
         [
-            "BabelMap.exe",
+            "BabelMap.exe", 
             "BabelMap - Unicode character map viewer"
         ]
-    ],
-    "url": "http://www.babelstone.co.uk/Software/7907/BabelMap.zip",
+    ], 
+    "url": "http://www.babelstone.co.uk/Software/7907/BabelMap.zip", 
     "version": "9.0.0.2"
 }

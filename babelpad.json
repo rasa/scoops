@@ -1,15 +1,15 @@
 {
-    "bin": "BabelPad.exe",
-    "comment": "BabelPad.zip is updated regularly so let's leave the hash empty",
-    "homepage": "http://www.babelstone.co.uk/Software/BabelPad.html",
-    "license": "Freeware",
-    "notes": "The hash for 9.0.0.2 is\n222618271a6e9a5bd010a5d3626b933e782adaccbc9274b0d6743dba8be0ae6d",
+    "bin": "BabelPad.exe", 
+    "comment": "BabelPad.zip is updated regularly so let's leave the hash empty", 
+    "homepage": "http://www.babelstone.co.uk/Software/BabelPad.html", 
+    "license": "Freeware", 
+    "notes": "The hash for 9.0.0.2 is\n222618271a6e9a5bd010a5d3626b933e782adaccbc9274b0d6743dba8be0ae6d", 
     "shortcuts": [
         [
-            "BabelPad.exe",
+            "BabelPad.exe", 
             "BabelPad - Unicode text editor"
         ]
-    ],
-    "url": "http://www.babelstone.co.uk/Software/7907/BabelPad.zip",
+    ], 
+    "url": "http://www.babelstone.co.uk/Software/7907/BabelPad.zip", 
     "version": "9.0.0.2"
 }
