@@ -1,50 +1,37 @@
 {
     "architecture": {
         "32bit": {
-            "bin": [
-                "ztw.exe"
-            ], 
-            "hash": [
-                "", 
-                "270e1a8374e80973ac4565fd817aa99c4e64aa2792c11ac124ba8c292ad31d72"
-            ], 
-            "installer": {
+            "_bin": "ztw.exe", 
+            "hash": "7bf68e67c877c70bd563e19c57e08d4e3b8a8262a57f8f7a32174f6dd1a45f5f", 
+            "installer_disabled": {
                 "args": [
                     "/S", 
                     "/D=$dir"
                 ], 
                 "file": "ztw22x86.exe"
             }, 
-            "url": [
-                "http://www.zedtek.com/download/ztw22x86.exe", 
-                "http://www.ztree.com/download/ztw24169.zip"
-            ]
+            "url": "http://www.zedtek.com/download/ztw22x86.exe"
         }, 
         "64bit": {
-            "bin": [
+            "_bin": [
                 "ztw64.exe", 
                 "ztw.exe"
             ], 
-            "hash": [
-                "e7c7977abf151223725b295fc506913d0ebe290b5ee9d45dcb2dede750344056", 
-                "270e1a8374e80973ac4565fd817aa99c4e64aa2792c11ac124ba8c292ad31d72"
-            ], 
-            "installer": {
+            "hash": "e7c7977abf151223725b295fc506913d0ebe290b5ee9d45dcb2dede750344056", 
+            "installer_disabled": {
                 "args": [
                     "/S", 
                     "/D=$dir"
                 ], 
                 "file": "ztw22x64.exe"
             }, 
-            "url": [
-                "http://www.zedtek.com/download/ztw22x64.exe", 
-                "http://www.ztree.com/download/ztw24169.zip"
-            ]
+            "url": "http://www.zedtek.com/download/ztw22x64.exe"
         }
     }, 
     "homepage": "http://www.ztree.com/", 
     "license": "Proprietary", 
-    "uninstaller": {
+    "uninstaller_comment": "uninstaller ignores the /S command line", 
+    "uninstaller_disabled": {
         "args": [
             "/S"
         ], 
