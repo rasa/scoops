@@ -1,5 +1,9 @@
 {
-    "bin": "attr.exe", 
+    "bin": "attr.exe",
+    "checkver": {
+        "re": "<a href=\"/rasa/attr/releases/tag/v([\\d\\.]+)\"></a>",
+        "url": "https://github.com/rasa/attr/releases/latest"
+    },    
     "hash": "66b7f3e51107f64d6d9449308e1df36827f948652420be31611467de2cd39812", 
     "homepage": "https://github.com/rasa/attr", 
     "license": "MIT", 
