@@ -1,7 +1,7 @@
 {
     "bin": "BabelMap.exe",
     "checkver": {
-        "re": "<td class=\"sl\">([\\d.]+)\\s+\\([\\d\\-]+\\)</td>",
+        "re": "BabelMap</td>\\s*<td class=\"sl\">([\\d.]+)\\s+\\([\\d\\-]+\\)</td>",
         "url": "http://www.babelstone.co.uk/Software/BabelMap.html"
     },
     "comment": "BabelMap.zip is updated regularly so let's leave the hash empty", 
