@@ -35,7 +35,11 @@
             "url": "http://www.zedtek.com/download/ztw22x64.exe"
         }
     }, 
-    "homepage": "http://www.ztree.com/", 
+    "checkver": {
+        "re": "color:\\s+rgb\\(255,0,0\\);\">v([\\d\\.]+)</span>", 
+        "url": "http://www.ztree.com/html/ztreewin.htm"
+    }, 
+    "homepage": "http://www.ztree.com/html/ztreewin.htm", 
     "license": "Trialware", 
     "version": "2.2.0"
 }

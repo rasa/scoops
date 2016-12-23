@@ -14,6 +14,10 @@
     "bin": [
         "tidy.exe"
     ], 
+    "checkver": {
+        "re": "<a\\s+href=\"/htacg/tidy-html5/releases/tag/v([\\d\\.]+)\"", 
+        "url": "https://github.com/htacg/tidy-html5/releases/latest"
+    }, 
     "homepage": "http://www.html-tidy.org/", 
     "license": "http://www.html-tidy.org/documentation/#license", 
     "version": "5.2.0"

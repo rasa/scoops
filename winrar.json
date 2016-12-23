@@ -15,6 +15,10 @@
         "UnRAR.exe", 
         "WinRAR.exe"
     ], 
+    "checkver": {
+        "re": "<b>WinRAR\\s+x86\\s+\\(32\\s+bit\\)\\s+([\\d\\.]+)<", 
+        "url": "http://www.rarlab.com/download.htm"
+    }, 
     "homepage": "http://www.rarlab.com/", 
     "installer": {
         "args": [

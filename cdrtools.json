@@ -27,7 +27,7 @@
         "scgcheck.exe", 
         "scgskeleton.exe"
     ], 
-    "homepage": "http://cdrecord.org/", 
+    "homepage": "https://sourceforge.net/projects/tumagcc/", 
     "license": "CDDL, GPL & LGPL", 
     "version": "3.01"
 }

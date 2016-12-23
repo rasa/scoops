@@ -28,6 +28,10 @@
         "bin\\wkhtmltoimage.exe", 
         "bin\\wkhtmltopdf.exe"
     ], 
+    "checkver": {
+        "re": "The\\s+current\\s+stable\\s+series\\s+is\\s+<strong>([\\d\\.]+)</strong>", 
+        "url": "http://wkhtmltopdf.org/downloads.html"
+    }, 
     "homepage": "http://wkhtmltopdf.org/", 
     "license": "LGPL3", 
     "uninstaller": {
