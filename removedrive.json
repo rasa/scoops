@@ -2,18 +2,18 @@
     "architecture": {
         "32bit": {
             "bin": "Win32/RemoveDrive.exe"
-        },
+        }, 
         "64bit": {
             "bin": "x64/RemoveDrive.exe"
         }
-    },
+    }, 
     "checkver": {
-        "re": "RemoveDrive\\s+V([\\d\\.]+)\\s+-\\s+Safe",
+        "re": "RemoveDrive\\s+V([\\d\\.]+)\\s+-\\s+Safe", 
         "url": "http://www.uwe-sieber.de/drivetools_e.html"
-    },
-    "hash": "ebccceb49d7f66d311b52d0bdd3a974cb4defbbd524a5e6586d9317851f421a8",
-    "homepage": "http://www.uwe-sieber.de/drivetools_e.html",
-    "license": "Freeware",
-    "url": "http://www.uwe-sieber.de/files/removedrive.zip",
+    }, 
+    "hash": "ebccceb49d7f66d311b52d0bdd3a974cb4defbbd524a5e6586d9317851f421a8", 
+    "homepage": "http://www.uwe-sieber.de/drivetools_e.html", 
+    "license": "Freeware", 
+    "url": "http://www.uwe-sieber.de/files/removedrive.zip", 
     "version": "2.8.4"
 }
