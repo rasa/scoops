@@ -1,5 +1,9 @@
 {
     "bin": "res_set.exe", 
+    "checkver": {
+        "re": "<a\\s+href=\"/rasa/res_set/releases/tag/v([\\d\\.]+)\"", 
+        "url": "https://github.com/rasa/res_set/releases/latest"
+    }, 
     "hash": "5fff2f32683a8801935350c7f527faab444c47add9fc6b3cc9a48e0f1a7e42e9", 
     "homepage": "https://github.com/rasa/res_set", 
     "license": "MIT", 

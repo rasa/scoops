@@ -3,6 +3,10 @@
         "regdelta.exe", 
         "regdeltaU.exe"
     ], 
+    "checkver": {
+        "re": "<a\\s+href=\"/rasa/regdelta/releases/tag/v([\\d\\.]+)\"", 
+        "url": "https://github.com/rasa/regdelta/releases/latest"
+    }, 
     "hash": "dcf0624003576dbe48752071fd58bfda54b81710f81c862a7cafdd83f8764dd8", 
     "homepage": "https://github.com/rasa/regdelta", 
     "license": "MIT", 

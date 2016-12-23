@@ -1,5 +1,9 @@
 {
     "bin": "path_set.exe", 
+    "checkver": {
+        "re": "<a\\s+href=\"/rasa/path_set/releases/tag/v([\\d\\.]+)\"", 
+        "url": "https://github.com/rasa/path_set/releases/latest"
+    }, 
     "hash": "765a7b7c947616237935179517bf42887ca21e60367ed22c4dabae3b10bfd0d4", 
     "homepage": "https://github.com/rasa/path_set", 
     "license": "MIT", 

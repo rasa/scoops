@@ -1,5 +1,9 @@
 {
     "bin": "inirw.exe", 
+    "checkver": {
+        "re": "<a\\s+href=\"/rasa/inirw/releases/tag/v([\\d\\.]+)\"", 
+        "url": "https://github.com/rasa/inirw/releases/latest"
+    }, 
     "hash": "12adf14d943195f33323ec08e8171a263da82de19f6d981fee6ffc110f7b08c0", 
     "homepage": "https://github.com/rasa/inirw", 
     "license": "MIT", 

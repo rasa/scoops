@@ -9,6 +9,10 @@
             "url": "https://github.com/rasa/vlc_installer/releases/download/v2.2.4/vlc_installer-2.2.4-win64.zip"
         }
     }, 
+    "checkver": {
+        "re": "<a\\s+href=\"/rasa/vlc_installer/releases/tag/v([\\d\\.]+)\"", 
+        "url": "https://github.com/rasa/vlc_installer/releases/latest"
+    }, 
     "hash": "", 
     "homepage": "https://github.com/rasa/vlc_installer", 
     "installer": {

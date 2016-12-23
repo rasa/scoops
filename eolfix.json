@@ -1,5 +1,9 @@
 {
     "bin": "eolfix.exe", 
+    "checkver": {
+        "re": "<a\\s+href=\"/rasa/eolfix/releases/tag/v([\\d\\.]+)\"", 
+        "url": "https://github.com/rasa/eolfix/releases/latest"
+    }, 
     "hash": "1d674daed4b5ab7d8de21c14d108b78dd6cd7bfcfb34db264bbf3a09cc65a62f", 
     "homepage": "https://github.com/rasa/eolfix", 
     "license": "MIT", 

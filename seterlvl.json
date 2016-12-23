@@ -1,5 +1,9 @@
 {
     "bin": "seterlvl.exe", 
+    "checkver": {
+        "re": "<a\\s+href=\"/rasa/seterlvl/releases/tag/v([\\d\\.]+)\"", 
+        "url": "https://github.com/rasa/seterlvl/releases/latest"
+    }, 
     "hash": "d4e732fe122c16450100f964c340594c21455bf7e108529027520c2974ebb971", 
     "homepage": "https://github.com/rasa/seterlvl", 
     "license": "MIT", 
