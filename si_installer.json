@@ -42,6 +42,7 @@
         "re": "<a\\s+href=\"/rasa/si_installer/releases/tag/v([\\d\\.]+)\"", 
         "url": "https://github.com/rasa/si_installer/releases/latest"
     }, 
+    "description": "Downloads and install SysInternals freeware", 
     "hash": "839a47cdd7d3aeb78bc8c9a820f014c6556b6e360544dc476e9a1dd58fbf66fb", 
     "homepage": "https://github.com/rasa/si_installer", 
     "installer": {

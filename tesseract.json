@@ -1,6 +1,7 @@
 {
     "_todo": "support 32bit, add uninstaller", 
     "bin": [], 
+    "description": "OCR engine used by Google", 
     "hash": "771912fa3a027925fd8d99ed99e23b03f170418f03cb5f147211d2c97dd174f8", 
     "homepage": "https://github.com/UB-Mannheim/tesseract/wiki", 
     "installer": {

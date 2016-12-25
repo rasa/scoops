@@ -5,6 +5,7 @@
             "mailsend"
         ]
     ], 
+    "description": "Send mail via SMTP", 
     "hash": "87db23b8c9588353d12e19e953dddb17ed04b422f41bcfbaa8ad4e27057245b4", 
     "homepage": "https://github.com/muquit/mailsend/", 
     "license": "BSD", 

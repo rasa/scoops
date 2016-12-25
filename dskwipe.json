@@ -4,6 +4,7 @@
         "re": "<a\\s+href=\"/rasa/dskwipe/releases/tag/v([\\d\\.]+)\"", 
         "url": "https://github.com/rasa/dskwipe/releases/latest"
     }, 
+    "description": "Securely wipe disk media", 
     "hash": "59badf8aa3b8416361d96361863cca495bb6469288d5b9902567b385a444754a", 
     "homepage": "https://github.com/rasa/dskwipe", 
     "license": "MIT", 

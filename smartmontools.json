@@ -1,6 +1,7 @@
 {
     "bin": [], 
-    "hash": "", 
+    "description": "Read SMART data from disks", 
+    "hash": "564ff79214af60c4ab0d222ae61781624ca56278bc777963ebe0f19f87f04e3f", 
     "homepage": "https://www.smartmontools.org/", 
     "license": "GPL", 
     "url": "https://sourceforge.net/projects/smartmontools/files/smartmontools/6.5/smartmontools-6.5-1.win32-setup.exe", 

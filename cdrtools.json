@@ -27,6 +27,7 @@
         "scgcheck.exe", 
         "scgskeleton.exe"
     ], 
+    "description": "Burn and read CDs, DVDs, and BluRay discs", 
     "homepage": "https://sourceforge.net/projects/tumagcc/", 
     "license": "CDDL, GPL & LGPL", 
     "version": "3.01"

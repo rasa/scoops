@@ -4,6 +4,7 @@
         "re": "<a\\s+href=\"/rasa/lsdsk/releases/tag/v([\\d\\.]+)\"", 
         "url": "https://github.com/rasa/lsdsk/releases/latest"
     }, 
+    "description": "List mounted disks", 
     "hash": "dd27b551df15bf59a977b2eb1a4b2415f9f7c68830393e0f84decb602b060984", 
     "homepage": "https://github.com/rasa/lsdsk", 
     "license": "MIT", 

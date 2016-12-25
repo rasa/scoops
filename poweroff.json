@@ -1,5 +1,6 @@
 {
     "bin": "poweroff.exe", 
+    "description": "Poweroff system utility", 
     "hash": "51f194e25b8638992b92a060b3f1608837a62613f20be1047966ef252578ac8a", 
     "homepage": "http://users.telenet.be/jbosman/poweroff/poweroff.htm", 
     "license": "Unknown", 

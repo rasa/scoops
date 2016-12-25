@@ -32,6 +32,7 @@
         "re": "The\\s+current\\s+stable\\s+series\\s+is\\s+<strong>([\\d\\.]+)</strong>", 
         "url": "http://wkhtmltopdf.org/downloads.html"
     }, 
+    "description": "Render HTML into PDF", 
     "homepage": "http://wkhtmltopdf.org/", 
     "license": "LGPL3", 
     "uninstaller": {

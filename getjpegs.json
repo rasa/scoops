@@ -4,6 +4,7 @@
         "re": "<a\\s+href=\"/rasa/getjpegs/releases/tag/v([\\d\\.]+)\"", 
         "url": "https://github.com/rasa/getjpegs/releases/latest"
     }, 
+    "description": "Recover .jpg files directly from disk", 
     "hash": "94360ac044bbda69f38c12bb56535ee90d12d279c5df4665b563be2e35393343", 
     "homepage": "https://github.com/rasa/getjpegs", 
     "license": "MIT", 

@@ -5,9 +5,10 @@
         "url": "http://www.babelstone.co.uk/Software/BabelPad.html"
     }, 
     "comment": "BabelPad.zip is updated regularly so let's leave the hash empty", 
+    "description": "Unicode text editor", 
     "homepage": "http://www.babelstone.co.uk/Software/BabelPad.html", 
     "license": "Freeware", 
-    "notes": "The hash for 9.0.0.2 is\n53df6579c8f71fdfeac42f4853ca14f58cbb23916ef4dcbe3a9c4510a7853649", 
+    "notes": "The hash for 9.0.0.3 is\n53df6579c8f71fdfeac42f4853ca14f58cbb23916ef4dcbe3a9c4510a7853649", 
     "shortcuts": [
         [
             "BabelPad.exe", 
