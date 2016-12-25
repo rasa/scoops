@@ -1,13 +1,13 @@
 {
-    "bin": "rehash.exe",
+    "bin": "rehash.exe", 
     "checkver": {
-        "re": ">Download\\s+rehash-([\\d\\.]+)-win\\.zip",
+        "re": ">Download\\s+rehash-([\\d\\.]+)-win\\.zip", 
         "url": "https://sourceforge.net/projects/rehash/files/"
-    },
-    "description": "Multi-hash calculator",
-    "hash": "7ac0cb28709f01096e196de58f303f7682d4cd697a03faa34587e292bf390d84",
-    "homepage": "http://rehash.sourceforge.net/",
-    "license": "BSD-2-Clause",
-    "url": "https://sourceforge.net/projects/rehash/files/rehash/0.2/rehash-0.2-win.zip",
+    }, 
+    "description": "Multi-hash calculator", 
+    "hash": "7ac0cb28709f01096e196de58f303f7682d4cd697a03faa34587e292bf390d84", 
+    "homepage": "http://rehash.sourceforge.net/", 
+    "license": "BSD-2-Clause", 
+    "url": "https://sourceforge.net/projects/rehash/files/rehash/0.2/rehash-0.2-win.zip", 
     "version": "0.2"
 }

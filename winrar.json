@@ -1,33 +1,33 @@
 {
-    "_license_url": "http://www.win-rar.com/winrarlicense.html?&L=0",
+    "_license_url": "http://www.win-rar.com/winrarlicense.html?&L=0", 
     "architecture": {
         "32bit": {
-            "hash": "e81baa5c2d2771cbad2d168ecf278f865dc2de38983c6a169d583949375ea735",
+            "hash": "e81baa5c2d2771cbad2d168ecf278f865dc2de38983c6a169d583949375ea735", 
             "url": "http://www.rarlab.com/rar/wrar540.exe"
-        },
+        }, 
         "64bit": {
-            "hash": "d73cc6a97c3edde637c7d952ee2e0efc5b09937e5300cb0ecaffda70f4efdef0",
+            "hash": "d73cc6a97c3edde637c7d952ee2e0efc5b09937e5300cb0ecaffda70f4efdef0", 
             "url": "http://www.rarlab.com/rar/winrar-x64-540.exe"
         }
-    },
+    }, 
     "bin": [
-        "Rar.exe",
-        "UnRAR.exe",
+        "Rar.exe", 
+        "UnRAR.exe", 
         "WinRAR.exe"
-    ],
+    ], 
     "checkver": {
-        "re": "<b>WinRAR\\s+x86\\s+\\(32\\s+bit\\)\\s+([\\d\\.]+)<",
+        "re": "<b>WinRAR\\s+x86\\s+\\(32\\s+bit\\)\\s+([\\d\\.]+)<", 
         "url": "http://www.rarlab.com/download.htm"
-    },
-    "description": "Compress/uncompress RAR files",
-    "homepage": "http://www.rarlab.com/",
+    }, 
+    "description": "Compress/uncompress RAR files", 
+    "homepage": "http://www.rarlab.com/", 
     "installer": {
         "args": [
-            "-s",
+            "-s", 
             "-d$dir"
         ]
-    },
-    "license": "Shareware",
-    "notes": "Winrar is shareware, but unrar is freeware",
+    }, 
+    "license": "Shareware", 
+    "notes": "Winrar is shareware, but unrar is freeware", 
     "version": "5.40"
 }
