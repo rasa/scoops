@@ -2,45 +2,45 @@
     "_uninstaller_disabled": {
         "args": [
             "/S"
-        ], 
+        ],
         "file": "Uninstall.exe"
-    }, 
-    "_uninstaller_notes": "uninstaller ignores the /S command line", 
+    },
+    "_uninstaller_notes": "uninstaller ignores the /S command line",
     "architecture": {
         "32bit": {
-            "_bin": "ztw.exe", 
-            "hash": "7bf68e67c877c70bd563e19c57e08d4e3b8a8262a57f8f7a32174f6dd1a45f5f", 
+            "_bin": "ztw.exe",
+            "hash": "7bf68e67c877c70bd563e19c57e08d4e3b8a8262a57f8f7a32174f6dd1a45f5f",
             "installer": {
                 "args": [
-                    "/S", 
+                    "/S",
                     "/D=$dir"
-                ], 
+                ],
                 "file": "ztw22x86.exe"
-            }, 
+            },
             "url": "http://www.zedtek.com/download/ztw22x86.exe"
-        }, 
+        },
         "64bit": {
             "_bin": [
-                "ztw64.exe", 
+                "ztw64.exe",
                 "ztw.exe"
-            ], 
-            "hash": "e7c7977abf151223725b295fc506913d0ebe290b5ee9d45dcb2dede750344056", 
+            ],
+            "hash": "e7c7977abf151223725b295fc506913d0ebe290b5ee9d45dcb2dede750344056",
             "installer": {
                 "args": [
-                    "/S", 
+                    "/S",
                     "/D=$dir"
-                ], 
+                ],
                 "file": "ztw22x64.exe"
-            }, 
+            },
             "url": "http://www.zedtek.com/download/ztw22x64.exe"
         }
-    }, 
+    },
     "checkver": {
-        "re": "color:\\s+rgb\\(255,0,0\\);\">v([\\d\\.]+)</span>", 
+        "re": "color:\\s+rgb\\(255,0,0\\);\">v([\\d\\.]+)</span>",
         "url": "http://www.ztree.com/html/ztreewin.htm"
-    }, 
-    "description": "Text-mode file/directory manager", 
-    "homepage": "http://www.ztree.com/html/ztreewin.htm", 
-    "license": "Trialware", 
+    },
+    "description": "Text-mode file/directory manager",
+    "homepage": "http://www.ztree.com/html/ztreewin.htm",
+    "license": "Shareware",
     "version": "2.2.0"
 }
