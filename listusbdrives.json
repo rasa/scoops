@@ -1,0 +1,16 @@
+{
+    "architecture": {
+        "32bit": {
+            "bin": "Win32/ListUsbDrives.exe"
+        }, 
+        "64bit": {
+            "bin": "x64/ListUsbDrives.exe"
+        }
+    }, 
+    "description": "List USB drives", 
+    "hash": "592f9fbd36f5dd40f4b57b868fb5941c2b5c9a03224eb48872ff507ac8700a77", 
+    "homepage": "http://www.uwe-sieber.de/usbdlm_e.html", 
+    "license": "Freeware", 
+    "url": "http://www.uwe-sieber.de/files/listusbdrives.zip", 
+    "version": "20160905"
+}

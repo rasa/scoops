@@ -1,0 +1,20 @@
+{
+    "architecture": {
+        "32bit": {
+            "bin": "Win32/DriveCleanup.exe"
+        }, 
+        "64bit": {
+            "bin": "x64/DriveCleanup.exe"
+        }
+    }, 
+    "checkver": {
+        "re": "DriveCleanup\\s+V([\\d.]+)\\s+-\\s+remove", 
+        "url": "http://www.uwe-sieber.de/drivetools_e.html"
+    }, 
+    "description": "Remove nonpresent drives from the registry", 
+    "homepage": "http://www.uwe-sieber.de/drivetools_e.html", 
+    "license": "Freeware", 
+    "notes": "Hash for 1.2 is:\nd75fdf50b67558ffcbe00aa98d40e53bfec4d01abd04138395a7ce77fbec6651", 
+    "url": "http://www.uwe-sieber.de/files/drivecleanup.zip", 
+    "version": "1.2"
+}
