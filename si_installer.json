@@ -39,7 +39,7 @@
         "Tcpview.exe"
     ], 
     "checkver": {
-        "re": "<a\\s+href=\"/rasa/si_installer/releases/tag/v([\\d\\.]+)\"", 
+        "re": "<a\\s+href=\"/rasa/si_installer/releases/tag/v([\\d.]+)\"", 
         "url": "https://github.com/rasa/si_installer/releases/latest"
     }, 
     "description": "Downloads and install SysInternals freeware", 

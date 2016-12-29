@@ -2,7 +2,7 @@
     "_todo": "support 32bit, add uninstaller", 
     "bin": [], 
     "checkver": {
-        "re": "<a\\s+href=\"/tesseract-ocr/tesseract/releases/tag/v([\\d\\.]+)\"", 
+        "re": "<a\\s+href=\"/tesseract-ocr/tesseract/releases/tag/v([\\d.]+)\"", 
         "url": "https://github.com/tesseract-ocr/tesseract/releases/latest"
     }, 
     "description": "OCR engine developed by Google", 

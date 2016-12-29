@@ -15,7 +15,7 @@
         "tidy.exe"
     ], 
     "checkver": {
-        "re": "<a\\s+href=\"/htacg/tidy-html5/releases/tag/v([\\d\\.]+)\"", 
+        "re": "<a\\s+href=\"/htacg/tidy-html5/releases/tag/v([\\d.]+)\"", 
         "url": "https://github.com/htacg/tidy-html5/releases/latest"
     }, 
     "description": "Tidy HTML and XML files", 

@@ -1,7 +1,7 @@
 {
     "bin": "mklnk.exe", 
     "checkver": {
-        "re": "<a\\s+href=\"/rasa/mklnk/releases/tag/v([\\d\\.]+)\"", 
+        "re": "<a\\s+href=\"/rasa/mklnk/releases/tag/v([\\d.]+)\"", 
         "url": "https://github.com/rasa/mklnk/releases/latest"
     }, 
     "description": "Make .lnk files", 

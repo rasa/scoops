@@ -36,7 +36,7 @@
         }
     }, 
     "checkver": {
-        "re": "color:\\s+rgb\\(255,0,0\\);\">v([\\d\\.]+)</span>", 
+        "re": "color:\\s+rgb\\(255,0,0\\);\">v([\\d.]+)</span>", 
         "url": "http://www.ztree.com/html/ztreewin.htm"
     }, 
     "description": "Text-mode file/directory manager", 

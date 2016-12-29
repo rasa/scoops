@@ -13,7 +13,7 @@
         "pdfunite.exe"
     ], 
     "checkver": {
-        "re": "Latest\\s+binary\\s+:\\s+<a\\s+href=\"http://blog\\.alivate\\.com\\.au/wp-content/uploads/.*/poppler-([\\d\\.]+)_", 
+        "re": "Latest\\s+binary\\s+:\\s+<a\\s+href=\"http://blog\\.alivate\\.com\\.au/wp-content/uploads/.*/poppler-([\\d.]+)_", 
         "url": "http://blog.alivate.com.au/poppler-windows/"
     }, 
     "description": "PDF rendering library", 

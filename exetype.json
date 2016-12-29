@@ -1,7 +1,7 @@
 {
     "bin": "exetype.exe", 
     "checkver": {
-        "re": "<a\\s+href=\"/rasa/exetype/releases/tag/v([\\d\\.]+)\"", 
+        "re": "<a\\s+href=\"/rasa/exetype/releases/tag/v([\\d.]+)\"", 
         "url": "https://github.com/rasa/exetype/releases/latest"
     }, 
     "description": "Display the type of a Windows EXE file", 

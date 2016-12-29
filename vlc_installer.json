@@ -10,7 +10,7 @@
         }
     }, 
     "checkver": {
-        "re": "<a\\s+href=\"/rasa/vlc_installer/releases/tag/v([\\d\\.]+)\"", 
+        "re": "<a\\s+href=\"/rasa/vlc_installer/releases/tag/v([\\d.]+)\"", 
         "url": "https://github.com/rasa/vlc_installer/releases/latest"
     }, 
     "description": "Download and install the VLC media player and related plugins", 

@@ -1,7 +1,7 @@
 {
     "bin": "seterlvl.exe", 
     "checkver": {
-        "re": "<a\\s+href=\"/rasa/seterlvl/releases/tag/v([\\d\\.]+)\"", 
+        "re": "<a\\s+href=\"/rasa/seterlvl/releases/tag/v([\\d.]+)\"", 
         "url": "https://github.com/rasa/seterlvl/releases/latest"
     }, 
     "description": "Set the errorlevel and exit", 

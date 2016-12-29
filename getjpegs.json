@@ -1,7 +1,7 @@
 {
     "bin": "getjpegs.exe", 
     "checkver": {
-        "re": "<a\\s+href=\"/rasa/getjpegs/releases/tag/v([\\d\\.]+)\"", 
+        "re": "<a\\s+href=\"/rasa/getjpegs/releases/tag/v([\\d.]+)\"", 
         "url": "https://github.com/rasa/getjpegs/releases/latest"
     }, 
     "description": "Recover .jpg files directly from disk", 
