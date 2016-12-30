@@ -1,4 +1,10 @@
 {
+  "autoupdate": {
+    "hash": {
+      "mode": "download"
+    }, 
+    "url": "https://github.com/rasa/res_set/releases/download/v$version/res_set-$version-win32.zip"
+  }, 
   "bin": "res_set.exe", 
   "checkver": {
     "re": "/releases/tag/v([\\d.]+)", 

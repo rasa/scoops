@@ -23,6 +23,12 @@
       }
     }
   }, 
+  "autoupdate": {
+    "hash": {
+      "mode": "download"
+    }, 
+    "url": "https://github.com/rasa/nirsoft_installer/releases/download/v$version/nirsoft_installer-$version-win32.zip"
+  }, 
   "bin": [
     "heapmemview.exe", 
     "wirelesskeydump.exe", 

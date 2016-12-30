@@ -1,5 +1,11 @@
 {
   "_todo": "add uninstaller", 
+  "autoupdate": {
+    "hash": {
+      "mode": "download"
+    }, 
+    "url": "http://digi.bib.uni-mannheim.de/tesseract/tesseract-ocr-setup-$versiondev.exe"
+  }, 
   "bin": [], 
   "checkver": {
     "re": "/releases/tag/([\\d.]+)", 

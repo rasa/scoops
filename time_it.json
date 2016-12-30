@@ -1,4 +1,10 @@
 {
+  "autoupdate": {
+    "hash": {
+      "mode": "download"
+    }, 
+    "url": "https://github.com/rasa/time_it/releases/download/v$version/time_it-$version-win32.zip"
+  }, 
   "bin": "time_it.exe", 
   "checkver": {
     "re": "/releases/tag/v([\\d.]+)", 

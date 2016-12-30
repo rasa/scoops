@@ -1,4 +1,10 @@
 {
+  "autoupdate": {
+    "hash": {
+      "mode": "download"
+    }, 
+    "url": "https://github.com/rasa/inirw/releases/download/v$version/inirw-$version-win32.zip"
+  }, 
   "bin": "inirw.exe", 
   "checkver": {
     "re": "/releases/tag/v([\\d.]+)", 

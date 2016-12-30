@@ -1,4 +1,10 @@
 {
+  "autoupdate": {
+    "hash": {
+      "mode": "download"
+    }, 
+    "url": "https://github.com/muquit/mailsend/releases/download/$version/mailsend$version.exe.zip"
+  }, 
   "bin": [
     [
       "mailsend1.19.exe", 

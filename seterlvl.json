@@ -1,4 +1,10 @@
 {
+  "autoupdate": {
+    "hash": {
+      "mode": "download"
+    }, 
+    "url": "https://github.com/rasa/seterlvl/releases/download/v$version/seterlvl-$version-win32.zip"
+  }, 
   "bin": "seterlvl.exe", 
   "checkver": {
     "re": "/releases/tag/v([\\d.]+)", 

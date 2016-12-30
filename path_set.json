@@ -1,4 +1,10 @@
 {
+  "autoupdate": {
+    "hash": {
+      "mode": "download"
+    }, 
+    "url": "https://github.com/rasa/path_set/releases/download/v$version/path_set-$version-win32.zip"
+  }, 
   "bin": "path_set.exe", 
   "checkver": {
     "re": "/releases/tag/v([\\d.]+)", 

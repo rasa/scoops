@@ -1,4 +1,10 @@
 {
+  "autoupdate": {
+    "hash": {
+      "mode": "download"
+    }, 
+    "url": "https://github.com/rasa/lsdsk/releases/download/v$version/lsdsk-$version-win32.zip"
+  }, 
   "bin": "lsdsk.exe", 
   "checkver": {
     "re": "/releases/tag/v([\\d.]+)", 

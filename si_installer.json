@@ -1,4 +1,10 @@
 {
+  "autoupdate": {
+    "hash": {
+      "mode": "download"
+    }, 
+    "url": "https://github.com/rasa/si_installer/releases/download/v$version/si_installer-$version-win32.zip"
+  }, 
   "bin": [
     "Autoruns.exe", 
     "Autoruns64.exe", 

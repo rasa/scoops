@@ -1,4 +1,10 @@
 {
+  "autoupdate": {
+    "hash": {
+      "mode": "download"
+    }, 
+    "url": "https://github.com/rasa/regdelta/releases/download/v$version/regdelta-$version-win32.zip"
+  }, 
   "bin": [
     "regdelta.exe", 
     "regdeltaU.exe"

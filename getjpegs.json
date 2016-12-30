@@ -1,4 +1,10 @@
 {
+  "autoupdate": {
+    "hash": {
+      "mode": "download"
+    }, 
+    "url": "https://github.com/rasa/getjpegs/releases/download/v$version/getjpegs-$version-win32.zip"
+  }, 
   "bin": "getjpegs.exe", 
   "checkver": {
     "re": "/releases/tag/v([\\d.]+)", 

@@ -1,4 +1,10 @@
 {
+  "autoupdate": {
+    "hash": {
+      "mode": "download"
+    }, 
+    "url": "https://github.com/rasa/eolfix/releases/download/v$version/eolfix-$version-win32.zip"
+  }, 
   "bin": "eolfix.exe", 
   "checkver": {
     "re": "/releases/tag/v([\\d.]+)", 
