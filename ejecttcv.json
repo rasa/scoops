@@ -7,10 +7,7 @@
       "bin": "x64/EjectTcv.exe"
     }
   }, 
-  "checkver": {
-    "re": "EjectTcv\\s+V([\\d.]+)\\s+-\\s+'ejects'", 
-    "url": "http://www.uwe-sieber.de/drivetools_e.html"
-  }, 
+  "checkver": "EjectTcv\\s+V([\\d.]+)\\s+-\\s+'ejects'", 
   "description": "Eject TrueCrypt/VeraCrypt volume", 
   "homepage": "http://www.uwe-sieber.de/drivetools_e.html", 
   "license": "Freeware", 

@@ -1,7 +1,7 @@
 {
   "bin": "poweroff.exe", 
   "checkver": {
-    "re": "<p\\s+style=\"line-height:\\s+100%\">V([\\d.]+):\\s+\\d\\d-\\d\\d-\\d\\d\\d\\d</p>", 
+    "re": "<p\\s+style=\"line-height:\\s+100%\">V([\\d.]+):\\s+\\d\\d-\\d\\d-\\d\\d\\d\\d", 
     "url": "http://users.telenet.be/jbosman/poweroff/poweroff.htm"
   }, 
   "description": "Poweroff system utility", 

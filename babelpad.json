@@ -1,9 +1,6 @@
 {
   "bin": "BabelPad.exe", 
-  "checkver": {
-    "re": "BabelPad</td>\\s*<td class=\"sl\">([\\d.]+)\\s+\\([\\d\\-]+\\)</td>", 
-    "url": "http://www.babelstone.co.uk/Software/BabelPad.html"
-  }, 
+  "checkver": "BabelPad</td>\\s*<td class=\"sl\">([\\d.]+)", 
   "comment": "BabelPad.zip is updated regularly so let's leave the hash empty", 
   "description": "Unicode text editor", 
   "homepage": "http://www.babelstone.co.uk/Software/BabelPad.html", 

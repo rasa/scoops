@@ -1,8 +1,5 @@
 {
-  "_checkver": {
-    "re": "FFB\\s+V([\\d.]+)\\s+-\\s+Flush", 
-    "url": "http://www.uwe-sieber.de/drivetools_e.html"
-  }, 
+  "_checkver": "FFB\\s+V([\\d.]+)\\s+-\\s+Flush", 
   "architecture": {
     "32bit": {
       "bin": "Win32/FFB.exe"

@@ -1,7 +1,7 @@
 {
   "bin": "ritchielawrence-mtee-e4d4592/bin/Release/mtee.exe", 
   "checkver": {
-    "re": "<a\\s+href=\"/ritchielawrence/mtee/releases/tag/v([\\d.]+)\"", 
+    "re": "/releases/tag/v([\\d.]+)", 
     "url": "https://github.com/ritchielawrence/mtee/releases/latest"
   }, 
   "description": "Stdout stream splitter", 

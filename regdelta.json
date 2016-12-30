@@ -4,7 +4,7 @@
     "regdeltaU.exe"
   ], 
   "checkver": {
-    "re": "<a\\s+href=\"/rasa/regdelta/releases/tag/v([\\d.]+)\"", 
+    "re": "/releases/tag/v([\\d.]+)", 
     "url": "https://github.com/rasa/regdelta/releases/latest"
   }, 
   "description": "Diff, export, and sort Windows registry files", 

@@ -11,11 +11,9 @@
       "url": "http://binaries.html-tidy.org/binaries/tidy-5.2.0/tidy-5.2.0-win64.zip"
     }
   }, 
-  "bin": [
-    "tidy.exe"
-  ], 
+  "bin": "tidy.exe", 
   "checkver": {
-    "re": "<a\\s+href=\"/htacg/tidy-html5/releases/tag/v([\\d.]+)\"", 
+    "re": "/releases/tag/v([\\d.]+)", 
     "url": "https://github.com/htacg/tidy-html5/releases/latest"
   }, 
   "description": "Tidy HTML and XML files", 

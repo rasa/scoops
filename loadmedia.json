@@ -7,10 +7,7 @@
       "bin": "x64/LoadMedia.exe"
     }
   }, 
-  "checkver": {
-    "re": "LoadMedia\\s+V([\\d.]+)\\s+-\\s+Loads", 
-    "url": "http://www.uwe-sieber.de/drivetools_e.html"
-  }, 
+  "checkver": "LoadMedia\\s+V([\\d.]+)\\s+-\\s+Loads", 
   "description": "Load removable media", 
   "homepage": "http://www.uwe-sieber.de/drivetools_e.html", 
   "license": "Freeware", 

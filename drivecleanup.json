@@ -7,10 +7,7 @@
       "bin": "x64/DriveCleanup.exe"
     }
   }, 
-  "checkver": {
-    "re": "DriveCleanup\\s+V([\\d.]+)\\s+-\\s+remove", 
-    "url": "http://www.uwe-sieber.de/drivetools_e.html"
-  }, 
+  "checkver": "DriveCleanup\\s+V([\\d.]+)", 
   "description": "Remove nonpresent drives from the registry", 
   "homepage": "http://www.uwe-sieber.de/drivetools_e.html", 
   "license": "Freeware", 

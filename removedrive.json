@@ -7,10 +7,7 @@
       "bin": "x64/RemoveDrive.exe"
     }
   }, 
-  "checkver": {
-    "re": "RemoveDrive\\s+V([\\d.]+)\\s+-\\s+Safe", 
-    "url": "http://www.uwe-sieber.de/drivetools_e.html"
-  }, 
+  "checkver": "RemoveDrive\\s+V([\\d.]+)\\s+-\\s+Safe", 
   "description": "Safely removes drives", 
   "homepage": "http://www.uwe-sieber.de/drivetools_e.html", 
   "license": "Freeware", 

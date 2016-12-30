@@ -1,7 +1,7 @@
 {
   "bin": "attr.exe", 
   "checkver": {
-    "re": "<a\\s+href=\"/rasa/attr/releases/tag/v([\\d.]+)\"", 
+    "re": "<a\\s+href=\"/rasa/attr/releases/tag/v([\\d.]+)", 
     "url": "https://github.com/rasa/attr/releases/latest"
   }, 
   "description": "Display and set attributes on files and directories", 

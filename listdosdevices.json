@@ -1,9 +1,6 @@
 {
   "bin": "ListDosDevices.exe", 
-  "checkver": {
-    "re": "ListDosDevices\\s+V([\\d.]+)", 
-    "url": "http://www.uwe-sieber.de/drivetools_e.html"
-  }, 
+  "checkver": "ListDosDevices\\s+V([\\d.]+)", 
   "description": "List DOS devices", 
   "homepage": "http://www.uwe-sieber.de/drivetools_e.html", 
   "license": "Freeware", 

@@ -1,9 +1,6 @@
 {
   "bin": "DeleteDosDevice.exe", 
-  "checkver": {
-    "re": "Download\\s+V([\\d.]+):\\s*<a\\s+href=\"files/deletedosdevice", 
-    "url": "http://www.uwe-sieber.de/drivetools_e.html"
-  }, 
+  "checkver": "Download\\s+V([\\d.]+):\\s*<a\\s+href=\"files/deletedosdevice", 
   "description": "Delete DOS device", 
   "homepage": "http://www.uwe-sieber.de/drivetools_e.html", 
   "license": "Freeware", 

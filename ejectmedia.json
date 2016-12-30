@@ -7,10 +7,7 @@
       "bin": "x64/EjectMedia.exe"
     }
   }, 
-  "checkver": {
-    "re": "EjectMedia\\s+V([\\d.]+)\\s+-\\s+ejects", 
-    "url": "http://www.uwe-sieber.de/drivetools_e.html"
-  }, 
+  "checkver": "EjectMedia\\s+V([\\d.]+)\\s+-\\s+ejects", 
   "description": "Ejects removable drives", 
   "homepage": "http://www.uwe-sieber.de/drivetools_e.html", 
   "license": "Freeware", 

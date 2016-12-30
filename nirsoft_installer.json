@@ -40,7 +40,7 @@
     "wirelesskeydump.exe"
   ], 
   "checkver": {
-    "re": "<a\\s+href=\"/rasa/nirsoft_installer/releases/tag/v([\\d.]+)\"", 
+    "re": "/releases/tag/v([\\d.]+)", 
     "url": "https://github.com/rasa/nirsoft_installer/releases/latest"
   }, 
   "description": "Downloads and install NirSoft freeware", 

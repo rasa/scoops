@@ -1,7 +1,7 @@
 {
   "bin": "path_set.exe", 
   "checkver": {
-    "re": "<a\\s+href=\"/rasa/path_set/releases/tag/v([\\d.]+)\"", 
+    "re": "/releases/tag/v([\\d.]+)", 
     "url": "https://github.com/rasa/path_set/releases/latest"
   }, 
   "description": "Modify system and user environment variables", 

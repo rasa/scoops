@@ -7,10 +7,7 @@
       "bin": "x64/RestartSrDev.exe"
     }
   }, 
-  "checkver": {
-    "re": "RestartSrDev\\s+V([\\d.]+)\\s+-\\s+restarts", 
-    "url": "http://www.uwe-sieber.de/drivetools_e.html"
-  }, 
+  "checkver": "RestartSrDev\\s+V([\\d.]+)\\s+-\\s+restarts", 
   "description": "Restarts safely removed drives", 
   "homepage": "http://www.uwe-sieber.de/drivetools_e.html", 
   "license": "Freeware", 

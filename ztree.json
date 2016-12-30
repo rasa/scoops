@@ -35,10 +35,7 @@
       "url": "http://www.zedtek.com/download/ztw22x64.exe"
     }
   }, 
-  "checkver": {
-    "re": "color:\\s+rgb\\(255,0,0\\);\">v([\\d.]+)</span>", 
-    "url": "http://www.ztree.com/html/ztreewin.htm"
-  }, 
+  "checkver": "color:\\s+rgb\\(255,0,0\\);\">v([\\d.]+)", 
   "description": "Text-mode file/directory manager", 
   "homepage": "http://www.ztree.com/html/ztreewin.htm", 
   "license": "Shareware", 

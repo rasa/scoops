@@ -6,7 +6,7 @@
     ]
   ], 
   "checkver": {
-    "re": "<a\\s+href=\"/muquit/mailsend/releases/tag/v([\\d.]+)\"", 
+    "re": "/releases/tag/v([\\d.]+)", 
     "url": "https://github.com/muquit/mailsend/releases/latest"
   }, 
   "description": "Send mail via SMTP", 
