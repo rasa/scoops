@@ -2,7 +2,7 @@
   "bin": "time_it.exe", 
   "checkver": {
     "re": "/releases/tag/v([\\d.]+)", 
-    "url": "https://github.com/rasa/timeit/releases/latest"
+    "url": "https://github.com/rasa/time_it/releases/latest"
   }, 
   "description": "Time disk I/O", 
   "hash": "8acdd6249cc168256a75900f51447d5b65105219eb61288b55c949e683bd7725", 

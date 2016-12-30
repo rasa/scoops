@@ -13,7 +13,7 @@
     "pdfunite.exe"
   ], 
   "checkver": {
-    "re": "Latest\\s+binary\\s+:\\s+<a\\s+href=\"http://blog\\.alivate\\.com\\.au/wp-content/uploads/.*/poppler-([\\d.]+)_", 
+    "re": "Latest\\s+binary.*/uploads/\\d+/\\d+/poppler-([\\d+.]+)", 
     "url": "http://blog.alivate.com.au/poppler-windows/"
   }, 
   "description": "PDF rendering library", 
@@ -21,6 +21,6 @@
   "hash": "f4d27a0684169a9355df5ea9f298bbc36e2c22238bdba02563798a5abb8898c3", 
   "homepage": "http://blog.alivate.com.au/poppler-windows/", 
   "license": "GPL-3.0", 
-  "url": "http://blog.alivate.com.au/wp-content/uploads/2016/11/poppler-0.49_x86.7z", 
-  "version": "0.49"
+  "url": "http://blog.alivate.com.au/wp-content/uploads/2016/12/poppler-0.50_x86.7z", 
+  "version": "0.50"
 }

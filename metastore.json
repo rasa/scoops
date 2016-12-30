@@ -1,7 +1,7 @@
 {
   "bin": "metastore.exe", 
   "checkver": {
-    "re": "/releases/tag/([\\d.]+)\"", 
+    "re": "/releases/tag/([a-f0-9]+)\"", 
     "url": "https://github.com/rasa/metastore/releases/latest"
   }, 
   "description": "Store and restore metadata from a filesystem", 

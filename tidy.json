@@ -13,7 +13,7 @@
   }, 
   "bin": "tidy.exe", 
   "checkver": {
-    "re": "/releases/tag/v([\\d.]+)", 
+    "re": "/releases/tag/([\\d.]+)", 
     "url": "https://github.com/htacg/tidy-html5/releases/latest"
   }, 
   "description": "Tidy HTML and XML files", 

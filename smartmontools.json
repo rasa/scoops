@@ -1,7 +1,7 @@
 {
   "bin": [], 
   "checkver": {
-    "re": ">Download\\s+smartmontools-([\\d.]+)\\.win32-setup\\.exe", 
+    "re": ">Download\\s+smartmontools-([\\d.\\-]+)\\.win32-setup\\.exe", 
     "url": "https://sourceforge.net/projects/smartmontools/files/smartmontools/"
   }, 
   "description": "Read SMART data from disks", 

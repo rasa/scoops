@@ -2,7 +2,7 @@
   "_todo": "add uninstaller", 
   "bin": [], 
   "checkver": {
-    "re": "/releases/tag/v([\\d.]+)", 
+    "re": "/releases/tag/([\\d.]+)", 
     "url": "https://github.com/tesseract-ocr/tesseract/releases/latest"
   }, 
   "description": "OCR engine developed by Google", 
