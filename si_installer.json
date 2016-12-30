@@ -1,66 +1,67 @@
 {
-    "bin": [
-        "Autoruns.exe", 
-        "Autoruns64.exe", 
-        "autorunsc.exe", 
-        "autorunsc64.exe", 
-        "Bginfo.exe", 
-        "Desktops.exe", 
-        "pagedfrg.exe", 
-        "procexp.exe", 
-        "procexp64.exe", 
-        "Procmon.exe", 
-        "PsExec.exe", 
-        "PsExec64.exe", 
-        "psfile.exe", 
-        "psfile64.exe", 
-        "PsGetsid.exe", 
-        "PsGetsid64.exe", 
-        "PsInfo.exe", 
-        "PsInfo64.exe", 
-        "pskill.exe", 
-        "pskill64.exe", 
-        "pslist.exe", 
-        "pslist64.exe", 
-        "PsLoggedon.exe", 
-        "PsLoggedon64.exe", 
-        "psloglist.exe", 
-        "pspasswd.exe", 
-        "pspasswd64.exe", 
-        "psping.exe", 
-        "psping64.exe", 
-        "PsService.exe", 
-        "PsService64.exe", 
-        "psshutdown.exe", 
-        "pssuspend.exe", 
-        "pssuspend64.exe", 
-        "RootkitRevealer.exe", 
-        "Tcpvcon.exe", 
-        "Tcpview.exe"
+  "bin": [
+    "Autoruns.exe", 
+    "Autoruns64.exe", 
+    "autorunsc.exe", 
+    "autorunsc64.exe", 
+    "Bginfo.exe", 
+    "Desktops.exe", 
+    "pagedfrg.exe", 
+    "procexp.exe", 
+    "procexp64.exe", 
+    "Procmon.exe", 
+    "PsExec.exe", 
+    "PsExec64.exe", 
+    "psfile.exe", 
+    "psfile64.exe", 
+    "PsGetsid.exe", 
+    "PsGetsid64.exe", 
+    "PsInfo.exe", 
+    "PsInfo64.exe", 
+    "pskill.exe", 
+    "pskill64.exe", 
+    "pslist.exe", 
+    "pslist64.exe", 
+    "PsLoggedon.exe", 
+    "PsLoggedon64.exe", 
+    "psloglist.exe", 
+    "pspasswd.exe", 
+    "pspasswd64.exe", 
+    "psping.exe", 
+    "psping64.exe", 
+    "PsService.exe", 
+    "PsService64.exe", 
+    "psshutdown.exe", 
+    "pssuspend.exe", 
+    "pssuspend64.exe", 
+    "RootkitRevealer.exe", 
+    "Tcpvcon.exe", 
+    "Tcpview.exe"
+  ], 
+  "checkver": {
+    "re": "<a\\s+href=\"/rasa/si_installer/releases/tag/v([\\d.]+)\"", 
+    "url": "https://github.com/rasa/si_installer/releases/latest"
+  }, 
+  "description": "Downloads and install SysInternals freeware", 
+  "hash": "839a47cdd7d3aeb78bc8c9a820f014c6556b6e360544dc476e9a1dd58fbf66fb", 
+  "homepage": "https://github.com/rasa/si_installer", 
+  "installer": {
+    "args": [
+      "/S", 
+      "/INSTYPE", 
+      "1", 
+      "/D=$dir"
     ], 
-    "checkver": {
-        "re": "<a\\s+href=\"/rasa/si_installer/releases/tag/v([\\d.]+)\"", 
-        "url": "https://github.com/rasa/si_installer/releases/latest"
-    }, 
-    "description": "Downloads and install SysInternals freeware", 
-    "hash": "839a47cdd7d3aeb78bc8c9a820f014c6556b6e360544dc476e9a1dd58fbf66fb", 
-    "homepage": "https://github.com/rasa/si_installer", 
-    "installer": {
-        "args": [
-            "/S", 
-            "/INSTYPE", 
-            "1", 
-            "/D=$dir"
-        ], 
-        "file": "si_installer.exe"
-    }, 
-    "license": "MIT", 
-    "uninstaller": {
-        "args": [
-            "/S"
-        ], 
-        "file": "Uninstall-si_installer.exe"
-    }, 
-    "url": "https://github.com/rasa/si_installer/releases/download/v1.22/si_installer-1.22-win32.zip", 
-    "version": "1.22"
+    "file": "si_installer.exe"
+  }, 
+  "license": "MIT", 
+  "notes": "WARNING: The uninstaller will display a popup window", 
+  "uninstaller": {
+    "args": [
+      "/S"
+    ], 
+    "file": "Uninstall-si_installer.exe"
+  }, 
+  "url": "https://github.com/rasa/si_installer/releases/download/v1.22/si_installer-1.22-win32.zip", 
+  "version": "1.22"
 }
