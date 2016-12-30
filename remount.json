@@ -1,20 +1,20 @@
 {
-    "_checkver": {
-        "re": "ReMount\\s+V([\\d.]+)\\s+-\\s+reassigning", 
-        "url": "http://www.uwe-sieber.de/drivetools_e.html"
+  "_checkver": {
+    "re": "ReMount\\s+V([\\d.]+)\\s+-\\s+reassigning", 
+    "url": "http://www.uwe-sieber.de/drivetools_e.html"
+  }, 
+  "architecture": {
+    "32bit": {
+      "bin": "Win32/remount.exe"
     }, 
-    "architecture": {
-        "32bit": {
-            "bin": "Win32/remount.exe"
-        }, 
-        "64bit": {
-            "bin": "x64/remount.exe"
-        }
-    }, 
-    "description": "Remount ejected volumes", 
-    "homepage": "http://www.uwe-sieber.de/drivetools_e.html", 
-    "license": "Freeware", 
-    "notes": "Hash for 1.5.1 is:\n6df3b7dec8898e993fd0424f4863b1e2444801478230d7097a8ff7dd5ca9be21", 
-    "url": "http://www.uwe-sieber.de/files/remount.zip", 
-    "version": "1.5.1"
+    "64bit": {
+      "bin": "x64/remount.exe"
+    }
+  }, 
+  "description": "Remount ejected volumes", 
+  "homepage": "http://www.uwe-sieber.de/drivetools_e.html", 
+  "license": "Freeware", 
+  "notes": "Hash for 1.5.1 is:\n6df3b7dec8898e993fd0424f4863b1e2444801478230d7097a8ff7dd5ca9be21", 
+  "url": "http://www.uwe-sieber.de/files/remount.zip", 
+  "version": "1.5.1"
 }

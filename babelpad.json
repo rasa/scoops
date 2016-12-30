@@ -1,20 +1,20 @@
 {
-    "bin": "BabelPad.exe", 
-    "checkver": {
-        "re": "BabelPad</td>\\s*<td class=\"sl\">([\\d.]+)\\s+\\([\\d\\-]+\\)</td>", 
-        "url": "http://www.babelstone.co.uk/Software/BabelPad.html"
-    }, 
-    "comment": "BabelPad.zip is updated regularly so let's leave the hash empty", 
-    "description": "Unicode text editor", 
-    "homepage": "http://www.babelstone.co.uk/Software/BabelPad.html", 
-    "license": "Freeware", 
-    "notes": "The hash for 9.0.0.3 is\n53df6579c8f71fdfeac42f4853ca14f58cbb23916ef4dcbe3a9c4510a7853649", 
-    "shortcuts": [
-        [
-            "BabelPad.exe", 
-            "BabelPad - Unicode text editor"
-        ]
-    ], 
-    "url": "http://www.babelstone.co.uk/Software/7907/BabelPad.zip", 
-    "version": "9.0.0.3"
+  "bin": "BabelPad.exe", 
+  "checkver": {
+    "re": "BabelPad</td>\\s*<td class=\"sl\">([\\d.]+)\\s+\\([\\d\\-]+\\)</td>", 
+    "url": "http://www.babelstone.co.uk/Software/BabelPad.html"
+  }, 
+  "comment": "BabelPad.zip is updated regularly so let's leave the hash empty", 
+  "description": "Unicode text editor", 
+  "homepage": "http://www.babelstone.co.uk/Software/BabelPad.html", 
+  "license": "Freeware", 
+  "notes": "The hash for 9.0.0.3 is\n53df6579c8f71fdfeac42f4853ca14f58cbb23916ef4dcbe3a9c4510a7853649", 
+  "shortcuts": [
+    [
+      "BabelPad.exe", 
+      "BabelPad - Unicode text editor"
+    ]
+  ], 
+  "url": "http://www.babelstone.co.uk/Software/7907/BabelPad.zip", 
+  "version": "9.0.0.3"
 }

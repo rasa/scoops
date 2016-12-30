@@ -1,9 +1,9 @@
 {
-    "bin": "fat32format.exe", 
-    "description": "FAT32 format disk media", 
-    "hash": "812a33f01c7d73a1e4b89427c01b6bf967dc8d8ef3671200f381b130356b3068", 
-    "homepage": "http://www.ridgecrop.demon.co.uk/index.htm?fat32format.htm", 
-    "license": "GPL-2.0", 
-    "url": "http://www.ridgecrop.demon.co.uk/download/fat32format.zip", 
-    "version": "1.07"
+  "bin": "fat32format.exe", 
+  "description": "FAT32 format disk media", 
+  "hash": "812a33f01c7d73a1e4b89427c01b6bf967dc8d8ef3671200f381b130356b3068", 
+  "homepage": "http://www.ridgecrop.demon.co.uk/index.htm?fat32format.htm", 
+  "license": "GPL-2.0", 
+  "url": "http://www.ridgecrop.demon.co.uk/download/fat32format.zip", 
+  "version": "1.07"
 }

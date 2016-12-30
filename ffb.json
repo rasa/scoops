@@ -1,20 +1,20 @@
 {
-    "_checkver": {
-        "re": "FFB\\s+V([\\d.]+)\\s+-\\s+Flush", 
-        "url": "http://www.uwe-sieber.de/drivetools_e.html"
+  "_checkver": {
+    "re": "FFB\\s+V([\\d.]+)\\s+-\\s+Flush", 
+    "url": "http://www.uwe-sieber.de/drivetools_e.html"
+  }, 
+  "architecture": {
+    "32bit": {
+      "bin": "Win32/FFB.exe"
     }, 
-    "architecture": {
-        "32bit": {
-            "bin": "Win32/FFB.exe"
-        }, 
-        "64bit": {
-            "bin": "x64/FFB.exe"
-        }
-    }, 
-    "description": "Flush file buffers", 
-    "homepage": "http://www.uwe-sieber.de/drivetools_e.html", 
-    "license": "Freeware", 
-    "notes": "Hash for 0.8 is:\n56fc362a8a2c96fc85c7d7226060f16defed445abf15bc20d22c60c52b666880", 
-    "url": "http://www.uwe-sieber.de/files/FFB.zip", 
-    "version": "0.8"
+    "64bit": {
+      "bin": "x64/FFB.exe"
+    }
+  }, 
+  "description": "Flush file buffers", 
+  "homepage": "http://www.uwe-sieber.de/drivetools_e.html", 
+  "license": "Freeware", 
+  "notes": "Hash for 0.8 is:\n56fc362a8a2c96fc85c7d7226060f16defed445abf15bc20d22c60c52b666880", 
+  "url": "http://www.uwe-sieber.de/files/FFB.zip", 
+  "version": "0.8"
 }

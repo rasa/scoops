@@ -1,16 +1,16 @@
 {
-    "bin": [
-        "regdelta.exe", 
-        "regdeltaU.exe"
-    ], 
-    "checkver": {
-        "re": "<a\\s+href=\"/rasa/regdelta/releases/tag/v([\\d.]+)\"", 
-        "url": "https://github.com/rasa/regdelta/releases/latest"
-    }, 
-    "description": "Diff, export, and sort Windows registry files", 
-    "hash": "dcf0624003576dbe48752071fd58bfda54b81710f81c862a7cafdd83f8764dd8", 
-    "homepage": "https://github.com/rasa/regdelta", 
-    "license": "MIT", 
-    "url": "https://github.com/rasa/regdelta/releases/download/v1.1/regdelta-1.1-win32.zip", 
-    "version": "1.1"
+  "bin": [
+    "regdelta.exe", 
+    "regdeltaU.exe"
+  ], 
+  "checkver": {
+    "re": "<a\\s+href=\"/rasa/regdelta/releases/tag/v([\\d.]+)\"", 
+    "url": "https://github.com/rasa/regdelta/releases/latest"
+  }, 
+  "description": "Diff, export, and sort Windows registry files", 
+  "hash": "dcf0624003576dbe48752071fd58bfda54b81710f81c862a7cafdd83f8764dd8", 
+  "homepage": "https://github.com/rasa/regdelta", 
+  "license": "MIT", 
+  "url": "https://github.com/rasa/regdelta/releases/download/v1.1/regdelta-1.1-win32.zip", 
+  "version": "1.1"
 }
