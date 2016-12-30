@@ -1,17 +1,17 @@
 {
-  "architecture": {
-    "32bit": {
-      "bin": "Win32/EjectMedia.exe"
+    "architecture": {
+        "32bit": {
+            "bin": "Win32/EjectMedia.exe"
+        }, 
+        "64bit": {
+            "bin": "x64/EjectMedia.exe"
+        }
     }, 
-    "64bit": {
-      "bin": "x64/EjectMedia.exe"
-    }
-  }, 
-  "checkver": "EjectMedia\\s+V([\\d.]+)\\s+-\\s+ejects", 
-  "description": "Ejects removable drives", 
-  "homepage": "http://www.uwe-sieber.de/drivetools_e.html", 
-  "license": "Freeware", 
-  "notes": "Hash for 2.7.2 is:\n998943f64969de58acd87614eff315a245f4eea56ad47ad990e85e2fb8d499d5", 
-  "url": "http://www.uwe-sieber.de/files/ejectmedia.zip", 
-  "version": "2.7.2"
+    "checkver": "EjectMedia\\s+V([\\d.]+)\\s+-\\s+ejects", 
+    "description": "Ejects removable drives", 
+    "homepage": "http://www.uwe-sieber.de/drivetools_e.html", 
+    "license": "Freeware", 
+    "notes": "Hash for 2.7.2 is:\n998943f64969de58acd87614eff315a245f4eea56ad47ad990e85e2fb8d499d5", 
+    "url": "http://www.uwe-sieber.de/files/ejectmedia.zip", 
+    "version": "2.7.2"
 }

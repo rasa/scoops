@@ -1,19 +1,19 @@
 {
-  "autoupdate": {
-    "hash": {
-      "mode": "download"
+    "autoupdate": {
+        "hash": {
+            "mode": "download"
+        }, 
+        "url": "https://github.com/rasa/eolfix/releases/download/v$version/eolfix-$version-win32.zip"
     }, 
-    "url": "https://github.com/rasa/eolfix/releases/download/v$version/eolfix-$version-win32.zip"
-  }, 
-  "bin": "eolfix.exe", 
-  "checkver": {
-    "re": "/releases/tag/v([\\d.]+)", 
-    "url": "https://github.com/rasa/eolfix/releases/latest"
-  }, 
-  "description": "Report & fix end-of-line characters", 
-  "hash": "1d674daed4b5ab7d8de21c14d108b78dd6cd7bfcfb34db264bbf3a09cc65a62f", 
-  "homepage": "https://github.com/rasa/eolfix", 
-  "license": "MIT", 
-  "url": "https://github.com/rasa/eolfix/releases/download/v0.3.0/eolfix-0.3.0-win32.zip", 
-  "version": "0.3.0"
+    "bin": "eolfix.exe", 
+    "checkver": {
+        "re": "/releases/tag/v([\\d.]+)", 
+        "url": "https://github.com/rasa/eolfix/releases/latest"
+    }, 
+    "description": "Report & fix end-of-line characters", 
+    "hash": "1d674daed4b5ab7d8de21c14d108b78dd6cd7bfcfb34db264bbf3a09cc65a62f", 
+    "homepage": "https://github.com/rasa/eolfix", 
+    "license": "MIT", 
+    "url": "https://github.com/rasa/eolfix/releases/download/v0.3.0/eolfix-0.3.0-win32.zip", 
+    "version": "0.3.0"
 }

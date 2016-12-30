@@ -1,13 +1,13 @@
 {
-  "bin": "ritchielawrence-cmdow-1bbcd2b/bin/Release/cmdow.exe", 
-  "checkver": {
-    "re": "/releases/tag/v([\\d.]+)", 
-    "url": "https://github.com/ritchielawrence/cmdow/releases/latest"
-  }, 
-  "description": "Manipulate program windows", 
-  "homepage": "http://ritchielawrence.github.io/cmdow/", 
-  "license": "MIT", 
-  "notes": "Hash for 1.4.8 is:\nf7f0c2d252affcf77a3a7197a65b724d5051f797d8c68d497374aac1df6084bc", 
-  "url": "https://codeload.github.com/ritchielawrence/cmdow/legacy.zip/master#cmdow.zip", 
-  "version": "1.4.8"
+    "bin": "ritchielawrence-cmdow-1bbcd2b/bin/Release/cmdow.exe", 
+    "checkver": {
+        "re": "/releases/tag/v([\\d.]+)", 
+        "url": "https://github.com/ritchielawrence/cmdow/releases/latest"
+    }, 
+    "description": "Manipulate program windows", 
+    "homepage": "http://ritchielawrence.github.io/cmdow/", 
+    "license": "MIT", 
+    "notes": "Hash for 1.4.8 is:\nf7f0c2d252affcf77a3a7197a65b724d5051f797d8c68d497374aac1df6084bc", 
+    "url": "https://codeload.github.com/ritchielawrence/cmdow/legacy.zip/master#cmdow.zip", 
+    "version": "1.4.8"
 }

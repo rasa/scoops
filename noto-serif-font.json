@@ -1,10 +1,10 @@
 {
-  "description": "Noto serif font", 
-  "hash": "46ae67d495b2a3fc14201563cfcaf93a0b5009a753f6993eb47e9c49934ddfdb", 
-  "homepage": "https://www.google.com/get/noto/", 
-  "license": "OFL-1.1", 
-  "post_install": "$fonts = (New-Object -ComObject Shell.Application).Namespace(0x14) ; dir $dir/*.ttf | %{ $fonts.CopyHere($_.fullname) }", 
-  "pre_install": "#Access denied error running: Remove-Item \"$env:windir/fonts/NotoSerif*.ttf\" -recurse", 
-  "url": "https://noto-website-2.storage.googleapis.com/pkgs/NotoSerif-hinted.zip", 
-  "version": "2016-10-25"
+    "description": "Noto serif font", 
+    "hash": "46ae67d495b2a3fc14201563cfcaf93a0b5009a753f6993eb47e9c49934ddfdb", 
+    "homepage": "https://www.google.com/get/noto/", 
+    "license": "OFL-1.1", 
+    "post_install": "$fonts = (New-Object -ComObject Shell.Application).Namespace(0x14) ; dir $dir/*.ttf | %{ $fonts.CopyHere($_.fullname) }", 
+    "pre_install": "#Access denied error running: Remove-Item \"$env:windir/fonts/NotoSerif*.ttf\" -recurse", 
+    "url": "https://noto-website-2.storage.googleapis.com/pkgs/NotoSerif-hinted.zip", 
+    "version": "2016-10-25"
 }

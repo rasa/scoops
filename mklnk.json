@@ -1,19 +1,19 @@
 {
-  "autoupdate": {
-    "hash": {
-      "mode": "download"
+    "autoupdate": {
+        "hash": {
+            "mode": "download"
+        }, 
+        "url": "https://github.com/rasa/mklnk/releases/download/v$version/mklnk-$version-win32.zip"
     }, 
-    "url": "https://github.com/rasa/mklnk/releases/download/v$version/mklnk-$version-win32.zip"
-  }, 
-  "bin": "mklnk.exe", 
-  "checkver": {
-    "re": "/releases/tag/v([\\d.]+)", 
-    "url": "https://github.com/rasa/mklnk/releases/latest"
-  }, 
-  "description": "Make .lnk files", 
-  "hash": "3526a7b87190366aa667bba66e7a45cf753597c9a77940228dfb030879a6eaab", 
-  "homepage": "https://github.com/rasa/mklnk", 
-  "license": "MIT", 
-  "url": "https://github.com/rasa/mklnk/releases/download/v1.5/mklnk-1.5-win32.zip", 
-  "version": "1.5"
+    "bin": "mklnk.exe", 
+    "checkver": {
+        "re": "/releases/tag/v([\\d.]+)", 
+        "url": "https://github.com/rasa/mklnk/releases/latest"
+    }, 
+    "description": "Make .lnk files", 
+    "hash": "3526a7b87190366aa667bba66e7a45cf753597c9a77940228dfb030879a6eaab", 
+    "homepage": "https://github.com/rasa/mklnk", 
+    "license": "MIT", 
+    "url": "https://github.com/rasa/mklnk/releases/download/v1.5/mklnk-1.5-win32.zip", 
+    "version": "1.5"
 }

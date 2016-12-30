@@ -1,24 +1,24 @@
 {
-  "bin": [
-    "pdfdetach.exe", 
-    "pdffonts.exe", 
-    "pdfimages.exe", 
-    "pdfinfo.exe", 
-    "pdfseparate.exe", 
-    "pdftocairo.exe", 
-    "pdftohtml.exe", 
-    "pdftoppm.exe", 
-    "pdftops.exe", 
-    "pdftotext.exe", 
-    "pdfunite.exe"
-  ], 
-  "checkver": "Latest binary.*-(0\\.[56789][\\d.]+)_", 
-  "checkver_": "This regex fails: Latest binary.*-([\\d.]+)_", 
-  "description": "PDF rendering library", 
-  "extract_dir": "poppler-0.49/bin", 
-  "hash": "f4d27a0684169a9355df5ea9f298bbc36e2c22238bdba02563798a5abb8898c3", 
-  "homepage": "http://blog.alivate.com.au/poppler-windows/", 
-  "license": "GPL-3.0", 
-  "url": "http://blog.alivate.com.au/wp-content/uploads/2016/12/poppler-0.50_x86.7z", 
-  "version": "0.50"
+    "bin": [
+        "pdfdetach.exe", 
+        "pdffonts.exe", 
+        "pdfimages.exe", 
+        "pdfinfo.exe", 
+        "pdfseparate.exe", 
+        "pdftocairo.exe", 
+        "pdftohtml.exe", 
+        "pdftoppm.exe", 
+        "pdftops.exe", 
+        "pdftotext.exe", 
+        "pdfunite.exe"
+    ], 
+    "checkver": "Latest binary.*-(0\\.[56789][\\d.]+)_", 
+    "checkver_": "This regex fails: Latest binary.*-([\\d.]+)_", 
+    "description": "PDF rendering library", 
+    "extract_dir": "poppler-0.49/bin", 
+    "hash": "f4d27a0684169a9355df5ea9f298bbc36e2c22238bdba02563798a5abb8898c3", 
+    "homepage": "http://blog.alivate.com.au/poppler-windows/", 
+    "license": "GPL-3.0", 
+    "url": "http://blog.alivate.com.au/wp-content/uploads/2016/12/poppler-0.50_x86.7z", 
+    "version": "0.50"
 }

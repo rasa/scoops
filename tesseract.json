@@ -1,29 +1,29 @@
 {
-  "_todo": "add uninstaller", 
-  "autoupdate": {
-    "hash": {
-      "mode": "download"
+    "_todo": "add uninstaller", 
+    "autoupdate": {
+        "hash": {
+            "mode": "download"
+        }, 
+        "url": "http://digi.bib.uni-mannheim.de/tesseract/tesseract-ocr-setup-$versiondev.exe"
     }, 
-    "url": "http://digi.bib.uni-mannheim.de/tesseract/tesseract-ocr-setup-$versiondev.exe"
-  }, 
-  "bin": [], 
-  "checkver": {
-    "re": "/releases/tag/([\\d.]+)", 
-    "url": "https://github.com/tesseract-ocr/tesseract/releases/latest"
-  }, 
-  "description": "OCR engine developed by Google", 
-  "hash": "771912fa3a027925fd8d99ed99e23b03f170418f03cb5f147211d2c97dd174f8", 
-  "homepage": "https://github.com/UB-Mannheim/tesseract/wiki", 
-  "installer": {
-    "_comment": "/D option is ignored", 
-    "args": [
-      "/S", 
-      "/D=$dir"
-    ], 
-    "file": "tesseract-ocr-setup-3.05.00dev.exe"
-  }, 
-  "license": "Apache-2.0", 
-  "post_install": "[Environment]::SetEnvironmentVariable(\"Path\", $env:Path + \";C:\\Program Files (x86)\\Tesseract-OCR\", [EnvironmentVariableTarget]::Machine)", 
-  "url": "http://digi.bib.uni-mannheim.de/tesseract/tesseract-ocr-setup-3.05.00dev.exe", 
-  "version": "3.05.00"
+    "bin": [], 
+    "checkver": {
+        "re": "/releases/tag/([\\d.]+)", 
+        "url": "https://github.com/tesseract-ocr/tesseract/releases/latest"
+    }, 
+    "description": "OCR engine developed by Google", 
+    "hash": "771912fa3a027925fd8d99ed99e23b03f170418f03cb5f147211d2c97dd174f8", 
+    "homepage": "https://github.com/UB-Mannheim/tesseract/wiki", 
+    "installer": {
+        "_comment": "/D option is ignored", 
+        "args": [
+            "/S", 
+            "/D=$dir"
+        ], 
+        "file": "tesseract-ocr-setup-3.05.00dev.exe"
+    }, 
+    "license": "Apache-2.0", 
+    "post_install": "[Environment]::SetEnvironmentVariable(\"Path\", $env:Path + \";C:\\Program Files (x86)\\Tesseract-OCR\", [EnvironmentVariableTarget]::Machine)", 
+    "url": "http://digi.bib.uni-mannheim.de/tesseract/tesseract-ocr-setup-3.05.00dev.exe", 
+    "version": "3.05.00"
 }
