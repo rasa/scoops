@@ -1,8 +1,5 @@
 {
     "autoupdate": {
-        "hash": {
-            "mode": "download"
-        }, 
         "url": "https://sourceforge.net/projects/rehash/files/rehash/$version/rehash-$version-win.zip"
     }, 
     "bin": "rehash.exe", 

@@ -1,15 +1,9 @@
 {
     "autoupdate": {
-        "hash": {
-            "mode": "download"
-        }, 
         "url": "https://github.com/rasa/time_it/releases/download/v$version/time_it-$version-win32.zip"
     }, 
     "bin": "time_it.exe", 
-    "checkver": {
-        "re": "/releases/tag/v([\\d.]+)", 
-        "url": "https://github.com/rasa/time_it/releases/latest"
-    }, 
+    "checkver": "github", 
     "description": "Time disk I/O", 
     "hash": "8acdd6249cc168256a75900f51447d5b65105219eb61288b55c949e683bd7725", 
     "homepage": "https://github.com/rasa/time_it", 

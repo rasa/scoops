@@ -1,8 +1,5 @@
 {
     "autoupdate": {
-        "hash": {
-            "mode": "download"
-        }, 
         "url": "http://www.dmst.aueb.gr/dds/sw/outwit/outwit-bin-$version.zip"
     }, 
     "bin": [

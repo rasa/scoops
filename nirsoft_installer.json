@@ -24,9 +24,6 @@
         }
     }, 
     "autoupdate": {
-        "hash": {
-            "mode": "download"
-        }, 
         "url": "https://github.com/rasa/nirsoft_installer/releases/download/v$version/nirsoft_installer-$version-win32.zip"
     }, 
     "bin": [
@@ -45,10 +42,7 @@
         "heapmemview.exe", 
         "wirelesskeydump.exe"
     ], 
-    "checkver": {
-        "re": "/releases/tag/v([\\d.]+)", 
-        "url": "https://github.com/rasa/nirsoft_installer/releases/latest"
-    }, 
+    "checkver": "github", 
     "description": "Downloads and install NirSoft freeware", 
     "hash": "30ca07147d18fd9365313e0be771eb80f223df2be54855a18af6acb2be586ad5", 
     "homepage": "https://github.com/rasa/nirsoft_installer", 

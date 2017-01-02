@@ -1,8 +1,5 @@
 {
     "autoupdate": {
-        "hash": {
-            "mode": "download"
-        }, 
         "url": "https://github.com/muquit/mailsend/releases/download/$version/mailsend$version.exe.zip"
     }, 
     "bin": [
@@ -11,10 +8,7 @@
             "mailsend"
         ]
     ], 
-    "checkver": {
-        "re": "/releases/tag/([\\d.]+)", 
-        "url": "https://github.com/muquit/mailsend/releases/latest"
-    }, 
+    "checkver": "github", 
     "description": "Send mail via SMTP", 
     "hash": "87db23b8c9588353d12e19e953dddb17ed04b422f41bcfbaa8ad4e27057245b4", 
     "homepage": "https://github.com/muquit/mailsend/", 

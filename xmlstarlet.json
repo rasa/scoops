@@ -1,8 +1,5 @@
 {
     "autoupdate": {
-        "hash": {
-            "mode": "download"
-        }, 
         "url": "https://sourceforge.net/projects/xmlstar/files/xmlstarlet/$version/xmlstarlet-$version-win32.zip"
     }, 
     "bin": "xmlstarlet-1.6.1/xml.exe", 
