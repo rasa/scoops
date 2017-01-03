@@ -1,8 +1,7 @@
 {
     "bin": "ritchielawrence-cmdow-1bbcd2b/bin/Release/cmdow.exe", 
     "checkver": {
-        "re": "/releases/tag/v([\\d.]+)", 
-        "url": "https://github.com/ritchielawrence/cmdow/releases/latest"
+        "github": "https://github.com/ritchielawrence/cmdow"
     }, 
     "description": "Manipulate program windows", 
     "homepage": "http://ritchielawrence.github.io/cmdow/", 

@@ -5,8 +5,7 @@
     }, 
     "bin": [], 
     "checkver": {
-        "re": "/releases/tag/([\\d.]+)", 
-        "url": "https://github.com/tesseract-ocr/tesseract/releases/latest"
+        "github": "https://github.com/tesseract-ocr/tesseract"
     }, 
     "description": "OCR engine developed by Google", 
     "hash": "771912fa3a027925fd8d99ed99e23b03f170418f03cb5f147211d2c97dd174f8", 
