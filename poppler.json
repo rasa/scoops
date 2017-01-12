@@ -1,4 +1,5 @@
 {
+    "_comment": "This regex fails: Latest binary.*-([\\d.]+)_", 
     "bin": [
         "bin/pdfdetach.exe", 
         "bin/pdffonts.exe", 
@@ -13,7 +14,6 @@
         "bin/pdfunite.exe"
     ], 
     "checkver": "Latest binary.*-(0\\.[56789][\\d.]+)_", 
-    "checkver_": "This regex fails: Latest binary.*-([\\d.]+)_", 
     "description": "PDF rendering library", 
     "extract_dir": "poppler-0.50", 
     "hash": "5f617bbc18b792f7ab4eb7e90d2f8dd1ed9c83cbbc2d15ab6f5717c367b71d00", 
