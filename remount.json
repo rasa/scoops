@@ -1,5 +1,5 @@
 {
-    "_checkver": "ReMount\\s+V([\\d.]+)\\s+-\\s+reassigning", 
+    "_comment": "checkver to be: ReMount\\s+V([\\d.]+)\\s+-\\s+reassigning", 
     "architecture": {
         "32bit": {
             "bin": "Win32/remount.exe"

@@ -1,4 +1,5 @@
 {
+    "_comment": "uninstaller ignores the /S command line", 
     "architecture": {
         "32bit": {
             "hash": "7bf68e67c877c70bd563e19c57e08d4e3b8a8262a57f8f7a32174f6dd1a45f5f", 
@@ -24,7 +25,6 @@
         }
     }, 
     "checkver": "color:\\s+rgb\\(255,0,0\\);\">v([\\d.]+)", 
-    "comment": "uninstaller ignores the /S command line", 
     "description": "Text-mode file/directory manager", 
     "homepage": "http://www.ztree.com/html/ztreewin.htm", 
     "license": "Shareware", 

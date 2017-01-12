@@ -1,5 +1,5 @@
 {
-    "_checkver": "ListDosDevices\\s+V([\\d.]+)", 
+    "_comment": "checkver to be: ListDosDevices\\s+V([\\d.]+)", 
     "bin": "ListDosDevices.exe", 
     "description": "List DOS devices", 
     "homepage": "http://www.uwe-sieber.de/drivetools_e.html", 

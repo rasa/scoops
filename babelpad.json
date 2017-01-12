@@ -1,7 +1,7 @@
 {
+    "_comment": "BabelPad.zip is updated regularly so let's leave the hash empty", 
     "bin": "BabelPad.exe", 
     "checkver": "BabelPad</td>\\s*<td class=\"sl\">([\\d.]+)", 
-    "comment": "BabelPad.zip is updated regularly so let's leave the hash empty", 
     "description": "Unicode text editor", 
     "homepage": "http://www.babelstone.co.uk/Software/BabelPad.html", 
     "license": "Freeware", 

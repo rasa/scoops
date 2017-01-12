@@ -1,6 +1,6 @@
 {
+    "_comment": "winrar and ztree are Trialware", 
     "bin": [], 
-    "comment": "winrar and ztree are Trialware", 
     "depends": [
         "attr", 
         "babelmap", 

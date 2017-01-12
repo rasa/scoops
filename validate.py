@@ -7,6 +7,7 @@ from jsonschema import validate
 import json
 import os
 import pprint
+import re
 import sys
 import traceback
 
@@ -21,7 +22,7 @@ def decode(s):
 schema_name = 'schema.json'
 
 file = sys.argv[1]
-if file == schema_name:
+if re.match('^schema', file):
     sys.exit(0)
 
 print('Validating', file)

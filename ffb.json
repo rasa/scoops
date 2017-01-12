@@ -1,5 +1,5 @@
 {
-    "_checkver": "FFB\\s+V([\\d.]+)\\s+-\\s+Flush", 
+    "_comment": "checkver to be: FFB\\s+V([\\d.]+)\\s+-\\s+Flush", 
     "architecture": {
         "32bit": {
             "bin": "Win32/FFB.exe"

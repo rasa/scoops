@@ -1,5 +1,5 @@
 {
-    "_todo": "test 32bit version", 
+    "_comment": "todo: test 32bit version", 
     "architecture": {
         "32bit": {
             "hash": "", 
