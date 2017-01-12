@@ -20,9 +20,9 @@ mtime = os.path.getmtime(file)
 with open(file, 'rb') as f:
   json_data = json.load(f)
 
-new_data = json.dumps(json_data, sort_keys=True, indent=4)
+new_data = json.dumps(json_data, sort_keys=True, indent=4, separators=(',', ': '))
 with open(file, 'wb') as f:
-  f.write(new_data)
+  f.write(new_data+"\n")
 
 touch(file, mtime)
 
