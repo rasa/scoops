@@ -5,7 +5,7 @@
                 "args": [
                     "/S",
                     "/INSTYPE",
-                    "4",
+                    "3",
                     "/D=$dir"
                 ],
                 "file": "nirsoft_installer.exe"
@@ -16,7 +16,7 @@
                 "args": [
                     "/S",
                     "/INSTYPE",
-                    "3",
+                    "2",
                     "/D=$dir"
                 ],
                 "file": "nirsoft_installer.exe"
