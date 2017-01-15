@@ -1,5 +1,5 @@
 {
-    "_comment": "winrar and ztree are Trialware",
+    "_comment": "winrar and ztree are Shareware",
     "bin": [],
     "depends": [
         "attr",
@@ -53,6 +53,16 @@
     ],
     "homepage": "https://github.com/rasa/scoops",
     "license": "MIT",
-    "notes": "Not included: \nnoto-fonts \nnoto-mono-font \nnoto-sans-font \nnono-serif-font \nvlc_installer\nList last: \nsi_installer \nnirsoft_installer",
+    "notes": [
+        "Not included:",
+        "  noto-fonts",
+        "  noto-mono-font",
+        "  noto-sans-font",
+        "  nono-serif-font",
+        "  vlc_installer",
+        "List last:",
+        "  si_installer",
+        "  nirsoft_installer"
+    ],
     "version": "2016-12-28"
 }
