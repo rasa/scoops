@@ -32,22 +32,23 @@ with open(schema_name, 'rb') as f:
 
 with open(file, 'rb') as f:
     jstr = f.read(os.path.getsize(file))
-    jstr_no_bom = decode(jstr)
 
-    failed = file + '.failed'
-    if os.path.exists(failed):
-        os.remove(failed)
-    try:
-        parser = JsonComment(json)
-        json_data = parser.loads(jstr_no_bom)
+jstr_no_bom = decode(jstr)
+failed = file + '.failed'
+if os.path.exists(failed):
+    os.remove(failed)
 
-        validate(json_data, schema_data)
+try:
+    parser = JsonComment(json)
+    json_data = parser.loads(jstr_no_bom)
 
-    except Exception as e:
-        trace = traceback.format_exc()
-        print(trace)
-        with open(failed, 'ab+') as f:
-            f.write(trace)
-        sys.exit(1)
+    validate(json_data, schema_data)
+
+except Exception as e:
+    trace = traceback.format_exc()
+    print(trace)
+    with open(failed, 'ab+') as f:
+        f.write(trace)
+    sys.exit(1)
 
 sys.exit(0)

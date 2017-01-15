@@ -1,10 +1,20 @@
 #!/usr/bin/env python
 
 from __future__ import print_function
+from jsoncomment import JsonComment
+from jsonschema import validate
 
 import json
 import os
 import sys
+
+def decode(s):
+    for encoding in 'utf-8-sig', 'utf-16':
+        try:
+            return s.decode(encoding)
+        except UnicodeDecodeError:
+            continue
+    return s.decode('latin-1')
 
 def touch(filename, mtime):
   with open(filename, 'a+'):
@@ -18,7 +28,11 @@ print('Updating', file)
 mtime = os.path.getmtime(file)
 
 with open(file, 'rb') as f:
-  json_data = json.load(f)
+    jstr = f.read(os.path.getsize(file))
+    jstr_no_bom = decode(jstr)
+
+parser = JsonComment(json)
+json_data = parser.loads(jstr_no_bom)
 
 new_data = json.dumps(json_data, sort_keys=True, indent=4, separators=(',', ': '))
 with open(file, 'wb') as f:
