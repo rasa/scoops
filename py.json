@@ -1,0 +1,26 @@
+{
+    "architecture": {
+        "32bit": {
+            "url": "https://bitbucket.org/vinay.sajip/pylauncher/downloads/launchwin-1.0.1.6.msi"
+        },
+        "64bit": {
+            "url": "https://bitbucket.org/vinay.sajip/pylauncher/downloads/launchwin-1.0.1.6.amd64.msi"
+        }
+    },
+    "autoupdate": {
+        "32bit": {
+            "url": "https://bitbucket.org/vinay.sajip/pylauncher/downloads/launchwin-1.0.1.6.msi"
+        },
+        "64bit": {
+            "url": "https://bitbucket.org/vinay.sajip/pylauncher/downloads/launchwin-$version.amd64.msi"
+        }
+    },
+    "bin": [
+        "py.exe",
+        "pyw.exe"
+    ],
+    "checkver": "launchwin-([\\d.]+)\\.msi",
+    "homepage": "https://bitbucket.org/vinay.sajip/pylauncher/downloads",
+    "license": "BSD-3-Clause",
+    "version": "1.0.1.6"
+}
