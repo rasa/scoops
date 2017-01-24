@@ -124,13 +124,23 @@ def do_license(v):
             v += part
     return v
 
+def get_url(js):
+    if 'checkver' in js:
+        if 'url' in js['checkver']:
+            return js['checkver']['url']
+    if 'architecture' in js:
+        if '64bit' in js['architecture']:
+            if 'url' in js['architecture']['64bit']:
+                return js['architecture']['64bit']['url']
+    if 'homepage' in js:
+        return js['homepage']
+    return ''
+
 def do_version(js):
     version = js['version']
-    if not 'checkver' in js:
+    url = get_url(js)
+    if url == '':
         return version
-    if not 'url' in js['checkver']:
-        return version
-    url = js['checkver']['url']
     return '[%s](%s "%s")' % (version, url, url)
 
 markdown = 'README.md'
