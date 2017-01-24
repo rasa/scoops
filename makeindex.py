@@ -168,6 +168,8 @@ for file in os.listdir('.'):
         (name, ext) = os.path.splitext(os.path.basename(file))
         if re.search('^_', name):
             continue
+        if re.search('^schema', name):
+            continue
         for key in keys:
             if key in j:
                 v = j[key].strip()

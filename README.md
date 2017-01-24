@@ -64,8 +64,6 @@ scoop bucket add rasa https://github.com/rasa/scoops.git
 |[res_set](https://github.com/rasa/res_set "https://github.com/rasa/res_set")|1.9|Display or change the monitor resolution, color depth, or refresh rate|[MIT](https://opensource.org/licenses/MIT "https://opensource.org/licenses/MIT")|
 |[rescandevices](http://www.uwe-sieber.de/drivetools_e.html "http://www.uwe-sieber.de/drivetools_e.html")|0.1|Rescan devices|[Freeware](https://en.wikipedia.org/wiki/Freeware "https://en.wikipedia.org/wiki/Freeware")|
 |[restartsrdev](http://www.uwe-sieber.de/drivetools_e.html "http://www.uwe-sieber.de/drivetools_e.html")|2.0|Restarts safely removed drives|[Freeware](https://en.wikipedia.org/wiki/Freeware "https://en.wikipedia.org/wiki/Freeware")|
-|[schema]( "")||||
-|[schema_rasa]( "")||||
 |[seterlvl](https://github.com/rasa/seterlvl "https://github.com/rasa/seterlvl")|1.4|Set the errorlevel and exit|[MIT](https://opensource.org/licenses/MIT "https://opensource.org/licenses/MIT")|
 |[si_installer](https://github.com/rasa/si_installer "https://github.com/rasa/si_installer")|1.22|Downloads and install SysInternals freeware|[MIT](https://opensource.org/licenses/MIT "https://opensource.org/licenses/MIT")|
 |[smartmontools](https://www.smartmontools.org/ "https://www.smartmontools.org/")|[6.5-1](https://sourceforge.net/projects/smartmontools/files/smartmontools/ "https://sourceforge.net/projects/smartmontools/files/smartmontools/")|Read SMART data from disks|[GPL-2.0](https://opensource.org/licenses/GPL-2.0 "https://opensource.org/licenses/GPL-2.0")|
