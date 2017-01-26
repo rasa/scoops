@@ -1,0 +1,73 @@
+{
+    "architecture": {
+        "32bit": {
+            "hash": [
+                "f4a4b8897e86f52a319ee4568e62be9cda1bcb2341e798da12e359d81cb36e51",
+                "cf3413ce936f8455b9600fd23a7821aef3737f017514e7d0894ab93c43dc9754",
+                "38fb2347d8e067c7b57d65721e7b7c7b16a7f795ce36385a6ada8bfeb4656b3f"
+            ],
+            "installer": {
+                "args": [
+                    "/S",
+                    "/D=$dir"
+                ],
+                "file": "vlc-2.2.4-win32.exe"
+            },
+            "uninstaller": {
+                "args": [
+                    "/S"
+                ],
+                "file": "uninstall.exe"
+            },
+            "url": [
+                "http://get.videolan.org/vlc/2.2.4/win32/vlc-2.2.4-win32.exe",
+                "http://vlc-bluray.whoknowsmy.name/files/win32/libaacs.dll",
+                "http://vlc-bluray.whoknowsmy.name/files/KEYDB.cfg"
+            ]
+        },
+        "64bit": {
+            "hash": [
+                "a283b1913c8905c4d58787f34b4a85f28f3f77c4157bee554e3e70441e6e75e4",
+                "03d2070a0c6fb66000b5ed94b44bc7fe22940e02d26bf92ceb0fe13c8fe6c786",
+                "38fb2347d8e067c7b57d65721e7b7c7b16a7f795ce36385a6ada8bfeb4656b3f"
+            ],
+            "installer": {
+                "args": [
+                    "/S",
+                    "/D=$dir"
+                ],
+                "file": "vlc-2.2.4-win64.exe"
+            },
+            "uninstaller": {
+                "args": [
+                    "/S"
+                ],
+                "file": "uninstall.exe"
+            },
+            "url": [
+                "http://get.videolan.org/vlc/2.2.4/win64/vlc-2.2.4-win64.exe",
+                "http://vlc-bluray.whoknowsmy.name/files/win64/libaacs.dll",
+                "http://vlc-bluray.whoknowsmy.name/files/KEYDB.cfg"
+            ]
+        }
+    },
+    "autoupdate": {
+        "architecture": {
+            "32bit": {
+                "url": "http://get.videolan.org/vlc/$version/win32/vlc-$version-win32.exe"
+            },
+            "64bit": {
+                "url": "http://get.videolan.org/vlc/$version/win64/vlc-$version-win64.exe"
+            }
+        }
+    },
+    "checkver": {
+        "re": "downloadDetails\">Version\\s+([\\d.]+)",
+        "url": ""
+    },
+    "description": "VLC + Bluray plugin",
+    "homepage": "http://www.videolan.org/",
+    "license": "GPL-2",
+    "post_install": "New-Item -ItemType Directory -Force -Path \"$($env:ProgramData)\\aacs\" >$null; Copy-Item \"$dir\\KEYDB.cfg\" \"$($env:ProgramData)\\aacs\"; Copy-Item \"$dir\\libaacs.dll\" \"$($env:ProgramFiles)\\VideoLAN\\VLC\"; Copy-Item \"$($env:ProgramFiles)\\VideoLAN\\VLC\\uninstall.exe\" \"$dir\"",
+    "version": "2.2.4"
+}
