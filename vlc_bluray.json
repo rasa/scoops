@@ -20,7 +20,7 @@
                 "file": "uninstall.exe"
             },
             "url": [
-                "http://get.videolan.org/vlc/2.2.4/win32/vlc-2.2.4-win32.exe",
+                "https://get.videolan.org/vlc/2.2.4/win32/vlc-2.2.4-win32.exe",
                 "http://vlc-bluray.whoknowsmy.name/files/win32/libaacs.dll",
                 "http://vlc-bluray.whoknowsmy.name/files/KEYDB.cfg"
             ]
@@ -45,7 +45,7 @@
                 "file": "uninstall.exe"
             },
             "url": [
-                "http://get.videolan.org/vlc/2.2.4/win64/vlc-2.2.4-win64.exe",
+                "https://get.videolan.org/vlc/2.2.4/win64/vlc-2.2.4-win64.exe",
                 "http://vlc-bluray.whoknowsmy.name/files/win64/libaacs.dll",
                 "http://vlc-bluray.whoknowsmy.name/files/KEYDB.cfg"
             ]
@@ -54,20 +54,19 @@
     "autoupdate": {
         "architecture": {
             "32bit": {
-                "url": "http://get.videolan.org/vlc/$version/win32/vlc-$version-win32.exe"
+                "url": "https://get.videolan.org/vlc/$version/win32/vlc-$version-win32.exe"
             },
             "64bit": {
-                "url": "http://get.videolan.org/vlc/$version/win64/vlc-$version-win64.exe"
+                "url": "https://get.videolan.org/vlc/$version/win64/vlc-$version-win64.exe"
             }
         }
     },
-    "checkver": {
-        "re": "downloadDetails\">Version\\s+([\\d.]+)",
-        "url": ""
+    "checkver":
+        "re": "downloadDetails\">Version\\s+([\\d.]+)"
     },
     "description": "VLC + Bluray plugin",
-    "homepage": "http://www.videolan.org/",
-    "license": "GPL-2",
+    "homepage": "https://www.videolan.org/",
+    "license": "GPL-2.0",
     "post_install": "New-Item -ItemType Directory -Force -Path \"$($env:ProgramData)\\aacs\" >$null; Copy-Item \"$dir\\KEYDB.cfg\" \"$($env:ProgramData)\\aacs\"; Copy-Item \"$dir\\libaacs.dll\" \"$($env:ProgramFiles)\\VideoLAN\\VLC\"; Copy-Item \"$($env:ProgramFiles)\\VideoLAN\\VLC\\uninstall.exe\" \"$dir\"",
     "version": "2.2.4"
 }
