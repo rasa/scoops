@@ -37,7 +37,7 @@
     },
     "bin": "vlc.exe",
     "checkver": {
-        "re": "downloadDetails\">Version\\s+([\\d.]+)"
+        "re": "latestVersion\":\"([\\d.]+)"
     },
     "description": "VLC + Bluray plugin",
     "extract_dir": "vlc-2.2.4",

@@ -62,7 +62,7 @@
         }
     },
     "checkver": {
-        "re": "downloadDetails\">Version\\s+([\\d.]+)"
+        "re": "latestVersion\":\"([\\d.]+)"
     },
     "description": "VLC + Bluray plugin",
     "homepage": "https://www.videolan.org/",
