@@ -61,7 +61,7 @@
             }
         }
     },
-    "checkver":
+    "checkver": {
         "re": "downloadDetails\">Version\\s+([\\d.]+)"
     },
     "description": "VLC + Bluray plugin",
