@@ -8,11 +8,13 @@
         }
     },
     "autoupdate": {
-        "32bit": {
-            "url": "https://bitbucket.org/vinay.sajip/pylauncher/downloads/launchwin-$version.msi"
-        },
-        "64bit": {
-            "url": "https://bitbucket.org/vinay.sajip/pylauncher/downloads/launchwin-$version.amd64.msi"
+        "architecture": {
+            "32bit": {
+                "url": "https://bitbucket.org/vinay.sajip/pylauncher/downloads/launchwin-$version.msi"
+            },
+            "64bit": {
+                "url": "https://bitbucket.org/vinay.sajip/pylauncher/downloads/launchwin-$version.amd64.msi"
+            }
         }
     },
     "bin": [
