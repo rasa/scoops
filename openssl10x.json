@@ -12,6 +12,7 @@
     },
     "bin": "bin\\openssl.exe",
     "checkver": ">Win32 OpenSSL v(1.0.[\\w]+)\\s+Light<",
+    "description": "TLS/SSL toolkit",
     "env_add_path": "bin",
     "env_set": {
         "OPENSSL_CONF": "$dir\\bin\\openssl.cfg"
