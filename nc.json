@@ -19,7 +19,7 @@
     },
     "description": "Read and write from/to network connections",
     "homepage": "https://eternallybored.org/misc/netcat/",
-    "license": "GPL-2",
+    "license": "GPL-2.0",
     "url": "https://eternallybored.org/misc/netcat/netcat-win32-1.12.zip",
     "version": "1.12"
 }
