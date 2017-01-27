@@ -1,0 +1,55 @@
+{
+    "architecture": {
+        "32bit": {
+            "hash": "a7784f56ef28195930cdcc58b9b488c2379ba60bc57eb46a56271b12efed2b28",
+            "installer": {
+                "args": [
+                    "/S",
+                    "/D=$dir"
+                ],
+                "file": "HandBrake-1.0.2-i686-Win_GUI.exe"
+            },
+            "uninstaller": {
+                "args": [
+                    "/S"
+                ],
+                "file": "uninst.exe"
+            },
+            "url": "http://handbrake.fr/rotation.php?file=HandBrake-1.0.2-i686-Win_GUI.exe#/HandBrake-1.0.2-i686-Win_GUI.exe"
+        },
+        "64bit": {
+            "hash": "41a174c78842917fd7a7481759b9bb31ed50894f9db3487426d1cee28b8c8d49",
+            "installer": {
+                "args": [
+                    "/S",
+                    "/D=$dir"
+                ],
+                "file": "HandBrake-1.0.2-x86_64-Win_GUI.exe"
+            },
+            "uninstaller": {
+                "args": [
+                    "/S"
+                ],
+                "file": "uninst.exe"
+            },
+            "url": "http://handbrake.fr/rotation.php?file=HandBrake-1.0.2-x86_64-Win_GUI.exe#/HandBrake-1.0.2-x86_64-Win_GUI.exe"
+        }
+    },
+    "autoupdate": {
+        "architecture": {
+            "32bit": {
+                "url": "http://handbrake.fr/rotation.php?file=HandBrake-$version-i686-Win_GUI.exe"
+            },
+            "64bit": {
+                "url": "http://handbrake.fr/rotation.php?file=HandBrake-$version-x86_64-Win_GUI.exe"
+            }
+        }
+    },
+    "checkver": {
+        "re": "<b>Download\\s+HandBrake\\s+([\\d.]+)"
+    },
+    "description": "Video converter",
+    "homepage": "https://handbrake.fr/",
+    "license": "GPL-2.0",
+    "version": "1.0.2"
+}

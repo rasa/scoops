@@ -1,0 +1,30 @@
+{
+    "architecture": {
+        "32bit": {
+            "hash": "",
+            "url": "https://handbrake.fr/rotation.php?file=HandBrakeCLI-1.0.2-win-i686.zip#/HandBrakeCLI-1.0.2-win-i686.zip"
+        },
+        "64bit": {
+            "hash": "",
+            "url": "https://handbrake.fr/rotation.php?file=HandBrakeCLI-1.0.2-win-x86_64.zip#/HandBrakeCLI-1.0.2-win-x86_64.zip"
+        }
+    },
+    "autoupdate": {
+        "architecture": {
+            "32bit": {
+                "url": "https://handbrake.fr/rotation.php?file=HandBrakeCLI-$version-win-i686.zip#/HandBrakeCLI-$version-win-i686.zip"
+            },
+            "64bit": {
+                "url": "https://handbrake.fr/rotation.php?file=HandBrakeCLI-$version-win-x86_64.zip#/HandBrakeCLI-$version-win-x86_64.zip"
+            }
+        }
+    },
+    "checkver": {
+        "re": "Current\\s+Version:\\s+([\\d.]+)",
+        "url": "https://handbrake.fr/downloads2.php"
+    },
+    "description": "Command line video converter",
+    "homepage": "https://handbrake.fr/",
+    "license": "GPL-2.0",
+    "version": "1.0.2"
+}
