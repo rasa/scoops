@@ -128,10 +128,6 @@ def get_url(js):
     if 'checkver' in js:
         if 'url' in js['checkver']:
             return js['checkver']['url']
-    if 'architecture' in js:
-        if '64bit' in js['architecture']:
-            if 'url' in js['architecture']['64bit']:
-                return js['architecture']['64bit']['url']
     if 'homepage' in js:
         return js['homepage']
     return ''
