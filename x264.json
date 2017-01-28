@@ -9,7 +9,12 @@
             "url": "http://download.videolan.org/pub/videolan/x264/binaries/win64/x264-r2762-90a61ec.exe"
         }
     },
-    "bin": [["x264-r2762-90a61ec.exe", "x264"]],
+    "bin": [
+        [
+            "x264-r2762-90a61ec.exe",
+            "x264"
+        ]
+    ],
     "description": "H.264/MPEG-4 AVC video encoder",
     "homepage": "https://www.videolan.org/developers/x264.html",
     "license": "GPL-2.0",
