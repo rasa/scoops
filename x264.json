@@ -1,7 +1,7 @@
 {
     "architecture": {
         "32bit": {
-            "hash": "",
+            "hash": "cc4c532516ddd55c61ccefe2021b8509ae2b8406f7faf570e37a013cc2bc4035",
             "url": "http://download.videolan.org/pub/videolan/x264/binaries/win32/x264-r2762-90a61ec.exe"
         },
         "64bit": {
@@ -13,5 +13,5 @@
     "description": "H.264/MPEG-4 AVC video encoder",
     "homepage": "https://www.videolan.org/developers/x264.html",
     "license": "GPL-2.0",
-    "version": "r2762-90a61ec"
+    "version": "2762.2017.01.24"
 }
