@@ -5,7 +5,7 @@
             "url": "https://handbrake.fr/rotation.php?file=HandBrakeCLI-1.0.2-win-i686.zip#/HandBrakeCLI-1.0.2-win-i686.zip"
         },
         "64bit": {
-            "hash": "",
+            "hash": "419393cc99da1a0167b620b8705dddfce0c50f3f56900c45afc302806e1e032d",
             "url": "https://handbrake.fr/rotation.php?file=HandBrakeCLI-1.0.2-win-x86_64.zip#/HandBrakeCLI-1.0.2-win-x86_64.zip"
         }
     },
@@ -19,6 +19,13 @@
             }
         }
     },
+    "bin": [
+        "HandBrakeCLI.exe",
+        [
+            "HandBrakeCLI.exe",
+            "handbrake"
+        ]
+    ],
     "checkver": {
         "re": "Current\\s+Version:\\s+([\\d.]+)",
         "url": "https://handbrake.fr/downloads2.php"
