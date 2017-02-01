@@ -17,7 +17,7 @@
     },
     "description": "Zip compression utilities",
     "homepage": "http://www.info-zip.org/",
-    "license": "ftp://ftp.info-zip.org/pub/infozip/license.html",
+    "license": "http://www.info-zip.org/pub/infozip/license.html",
     "pre_install": "Add-Type -assembly 'system.io.compression.filesystem'; [io.compression.zipfile]::ExtractToDirectory(\"$dir\\$fname\", \"$dir\")",
     "version": "3.0"
 }
