@@ -103,7 +103,7 @@ lmap = {
 }
 
 def do_license(v):
-    if re.search('^http', v):
+    if re.search('^(http|ftp)', v):
         v = '[%s](%s "%s")' % ('Link', v, v)
         return v
 
