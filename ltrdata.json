@@ -310,5 +310,5 @@
     "homepage": "http://www.ltr-data.se/opencode.html/#CmdUtils",
     "license": "MIT",
     "notes": "The following are GUI applications:\nassd\ncalldll\ncalldllw\nchkwsdll\ndenywin\nenumwinw\nFileOpen\nFSplitW\ngethostw\ngetuser\nkeylock\nlogonwrap\nlogout\nmsgbox\nnoexcept\nplaywavs\nprivproc\nregrepl\nritprogr\nrunwait\nrunwaitw\nsdonexit\nshc\nsleep\nsynctime\ntickcntw\ntscwrap\nw32ver\nwavplay\nwinlogoncfg\n",
-    "version": "2016-08-26"
+    "version": "16.08.26"
 }
