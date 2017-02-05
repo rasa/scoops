@@ -1,0 +1,24 @@
+{
+    "architecture": {
+        "32bit": {
+            "extract_dir": "openssl-1.1.0d-win32-mingw",
+            "hash": "",
+            "url": "https://ci.appveyor.com/api/buildjobs/58obp9llu14hinxc/artifacts/openssl-1.1.0d-win32-mingw.7z"
+        },
+        "64bit": {
+            "extract_dir": "openssl-1.1.0d-win64-mingw",
+            "hash": "5fcd5ff7a8311b0990b4845f5ac16cac5bf71133bb883b60ee08458199e58dbf",
+            "url": "https://ci.appveyor.com/api/buildjobs/58obp9llu14hinxc/artifacts/openssl-1.1.0d-win64-mingw.7z"
+        }
+    },
+    "bin": "openssl.exe",
+    "checkver": ">(ver: ([\\w.]+)",
+    "description": "TLS/SSL toolkit (1.1.x branch)",
+    "env_add_path": "",
+    "env_set": {
+        "OPENSSL_CONF": "$dir\\openssl.cnf"
+    },
+    "homepage": "https://bintray.com/vszakats/generic/openssl",
+    "license": "https://www.openssl.org/source/license.html",
+    "version": "1.1.0d"
+}
