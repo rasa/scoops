@@ -1,0 +1,6 @@
+# python requirements file
+# install requirements by running:
+# $ pip install -r requirements.txt
+
+jsoncomment>=0.3.0
+jsonschema>=2.5.1
