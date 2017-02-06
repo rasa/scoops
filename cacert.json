@@ -5,5 +5,5 @@
     "homepage": "https://curl.haxx.se/docs/caextract.html",
     "license": "MPL-2.0",
     "url": "https://curl.haxx.se/ca/cacert.pem",
-    "version": "17.01.18"
+    "version": "2017-01-18"
 }
