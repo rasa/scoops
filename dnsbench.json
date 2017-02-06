@@ -1,0 +1,15 @@
+{
+    "bin": "DNSBench.exe",
+    "description": "Benchmark DNS servers",
+    "hash": "0baf546d6ac9fd853b11cba89d3f314ca3ff0ca791224aa0753f0441a396dbe7",
+    "homepage": "https://www.grc.com/dns/benchmark.htm",
+    "license": "Freeware",
+    "shortcuts": [
+        [
+            "DNSBench.exe",
+            "DNSBench - Benchmark DNS Servers"
+        ]
+    ],
+    "url": "https://www.grc.com/files/DNSBench.exe",
+    "version": "1.2.3295.0"
+}

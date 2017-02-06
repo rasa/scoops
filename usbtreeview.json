@@ -1,0 +1,24 @@
+{
+    "architecture": {
+        "32bit": {
+            "extract_dir": "Win32"
+        },
+        "64bit": {
+            "extract_dir": "x64"
+        }
+    },
+    "bin": "usbtreeview.exe",
+    "checkver": "USB Device Tree Viewer V([\\d.]+)",
+    "description": "USB Device Tree Viewer",
+    "hash": "b4966e30c14c86272e04700b9862f7d48a7bd9964f9e620f0654001d40827b3f",
+    "homepage": "http://www.uwe-sieber.de/usbtreeview_e.html",
+    "license": "Freeware",
+    "shortcuts": [
+        [
+            "usbtreeview.exe",
+            "UsbTreeView - USB Device Tree Viewer"
+        ]
+    ],
+    "url": "http://www.uwe-sieber.de/files/usbtreeview.zip",
+    "version": "3.0.8"
+}
