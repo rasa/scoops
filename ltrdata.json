@@ -5,9 +5,6 @@
                 "allowsetfg.exe",
                 "assd.exe",
                 "asuser.exe",
-                "bunzip2.exe",
-                "bzcat.exe",
-                "bzip2.exe",
                 "calldll.exe",
                 "calldllw.exe",
                 "cerrmsg.exe",
@@ -160,9 +157,6 @@
             "bin": [
                 "allowsetfg.exe",
                 "assd.exe",
-                "bunzip2.exe",
-                "bzcat.exe",
-                "bzip2.exe",
                 "calldll.exe",
                 "calldllw.exe",
                 "cerrmsg.exe",
@@ -306,6 +300,9 @@
             "url": "http://www.ltr-data.se/files/win64/exefiles.7z"
         }
     },
+    "depends": [
+        "bzip2"
+    ],
     "description": "ltr-data.se freeware utilities",
     "homepage": "http://www.ltr-data.se/opencode.html/#CmdUtils",
     "license": "MIT",
