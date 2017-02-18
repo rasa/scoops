@@ -140,7 +140,7 @@ def do_version(js):
     return '[%s](%s "%s")' % (version, url, url)
 
 markdown = 'README.md'
-with open(markdown, 'rb') as f:
+with open(markdown, 'r') as f:
     lines = f.readlines()
 
 specs = sys.argv
@@ -158,6 +158,8 @@ keys = [
 
 rows = {}
 
+# @todo use git ls-files *.json instead
+
 for file in os.listdir('.'):
     accept = False
     for spec in specs:
@@ -168,7 +170,7 @@ for file in os.listdir('.'):
     if not accept:
         continue
 
-    with open(file, 'rb') as f:
+    with open(file, 'r') as f:
         j = json.load(f)
         row = {}
         (name, ext) = os.path.splitext(os.path.basename(file))
@@ -219,7 +221,7 @@ for line in lines:
 
     out.append(line)
 
-with open(markdown, 'wb') as f:
+with open(markdown, 'w') as f:
     f.write("\n".join(out))
     f.write("\n")
 
