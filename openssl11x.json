@@ -1,14 +1,14 @@
 {
     "architecture": {
         "32bit": {
-            "extract_dir": "openssl-1.1.0d-win32-mingw",
-            "hash": "c76e25eaae7a88e98e952a6cb78ed5e355244aeb3e0dcf9fd8b04dd14d0f9169",
-            "url": "https://ci.appveyor.com/api/buildjobs/58obp9llu14hinxc/artifacts/openssl-1.1.0d-win32-mingw.7z"
+            "extract_dir": "openssl-1.1.0e-win32-mingw",
+            "hash": "e2e008e437102db11c5d90fa32e05ece77a346419c5e2533199691c3249c3e26",
+            "url": "https://bintray.com/vszakats/generic/download_file?file_path=openssl-1.1.0e-win32-mingw.7z#/dl.7z"
         },
         "64bit": {
-            "extract_dir": "openssl-1.1.0d-win64-mingw",
-            "hash": "5fcd5ff7a8311b0990b4845f5ac16cac5bf71133bb883b60ee08458199e58dbf",
-            "url": "https://ci.appveyor.com/api/buildjobs/58obp9llu14hinxc/artifacts/openssl-1.1.0d-win64-mingw.7z"
+            "extract_dir": "openssl-1.1.0e-win64-mingw",
+            "hash": "3869d68a76b4ea3bbc3651fb472d10d1cd0425d57287c6ece392f6ed64597852",
+            "url": "https://bintray.com/vszakats/generic/download_file?file_path=openssl-1.1.0e-win64-mingw.7z#/dl.7z"
         }
     },
     "bin": "openssl.exe",
@@ -20,5 +20,5 @@
     },
     "homepage": "https://www.openssl.org/",
     "license": "https://www.openssl.org/source/license.html",
-    "version": "1.1.0d"
+    "version": "1.1.0e"
 }

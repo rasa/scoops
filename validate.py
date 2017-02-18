@@ -47,7 +47,7 @@ try:
 except Exception as e:
     trace = traceback.format_exc()
     print(trace)
-    with open(failed, 'ab+') as f:
+    with open(failed, 'a+') as f:
         f.write(trace)
     sys.exit(1)
 
