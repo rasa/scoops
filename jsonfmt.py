@@ -8,6 +8,9 @@ import json
 import os
 import sys
 
+if sys.version_info >= (3,0):
+    sys.exit("Sorry, this script has only been tested with Python 2.x")
+
 def decode(s):
     for encoding in 'utf-8-sig', 'utf-16':
         try:
@@ -27,7 +30,7 @@ print('Updating', file)
 
 mtime = os.path.getmtime(file)
 
-with open(file, 'rb') as f:
+with open(file, 'r') as f:
     jstr = f.read(os.path.getsize(file))
     jstr_no_bom = decode(jstr)
 
@@ -35,8 +38,13 @@ parser = JsonComment(json)
 json_data = parser.loads(jstr_no_bom)
 
 new_data = json.dumps(json_data, sort_keys=True, indent=4, separators=(',', ': '))
-with open(file, 'wb') as f:
+with open(file + '.tmp', 'w') as f:
   f.write(new_data+"\n")
+
+if os.path.isfile(file + '.bak'):
+    os.remove(file + '.bak')
+os.rename(file, file + '.bak')
+os.rename(file + '.tmp', file)
 
 touch(file, mtime)
 

@@ -27,10 +27,10 @@ if re.match('^schema', file):
 
 print('Validating', file)
 
-with open(schema_name, 'rb') as f:
+with open(schema_name, 'r') as f:
     schema_data = json.load(f)
 
-with open(file, 'rb') as f:
+with open(file, 'r') as f:
     jstr = f.read(os.path.getsize(file))
 
 jstr_no_bom = decode(jstr)
