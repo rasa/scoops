@@ -1,0 +1,33 @@
+{
+    "architecture": {
+        "32bit": {
+            "extract_dir": "gifsicle-1.88-win32",
+            "hash": "1c966e6213738f1374eef0d1292dfecdca25b080c958e4b596f0d0f2fd4c9198",
+            "url": "https://eternallybored.org/misc/gifsicle/releases/gifsicle-1.88-win32.zip"
+        },
+        "64bit": {
+            "extract_dir": "gifsicle-1.88-win64",
+            "hash": "adc2e4e7677122660d522e3241058e78a3441ecea04656914e24893281e937b7",
+            "url": "https://eternallybored.org/misc/gifsicle/releases/gifsicle-1.88-win64.zip"
+        }
+    },
+    "autoupdate": {
+        "32bit": {
+            "extract_dir": "gifsicle-$version-win32",        
+            "url": "https://eternallybored.org/misc/gifsicle/releases/gifsicle-$version-win32.zip"
+        },
+        "64bit": {
+            "extract_dir": "gifsicle-$version-win64",        
+            "url": "https://eternallybored.org/misc/gifsicle/releases/gifsicle-$version-win64.zip"
+        }
+    },
+    "bin": [
+        "gifdiff.exe",
+        "gifsicle.exe"
+    ],
+    "checkver": "href=\"releases/gifsicle-([\\d.]+)</a>",
+    "description": "GIF image CLI tool",
+    "homepage": "https://eternallybored.org/misc/gifsicle/",
+    "license": "GPL-2.0",
+    "version": "1.88"
+}
