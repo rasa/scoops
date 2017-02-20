@@ -1,0 +1,20 @@
+{
+    "autoupdate": {
+        "extract_dir": "gsmartcontrol-$version-win32",
+        "url": "https://sourceforge.net/projects/gsmartcontrol/files/$version/gsmartcontrol-$version-win32.zip"
+    },
+    "bin": [
+        "gsmartcontrol.exe"
+    ],
+    "checkver": "/gsmartcontrol-([\\d.]+)-win32\\.zip",
+    "depends": [
+        "smartmontools"
+    ],
+    "description": "GUI frontend for smartmontools (Read SMART data from disks)",
+    "extract_dir": "gsmartcontrol-0.8.7-win32",
+    "hash": "sha1:4299875c589a2afd39fe64b514fa78c84f5d7be8",
+    "homepage": "http://gsmartcontrol.sourceforge.net/home/index.php/Downloads",
+    "license": "GPL-2.0",
+    "url": "https://sourceforge.net/projects/gsmartcontrol/files/0.8.7/gsmartcontrol-0.8.7-win32.zip",
+    "version": "0.8.7"
+}
