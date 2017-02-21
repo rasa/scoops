@@ -102,6 +102,7 @@ lmap = {
     'publicdomain': 'https://wiki.creativecommons.org/wiki/Public_domain',
 }
 
+
 def do_license(v):
     if re.search('^(http|ftp)', v):
         v = '[%s](%s "%s")' % ('Link', v, v)
@@ -124,6 +125,7 @@ def do_license(v):
             v += part
     return v
 
+
 def get_url(js):
     if 'checkver' in js:
         if 'url' in js['checkver']:
@@ -132,12 +134,14 @@ def get_url(js):
         return js['homepage']
     return ''
 
+
 def do_version(js):
     version = js['version']
     url = get_url(js)
     if url == '':
         return version
     return '[%s](%s "%s")' % (version, url, url)
+
 
 markdown = 'README.md'
 with open(markdown, 'r') as f:
@@ -195,12 +199,17 @@ table = []
 table.append('|Name|Version|Description|License|')
 table.append('|----|-------|-----------|-------|')
 
-newlist = [(k,rows[k]) for k in sorted(rows.keys())]
+newlist = [(k, rows[k]) for k in sorted(rows.keys())]
 
 for (name, row) in newlist:
-    table.append('|[%s](%s "%s")|%s|%s|%s|' % (name, row['homepage'], row['homepage'], row['version'], row['description'], row['license']))
+    table.append('|[%s](%s "%s")|%s|%s|%s|' %
+                 (name, row['homepage'], row['homepage'], row['version'],
+                  row['description'], row['license']))
 
 out = []
+
+h1 = '<!-- The following table was inserted by makeindex.py -->'
+h2 = '<!-- Your edits will be lost the next time makeindex.py is run -->'
 
 found = False
 for line in lines:
@@ -213,8 +222,8 @@ for line in lines:
     if re.match(r'^\s*<!--\s+<apps>\s+-->', line):
         found = True
         out.append(line)
-        out.append('<!-- The following table was inserted by makeindex.py -->')
-        out.append('<!-- Your edits will be lost the next time makeindex.py is run -->')
+        out.append(h1)
+        out.append(h2)
         for row in table:
             out.append(row)
         continue

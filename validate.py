@@ -11,6 +11,7 @@ import re
 import sys
 import traceback
 
+
 def decode(s):
     for encoding in 'utf-8-sig', 'utf-16':
         try:
@@ -18,6 +19,7 @@ def decode(s):
         except UnicodeDecodeError:
             continue
     return s.decode('latin-1')
+
 
 schema_name = 'schema.json'
 
