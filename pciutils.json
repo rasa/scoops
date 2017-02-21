@@ -26,7 +26,7 @@
         "lspci.exe",
         "setpci.exe"
     ],
-    "checkver": "href=\"releases/pciutils-([\\d.]+)</a>",
+    "checkver": "href=\"releases/pciutils-([\\d.]+)",
     "description": "Inspect and manipulate configuration of PCI devices",
     "homepage": "https://eternallybored.org/misc/pciutils/",
     "license": "GPL-2.0",

@@ -25,7 +25,7 @@
         "gifdiff.exe",
         "gifsicle.exe"
     ],
-    "checkver": "href=\"releases/gifsicle-([\\d.]+)</a>",
+    "checkver": "href=\"releases/gifsicle-([\\d.]+)",
     "description": "GIF image CLI tool",
     "homepage": "https://eternallybored.org/misc/gifsicle/",
     "license": "GPL-2.0",
