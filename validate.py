@@ -13,6 +13,9 @@ import traceback
 
 
 def decode(s):
+    if sys.version_info >= (3, 0):
+        return s
+
     for encoding in 'utf-8-sig', 'utf-16':
         try:
             return s.decode(encoding)
@@ -33,7 +36,7 @@ with open(schema_name, 'r') as f:
     schema_data = json.load(f)
 
 with open(file, 'r') as f:
-    jstr = f.read(os.path.getsize(file))
+    jstr = f.read()
 
 jstr_no_bom = decode(jstr)
 failed = file + '.failed'

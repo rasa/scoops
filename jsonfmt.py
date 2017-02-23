@@ -8,11 +8,11 @@ import json
 import os
 import sys
 
-if sys.version_info >= (3, 0):
-    sys.exit("Sorry, this script has only been tested with Python 2.x")
-
 
 def decode(s):
+    if sys.version_info >= (3, 0):
+        return s
+
     for encoding in 'utf-8-sig', 'utf-16':
         try:
             return s.decode(encoding)

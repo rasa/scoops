@@ -12,13 +12,15 @@
         }
     },
     "autoupdate": {
-        "32bit": {
-            "extract_dir": "gifsicle-$version-win32",        
-            "url": "https://eternallybored.org/misc/gifsicle/releases/gifsicle-$version-win32.zip"
-        },
-        "64bit": {
-            "extract_dir": "gifsicle-$version-win64",        
-            "url": "https://eternallybored.org/misc/gifsicle/releases/gifsicle-$version-win64.zip"
+        "architecture": {
+            "32bit": {
+                "extract_dir": "gifsicle-$version-win32",
+                "url": "https://eternallybored.org/misc/gifsicle/releases/gifsicle-$version-win32.zip"
+            },
+            "64bit": {
+                "extract_dir": "gifsicle-$version-win64",
+                "url": "https://eternallybored.org/misc/gifsicle/releases/gifsicle-$version-win64.zip"
+            }
         }
     },
     "bin": [
