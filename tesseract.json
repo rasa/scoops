@@ -2,7 +2,6 @@
     "autoupdate": {
         "url": "http://digi.bib.uni-mannheim.de/tesseract/tesseract-ocr-setup-$versiondev.exe"
     },
-    "bin": [],
     "checkver": {
         "re": "The latest installer can be downloaded here:\n<a href=\"http://digi.bib.uni-mannheim.de/tesseract/tesseract-ocr-setup-([\\d.]+)",
         "url": "https://github.com/UB-Mannheim/tesseract/wiki"

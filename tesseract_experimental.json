@@ -1,5 +1,4 @@
 {
-    "bin": [],
     "checkver": {
         "re": "tesseract-ocr-setup-([\\d.]+)dev\\.exe</a>\\s+\\(experimental\\)",
         "url": "https://github.com/UB-Mannheim/tesseract/wiki"
