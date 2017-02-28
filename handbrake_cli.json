@@ -2,20 +2,20 @@
     "architecture": {
         "32bit": {
             "hash": "",
-            "url": "https://handbrake.fr/rotation.php?file=HandBrakeCLI-1.0.2-win-i686.zip#/HandBrakeCLI-1.0.2-win-i686.zip"
+            "url": "https://handbrake.fr/rotation.php?file=HandBrakeCLI-1.0.3-win-i686.zip#/dl.zip"
         },
         "64bit": {
-            "hash": "419393cc99da1a0167b620b8705dddfce0c50f3f56900c45afc302806e1e032d",
-            "url": "https://handbrake.fr/rotation.php?file=HandBrakeCLI-1.0.2-win-x86_64.zip#/HandBrakeCLI-1.0.2-win-x86_64.zip"
+            "hash": "",
+            "url": "https://handbrake.fr/rotation.php?file=HandBrakeCLI-1.0.3-win-x86_64.zip#/dl.zip"
         }
     },
     "autoupdate": {
         "architecture": {
             "32bit": {
-                "url": "https://handbrake.fr/rotation.php?file=HandBrakeCLI-$version-win-i686.zip#/HandBrakeCLI-$version-win-i686.zip"
+                "url": "https://handbrake.fr/rotation.php?file=HandBrakeCLI-$version-win-i686.zip#/dl.zip"
             },
             "64bit": {
-                "url": "https://handbrake.fr/rotation.php?file=HandBrakeCLI-$version-win-x86_64.zip#/HandBrakeCLI-$version-win-x86_64.zip"
+                "url": "https://handbrake.fr/rotation.php?file=HandBrakeCLI-$version-win-x86_64.zip#/dl.zip"
             }
         }
     },
@@ -33,5 +33,5 @@
     "description": "Command line video converter",
     "homepage": "https://handbrake.fr/",
     "license": "GPL-2.0",
-    "version": "1.0.2"
+    "version": "1.0.3"
 }
