@@ -26,7 +26,7 @@
         "scgcheck.exe",
         "scgskeleton.exe"
     ],
-    "description": "Burn and read CDs, DVDs, and BluRay discs",
+    "description": "Burn and read CDs, DVDs, and Blu-ray discs",
     "hash": "f534062cab7585b82bd764f02bc65fb0c7c27ac1615786bfc81c35880ce4acc6",
     "homepage": "https://sourceforge.net/projects/tumagcc/",
     "license": "CDDL-1.0/GPL-2.0/LGPL-2.1",

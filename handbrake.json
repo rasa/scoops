@@ -46,7 +46,7 @@
     "checkver": {
         "re": "<b>Download\\s+HandBrake\\s+([\\d.]+)"
     },
-    "description": "Video converter",
+    "description": "Convert videos with GUI program",
     "homepage": "https://handbrake.fr/",
     "license": "GPL-2.0",
     "version": "1.0.3"

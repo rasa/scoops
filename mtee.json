@@ -3,7 +3,7 @@
     "checkver": {
         "github": "https://github.com/ritchielawrence/mtee"
     },
-    "description": "Stdout stream splitter",
+    "description": "Split standard output to a file",
     "hash": "0acf8e8602e641fc914b23537c7a90861c4b076e569e4521b95d37ad361eefa4",
     "homepage": "http://ritchielawrence.github.io/mtee/",
     "license": "MIT",

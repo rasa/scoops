@@ -39,7 +39,7 @@
     "checkver": {
         "re": "latestVersion\":\"([\\d.]+)"
     },
-    "description": "VLC + Bluray plugin",
+    "description": "VLC + Blu-ray plugin (portable version)",
     "extract_dir": "vlc-2.2.4",
     "homepage": "https://www.videolan.org/",
     "license": "GPL-2.0",

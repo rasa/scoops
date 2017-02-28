@@ -20,17 +20,13 @@
         }
     },
     "bin": [
-        "HandBrakeCLI.exe",
-        [
-            "HandBrakeCLI.exe",
-            "handbrake"
-        ]
+        "HandBrakeCLI.exe"
     ],
     "checkver": {
         "re": "Current\\s+Version:\\s+([\\d.]+)",
         "url": "https://handbrake.fr/downloads2.php"
     },
-    "description": "Command line video converter",
+    "description": "Convert videos with CLI program",
     "homepage": "https://handbrake.fr/",
     "license": "GPL-2.0",
     "version": "1.0.3"

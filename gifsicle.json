@@ -28,7 +28,7 @@
         "gifsicle.exe"
     ],
     "checkver": "href=\"releases/gifsicle-([\\d.]+)",
-    "description": "GIF image CLI tool",
+    "description": "Manipulate GIF images",
     "homepage": "https://eternallybored.org/misc/gifsicle/",
     "license": "GPL-2.0",
     "version": "1.88"
