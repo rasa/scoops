@@ -101,7 +101,7 @@ The following apps have been migrated to another scoop bucket:
 
 |Location|Name|Version|Description|License|
 |--------|----|-------|-----------|-------|
-|[scoop][https://github.com/lukesampson/scoop/blob/master/bucket/cacert.json]|[cacert](https://curl.haxx.se/docs/caextract.html "https://curl.haxx.se/docs/caextract.html")|[2017-01-18](https://curl.haxx.se/docs/caextract.html "https://curl.haxx.se/docs/caextract.html")|Mozilla CA certificate store in PEM format|[MPL-2.0](https://opensource.org/licenses/MPL-2.0 "https://opensource.org/licenses/MPL-2.0")|
+|[scoop](https://github.com/lukesampson/scoop/blob/master/bucket/cacert.json)|[cacert](https://curl.haxx.se/docs/caextract.html "https://curl.haxx.se/docs/caextract.html")|[2017-01-18](https://curl.haxx.se/docs/caextract.html "https://curl.haxx.se/docs/caextract.html")|Mozilla CA certificate store in PEM format|[MPL-2.0](https://opensource.org/licenses/MPL-2.0 "https://opensource.org/licenses/MPL-2.0")|
 
 ## Bugs
 
