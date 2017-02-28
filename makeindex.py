@@ -144,7 +144,8 @@ def do_version(js):
 
 
 markdown = 'README.md'
-with open(markdown, 'r') as f:
+print("Reading %s" % markdown)
+with open(markdown, 'rb') as f:
     lines = f.readlines()
 
 specs = sys.argv
@@ -213,7 +214,7 @@ h2 = '<!-- Your edits will be lost the next time makeindex.py is run -->'
 
 found = False
 for line in lines:
-    line = line.strip()
+    line = str(line.strip())
     if found:
         if re.match(r'^\s*<!--\s+</apps>\s+-->', line):
             found = False
@@ -230,8 +231,17 @@ for line in lines:
 
     out.append(line)
 
-with open(markdown, 'w') as f:
-    f.write("\n".join(out))
-    f.write("\n")
+print("Writing %s" % markdown)
+
+with open(markdown + '.tmp', 'wb') as f:
+    data = "\n".join(out) + "\n"
+    data = data.encode('utf8')
+    f.write(data)
+
+if os.path.exists(markdown + '.bak'):
+    os.remove(markdown + '.bak')
+
+os.rename(markdown, markdown + '.bak')
+os.rename(markdown + '.tmp', markdown)
 
 sys.exit(0)
