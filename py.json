@@ -20,7 +20,7 @@
     "checkver": "launchwin-([\\d.]+)\\.msi",
     "description": "Find and launch Python",
     "hash": "8b2cd43f07a93795d3026646f5fde0fa717e9e261026963f39e943e899dddca6",
-    "homepage": "https://bitbucket.org/vinay.sajip/pylauncher/downloads",
+    "homepage": "https://bitbucket.org/vinay.sajip/pylauncher/downloads/",
     "license": "BSD-3-Clause",
     "version": "1.0.1.6"
 }
