@@ -44,17 +44,4 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
-# backup files
-*.bak
-*.old
-
-md5s.txt
-sha1s.txt
-sha256s.txt
-*.asc
-*.sha256
-
-.*.uploaded
-.*.scanned
-.*.released
-.*.tagged
+archive/
