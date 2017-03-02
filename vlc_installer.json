@@ -20,7 +20,7 @@
         }
     },
     "checkver": "github",
-    "description": "Download and install the VLC media player and related plugins",
+    "description": "Download and install the VLC media player and related plugins (deprecated)",
     "homepage": "https://github.com/rasa/vlc_installer",
     "installer": {
         "args": [
