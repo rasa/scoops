@@ -16,7 +16,7 @@ def decode(s):
     for encoding in 'utf-8-sig', 'utf-16':
         try:
             return s.decode(encoding)
-        except UnicodeDecodeError:
+        except UnicodeDecodeError as e:
             continue
     return s.decode('latin-1')
 
@@ -34,16 +34,18 @@ print('Updating', file)
 mtime = os.path.getmtime(file)
 
 with open(file, 'r') as f:
-    jstr = f.read(os.path.getsize(file))
+    jstr = f.read()
     jstr_no_bom = decode(jstr)
-
+    
 parser = JsonComment(json)
 json_data = parser.loads(jstr_no_bom)
 
 new_data = json.dumps(
     json_data, sort_keys=True, indent=4, separators=(',', ': '))
-with open(file + '.tmp', 'w') as f:
-    f.write(new_data + "\n")
+with open(file + '.tmp', 'wb') as f:
+    new_data = new_data.encode('utf-8')
+    new_data += b"\n"
+    f.write(new_data)
 
 if os.path.isfile(file + '.bak'):
     os.remove(file + '.bak')
