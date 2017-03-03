@@ -1,6 +1,6 @@
 {
     "autoupdate": {
-        "url": "http://www.dmst.aueb.gr/dds/sw/outwit/outwit-bin-$version.zip"
+        "url": "https://www.spinellis.gr/sw/outwit/outwit-bin-$version.zip"
     },
     "bin": [
         "bin\\docprop.exe",
@@ -14,8 +14,8 @@
     "description": "Diomidis Spinellis's outwit suite",
     "extract_dir": "outwit-bin-1.25",
     "hash": "677b142ee01d69d43b31a4dfff9e06465fd4d4545fb1441cf703171cb598dba7",
-    "homepage": "http://www.spinellis.gr/sw/outwit/",
+    "homepage": "https://www.spinellis.gr/sw/outwit/",
     "license": "https://raw.githubusercontent.com/dspinellis/outwit/master/LICENSE",
-    "url": "http://www.dmst.aueb.gr/dds/sw/outwit/outwit-bin-1.25.zip",
+    "url": "https://www.spinellis.gr/sw/outwit/outwit-bin-1.25.zip",
     "version": "1.25"
 }
