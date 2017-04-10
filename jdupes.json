@@ -1,0 +1,32 @@
+{
+    "architecture": {
+        "32bit": {
+            "extract_dir": "jdupes-1.8.c4f7b45_win32",
+            "hash": "d751c0ed7d36d39337e16323888c18f15ef2fcc610ed7ecc0786008d0bc24cf0",
+            "url": "https://github.com/jbruchon/jdupes/releases/download/v1.8/jdupes-1.8.c4f7b45_win32.zip"
+        },
+        "64bit": {
+            "extract_dir": "jdupes-1.8.c4f7b45_win64",
+            "hash": "5fb18775fea8fae6cbfaf501fa8fc955fb02415ef04b5f56a55c245e5b76d9a7",
+            "url": "https://github.com/jbruchon/jdupes/releases/download/v1.8/jdupes-1.8.c4f7b45_win64.zip"
+        }
+    },
+    "autoupdate": {
+        "architecture": {
+            "32bit": {
+                "extract_dir": "jdupes-$version_win32",
+                "url": "https://github.com/jbruchon/jdupes/releases/download/v$version/jdupes-$version_win32.zip"
+            },
+            "64bit": {
+                "extract_dir": "jdupes-$version_win64",
+                "url": "https://github.com/jbruchon/jdupes/releases/download/v$version/jdupes-$version_win64.zip"
+            }
+        }
+    },
+    "bin": "jdupes.exe",
+    "checkver": "github",
+    "description": "A powerful duplicate file finder and an enhanced fork of 'fdupes'",
+    "homepage": "https://github.com/jbruchon/jdupes",
+    "license": "MIT",
+    "version": "1.8"
+}
