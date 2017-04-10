@@ -14,10 +14,10 @@
                 ],
                 "file": "uninst.exe"
             },
-            "url": "http://handbrake.fr/rotation.php?file=HandBrake-1.0.3-i686-Win_GUI.exe#/dl.exe"
+            "url": "http://handbrake.fr/rotation.php?file=HandBrake-1.0.7-i686-Win_GUI.exe#/dl.exe"
         },
         "64bit": {
-            "hash": "fcf38bac7721783c610fa7ae7748d4f0ed30359cb2ae69fbf147e74b1677c0b6",
+            "hash": "",
             "installer": {
                 "args": [
                     "/S",
@@ -30,7 +30,7 @@
                 ],
                 "file": "uninst.exe"
             },
-            "url": "http://handbrake.fr/rotation.php?file=HandBrake-1.0.3-x86_64-Win_GUI.exe#/dl.exe"
+            "url": "http://handbrake.fr/rotation.php?file=HandBrake-1.0.7-x86_64-Win_GUI.exe#/dl.exe"
         }
     },
     "autoupdate": {
@@ -49,5 +49,5 @@
     "description": "Convert videos with GUI program",
     "homepage": "https://handbrake.fr/",
     "license": "GPL-2.0",
-    "version": "1.0.3"
+    "version": "1.0.7"
 }
