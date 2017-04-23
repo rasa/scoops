@@ -138,6 +138,8 @@ def get_url(js):
 def do_version(js):
     version = js['version']
     url = get_url(js)
+    if not 'checkver' in js:
+        version = '<i>%s</i>' % version
     if url == '':
         return version
     return '[%s](%s "%s")' % (version, url, url)
@@ -155,10 +157,11 @@ if len(specs) == 0:
     specs = ['*.json']
 
 keys = [
-    "description",
-    "homepage",
-    "license",
-    "version",
+    'checkver',
+    'description',
+    'homepage',
+    'license',
+    'version',
 ]
 
 rows = {}
@@ -185,7 +188,9 @@ for file in os.listdir('.'):
             continue
         for key in keys:
             if key in j:
-                v = j[key].strip()
+                v = j[key]
+                if type(v).__name__ == 'unicode':
+                    v = v.strip()
                 if key == 'license':
                     v = do_license(v)
                 if key == 'version':
