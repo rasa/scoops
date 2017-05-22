@@ -24,7 +24,7 @@ def decode(s):
     return s.decode('latin-1')
 
 
-schema_name = 'schema.json'
+schema_name = '%s/scoop/apps/scoop/current/schema.json' % os.environ['USERPROFILE']
 
 file = sys.argv[1]
 if re.match('^schema', file):
