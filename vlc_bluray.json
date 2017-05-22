@@ -2,7 +2,7 @@
     "architecture": {
         "32bit": {
             "hash": [
-                "f4a4b8897e86f52a319ee4568e62be9cda1bcb2341e798da12e359d81cb36e51",
+                "37e857b0322a6676c4d01310b2927c109720a6d89cc149d1a35852b649b53387",
                 "cf3413ce936f8455b9600fd23a7821aef3737f017514e7d0894ab93c43dc9754",
                 "38fb2347d8e067c7b57d65721e7b7c7b16a7f795ce36385a6ada8bfeb4656b3f"
             ],
@@ -20,14 +20,14 @@
                 "file": "uninstall.exe"
             },
             "url": [
-                "https://get.videolan.org/vlc/2.2.4/win32/vlc-2.2.4-win32.exe",
+                "https://get.videolan.org/vlc/2.2.5.1/win32/vlc-2.2.5.1-win32.exe",
                 "http://vlc-bluray.whoknowsmy.name/files/win32/libaacs.dll",
                 "http://vlc-bluray.whoknowsmy.name/files/KEYDB.cfg"
             ]
         },
         "64bit": {
             "hash": [
-                "a283b1913c8905c4d58787f34b4a85f28f3f77c4157bee554e3e70441e6e75e4",
+                "41a69a5f329315ea9b5ae6d3da8f4900f9f7ba4fb3d3c07e1adb844e60208159",
                 "03d2070a0c6fb66000b5ed94b44bc7fe22940e02d26bf92ceb0fe13c8fe6c786",
                 "38fb2347d8e067c7b57d65721e7b7c7b16a7f795ce36385a6ada8bfeb4656b3f"
             ],
@@ -45,7 +45,7 @@
                 "file": "uninstall.exe"
             },
             "url": [
-                "https://get.videolan.org/vlc/2.2.4/win64/vlc-2.2.4-win64.exe",
+                "https://get.videolan.org/vlc/2.2.5.1/win64/vlc-2.2.5.1-win64.exe",
                 "http://vlc-bluray.whoknowsmy.name/files/win64/libaacs.dll",
                 "http://vlc-bluray.whoknowsmy.name/files/KEYDB.cfg"
             ]
@@ -68,5 +68,5 @@
     "homepage": "https://www.videolan.org/",
     "license": "GPL-2.0",
     "post_install": "New-Item -ItemType Directory -Force -Path \"$($env:ProgramData)\\aacs\" >$null; Copy-Item \"$dir\\KEYDB.cfg\" \"$($env:ProgramData)\\aacs\"; Copy-Item \"$dir\\libaacs.dll\" \"$($env:ProgramFiles)\\VideoLAN\\VLC\"; Copy-Item \"$($env:ProgramFiles)\\VideoLAN\\VLC\\uninstall.exe\" \"$dir\"",
-    "version": "2.2.4"
+    "version": "2.2.5.1"
 }
