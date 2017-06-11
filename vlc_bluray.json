@@ -68,5 +68,5 @@
     "homepage": "https://www.videolan.org/",
     "license": "GPL-2.0",
     "post_install": "New-Item -ItemType Directory -Force -Path \"$($env:ProgramData)\\aacs\" >$null; Copy-Item \"$dir\\KEYDB.cfg\" \"$($env:ProgramData)\\aacs\"; Copy-Item \"$dir\\libaacs.dll\" \"$($env:ProgramFiles)\\VideoLAN\\VLC\"; Copy-Item \"$($env:ProgramFiles)\\VideoLAN\\VLC\\uninstall.exe\" \"$dir\"",
-    "version": "2.2.5.1"
+    "version": "2.2.6"
 }
