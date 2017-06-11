@@ -2,24 +2,24 @@
     "architecture": {
         "32bit": {
             "hash": [
-                "05465768bf30ff94c7baa7b1bd92fc26d9494a77ac18ea2a2a71a69c710e8eb5",
+                "6000f3a1386c06eed2a61ede6437df2e537e1bcaac73a4a32b7648a99ffcb6ed",
                 "cf3413ce936f8455b9600fd23a7821aef3737f017514e7d0894ab93c43dc9754",
                 "38fb2347d8e067c7b57d65721e7b7c7b16a7f795ce36385a6ada8bfeb4656b3f"
             ],
             "url": [
-                "https://get.videolan.org/vlc/2.2.5.1/win32/vlc-2.2.5.1-win32.zip",
+                "https://get.videolan.org/vlc/2.2.6/win32/vlc-2.2.6-win32.zip",
                 "http://vlc-bluray.whoknowsmy.name/files/win32/libaacs.dll",
                 "http://vlc-bluray.whoknowsmy.name/files/KEYDB.cfg"
             ]
         },
         "64bit": {
             "hash": [
-                "99979a58bfd0dcf3ca71cb49977592dbded92fdc121fbe1b678ad950e941037d",
+                "cf55a79e9c328d9a04abd0a358d3c7e391c3c5c4dabd42c4cf9b80faf94325da",
                 "03d2070a0c6fb66000b5ed94b44bc7fe22940e02d26bf92ceb0fe13c8fe6c786",
                 "38fb2347d8e067c7b57d65721e7b7c7b16a7f795ce36385a6ada8bfeb4656b3f"
             ],
             "url": [
-                "https://get.videolan.org/vlc/2.2.5.1/win64/vlc-2.2.5.1-win64.zip",
+                "https://get.videolan.org/vlc/2.2.6/win64/vlc-2.2.6-win64.zip",
                 "http://vlc-bluray.whoknowsmy.name/files/win64/libaacs.dll",
                 "http://vlc-bluray.whoknowsmy.name/files/KEYDB.cfg"
             ]
@@ -40,7 +40,7 @@
         "re": "latestVersion\":\"([\\d.]+)"
     },
     "description": "VLC + Blu-ray plugin (portable version)",
-    "extract_dir": "vlc-2.2.4",
+    "extract_dir": "vlc-2.2.6",
     "homepage": "https://www.videolan.org/",
     "license": "GPL-2.0",
     "post_install": "New-Item -ItemType Directory -Force -Path \"$($env:ProgramData)\\aacs\" >$null; Copy-Item \"$dir\\KEYDB.cfg\" \"$($env:ProgramData)\\aacs\"",
@@ -50,5 +50,5 @@
             "VLC media player"
         ]
     ],
-    "version": "2.2.5.1"
+    "version": "2.2.6"
 }
