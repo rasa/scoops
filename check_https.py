@@ -125,26 +125,26 @@ class CheckURLs(object):
                     hash = ''
                     if 'hash' in j:
                         hash = j['hash']
-                    # (data, changed) = self.process(j, 'homepage', data)
+                    (data, changed) = self.process(j, 'homepage', data)
                     (data, changed) = self.process(j, 'license', data)
-                    # (data, changed) = self.process(j, 'url', data, True, hash)
-                    # if changed:
-                        # (data, changed) = self.process(j, 'autoupdate', data, False)
-                    # (data, changed) = self.process(j, 'checkver', data)
-                    # if 'checkver' in j:
-                        # if isinstance(j['checkver'], dict):
-                            # (data, changed) = self.process(j['checkver'], 'github', data)
-                    # if 'architecture' in j:
-                        # (data, changed) = self.process(j['architecture'], '32bit', data, True, '', 'architecture')
-                        # if changed:
-                            # if 'autoupdate' in j:
-                                # if 'architecture' in j['autoupdate']:
-                                    # (data, changed) = self.process(j['autoupdate']['architecture'], '32bit', data, False, '', 'autoupdate.architecture')
-                        # (data, changed) = self.process(j['architecture'], '64bit', data, True, '', 'architecture')
-                        # if changed:
-                            # if 'autoupdate' in j:
-                                # if 'architecture' in j['autoupdate']:
-                                    # (data, changed) = self.process(j['autoupdate']['architecture'], '32bit', data, False, '', 'autoupdate.architecture')
+                    (data, changed) = self.process(j, 'url', data, True, hash)
+                    if changed:
+                        (data, changed) = self.process(j, 'autoupdate', data, False)
+                    (data, changed) = self.process(j, 'checkver', data)
+                    if 'checkver' in j:
+                        if isinstance(j['checkver'], dict):
+                            (data, changed) = self.process(j['checkver'], 'github', data)
+                    if 'architecture' in j:
+                        (data, changed) = self.process(j['architecture'], '32bit', data, True, '', 'architecture')
+                        if changed:
+                            if 'autoupdate' in j:
+                                if 'architecture' in j['autoupdate']:
+                                    (data, changed) = self.process(j['autoupdate']['architecture'], '32bit', data, False, '', 'autoupdate.architecture')
+                        (data, changed) = self.process(j['architecture'], '64bit', data, True, '', 'architecture')
+                        if changed:
+                            if 'autoupdate' in j:
+                                if 'architecture' in j['autoupdate']:
+                                    (data, changed) = self.process(j['autoupdate']['architecture'], '32bit', data, False, '', 'autoupdate.architecture')
                 self.last = file
                 if data != orig_data:
                     print("Updating %s" % file)
