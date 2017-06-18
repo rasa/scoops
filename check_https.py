@@ -29,79 +29,79 @@ class CheckURLs(object):
         """ @todo docstring me """
         self.file = ''
         self.last = ''
+        self.data = ''
+        self.orig_data = ''
 
     def is_https(self, url):
+        """ @todo docstring me """
         return re.search(r'^https', url, re.I) is not None
 
     def httpsify(self, url):
+        """ @todo docstring me """
         if self.is_https(url):
             return url
         if re.search(r'^https', url, re.I):
             return url
         parts = list(urlsplit(url))
         parts[0] = 'https'
-        # newparts = parts._replace(scheme='https')
-        parts[0] = 'https'
         return urlunsplit(parts)
 
-    def check_url(self, url, key, data, get=True, hash='', desc=''):
+    def check_url(self, url, key, get=True, hash='', desc=''):
         """ @todo docstring me """
         if desc:
             key += '.' + desc
         # print("url=%s hash=%s" % (url, hash))
         if self.is_https(url):
-            return (data, False)
+            return False
         new_url = self.httpsify(url)
         if get:
             try:
                 r = requests.get(new_url)
                 if r.status_code < 200 or r.status_code > 299:
                     # print("    %s: %s" % (r.status_code, url))
-                    return (data, False)
+                    return False
                 if self.file != self.last:
                     print("  %s:" % self.file)
                 print("    %s: %s: %s" % (r.status_code, key, url))
             except Exception as e:
                 #print("    %s: %s: %s" % (500, key, url))
-                return (data, False)
+                return False
 
-        new_data = re.sub(re.escape(url), new_url, data)
-        return (new_data, new_data != data)
+        old_data = self.data
+        self.data = re.sub(re.escape(url), new_url, self.data)
+        return self.data != old_data
 
-        return (data, False)
-
-    def check_urls(self, url_or_list, key, data, get=True, hash='', desc=''):
+    def check_urls(self, url_or_list, key, get=True, hash='', desc=''):
         """ @todo docstring me """
         if isinstance(url_or_list, list):
             updated = False
             for index, url in enumerate(url_or_list):
+                hash_value = ''
                 if isinstance(hash, list):
-                    hash_value = hash[index]
-                else:
-                    hash_value = ''
-                (data, changed) = self.check_url(url, key, data, get, hash_value, desc)
-                if changed:
-                    updated = True
-            return (data, updated)
+                    if len(hash) > index:
+                        hash_value = hash[index]
+                updated += self.check_url(url, key, get, hash_value, desc)
 
-        return self.check_url(url_or_list, key, data, get, desc)
+            return updated
+
+        return self.check_url(url_or_list, key, get, desc)
         
-    def process(self, j, key, data, get=True, hash='', desc=''):
+    def process(self, j, key, get=True, hash='', desc=''):
         """ @todo docstring me """
 
         if not key in j:
-            return (data, False)
+            return False
         if isinstance(j[key], dict):
             if not 'url' in j[key]:
-                return (data, False)
+                return False
 
             if not hash:
                 if 'hash' in j[key]:
                     hash = j[key]['hash']
                 
-            return self.check_urls(j[key]['url'], key, data, get, hash, desc)
+            return self.check_urls(j[key]['url'], key, get, hash, desc)
 
-        return self.check_urls(j[key], key, data, get, hash, desc)
+        return self.check_urls(j[key], key, get, hash, desc)
         
     def run(self, args=None):
         """ @todo docstring me """
@@ -110,47 +110,49 @@ class CheckURLs(object):
         if not args:
             args = ['.']
 
+        parser = JsonComment(json)
+
         for arg in args:
             mask = arg + '/*.json'
             print("%s:" % mask)
-            parser = JsonComment(json)
             for file in glob.glob(mask):
                 self.file = file
-                #print("  %s:" % file)
+                print("  %s:" % file)
                 with io.open(file, 'r', encoding='utf-8') as f:
-                    data = f.read()
-                    orig_data = data
-                with io.open(file, 'r', encoding='utf-8') as f:
-                    j = parser.load(f)
-                    hash = ''
-                    if 'hash' in j:
-                        hash = j['hash']
-                    (data, changed) = self.process(j, 'homepage', data)
-                    (data, changed) = self.process(j, 'license', data)
-                    (data, changed) = self.process(j, 'url', data, True, hash)
+                    self.data = f.read()
+                self.orig_data = self.data
+                j = parser.loads(self.data)
+                hash = ''
+                if 'hash' in j:
+                    hash = j['hash']
+                changed = self.process(j, 'homepage')
+                changed = self.process(j, 'license')
+                changed = self.process(j, 'url', True, hash)
+                if changed:
+                    changed = self.process(j, 'autoupdate', False)
+                changed = self.process(j, 'checkver')
+                if 'checkver' in j:
+                    if isinstance(j['checkver'], dict):
+                        changed = self.process(j['checkver'], 'github')
+                if 'architecture' in j:
+                    changed = self.process(j['architecture'], '32bit', True, '', 'architecture')
                     if changed:
-                        (data, changed) = self.process(j, 'autoupdate', data, False)
-                    (data, changed) = self.process(j, 'checkver', data)
-                    if 'checkver' in j:
-                        if isinstance(j['checkver'], dict):
-                            (data, changed) = self.process(j['checkver'], 'github', data)
-                    if 'architecture' in j:
-                        (data, changed) = self.process(j['architecture'], '32bit', data, True, '', 'architecture')
-                        if changed:
-                            if 'autoupdate' in j:
-                                if 'architecture' in j['autoupdate']:
-                                    (data, changed) = self.process(j['autoupdate']['architecture'], '32bit', data, False, '', 'autoupdate.architecture')
-                        (data, changed) = self.process(j['architecture'], '64bit', data, True, '', 'architecture')
-                        if changed:
-                            if 'autoupdate' in j:
-                                if 'architecture' in j['autoupdate']:
-                                    (data, changed) = self.process(j['autoupdate']['architecture'], '32bit', data, False, '', 'autoupdate.architecture')
+                        if 'autoupdate' in j:
+                            if 'architecture' in j['autoupdate']:
+                                changed = self.process(j['autoupdate']['architecture'], '32bit', False, '', 'autoupdate.architecture')
+                    changed = self.process(j['architecture'], '64bit', True, '', 'architecture')
+                    if changed:
+                        if 'autoupdate' in j:
+                            if 'architecture' in j['autoupdate']:
+                                changed = self.process(j['autoupdate']['architecture'], '64bit', False, '', 'autoupdate.architecture')
                 self.last = file
-                if data != orig_data:
+                if self.data != self.orig_data:
                     print("Updating %s" % file)
+                    if os.path.isfile(file + '.bak'):
+                        os.remove(file + '.bak')
                     os.rename(file, file + '.bak')
                     with io.open(file, 'w', encoding='utf-8') as f:
-                        f.write(data)
+                        f.write(self.data)
 
 checker = CheckURLs()
 checker.run()
