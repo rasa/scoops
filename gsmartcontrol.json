@@ -11,10 +11,10 @@
         "smartmontools"
     ],
     "description": "GUI frontend for smartmontools (Read SMART data from disks)",
-    "extract_dir": "gsmartcontrol-0.9.0-win32",
-    "hash": "ab39d671352b68bc1a5f4a516beee0b9608e01eb7aee3b1f1ec6e8b1bfd73087",
+    "extract_dir": "gsmartcontrol-1.0.0-win32",
+    "hash": "811c4ef252e0496a875293bfba94345de3242536638ce1cab2a89c45fdb5755d",
     "homepage": "http://gsmartcontrol.sourceforge.net/home/index.php/Downloads",
     "license": "GPL-2.0",
-    "url": "https://sourceforge.net/projects/gsmartcontrol/files/0.9.0/gsmartcontrol-0.9.0-win32.zip",
-    "version": "0.9.0"
+    "url": "https://sourceforge.net/projects/gsmartcontrol/files/1.0.0/gsmartcontrol-1.0.0-win32.zip",
+    "version": "1.0.0"
 }
