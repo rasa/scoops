@@ -1,6 +1,6 @@
 {
     "checkver": {
-        "re": "lame_v([\\]d.]+).zip",
+        "re": "lame_v([\\d.]+).zip",
         "url": "http://lame.buanzo.org/"
     },
     "depends": [
