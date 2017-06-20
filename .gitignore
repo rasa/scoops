@@ -46,3 +46,5 @@ Temporary Items
 
 archive/
 *.failed
+tmp/
+wip/
