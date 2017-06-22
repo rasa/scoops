@@ -8,9 +8,9 @@
         }
     },
     "description": "List USB drives",
-    "hash": "592f9fbd36f5dd40f4b57b868fb5941c2b5c9a03224eb48872ff507ac8700a77",
     "homepage": "http://www.uwe-sieber.de/usbdlm_e.html",
     "license": "Freeware",
+    "notes": "Hash for 5.2.8 is: \n592f9fbd36f5dd40f4b57b868fb5941c2b5c9a03224eb48872ff507ac8700a77",
     "url": "http://www.uwe-sieber.de/files/listusbdrives.zip",
-    "version": "16.09.05"
+    "version": "5.2.8"
 }
