@@ -25,7 +25,7 @@
     "checkver": {
         "re": "latestVersion\":\"([\\d.]+)"
     },
-    "depend": [
+    "depends": [
         "vlc"
     ],
     "description": "VLC + Blu-ray plugin (portable version)",

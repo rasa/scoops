@@ -1,6 +1,7 @@
 {
     "$id": "http://scoop.sh/draft/schema#",
     "$schema": "http://scoop.sh/draft/schema#",
+    "additionalProperties": false,
     "definitions": {
         "architecture": {
             "additionalProperties": false,
@@ -237,7 +238,6 @@
             ]
         }
     },
-    "additionalProperties": false,
     "properties": {
         "_comment": {
             "type": "string"
