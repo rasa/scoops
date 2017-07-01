@@ -150,7 +150,7 @@
                 "xcopynt.exe",
                 "xorsum.exe"
             ],
-            "hash": "15a53f8eecc2356e749dace801ac333d04517116670c399359f4423c47b937b1",
+            "hash": "5d6e8e695a7a835fd073237a5073e31866064a1b50de31b49fed89590e5eeff9",
             "url": "http://www.ltr-data.se/files/exefiles.7z"
         },
         "64bit": {
@@ -296,7 +296,7 @@
                 "xcopynt.exe",
                 "xorsum.exe"
             ],
-            "hash": "89e91c36767778056a0a74eb506422e9dced7ec5124f847e4eaa05f1fbd17687",
+            "hash": "a3b10af509c4d8dd4d07262f9484ed9bab31a954eebc413d051270d610b17792",
             "url": "http://www.ltr-data.se/files/win64/exefiles.7z"
         }
     },
@@ -307,5 +307,5 @@
     "homepage": "http://www.ltr-data.se/opencode.html/#CmdUtils",
     "license": "MIT",
     "notes": "The following are GUI applications:\nassd\ncalldll\ncalldllw\nchkwsdll\ndenywin\nenumwinw\nFileOpen\nFSplitW\ngethostw\ngetuser\nkeylock\nlogonwrap\nlogout\nmsgbox\nnoexcept\nplaywavs\nprivproc\nregrepl\nritprogr\nrunwait\nrunwaitw\nsdonexit\nshc\nsleep\nsynctime\ntickcntw\ntscwrap\nw32ver\nwavplay\nwinlogoncfg\n",
-    "version": "16.08.26"
+    "version": "17.07.01"
 }
