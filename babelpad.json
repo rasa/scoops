@@ -5,13 +5,13 @@
     "description": "Unicode text editor",
     "homepage": "http://www.babelstone.co.uk/Software/BabelPad.html",
     "license": "Freeware",
-    "notes": "The hash for 9.0.0.3 is\n53df6579c8f71fdfeac42f4853ca14f58cbb23916ef4dcbe3a9c4510a7853649",
+    "notes": "The hash for 10.0.0.0 is\n    5783573655f295442fa18d6545d319c22a987f8ea401e8b3224f6540bb28f66e",
     "shortcuts": [
         [
             "BabelPad.exe",
             "BabelPad - Unicode text editor"
         ]
     ],
-    "url": "http://www.babelstone.co.uk/Software/0125/BabelPad.zip",
-    "version": "9.0.0.3"
+    "url": "http://www.babelstone.co.uk/Software/7874/BabelPad.zip",
+    "version": "10.0.0.0"
 }

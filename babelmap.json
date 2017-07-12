@@ -5,13 +5,13 @@
     "description": "Display Unicode character maps",
     "homepage": "http://www.babelstone.co.uk/Software/BabelMap.html",
     "license": "Freeware",
-    "notes": "The hash for 9.0.0.3 is\ndf5d59d74afd8734bed6d7f27cf69e2b8364392f43b7f13777fdf23abd2d4027",
+    "notes": "The hash for 10.0.0.0 is\n    1ac387701f33cedcf0cea370bcc865a8d2abeaceca8da9f1617f0a468e7b442b",
     "shortcuts": [
         [
             "BabelMap.exe",
             "BabelMap - Unicode character map viewer"
         ]
     ],
-    "url": "http://www.babelstone.co.uk/Software/0125/BabelMap.zip",
-    "version": "9.0.0.3"
+    "url": "http://www.babelstone.co.uk/Software/7874/BabelMap.zip",
+    "version": "10.0.0.0"
 }
