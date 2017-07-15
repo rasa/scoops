@@ -1,0 +1,17 @@
+{
+    "autoupdate": {
+        "extract_dir": "inadyn-mt.v.$version",
+        "url": "https://sourceforge.net/projects/inadyn-mt/files/inadyn-mt/inadyn-mt.v.$version/inadyn-mt.v.$version.tar.gz"
+    },
+    "bin": [
+        "bin\\win32\\inadyn-mt.exe"
+    ],
+    "checkver": "title=\"/inadyn-mt/inadyn-mt\\.v\\.([\\d.]+)",
+    "description": "Dynamic DNS client",
+    "extract_dir": "inadyn-mt.v.02.28.10",
+    "hash": "f69bea12d96b66f9f662a8df0730c60457b24f5fb5308b109936880ebf7be5ca",
+    "homepage": "https://sourceforge.net/projects/inadyn-mt/files/inadyn-mt/",
+    "license": "GPL-3.0",
+    "url": "https://sourceforge.net/projects/inadyn-mt/files/inadyn-mt/inadyn-mt.v.02.28.10/inadyn-mt.v.02.28.10.tar.gz",
+    "version": "02.28.10"
+}
