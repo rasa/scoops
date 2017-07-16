@@ -1,0 +1,20 @@
+{
+    "architecture": {
+        "32bit": {
+            "url": "https://fossies.org/windows/misc/FastCopy330.zip",
+            "hash": "c67bd82f9847d759b1fe114934ca724ead7f49a115764dff5473437a2bf5e926"
+        },
+        "64bit": {
+            "url": "https://fossies.org/windows/misc/FastCopy330_x64.zip",
+            "hash": "b66b8987d52d3d1a2cfad881f435d8d6cef48a9b72295ab2b2447b7550eec842"
+        }
+    },
+    "bin": [
+        "FastCopy.exe"
+    ],
+    "checkver": "FastCopy v([\\d.]+)",
+    "description": "The Fastest Copy/Delete Software on Windows",
+    "homepage": "https://ipmsg.org/tools/fastcopy.html.en",
+    "license": "GPL-3.0",
+    "version": "3.30"
+}
