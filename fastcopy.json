@@ -16,5 +16,15 @@
     "description": "The Fastest Copy/Delete Software on Windows",
     "homepage": "https://ipmsg.org/tools/fastcopy.html.en",
     "license": "GPL-3.0",
+    "shortcuts": [
+        [
+            "FastCopy.exe",
+            "FastCopy - The Fastest Copy-Delete Software on Windows"
+        ],
+        [
+            "FastCopy.chm",
+            "FastCopy Manual"
+        ]
+    ],
     "version": "3.30"
 }
