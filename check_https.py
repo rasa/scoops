@@ -2,6 +2,11 @@
 # -*- coding: utf-8 -*-
 """ @todo docstring me """
 
+# @todo break into phases:
+# 1. Download, report bad urls
+# 2. Check hashes, report bad hashes
+# 3. Unzip, report by extract_dirs
+
 from __future__ import (
     absolute_import,
     division,
@@ -17,10 +22,12 @@ import json
 import re
 import os
 # @todo implement progressbar
+import shutil
 import ssl
 import subprocess
 import sys
 import urllib2
+import zipfile
 
 from six.moves.urllib.parse import urlsplit, urlunsplit  # pylint: disable=import-error
 
@@ -46,6 +53,8 @@ UAS = {}
 
 NO_REFERRERS = ['sourceforge.net']
 
+TMP_DIR = 'f:/tmp'
+
 
 class CheckURLs(object):
     """ @todo docstring me """
@@ -61,7 +70,10 @@ class CheckURLs(object):
         self.basename = ''
         self.data = ''
         self.logger = None
-        self.tmp_file = None
+        self.tmp_file = ''
+        self.tmp_dir = ''
+        self.zip_file = ''
+        self.zip_dir = ''
 
     def is_https(self, url):
         """ @todo docstring me """
@@ -156,15 +168,29 @@ class CheckURLs(object):
         if not m:
             logging.warning('%s: no / in url: %s', key, url)
             return False
-        dir = 'tmp' + '/' + self.basename
+        self.tmp_dir = os.path.join(TMP_DIR, '~', self.basename)
+        # logging.info('self.tmp_dir=%s', self.tmp_dir)
         file = m.group(1)
         for c in INVALID_FILE_CHARS:
             file = file.replace(c, '-')
+        # logging.info('file=%s', file)
 
         try:
-            if not os.path.exists(dir):
-                os.makedirs(dir)
-            self.tmp_file = dir + '/' + file
+            if os.path.exists(self.tmp_dir):
+                shutil.rmtree(self.tmp_dir)
+            if not os.path.exists(self.tmp_dir):
+                os.makedirs(self.tmp_dir)
+            self.tmp_file = os.path.join(self.tmp_dir, file)
+            # logging.info('self.tmp_file=%s', self.tmp_file)
+            (basename, extension) = os.path.splitext(file)
+            if re.search('\.zip', extension, re.I):
+                self.zip_dir = os.path.join(self.tmp_dir, basename)
+                self.zip_file = self.tmp_file
+                # logging.info('self.zip_dir="%s" self.zip_file="%s"', self.zip_dir, self.zip_file)
+            else:
+                self.zip_dir = ''
+                self.zip_file = ''
+
             logging.debug('%s: Saving %s bytes to %s', key,
                           len(data), self.tmp_file)
             with io.open(self.tmp_file, 'wb') as f:
@@ -198,6 +224,28 @@ class CheckURLs(object):
             status = request.getcode()
         return (status, data)
 
+    def unzip(self, url, data, key):
+        """ @todo docstring me """
+
+        if not self.zip_file:
+            return True
+        if not os.path.exists(self.zip_file):
+            return True
+        logging.debug('%s: Unzipping %s to %s', key, self.zip_file,
+                      self.zip_dir)
+        try:
+            zip_ref = zipfile.ZipFile(self.zip_file, 'r')
+            if os.path.exists(self.zip_dir):
+                shutil.rmtree(self.zip_dir)
+            if not os.path.exists(self.zip_dir):
+                os.makedirs(self.zip_dir)
+            zip_ref.extractall(self.zip_dir)
+        except Exception as e:
+            logging.exception(e)
+        finally:
+            zip_ref.close()
+        return True
+
     def get(self, url, key='', whine=True):
         """ @todo docstring me """
         ssl_errors = ['MaxRetryError', 'SSLError']
@@ -227,6 +275,7 @@ class CheckURLs(object):
                 return False
             logging.debug('%s: Status %s: %s', key, status, url)
             self.save(url, data, key)
+            self.unzip(url, data, key)
             return data
         except Exception as e:
             reason = ''
@@ -325,8 +374,8 @@ class CheckURLs(object):
     def check_urls(self, url_or_list, key, hash='', desc=''):
         """ @todo docstring me """
 
-        if desc:
-            key += '.' + desc
+        # if desc:
+        #    key += '.' + desc
 
         if isinstance(url_or_list, list):
             schemes = []
@@ -383,8 +432,8 @@ class CheckURLs(object):
     def _fix_schemes(self, url_or_list, key, scheme='https', desc=''):
         """ @todo docstring me """
 
-        if desc:
-            key += '.' + desc
+        # if desc:
+        #    key += '.' + desc
 
         if isinstance(url_or_list, list):
             updated = False
@@ -449,6 +498,9 @@ class CheckURLs(object):
         logger2.setLevel(logging.CRITICAL)
 
         parser = jsoncomment.JsonComment(json)
+
+        if not os.path.isdir(TMP_DIR):
+            os.makedirs(TMP_DIR)
 
         mask = dir_name + '/' + filespec
         logging.info("==> Processing dir %s", mask)
