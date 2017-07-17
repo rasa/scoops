@@ -15,6 +15,12 @@
     "hash": "a4a1ddb5f35c226556097eeb786aabef8adc3287db6259f0dc862a26f569090a",
     "homepage": "http://gsmartcontrol.sourceforge.net/home/index.php/Downloads",
     "license": "GPL-2.0",
+    "shortcuts": [
+        [
+            "gsmartcontrol.exe",
+            "GSmartControl - frontend for SmartMonTools"
+        ]
+    ],
     "url": "https://sourceforge.net/projects/gsmartcontrol/files/1.0.1/gsmartcontrol-1.0.1-win32.zip",
     "version": "1.0.1"
 }
