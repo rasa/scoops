@@ -1,8 +1,14 @@
 #!/usr/bin/env python
 
-from __future__ import print_function
+from __future__ import (
+    absolute_import,
+    division,
+    print_function,
+    unicode_literals
+)
 
 import fnmatch
+import io
 import json
 import re
 import os
@@ -147,8 +153,11 @@ def do_version(js):
 
 markdown = 'README.md'
 print("Reading %s" % markdown)
-with open(markdown, 'rb') as f:
+with io.open(markdown, 'r', encoding='utf-8') as f:
     lines = f.readlines()
+
+for i, line in enumerate(lines):
+    lines[i] = str(line)
 
 specs = sys.argv
 specs.pop(0)
@@ -238,9 +247,8 @@ for line in lines:
 
 print("Writing %s" % markdown)
 
-with open(markdown + '.tmp', 'wb') as f:
+with io.open(markdown + '.tmp', 'w', encoding='utf-8', newline='\n') as f:
     data = "\n".join(out) + "\n"
-    data = data.encode('utf8')
     f.write(data)
 
 if os.path.exists(markdown + '.bak'):
