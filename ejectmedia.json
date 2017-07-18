@@ -11,7 +11,7 @@
     "description": "Eject removable media",
     "homepage": "http://www.uwe-sieber.de/drivetools_e.html",
     "license": "Freeware",
-    "notes": "Hash for 2.7.3 is:\ne63e953f6e2b6c87e1c9cb3b1e04b48a2119ceab07f2b587957576d1ae38ccb9",
+    "notes": "Hash for 2.7.3 is:\n    e63e953f6e2b6c87e1c9cb3b1e04b48a2119ceab07f2b587957576d1ae38ccb9",
     "url": "http://www.uwe-sieber.de/files/ejectmedia.zip",
     "version": "2.7.3"
 }

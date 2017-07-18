@@ -2,7 +2,7 @@
     "description": "Noto sans serif font",
     "homepage": "https://www.google.com/get/noto/",
     "license": "OFL-1.1",
-    "notes": "Hash for version 17.04.03 is\n43b39ade1feaa6f9da0a63e5cdf60d2ea91ea0589075f3a9da1564281f04017c",
+    "notes": "Hash for version 17.04.03 is\n    43b39ade1feaa6f9da0a63e5cdf60d2ea91ea0589075f3a9da1564281f04017c",
     "post_install": "$fonts = (New-Object -ComObject Shell.Application).Namespace(0x14) ; dir $dir/*.ttf | %{ $fonts.CopyHere($_.fullname) }",
     "pre_install": "#Access denied error running: Remove-Item \"$env:windir/fonts/NotoSans*.ttf\" -recurse",
     "url": "https://noto-website.storage.googleapis.com/pkgs/NotoSans-hinted.zip",

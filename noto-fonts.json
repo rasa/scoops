@@ -3,7 +3,7 @@
     "description": "All noto fonts",
     "homepage": "https://www.google.com/get/noto/",
     "license": "OFL-1.1",
-    "notes": "Hash for version 17.04.03 is\nd5e5bace69570f348228e864444155657c1e7eca50857b9de4981fbd9b5122dd",
+    "notes": "Hash for version 17.04.03 is\n    d5e5bace69570f348228e864444155657c1e7eca50857b9de4981fbd9b5122dd",
     "post_install": "rm $dir/NotoColorEmoji.ttf ; $fonts = (New-Object -ComObject Shell.Application).Namespace(0x14) ; dir $dir/*.ttf | %{ $fonts.CopyHere($_.fullname) }",
     "pre_install": "#Access denied error running: Remove-Item \"$env:windir/fonts/Noto*.ttf\" -recurse",
     "url": "https://noto-website.storage.googleapis.com/pkgs/Noto-hinted.zip",
