@@ -5,7 +5,7 @@
     "description": "Unicode text editor",
     "homepage": "http://www.babelstone.co.uk/Software/BabelPad.html",
     "license": "Freeware",
-    "notes": "The hash for 10.0.0.0 is\n    5783573655f295442fa18d6545d319c22a987f8ea401e8b3224f6540bb28f66e",
+    "notes": "The hash for 10.0.0.1 is\n    930a8b736acb661ae1f44c89a3c3fd05d85b9b2e32bbfb160a0cd229ddc942cb",
     "shortcuts": [
         [
             "BabelPad.exe",
@@ -13,5 +13,5 @@
         ]
     ],
     "url": "http://www.babelstone.co.uk/Software/7874/BabelPad.zip",
-    "version": "10.0.0.0"
+    "version": "10.0.0.1"
 }
