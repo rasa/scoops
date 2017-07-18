@@ -5,7 +5,7 @@
     "description": "Display Unicode character maps",
     "homepage": "http://www.babelstone.co.uk/Software/BabelMap.html",
     "license": "Freeware",
-    "notes": "The hash for 10.0.0.0 is\n    1ac387701f33cedcf0cea370bcc865a8d2abeaceca8da9f1617f0a468e7b442b",
+    "notes": "The hash for 10.0.0.1 is\n    907b3153d1c049015ae45f301b8ef7b0125ea23decd7f32ea7707a4cde96d35d",
     "shortcuts": [
         [
             "BabelMap.exe",
@@ -13,5 +13,5 @@
         ]
     ],
     "url": "http://www.babelstone.co.uk/Software/7874/BabelMap.zip",
-    "version": "10.0.0.0"
+    "version": "10.0.0.1"
 }
