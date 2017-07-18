@@ -11,7 +11,7 @@
     "description": "Remove nonpresent drives from the registry",
     "homepage": "http://www.uwe-sieber.de/drivetools_e.html",
     "license": "Freeware",
-    "notes": "Hash for 1.4 is:\n35ba8d3bdf1d587478e499c23c11264c303a613e7c4ff246b37d75d03541bab8",
+    "notes": "Hash for 1.5 is:\n3f154eb826b8603fb647d38ea78a4a4ca8652e049f454942768d4ec6ece51e5d",
     "url": "http://www.uwe-sieber.de/files/drivecleanup.zip",
-    "version": "1.4"
+    "version": "1.5"
 }
