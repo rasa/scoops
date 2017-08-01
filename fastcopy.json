@@ -1,21 +1,39 @@
 {
     "architecture": {
         "32bit": {
-            "url": "https://fossies.org/windows/misc/FastCopy330.zip",
-            "hash": "c67bd82f9847d759b1fe114934ca724ead7f49a115764dff5473437a2bf5e926"
+            "hash": "8ddbf769074f7791390b773638769c770ef60612f5c54534e40cc0f4de25754f",
+            "url": "https://fossies.org/windows/misc/FastCopy331.zip"
         },
         "64bit": {
-            "url": "https://fossies.org/windows/misc/FastCopy330_x64.zip",
-            "hash": "b66b8987d52d3d1a2cfad881f435d8d6cef48a9b72295ab2b2447b7550eec842"
+            "hash": "9a8bf04211d548d1773e737a2d93a6a1684a7bc8965f825f513493a17dc4e0a1",
+            "url": "https://fossies.org/windows/misc/FastCopy331_x64.zip"
+        }
+    },
+    "autoupdate": {
+        "architecture": {
+            "32bit": {
+                "url": "https://fossies.org/windows/misc/FastCopy$cleanVersion.zip"
+            },
+            "64bit": {
+                "url": "https://fossies.org/windows/misc/FastCopy$cleanVersion_x64.zip"
+            }
         }
     },
     "bin": [
         "FastCopy.exe"
     ],
-    "checkver": "FastCopy v([\\d.]+)",
+    "checkver": {
+        "re": "FastCopy v([\\d.]+)",
+        "url": "https://ipmsg.org/tools/fastcopy.html.en"
+    },
     "description": "The Fastest Copy/Delete Software on Windows",
     "homepage": "https://ipmsg.org/tools/fastcopy.html.en",
     "license": "GPL-3.0",
+    "persist": [
+        "FastCopy2.ini",
+        "Log"
+    ],
+    "pre_install": "if (!(test-path $dir\\FastCopy2.ini)) {echo '[main]' | out-file -encoding oem $dir\\FastCopy2.ini}; if (!(test-path $dir\\Log)) {New-Item $dir\\Log -type directory -force}",
     "shortcuts": [
         [
             "FastCopy.exe",
@@ -26,5 +44,5 @@
             "FastCopy Manual"
         ]
     ],
-    "version": "3.30"
+    "version": "3.31"
 }
