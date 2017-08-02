@@ -12,9 +12,17 @@
     "autoupdate": {
         "architecture": {
             "32bit": {
+                "hash": {
+                    "find": "SHA256 \\($basename\\):\\s+([a-fA-F0-9]{64})",
+                    "url": "$url/"
+                },
                 "url": "https://fossies.org/windows/misc/FastCopy$cleanVersion.zip"
             },
             "64bit": {
+                "hash": {
+                    "find": "SHA256 \\($basename\\):\\s+([a-fA-F0-9]{64})",
+                    "url": "$url/"
+                },
                 "url": "https://fossies.org/windows/misc/FastCopy$cleanVersion_x64.zip"
             }
         }
