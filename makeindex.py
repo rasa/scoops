@@ -12,6 +12,7 @@ import io
 import json
 import re
 import os
+import subprocess
 import sys
 
 OSI = [
@@ -175,9 +176,12 @@ keys = [
 
 rows = {}
 
-# @todo use git ls-files *.json instead
+cmdline = ["git", "ls-files"]
+proc = subprocess.Popen(cmdline, stdout=subprocess.PIPE, shell=True)
+(out, err) = proc.communicate()
 
-for file in os.listdir('.'):
+files = out.splitlines()
+for file in files:
     accept = False
     for spec in specs:
         if fnmatch.fnmatch(file, spec):
