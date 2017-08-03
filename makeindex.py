@@ -182,6 +182,8 @@ proc = subprocess.Popen(cmdline, stdout=subprocess.PIPE, shell=True)
 
 files = out.splitlines()
 for file in files:
+    if re.search('wip/', file):
+        continue
     accept = False
     for spec in specs:
         if fnmatch.fnmatch(file, spec):
