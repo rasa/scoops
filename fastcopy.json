@@ -1,12 +1,12 @@
 {
     "architecture": {
         "32bit": {
-            "hash": "8ddbf769074f7791390b773638769c770ef60612f5c54534e40cc0f4de25754f",
-            "url": "https://fossies.org/windows/misc/FastCopy331.zip"
+            "hash": "801b133519ec7779ac344bc5693e4cade51a3c7eae696e9f527eef71be440e55",
+            "url": "https://fossies.org/windows/misc/FastCopy332.zip"
         },
         "64bit": {
-            "hash": "9a8bf04211d548d1773e737a2d93a6a1684a7bc8965f825f513493a17dc4e0a1",
-            "url": "https://fossies.org/windows/misc/FastCopy331_x64.zip"
+            "hash": "b3319d65e89570f521b8abe6a5aaf5ba7cd9b1e14be8dbe18e119b924fefd935",
+            "url": "https://fossies.org/windows/misc/FastCopy332_x64.zip"
         }
     },
     "autoupdate": {
@@ -52,5 +52,5 @@
             "FastCopy Manual"
         ]
     ],
-    "version": "3.31"
+    "version": "3.32"
 }
