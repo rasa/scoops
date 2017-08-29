@@ -1,11 +1,13 @@
 {
-    "_comment": "BabelMap.zip is updated regularly so let's leave the hash empty",
+    "autoupdate": {
+        "url": "http://www.babelstone.co.uk/Software/$matchRelease/BabelMap.zip"
+    },
     "bin": "BabelMap.exe",
-    "checkver": "BabelMap</td>\\s*<td class=\"sl\">([\\d.]+)",
+    "checkver": ">(?<version>[\\d.]+)\\s+\\([\\d-]+\\)</td>\\s*<td class=\"sl\"><a href=\"(?<release>\\d+)",
     "description": "Display Unicode character maps",
+    "hash": "a9b4aa3b1a2ba62653a617597069187cfb2d5f3aba1530b1b0b4913357effd96",
     "homepage": "http://www.babelstone.co.uk/Software/BabelMap.html",
     "license": "Freeware",
-    "notes": "The hash for 10.0.0.1 is\n    907b3153d1c049015ae45f301b8ef7b0125ea23decd7f32ea7707a4cde96d35d",
     "shortcuts": [
         [
             "BabelMap.exe",
@@ -13,5 +15,5 @@
         ]
     ],
     "url": "http://www.babelstone.co.uk/Software/7874/BabelMap.zip",
-    "version": "10.0.0.1"
+    "version": "10.0.0.2"
 }
