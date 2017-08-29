@@ -1,11 +1,13 @@
 {
-    "_comment": "BabelPad.zip is updated regularly so let's leave the hash empty",
+    "autoupdate": {
+        "url": "http://www.babelstone.co.uk/Software/$matchRelease/BabelPad.zip"
+    },
     "bin": "BabelPad.exe",
-    "checkver": "BabelPad</td>\\s*<td class=\"sl\">([\\d.]+)",
+    "checkver": ">(?<version>[\\d.]+)\\s+\\([\\d-]+\\)</td>\\s*<td class=\"sl\"><a href=\"(?<release>\\d+)",
     "description": "Unicode text editor",
+    "hash": "f072d995e581ca27311f8c0ff64dab4f14f2dd5504a83e76954a6c4f9ef00f83",
     "homepage": "http://www.babelstone.co.uk/Software/BabelPad.html",
     "license": "Freeware",
-    "notes": "The hash for 10.0.0.2 is\n    c86b2593cf53a651b3748075932f64557c5b142fe816c0ef16567368522192f8",
     "shortcuts": [
         [
             "BabelPad.exe",
@@ -13,5 +15,5 @@
         ]
     ],
     "url": "http://www.babelstone.co.uk/Software/7874/BabelPad.zip",
-    "version": "10.0.0.2"
+    "version": "10.0.0.4"
 }
