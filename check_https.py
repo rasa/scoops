@@ -26,7 +26,7 @@ import shutil
 import ssl
 import subprocess
 import sys
-import urllib2
+#import urllib2
 import zipfile
 
 from six.moves.urllib.parse import urlsplit, urlunsplit  # pylint: disable=import-error
@@ -37,7 +37,7 @@ import urllib3
 import urllib3.contrib.pyopenssl
 import certifi
 
-import requests
+#import requests
 
 DOWNLOADER = 'urllib3'
 
@@ -53,7 +53,7 @@ UAS = {}
 
 NO_REFERRERS = ['sourceforge.net']
 
-TMP_DIR = 'f:/tmp'
+TMP_DIR = 'l:/tmp'
 
 
 class CheckURLs(object):
