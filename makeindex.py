@@ -12,6 +12,7 @@ import io
 import json
 import re
 import os
+import pprint
 import subprocess
 import sys
 
@@ -182,15 +183,20 @@ proc = subprocess.Popen(cmdline, stdout=subprocess.PIPE, shell=True)
 
 files = out.splitlines()
 for file in files:
+    file = file.decode("utf-8")
     if re.search('wip/', file):
+        #print("skipping %s: wip" % file)
         continue
     accept = False
+    #print("file=%s" % file)
     for spec in specs:
+        #print("spec=%s" % spec)
         if fnmatch.fnmatch(file, spec):
             accept = True
             break
 
     if not accept:
+        #print("skipping %s: not matched" % file)
         continue
 
     with open(file, 'r') as f:
@@ -198,8 +204,10 @@ for file in files:
         row = {}
         (name, ext) = os.path.splitext(os.path.basename(file))
         if re.search('^_', name):
+            #print("skipping %s: starts with _" % name)
             continue
         if re.search('^schema', name):
+            #print("skipping %s: starts with schema" % name)
             continue
         for key in keys:
             if key in j:
