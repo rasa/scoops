@@ -3,20 +3,20 @@
     "architecture": {
         "32bit": {
             "hash": "48f67be806b4e823280f03ee5512ffd58deb6f37ecc80842265d4e8d2ca30055",
-            "url": "http://www.rarlab.com/rar/wrar550.exe"
+            "url": "https://www.rarlab.com/rar/wrar550.exe"
         },
         "64bit": {
             "hash": "367d47ad48822caeedf73ce9f26a3a92db6f9f2eb18ee6d650806959b6d7d0a2",
-            "url": "http://www.rarlab.com/rar/winrar-x64-550.exe"
+            "url": "https://www.rarlab.com/rar/winrar-x64-550.exe"
         }
     },
     "autoupdate": {
         "architecture": {
             "32bit": {
-                "url": "http://www.rarlab.com/rar/wrar$cleanVersion.exe"
+                "url": "https://www.rarlab.com/rar/wrar$cleanVersion.exe"
             },
             "64bit": {
-                "url": "http://www.rarlab.com/rar/winrar-x64-$cleanVersion.exe"
+                "url": "https://www.rarlab.com/rar/winrar-x64-$cleanVersion.exe"
             }
         }
     },
