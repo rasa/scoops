@@ -2,7 +2,7 @@
     "architecture": {
         "32bit": {
             "hash": [
-                "6000f3a1386c06eed2a61ede6437df2e537e1bcaac73a4a32b7648a99ffcb6ed",
+                "3956020408c1666c168985a5afd01310dc5976cca67b458f9d70414d36f2608d",
                 "cf3413ce936f8455b9600fd23a7821aef3737f017514e7d0894ab93c43dc9754",
                 "fdb3fe62fb9b638cefadd3aaa19cfc16286e2662e2dcc423382dcfef92614e47"
             ],
@@ -11,7 +11,7 @@
                     "/S",
                     "/D=$dir"
                 ],
-                "file": "vlc-2.2.6-win32.exe"
+                "file": "vlc-2.2.8-win32.exe"
             },
             "uninstaller": {
                 "args": [
@@ -20,14 +20,14 @@
                 "file": "uninstall.exe"
             },
             "url": [
-                "https://get.videolan.org/vlc/2.2.6/win32/vlc-2.2.6-win32.exe",
+                "https://get.videolan.org/vlc/2.2.8/win32/vlc-2.2.8-win32.exe",
                 "https://vlc-bluray.whoknowsmy.name/files/win32/libaacs.dll",
                 "https://vlc-bluray.whoknowsmy.name/files/KEYDB.cfg"
             ]
         },
         "64bit": {
             "hash": [
-                "21670eae2c8041d6f26667c664f97e8931f5977225bcc3c146902beb26305ed2",
+                "e3dcf2e7c2cb6ed741e78e1bbdd198875ec626a261711c7580aec5c95c8edac2",
                 "03d2070a0c6fb66000b5ed94b44bc7fe22940e02d26bf92ceb0fe13c8fe6c786",
                 "fdb3fe62fb9b638cefadd3aaa19cfc16286e2662e2dcc423382dcfef92614e47"
             ],
@@ -36,7 +36,7 @@
                     "/S",
                     "/D=$dir"
                 ],
-                "file": "vlc-2.2.6-win64.exe"
+                "file": "vlc-2.2.8-win64.exe"
             },
             "uninstaller": {
                 "args": [
@@ -45,7 +45,7 @@
                 "file": "uninstall.exe"
             },
             "url": [
-                "https://get.videolan.org/vlc/2.2.6/win64/vlc-2.2.6-win64.exe",
+                "https://get.videolan.org/vlc/2.2.8/win64/vlc-2.2.8-win64.exe",
                 "https://vlc-bluray.whoknowsmy.name/files/win64/libaacs.dll",
                 "https://vlc-bluray.whoknowsmy.name/files/KEYDB.cfg"
             ]
@@ -68,5 +68,5 @@
     "homepage": "https://www.videolan.org/",
     "license": "GPL-2.0",
     "post_install": "New-Item -ItemType Directory -Force -Path \"$($env:ProgramData)\\aacs\" >$null; Copy-Item \"$dir\\KEYDB.cfg\" \"$($env:ProgramData)\\aacs\"; Copy-Item \"$dir\\libaacs.dll\" \"$($env:ProgramFiles)\\VideoLAN\\VLC\"; Copy-Item \"$($env:ProgramFiles)\\VideoLAN\\VLC\\uninstall.exe\" \"$dir\"",
-    "version": "2.2.6-1"
+    "version": "2.2.8"
 }
