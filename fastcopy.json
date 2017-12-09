@@ -1,29 +1,21 @@
 {
     "architecture": {
         "32bit": {
-            "hash": "801b133519ec7779ac344bc5693e4cade51a3c7eae696e9f527eef71be440e55",
-            "url": "https://fossies.org/windows/misc/FastCopy332.zip"
+            "hash": "20d5637db54116c7959794b31dbda249f163ebeb1079d19a96b990cf8f170c44",
+            "url": "https://ipmsg.org/archive/FastCopy340.zip"
         },
         "64bit": {
-            "hash": "b3319d65e89570f521b8abe6a5aaf5ba7cd9b1e14be8dbe18e119b924fefd935",
-            "url": "https://fossies.org/windows/misc/FastCopy332_x64.zip"
+            "hash": "b1754976dd2e0a688c8a705b43f1b7ba8497c135fc99f2e2159084c10aad31a8",
+            "url": "https://ipmsg.org/archive/FastCopy340_x64.zip"
         }
     },
     "autoupdate": {
         "architecture": {
             "32bit": {
-                "hash": {
-                    "find": "SHA256 \\($basename\\):\\s+([a-fA-F0-9]{64})",
-                    "url": "$url/"
-                },
-                "url": "https://fossies.org/windows/misc/FastCopy$cleanVersion.zip"
+                "url": "https://ipmsg.org/archive/FastCopy$cleanVersion.zip"
             },
             "64bit": {
-                "hash": {
-                    "find": "SHA256 \\($basename\\):\\s+([a-fA-F0-9]{64})",
-                    "url": "$url/"
-                },
-                "url": "https://fossies.org/windows/misc/FastCopy$cleanVersion_x64.zip"
+                "url": "https://ipmsg.org/archive/FastCopy$cleanVersion_x64.zip"
             }
         }
     },
@@ -52,5 +44,5 @@
             "FastCopy Manual"
         ]
     ],
-    "version": "3.32"
+    "version": "3.40"
 }
