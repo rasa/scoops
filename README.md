@@ -19,6 +19,7 @@ scoop bucket add rasa https://github.com/rasa/scoops.git
 <!-- Your edits will be lost the next time makeindex.py is run -->
 |Name|Version|Description|License|
 |----|-------|-----------|-------|
+|[api-monitor](http://www.rohitab.com/apimonitor "http://www.rohitab.com/apimonitor")|[2r13](http://www.rohitab.com/apimonitor "http://www.rohitab.com/apimonitor")|Monitor API calls|[Freeware](https://en.wikipedia.org/wiki/Freeware "https://en.wikipedia.org/wiki/Freeware")|
 |[attr](https://github.com/rasa/attr "https://github.com/rasa/attr")|[1.6](https://github.com/rasa/attr "https://github.com/rasa/attr")|Display and set attributes on files and directories|[MIT](https://opensource.org/licenses/MIT "https://opensource.org/licenses/MIT")|
 |[audacity-ffmpeg-plugin](http://lame.buanzo.org/ "http://lame.buanzo.org/")|[2.2.2](http://lame.buanzo.org/ "http://lame.buanzo.org/")|FFMPEG plugin for Audacity|[LGPL-2.1](https://opensource.org/licenses/LGPL-2.1 "https://opensource.org/licenses/LGPL-2.1")|
 |[audacity-lame-plugin](http://lame.buanzo.org/ "http://lame.buanzo.org/")|[3.99.5](http://lame.buanzo.org/ "http://lame.buanzo.org/")|LAME plugin for Audacity|[Link](http://lame.sourceforge.net/license.txt "http://lame.sourceforge.net/license.txt")|
