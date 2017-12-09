@@ -19,7 +19,8 @@ def decode(s):
     return s.decode('latin-1')
 
 
-scoop_root = 'C:/Users/ross/scoop'
+scoop_root = '%USERPROFILE%/scoop'
+scoop_root = os.path.expandvars(scoop_root)
 buckets_root = scoop_root + '/buckets'
 
 buckets = [
