@@ -6,7 +6,7 @@
             "installer": {
                 "args": [
                     "/S",
-                    "/D=$dir"
+                    "/D=\"$dir\""
                 ],
                 "file": "ztw22x86.exe"
             },
@@ -17,7 +17,7 @@
             "installer": {
                 "args": [
                     "/S",
-                    "/D=$dir"
+                    "/D=\"$dir\""
                 ],
                 "file": "ztw22x64.exe"
             },

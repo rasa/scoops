@@ -25,7 +25,7 @@
     "installer": {
         "args": [
             "/S",
-            "/D=$dir"
+            "/D=\"$dir\""
         ],
         "file": "vlc_installer.exe"
     },

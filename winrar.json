@@ -34,7 +34,7 @@
     "installer": {
         "args": [
             "-s",
-            "-d$dir"
+            "-d\"$dir\""
         ]
     },
     "license": "Shareware",
