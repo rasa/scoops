@@ -1,7 +1,7 @@
 {
     "homepage": "https://github.com/mcmilk/7-Zip-zstd/",
     "description": "Multi-format compression/decompression tool with brotli and other codecs (beta version)",
-    "license": "http://www.7-zip.org/license.txt",
+    "license": "LGPL-2.1",
     "version": "17.01-v1.3.2-R1",
     "architecture": {
         "64bit": {
