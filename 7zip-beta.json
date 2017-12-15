@@ -1,5 +1,6 @@
 {
     "homepage": "http://www.7-zip.org/",
+    "description": "Multi-format compression/decompression tool (beta version)",
     "license": "http://www.7-zip.org/license.txt",
     "version": "17.01",
     "architecture": {
@@ -13,7 +14,10 @@
         }
     },
     "extract_dir": "Files/7-Zip",
-    "bin": "7z.exe",
+    "bin": [
+        "7z.exe",
+        "7zG.exe"
+    ],
     "checkver": "Download 7-Zip ([\\d.]+) beta",
     "autoupdate": {
         "architecture": {
