@@ -1,7 +1,7 @@
 {
     "homepage": "http://www.7-zip.org/",
     "description": "Multi-format compression/decompression tool (beta version)",
-    "license": "http://www.7-zip.org/license.txt",
+    "license": "LGPL-2.1",
     "version": "17.01",
     "architecture": {
         "64bit": {
