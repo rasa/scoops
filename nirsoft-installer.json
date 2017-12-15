@@ -6,7 +6,7 @@
                     "/S",
                     "/INSTYPE",
                     "3",
-                    "/D=$dir"
+                    "/D=\"$dir\""
                 ],
                 "file": "nirsoft_installer.exe"
             }
@@ -17,7 +17,7 @@
                     "/S",
                     "/INSTYPE",
                     "2",
-                    "/D=$dir"
+                    "/D=\"$dir\""
                 ],
                 "file": "nirsoft_installer.exe"
             }

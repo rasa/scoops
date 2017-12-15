@@ -157,7 +157,7 @@
             "/S",
             "/INSTYPE",
             "1",
-            "/D=$dir"
+            "/D=\"$dir\""
         ],
         "file": "si_installer.exe"
     },

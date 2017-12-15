@@ -33,7 +33,7 @@
         "FastCopy2.ini",
         "Log"
     ],
-    "pre_install": "if (!(test-path $dir\\FastCopy2.ini)) {echo '[main]' | out-file -encoding oem $dir\\FastCopy2.ini}; if (!(test-path $dir\\Log)) {New-Item $dir\\Log -type directory -force}",
+    "pre_install": "if (!(test-path \"$dir\\FastCopy2.ini\")) {echo '[main]' | out-file -encoding oem \"$dir\\FastCopy2.ini\"}; if (!(test-path \"$dir\\Log\")) {New-Item \"$dir\\Log\" -type directory -force}",
     "shortcuts": [
         [
             "FastCopy.exe",
