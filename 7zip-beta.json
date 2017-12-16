@@ -18,7 +18,10 @@
         "7z.exe",
         "7zG.exe"
     ],
-    "checkver": "Download 7-Zip ([\\d.]+) beta",
+    "checkver": {
+        "re": "Download 7-Zip ([\\d.]+) beta",
+        "url": "http://www.7-zip.org/download.html"
+    },
     "autoupdate": {
         "architecture": {
             "64bit": {
