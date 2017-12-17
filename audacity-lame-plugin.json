@@ -11,6 +11,6 @@
     "homepage": "http://lame.buanzo.org/",
     "license": "http://lame.sourceforge.net/license.txt",
     "post_install": "cp \"$dir\\*.dll\" \"$(appdir audacity)\\current\"",
-    "url": "http://lame.buanzo.org/lame_v3.99.5.zip",
+    "url": "https://lame.buanzo.org/lame_v3.99.5.zip",
     "version": "3.99.5"
 }
