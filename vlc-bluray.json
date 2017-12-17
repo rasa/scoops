@@ -4,7 +4,7 @@
             "hash": [
                 "3956020408c1666c168985a5afd01310dc5976cca67b458f9d70414d36f2608d",
                 "cf3413ce936f8455b9600fd23a7821aef3737f017514e7d0894ab93c43dc9754",
-                "fdb3fe62fb9b638cefadd3aaa19cfc16286e2662e2dcc423382dcfef92614e47"
+                "5ce236fe879add40824939cbe88b427b70674be9dc2632219fb75e72fa4e1334"
             ],
             "installer": {
                 "args": [
@@ -29,7 +29,7 @@
             "hash": [
                 "e3dcf2e7c2cb6ed741e78e1bbdd198875ec626a261711c7580aec5c95c8edac2",
                 "03d2070a0c6fb66000b5ed94b44bc7fe22940e02d26bf92ceb0fe13c8fe6c786",
-                "fdb3fe62fb9b638cefadd3aaa19cfc16286e2662e2dcc423382dcfef92614e47"
+                "5ce236fe879add40824939cbe88b427b70674be9dc2632219fb75e72fa4e1334"
             ],
             "installer": {
                 "args": [
@@ -68,5 +68,5 @@
     "homepage": "https://www.videolan.org/",
     "license": "GPL-2.0",
     "post_install": "New-Item -ItemType Directory -Force -Path \"$($env:ProgramData)\\aacs\" >$null; Copy-Item \"$dir\\KEYDB.cfg\" \"$($env:ProgramData)\\aacs\"; Copy-Item \"$dir\\libaacs.dll\" \"$($env:ProgramFiles)\\VideoLAN\\VLC\"; Copy-Item \"$($env:ProgramFiles)\\VideoLAN\\VLC\\uninstall.exe\" \"$dir\"",
-    "version": "2.2.8"
+    "version": "2.2.8-1"
 }
