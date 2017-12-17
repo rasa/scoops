@@ -3,7 +3,7 @@
         "32bit": {
             "hash": [
                 "cf3413ce936f8455b9600fd23a7821aef3737f017514e7d0894ab93c43dc9754",
-                "fdb3fe62fb9b638cefadd3aaa19cfc16286e2662e2dcc423382dcfef92614e47"
+                "5ce236fe879add40824939cbe88b427b70674be9dc2632219fb75e72fa4e1334"
             ],
             "url": [
                 "https://vlc-bluray.whoknowsmy.name/files/win32/libaacs.dll",
@@ -13,7 +13,7 @@
         "64bit": {
             "hash": [
                 "03d2070a0c6fb66000b5ed94b44bc7fe22940e02d26bf92ceb0fe13c8fe6c786",
-                "fdb3fe62fb9b638cefadd3aaa19cfc16286e2662e2dcc423382dcfef92614e47"
+                "5ce236fe879add40824939cbe88b427b70674be9dc2632219fb75e72fa4e1334"
             ],
             "url": [
                 "https://vlc-bluray.whoknowsmy.name/files/win64/libaacs.dll",
@@ -28,5 +28,5 @@
     "homepage": "https://www.videolan.org/",
     "license": "GPL-2.0",
     "post_install": "New-Item -ItemType Directory -Force -Path \"$($env:ProgramData)\\aacs\" >$null; Copy-Item \"$dir\\KEYDB.cfg\" \"$($env:ProgramData)\\aacs\"; cp \"$dir\\*.dll\" \"$(appdir vlc)\\current\"",
-    "version": "2.2.8"
+    "version": "2.2.8-1"
 }
