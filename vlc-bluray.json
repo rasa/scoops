@@ -9,7 +9,7 @@
             ],
             "url": [
                 "https://download.videolan.org/pub/vlc/2.2.4/win32/vlc-2.2.4-win32.7z",
-                "http://vlc-bluray.whoknowsmy.name/files/win32/libaacs.dll",
+                "https://vlc-bluray.whoknowsmy.name/files/win32/libaacs.dll",
                 "https://vlc-bluray.whoknowsmy.name/files/KEYDB.cfg"
             ]
         },
@@ -22,7 +22,7 @@
             ],
             "url": [
                 "https://download.videolan.org/pub/vlc/2.2.4/win64/vlc-2.2.4-win64.7z",
-                "http://vlc-bluray.whoknowsmy.name/files/win64/libaacs.dll",
+                "https://vlc-bluray.whoknowsmy.name/files/win64/libaacs.dll",
                 "https://vlc-bluray.whoknowsmy.name/files/KEYDB.cfg"
             ]
         }
