@@ -17,16 +17,16 @@
             ],
             "url": [
                 "https://vlc-bluray.whoknowsmy.name/files/win64/libaacs.dll",
-                "https://vlc-bluray.whoknowsmy.name/files/KEYDB.cfg"
+                "http://vlc-aacs.whoknowsmy.name/files/win64/libaacs.dll"
             ]
         }
     },
     "depends": [
-        "vlc"
+        "vlc@2.2.4"
     ],
     "description": "VLC Blu-ray plugin",
     "homepage": "https://www.videolan.org/",
     "license": "GPL-2.0",
     "post_install": "New-Item -ItemType Directory -Force -Path \"$($env:ProgramData)\\aacs\" >$null; Copy-Item \"$dir\\KEYDB.cfg\" \"$($env:ProgramData)\\aacs\"; cp \"$dir\\*.dll\" \"$(appdir vlc)\\current\"",
-    "version": "2.2.8-1"
+    "version": "2017.12.12"
 }
