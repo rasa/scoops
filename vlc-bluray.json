@@ -1,20 +1,30 @@
 {
     "architecture": {
-        "64bit": {
-            "url": [
-                "https://download.videolan.org/pub/vlc/2.2.4/win64/vlc-2.2.4-win64.7z",
-                "http://vlc-bluray.whoknowsmy.name/files/win32/libaacs.dll",
-                "https://vlc-bluray.whoknowsmy.name/files/KEYDB.cfg"
-            ],
-            "extract_dir": "vlc-2.2.4"
-        },
         "32bit": {
+            "extract_dir": "vlc-2.2.4",
+            "hash": [
+                "4e46bfc97e43cd55259894803ae7dfc9734bd6ff22f338164f62f35c6185d6d8",
+                "cf3413ce936f8455b9600fd23a7821aef3737f017514e7d0894ab93c43dc9754",
+                "5ce236fe879add40824939cbe88b427b70674be9dc2632219fb75e72fa4e1334"
+            ],
             "url": [
                 "https://download.videolan.org/pub/vlc/2.2.4/win32/vlc-2.2.4-win32.7z",
-                "http://vlc-bluray.whoknowsmy.name/files/win64/libaacs.dll",
-                "http://vlc-bluray.whoknowsmy.name/files/KEYDB.cfg"
+                "http://vlc-bluray.whoknowsmy.name/files/win32/libaacs.dll",
+                "https://vlc-bluray.whoknowsmy.name/files/KEYDB.cfg"
+            ]
+        },
+        "64bit": {
+            "extract_dir": "vlc-2.2.4",
+            "hash": [
+                "983db9e452dc03f82d7637dccd359ec5f89bb4f1802670bcc86f1cf7e3824a03",
+                "03d2070a0c6fb66000b5ed94b44bc7fe22940e02d26bf92ceb0fe13c8fe6c786",
+                "5ce236fe879add40824939cbe88b427b70674be9dc2632219fb75e72fa4e1334"
             ],
-            "extract_dir": "vlc-2.2.4"
+            "url": [
+                "https://download.videolan.org/pub/vlc/2.2.4/win64/vlc-2.2.4-win64.7z",
+                "http://vlc-bluray.whoknowsmy.name/files/win64/libaacs.dll",
+                "https://vlc-bluray.whoknowsmy.name/files/KEYDB.cfg"
+            ]
         }
     },
     "bin": "vlc.exe",
