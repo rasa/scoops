@@ -11,6 +11,6 @@
     "homepage": "http://lame.buanzo.org/",
     "license": "LGPL-2.1",
     "post_install": "cp \"$dir\\*.dll\" \"$(appdir audacity)\\current\"; cp \"$dir\\*.exe\" \"$(appdir audacity)\\current\"",
-    "url": "http://lame3.buanzo.com.ar/ffmpeg-win-2.2.2.zip",
+    "url": "https://lame.buanzo.org/ffmpeg-win-2.2.2.zip",
     "version": "2.2.2"
 }
