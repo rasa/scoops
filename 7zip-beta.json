@@ -2,15 +2,15 @@
     "homepage": "http://www.7-zip.org/",
     "description": "Multi-format compression/decompression tool (beta version)",
     "license": "LGPL-2.1",
-    "version": "17.01",
+    "version": "18.00",
     "architecture": {
         "64bit": {
-            "url": "http://www.7-zip.org/a/7z1701-x64.msi",
-            "hash": "7a639acd09bce633d824beff13ced6b65adf2abf359916d654a62c16dab0f172"
+            "url": "http://7-zip.org/a/7z1800-x64.msi",
+            "hash": "c6da98a62acd80e75a992930d2e5026ee18cb61873c3b238ae9cbffd6873add1"
         },
         "32bit": {
-            "url": "http://www.7-zip.org/a/7z1701.msi",
-            "hash": "2caee71c3de3938a2e703b06f915433218583cd9f9c3b5e9476a9944e8e14be7"
+            "url": "http://7-zip.org/a/7z1800.msi",
+            "hash": "26f9275ebeaf6fe5094fc51fd0e9e1b87fd19ed6ecbe6b960051f735e62330ec"
         }
     },
     "extract_dir": "Files/7-Zip",
