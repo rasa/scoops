@@ -4,7 +4,7 @@
     },
     "bin": "rehash.exe",
     "checkver": {
-        "re": ">Download\\s+rehash-([\\d.]+)-win\\.zip",
+        "re": "rehash-([\\d.]+)-win\\.zip",
         "url": "https://sourceforge.net/projects/rehash/files/"
     },
     "description": "Calculate file hashes",
