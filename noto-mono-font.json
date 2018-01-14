@@ -2,9 +2,9 @@
     "description": "Noto monospaced font",
     "homepage": "https://www.google.com/get/noto/",
     "license": "OFL-1.1",
-    "notes": "Hash for version 17.04.03 is\n    9a7a3f48623a9cf9ba2272bc072daf3ea7580ee870f9c2467b7baf0ae8f3b4a5",
-    "post_install": "$fonts = (New-Object -ComObject Shell.Application).Namespace(0x14) ; dir \"$dir/*.ttf\" | %{ $fonts.CopyHere($_.fullname) }",
+    "notes": "Hash for version 2017.10.25 is\n    2722ae9033c9e306e784b9254ca86c58c7af7483051583f767e05d03bc252bda",
+    "post_install": "#$fonts = (New-Object -ComObject Shell.Application).Namespace(0x14) ; #dir \"$dir/*.ttf\" | %{ $fonts.CopyHere($_.fullname) }",
     "pre_install": "#Access denied error running: Remove-Item \"$env:windir/fonts/NotoMono*.ttf\" -recurse",
-    "url": "https://noto-website.storage.googleapis.com/pkgs/NotoMono-hinted.zip",
-    "version": "17.04.03"
+    "url": "https://noto-website-2.storage.googleapis.com/pkgs/NotoMono-hinted.zip",
+    "version": "2017.10.25"
 }
