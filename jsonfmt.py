@@ -1,8 +1,18 @@
 #!/usr/bin/env python
+# -*- coding: utf-8 -*-
+""" @todo add docstring """
 
-from __future__ import print_function
+# ### imports ###
+
+from __future__ import (
+    absolute_import,
+    division,
+    print_function  # ,
+    #  unicode_literals
+)
+
 from jsoncomment import JsonComment
-from jsonschema import validate
+# from jsonschema import validate
 
 import json
 import os
@@ -16,7 +26,7 @@ def decode(s):
     for encoding in 'utf-8-sig', 'utf-16':
         try:
             return s.decode(encoding)
-        except UnicodeDecodeError as e:
+        except UnicodeDecodeError:
             continue
     return s.decode('latin-1')
 
@@ -36,7 +46,7 @@ mtime = os.path.getmtime(file)
 with open(file, 'r') as f:
     jstr = f.read()
     jstr_no_bom = decode(jstr)
-    
+
 parser = JsonComment(json)
 json_data = parser.loads(jstr_no_bom)
 

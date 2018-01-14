@@ -14,6 +14,9 @@ from __future__ import (
     # unicode_literals
 )
 
+import datetime
+
+import email.utils
 import glob
 import hashlib
 import io
@@ -21,13 +24,16 @@ import logging
 import json
 import re
 import os
+# import pprint
 # @todo implement progressbar
 import shutil
 import ssl
+import stat
 import subprocess
 import sys
-#import urllib2
-import zipfile
+# import time
+import urllib2
+# import zipfile
 
 from six.moves.urllib.parse import urlsplit, urlunsplit  # pylint: disable=import-error
 
@@ -37,7 +43,7 @@ import urllib3
 import urllib3.contrib.pyopenssl
 import certifi
 
-#import requests
+import requests
 
 DOWNLOADER = 'urllib3'
 
@@ -54,6 +60,14 @@ UAS = {}
 NO_REFERRERS = ['sourceforge.net']
 
 TMP_DIR = 'l:/tmp'
+
+
+# https://stackoverflow.com/a/4829285/1432614
+def on_rm_error(func, path, exc_info):
+    # path contains the path of the file that couldn't be removed
+    # let's just assume that it's read-only and unlink it.
+    os.chmod(path, stat.S_IWRITE)
+    return os.unlink(path)
 
 
 class CheckURLs(object):
@@ -74,6 +88,9 @@ class CheckURLs(object):
         self.tmp_dir = ''
         self.zip_file = ''
         self.zip_dir = ''
+
+        self.head_file = ''
+        self.head_values = {}
 
     def is_https(self, url):
         """ @todo docstring me """
@@ -156,49 +173,84 @@ class CheckURLs(object):
             base = '/'
         return urlunsplit([parts[0], parts[1], base, '', ''])
 
-    def save(self, url, data, key):
-        """ @todo docstring me """
-
+    def get_filenames(self, url, key):
         INVALID_FILE_CHARS = '<>"|?*:/\\%'
 
-        if re.search(r'(autoupdate|checkver|github|homepage|license)', key,
-                     re.I):
-            return False
         m = re.search(r'/([^/]+)/?$', url)
         if not m:
             logging.warning('%s: no / in url: %s', key, url)
             return False
         self.tmp_dir = os.path.join(TMP_DIR, '~', self.basename)
-        # logging.info('self.tmp_dir=%s', self.tmp_dir)
         file = m.group(1)
         for c in INVALID_FILE_CHARS:
             file = file.replace(c, '-')
-        # logging.info('file=%s', file)
+
+        self.tmp_file = os.path.join(self.tmp_dir, file)
+
+        self.head_file = os.path.join(self.tmp_dir, '.' + file)
+
+        (basename, extension) = os.path.splitext(file)
+
+        if basename == file:
+            self.zip_dir = ''
+            self.zip_file = ''
+            return True
+
+        # if re.search('\.zip', extension, re.I):
+        self.zip_dir = os.path.join(self.tmp_dir, basename)
+        self.zip_file = self.tmp_file
+        #   logging.info('self.zip_dir="%s" self.zip_file="%s"', self.zip_dir, self.zip_file)
+        # else:
+        #    self.zip_dir = ''
+        #    self.zip_file = ''
+
+        return True
+
+    def rmtree(self, dir):
+        def on_rm_error(func, path, exc_info):
+            logging.error('path=%s', path)
+            # path contains the path of the file that couldn't be removed
+            # let's just assume that it's read-only and unlink it.
+            os.chmod(path, stat.S_IWRITE)
+            return os.unlink(path)
+
+        # https://stackoverflow.com/a/4829285/1432614
+        return shutil.rmtree(dir, onerror=on_rm_error)
+
+    def save(self, url, data, key):
+        """ @todo docstring me """
+
+        if re.search(r'(autoupdate|checkver|github|homepage|license)', key,
+                     re.I):
+            return False
 
         try:
             if os.path.exists(self.tmp_dir):
-                shutil.rmtree(self.tmp_dir)
+                self.rmtree(self.tmp_dir)
             if not os.path.exists(self.tmp_dir):
                 os.makedirs(self.tmp_dir)
-            self.tmp_file = os.path.join(self.tmp_dir, file)
-            # logging.info('self.tmp_file=%s', self.tmp_file)
-            (basename, extension) = os.path.splitext(file)
-            if re.search('\.zip', extension, re.I):
-                self.zip_dir = os.path.join(self.tmp_dir, basename)
-                self.zip_file = self.tmp_file
-                # logging.info('self.zip_dir="%s" self.zip_file="%s"', self.zip_dir, self.zip_file)
-            else:
-                self.zip_dir = ''
-                self.zip_file = ''
 
             logging.debug('%s: Saving %s bytes to %s', key,
                           len(data), self.tmp_file)
+            self.save_headers()
             with io.open(self.tmp_file, 'wb') as f:
                 f.write(data)
+            if 'epoch' in self.head_values:
+                os.utime(self.tmp_file, (self.head_values['epoch'],
+                                         self.head_values['epoch']))
         except Exception as e:
             logging.exception(e)
             return False
         return True
+
+    def save_headers(self):
+        if not os.path.exists(self.tmp_dir):
+            os.makedirs(self.tmp_dir)
+        # logging.debug("Saving %s", self.head_file)
+        jsons = json.dumps(
+            self.head_values, sort_keys=True, indent=4, separators=(',', ': '))
+        with open(self.head_file, 'w') as f:
+            f.write(jsons)
 
     def download(self, url, headers):
         """ @todo docstring me """
@@ -211,6 +263,59 @@ class CheckURLs(object):
                 # retries=retries,
                 cert_reqs=ssl.CERT_REQUIRED,
                 ca_certs=certifi.where())
+
+            r = http.request('HEAD', url, headers=headers)
+            self.head_values = {}
+            h = r.getheaders()
+            for k, v in h.iteritems():
+                self.head_values[k] = v
+
+            # logging.debug(self.head_values)
+
+            last_modified = r.getheader('Last-Modified')
+            # logging.debug('last_modified=%s', last_modified)
+            etag = r.getheader('ETag')
+            # logging.debug('etag=%s', etag)
+
+            if last_modified or etag:
+                epoch = 0
+                if last_modified:
+                    # https://stackoverflow.com/a/1472336/1432614
+                    dt = datetime.datetime(
+                        *email.utils.parsedate(last_modified)[:6])
+                    # logging.debug('dt=%s', dt)
+                    # https://stackoverflow.com/a/11743262/1432614
+                    epoch = (
+                        dt - datetime.datetime(1970, 1, 1)).total_seconds()
+                    epoch = int(epoch)
+
+                # logging.debug('epoch=%s', epoch)
+                self.head_values['epoch'] = epoch
+
+                if os.path.isfile(self.head_file):
+                    with open(self.head_file) as f:
+                        old_values = json.load(f)
+
+                    if 'epoch' in old_values:
+                        if old_values['epoch'] == epoch:
+                            self.save_headers()
+                            status = 304  # not modified
+                            if os.path.isfile(self.tmp_file):
+                                with open(self.tmp_file, 'rb') as f:
+                                    data = f.read()
+                                return (status, data)
+
+                    if 'etag' in old_values:
+                        if old_values['ETag'] == etag:
+                            self.save_headers()
+                            status = 304  # not modified
+                            if os.path.isfile(self.tmp_file):
+                                with open(self.tmp_file, 'rb') as f:
+                                    data = f.read()
+                                return (status, data)
+
+            self.save_headers()
+
             r = http.request('GET', url, headers=headers)
             status = r.status
             data = r.data
@@ -233,18 +338,47 @@ class CheckURLs(object):
             return True
         logging.debug('%s: Unzipping %s to %s', key, self.zip_file,
                       self.zip_dir)
+
+        if os.path.exists(self.zip_dir):
+            self.rmtree(self.zip_dir)
+        if not os.path.exists(self.zip_dir):
+            # logging.debug("Creating directory '%s'", self.zip_dir)
+            os.makedirs(self.zip_dir)
+
+        cmd = '7z x -bb0 -y -o"%s" "%s">NUL' % (self.zip_dir, self.zip_file)
+        logging.debug(cmd)
+        os.system(cmd)
+        return True
+        """
         try:
-            zip_ref = zipfile.ZipFile(self.zip_file, 'r')
-            if os.path.exists(self.zip_dir):
-                shutil.rmtree(self.zip_dir)
-            if not os.path.exists(self.zip_dir):
-                os.makedirs(self.zip_dir)
-            zip_ref.extractall(self.zip_dir)
+            z = zipfile.ZipFile(self.zip_file, 'r')
+            # https://stackoverflow.com/a/9813471/1432614
+            for f in z.infolist():
+                name, date_time = f.filename, f.date_time
+                # logging.debug("name='%s'", name)
+                name = os.path.join(self.zip_dir, name)
+                if not os.path.exists(os.path.dirname(name)):
+                    # logging.debug("Creating directory '%s'", os.path.dirname(name))
+                    os.makedirs(os.path.dirname(name))
+                # logging.debug("Creating '%s'", name)
+                z.extract(f, self.zip_dir)
+                # with open(name, 'w') as outFile:
+                #     outFile.write(z.open(f).read())
+                date_time = time.mktime(date_time + (0, 0, -1))
+                if os.path.exists(name):
+                    # logging.debug("Setting time")
+                    os.utime(name, (date_time, date_time))
+                else:
+                    pass
+                    # logging.debug("Cannot set time as file not found: %s", name)
+
+            # z.extractall(self.zip_dir)
         except Exception as e:
             logging.exception(e)
         finally:
-            zip_ref.close()
+            z.close()
         return True
+        """
 
     def get(self, url, key='', whine=True):
         """ @todo docstring me """
@@ -267,7 +401,12 @@ class CheckURLs(object):
             if referer:
                 headers['Referer'] = referer
 
+            self.get_filenames(url, key)
             (status, data) = self.download(url, headers)
+
+            if status == 304:
+                logging.debug('%s: Status %s: %s', key, status, url)
+                return data
 
             if status < 200 or status > 299:
                 if whine:

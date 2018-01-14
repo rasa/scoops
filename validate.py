@@ -1,12 +1,22 @@
 #!/usr/bin/env python
+# -*- coding: utf-8 -*-
+""" @todo add docstring """
 
-from __future__ import print_function
+# ### imports ###
+
+from __future__ import (
+    absolute_import,
+    division,
+    print_function  # ,
+    #  unicode_literals
+)
+
 from jsoncomment import JsonComment
 from jsonschema import validate
 
 import json
 import os
-import pprint
+# import pprint
 import re
 import sys
 import traceback
@@ -24,7 +34,8 @@ def decode(s):
     return s.decode('latin-1')
 
 
-schema_name = '%s/scoop/apps/scoop/current/schema.json' % os.environ['USERPROFILE']
+schema_name = '%s/scoop/apps/scoop/current/schema.json' % os.environ[
+    'USERPROFILE']
 
 file = sys.argv[1]
 if re.match('^schema', file):

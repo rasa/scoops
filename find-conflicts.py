@@ -1,8 +1,18 @@
 #!/usr/bin/env python
+# -*- coding: utf-8 -*-
+""" @todo add docstring """
 
-from __future__ import print_function
+# ### imports ###
+
+from __future__ import (
+    absolute_import,
+    division,
+    print_function  # ,
+    #  unicode_literals
+)
+
 from jsoncomment import JsonComment
-from jsonschema import validate
+# from jsonschema import validate
 
 import glob
 import json
@@ -35,16 +45,16 @@ parser = JsonComment(json)
 map = {}
 
 for bucket in buckets:
-    for json in glob.glob(bucket + '/*.json'):
-        with open(json, 'rb') as f:
+    for json_file in glob.glob(bucket + '/*.json'):
+        with open(json_file, 'rb') as f:
             jstr = f.read()
             jstr_no_bom = decode(jstr)
             json_data = parser.loads(jstr_no_bom)
             if 'bin' not in json_data:
                 continue
-            base = os.path.basename(json)
+            base = os.path.basename(json_file)
             base = os.path.splitext(base)[0]
-            dir = os.path.basename(os.path.dirname(json))
+            dir = os.path.basename(os.path.dirname(json_file))
             repo = dir + '/' + base
             bins = json_data['bin']
             if len(bins) == 0:
