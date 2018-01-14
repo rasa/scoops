@@ -1,6 +1,15 @@
 #!/usr/bin/env python
+# -*- coding: utf-8 -*-
+""" @todo add docstring """
 
-from __future__ import print_function
+# ### imports ###
+
+from __future__ import (
+    absolute_import,
+    division,
+    print_function  # ,
+    #  unicode_literals
+)
 
 import fnmatch
 import json

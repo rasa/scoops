@@ -1,11 +1,20 @@
 #!/usr/bin/env python
+# -*- coding: utf-8 -*-
+""" @todo add docstring """
 
-from __future__ import print_function
+# ### imports ###
+
+from __future__ import (
+    absolute_import,
+    division,
+    print_function  # ,
+    #  unicode_literals
+)
 
 import datetime
-import fnmatch
+# import fnmatch
 import glob
-import json
+# import json
 import re
 import os
 import subprocess
@@ -22,7 +31,7 @@ exes = {}
 include_dirs = []  # ['c:\\bin']
 exclude_dirs = [
     r'%USERPROFILE%\scoop\apps\imagemagick\current',
-    r'%SystemDrive%\GnuWin32\bin', 
+    r'%SystemDrive%\GnuWin32\bin',
     r'%USERPROFILE%\scoop\apps\git\current\mingw64\bin'
 ]
 

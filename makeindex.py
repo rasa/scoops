@@ -1,10 +1,14 @@
 #!/usr/bin/env python
+# -*- coding: utf-8 -*-
+""" @todo add docstring """
+
+# ### imports ###
 
 from __future__ import (
     absolute_import,
     division,
-    print_function,
-    unicode_literals
+    print_function  # ,
+    #  unicode_literals
 )
 
 import fnmatch
@@ -12,7 +16,7 @@ import io
 import json
 import re
 import os
-import pprint
+# import pprint
 import subprocess
 import sys
 
@@ -146,7 +150,7 @@ def get_url(js):
 def do_version(js):
     version = js['version']
     url = get_url(js)
-    if not 'checkver' in js:
+    if 'checkver' not in js:
         version = '<i>%s</i>' % version
     if url == '':
         return version
@@ -185,18 +189,18 @@ files = out.splitlines()
 for file in files:
     file = file.decode("utf-8")
     if re.search('wip/', file):
-        #print("skipping %s: wip" % file)
+        # print("skipping %s: wip" % file)
         continue
     accept = False
-    #print("file=%s" % file)
+    # print("file=%s" % file)
     for spec in specs:
-        #print("spec=%s" % spec)
+        # print("spec=%s" % spec)
         if fnmatch.fnmatch(file, spec):
             accept = True
             break
 
     if not accept:
-        #print("skipping %s: not matched" % file)
+        # print("skipping %s: not matched" % file)
         continue
 
     with open(file, 'r') as f:
@@ -204,10 +208,10 @@ for file in files:
         row = {}
         (name, ext) = os.path.splitext(os.path.basename(file))
         if re.search('^_', name):
-            #print("skipping %s: starts with _" % name)
+            # print("skipping %s: starts with _" % name)
             continue
         if re.search('^schema', name):
-            #print("skipping %s: starts with schema" % name)
+            # print("skipping %s: starts with schema" % name)
             continue
         for key in keys:
             if key in j:
