@@ -2,6 +2,7 @@
     "depends": [
         "nirlauncher"
     ],
+    "description": "USB device database used by Nirsoft's usbdeview",
     "homepage": "http://www.linux-usb.org/usb-ids.html",
     "license": "GPL-2",
     "post_install": "if (Test-Path \"$(appdir nirlauncher)\") {cp \"$dir\\usb.ids\" \"$(appdir nirlauncher)\\current\\NirSoft\\usb.ids\"};if (Test-Path \"$(appdir nirlauncher)\") {cp \"$dir\\usb.ids\" \"$(appdir nirlauncher)\\current\\NirSoft\\x64\\usb.ids\"};",
