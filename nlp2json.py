@@ -14,21 +14,26 @@ from __future__ import (
 import io
 import json
 import os
-# import pprint
 import re
 import subprocess
 import sys
 
 if len(sys.argv) > 1:
-    nirlauncher_json = sys.argv[1]
+    nirsoft_dir = sys.argv[1]
 else:
-    nirlauncher_json = 'd:/github/rasa/scoop-extras/nirlauncher.json'
+    nirsoft_dir = os.path.join(os.environ['USERPROFILE'],
+                               'scoop/apps/nirlauncher/current/NirSoft')
+
+nirsoft_dir = re.sub(r'\\', '/', nirsoft_dir)
+nirsoft_nlp = os.path.join(nirsoft_dir, 'nirsoft.nlp')
 
 if len(sys.argv) > 2:
-    nirsoft_nlp = sys.argv[2]
+    nirlauncher_json = sys.argv[2]
 else:
-    # c:\scoop\apps\nirlauncher\current\NirSoft\nirsoft.nlp
-    nirsoft_nlp = 'c:/scoop/apps/nirlauncher/current/NirSoft/nirsoft.nlp'
+    nirlauncher_json = os.path.join(
+        os.path.dirname(nirsoft_dir), 'manifest.json')
+
+nirlauncher_json = re.sub(r'\\', '/', nirlauncher_json)
 
 with io.open(nirlauncher_json, 'r', encoding='utf-8') as f:
     data = json.load(f)
@@ -36,22 +41,18 @@ with io.open(nirlauncher_json, 'r', encoding='utf-8') as f:
 with io.open(nirsoft_nlp, 'r', encoding='utf-8') as f:
     lines = f.readlines()
 
-exes = {'32bit': {}, '64bit': {}}
+exes = {}
 
 h = {}
 
 for line in lines:
-    if re.match('\[', line):
-        if 'exe64' in h:
-            if h['exe64']:
-                h['path'] = re.sub(r'\\', '/', h['exe64'])
-                exes['64bit'][os.path.basename(h['path'])] = h
-            else:
-                h['path'] = re.sub(r'\\', '/', h['exe'])
-                exes['32bit'][os.path.basename(h['path'])] = h
+    if re.match(r'\[', line):
+        if 'exe' in h:
+            if h['exe']:
+                exes[os.path.basename(h['exe'])] = h
         h = {}
         continue
-    m = re.match('([^=]+)=(.*)', line)
+    m = re.match(r'([^=]+)=(.*)', line)
     if not m:
         continue
     k = m.group(1).strip()
@@ -69,33 +70,42 @@ data['architecture']['64bit']['shortcuts'] = [[
     "Nirlauncher - Run over 200 freeware utilities from nirsoft.net"
 ]]
 
-for arch, files in exes.items():
-    for file in sorted(files, key=unicode.lower):
-        h = files[file]
-        desc = h['ShortDesc']
-        desc = re.sub(r'"', "'", desc)
-        desc = re.sub(r'[/\\]', ",", desc)
-        desc = re.sub(r'[<>\|\?\*:/]', "", desc)
+for base in sorted(exes, key=unicode.lower):
+    h = exes[base]
+    desc = h['ShortDesc']
+    desc = re.sub(r'"', "'", desc)
+    desc = re.sub(r'[/\\]', ",", desc)
+    desc = re.sub(r'[<>\|\?\*:/]', "", desc)
 
-        desc = desc.rstrip('.')
-        print("%-25s %s" % (os.path.splitext(file)[0], desc))
-        fullpath = os.path.dirname(nirsoft_nlp) + '/' + h['path']
-        stdout = subprocess.check_output(["exetype", fullpath])
-        path = 'NirSoft/' + h['path']
-        data['architecture'][arch]['bin'].append(path)
-        if file not in exes['64bit']:
-            data['architecture']['64bit']['bin'].append(path)
+    desc = desc.rstrip('.')
+    if desc:
+        desc = desc[0].upper() + desc[1:]
+    print("%-25s %s" % (os.path.splitext(base)[0], desc))
+    path = 'NirSoft/' + h['exe']
+    path = re.sub(r'\\', '/', path)
+    data['architecture']['32bit']['bin'].append(path)
+    fullpath = nirsoft_dir + '/' + h['exe']
+    stdout = subprocess.check_output(["exetype", fullpath])
+    if re.search('GUI', stdout):
+        if 'AppName' in h and h['AppName']:
+            appname = h['AppName']
+        else:
+            appname = os.path.splitext(base)[0]
+        name = '%s/%s' % ('NirSoft', appname)
+        if desc:
+            name += ' - ' + desc
+        data['architecture']['32bit']['shortcuts'].append([path, name])
+    if 'exe64' not in h or not h['exe64']:
+        data['architecture']['64bit']['bin'].append(path)
         if re.search('GUI', stdout):
-            if 'AppName' in h and h['AppName']:
-                appname = h['AppName']
-            else:
-                appname = os.path.splitext(file)[0]
-            name = '%s/%s' % ('NirSoft', appname)
-            if desc:
-                name += ' - ' + desc
-            data['architecture'][arch]['shortcuts'].append([path, name])
-            if file not in exes['64bit']:
-                data['architecture']['64bit']['shortcuts'].append([path, name])
+            data['architecture']['64bit']['shortcuts'].append([path, name])
+        continue
+
+    path = 'NirSoft/' + h['exe64']
+    path = re.sub(r'\\', '/', path)
+    data['architecture']['64bit']['bin'].append(path)
+    if re.search('GUI', stdout):
+        data['architecture']['64bit']['shortcuts'].append([path, name])
 
 jsons = json.dumps(data, sort_keys=True, indent=4, separators=(',', ': '))
 
