@@ -3,72 +3,6 @@
     "$schema": "http://json-schema.org/draft-04/schema#",
     "additionalProperties": false,
     "definitions": {
-        "hashPattern": {
-            "pattern": "^([a-fA-F0-9]{64}|(sha1|sha256|sha512|md5):([a-fA-F0-9]{32}|[a-fA-F0-9]{40}|[a-fA-F0-9]{64}|[a-fA-F0-9]{128}))$",
-            "type": "string"
-        },
-        "hash": {
-            "anyOf": [
-                {
-                    "$ref": "#/definitions/hashPattern"
-                },
-                {
-                    "items": {
-                        "$ref": "#/definitions/hashPattern"
-                    },
-                    "minItems": 1,
-                    "type": "array",
-                    "uniqueItems": true
-                }
-            ]
-        },
-        "hashExtraction": {
-            "additionalProperties": false,
-            "properties": {
-                "find": {
-                    "format": "regex",
-                    "type": "string"
-                },
-                "jp": {
-                    "pattern": "^\\$\\..*$",
-                    "type": "string"
-                },
-                "mode": {
-                    "enum": [
-                        "download",
-                        "extract",
-                        "json",
-                        "rdf"
-                    ]
-                },
-                "type": {
-                    "enum": [
-                        "md5",
-                        "sha1",
-                        "sha256",
-                        "sha512"
-                    ],
-                    "description": "Deprecated, hash type is determined automatically"
-                },
-                "url": {
-                    "anyOf": [
-                        {
-                            "format": "uri",
-                            "type": "string"
-                        },
-                        {
-                            "pattern": "^(\\$url|\\$baseurl).[\\w\\d]+$",
-                            "type": "string"
-                        },
-                        {
-                            "pattern": "^.*(\\$url|\\$baseurl).*$",
-                            "type": "string"
-                        }
-                    ]
-                }
-            },
-            "type": "object"
-        },
         "architecture": {
             "additionalProperties": false,
             "properties": {
@@ -98,7 +32,7 @@
                     "$ref": "#/definitions/stringOrArrayOfStrings"
                 },
                 "shortcuts": {
-                    "$ref": "#/definitions/arrayOfArrayOfStrings"
+                    "$ref": "#/definitions/shortcutsArray"
                 },
                 "uninstaller": {
                     "$ref": "#/definitions/uninstaller"
@@ -132,12 +66,12 @@
                                 "extract_dir": {
                                     "type": "string"
                                 },
+                                "hash": {
+                                    "$ref": "#/definitions/hashExtraction"
+                                },
                                 "url": {
                                     "format": "uri",
                                     "type": "string"
-                                },
-                                "hash": {
-                                    "$ref": "#/definitions/hashExtraction"
                                 }
                             },
                             "type": "object"
@@ -148,12 +82,12 @@
                                 "extract_dir": {
                                     "type": "string"
                                 },
+                                "hash": {
+                                    "$ref": "#/definitions/hashExtraction"
+                                },
                                 "url": {
                                     "format": "uri",
                                     "type": "string"
-                                },
-                                "hash": {
-                                    "$ref": "#/definitions/hashExtraction"
                                 }
                             },
                             "type": "object"
@@ -190,22 +124,96 @@
                             "format": "uri",
                             "type": "string"
                         },
+                        "jp": {
+                            "pattern": "^\\$\\..*$",
+                            "type": "string"
+                        },
                         "re": {
                             "format": "regex",
                             "type": "string"
                         },
-                        "url": {
-                            "format": "uri",
+                        "replace": {
+                            "description": "Allows rearrange the regexp matches",
                             "type": "string"
                         },
-                        "jp": {
-                            "pattern": "^\\$\\..*$",
+                        "reverse": {
+                            "description": "Reverse the order of regex matches",
+                            "type": "boolean"
+                        },
+                        "url": {
+                            "format": "uri",
                             "type": "string"
                         }
                     },
                     "type": "object"
                 }
             ]
+        },
+        "hash": {
+            "anyOf": [
+                {
+                    "$ref": "#/definitions/hashPattern"
+                },
+                {
+                    "items": {
+                        "$ref": "#/definitions/hashPattern"
+                    },
+                    "minItems": 1,
+                    "type": "array",
+                    "uniqueItems": true
+                }
+            ]
+        },
+        "hashExtraction": {
+            "additionalProperties": false,
+            "properties": {
+                "find": {
+                    "format": "regex",
+                    "type": "string"
+                },
+                "jp": {
+                    "pattern": "^\\$\\..*$",
+                    "type": "string"
+                },
+                "mode": {
+                    "enum": [
+                        "download",
+                        "extract",
+                        "json",
+                        "rdf"
+                    ]
+                },
+                "type": {
+                    "description": "Deprecated, hash type is determined automatically",
+                    "enum": [
+                        "md5",
+                        "sha1",
+                        "sha256",
+                        "sha512"
+                    ]
+                },
+                "url": {
+                    "anyOf": [
+                        {
+                            "format": "uri",
+                            "type": "string"
+                        },
+                        {
+                            "pattern": "^(\\$url|\\$baseurl).[\\w\\d]+$",
+                            "type": "string"
+                        },
+                        {
+                            "pattern": "^.*(\\$url|\\$baseurl).*$",
+                            "type": "string"
+                        }
+                    ]
+                }
+            },
+            "type": "object"
+        },
+        "hashPattern": {
+            "pattern": "^([a-fA-F0-9]{64}|(sha1|sha256|sha512|md5):([a-fA-F0-9]{32}|[a-fA-F0-9]{40}|[a-fA-F0-9]{64}|[a-fA-F0-9]{128}))$",
+            "type": "string"
         },
         "installer": {
             "additionalProperties": false,
@@ -221,10 +229,25 @@
                     "type": "string"
                 },
                 "keep": {
+                    "type": "boolean"
+                },
+                "script": {
                     "type": "string"
                 }
             },
             "type": "object"
+        },
+        "shortcutsArray": {
+            "items": {
+                "items": {
+                    "type": "string"
+                },
+                "maxItems": 4,
+                "minItems": 2,
+                "type": "array"
+            },
+            "minItems": 1,
+            "type": "array"
         },
         "stringOrArrayOfStrings": {
             "anyOf": [
@@ -255,17 +278,29 @@
             ]
         },
         "uninstaller": {
+            "oneOf": [
+                {
+                    "required": [
+                        "file"
+                    ]
+                },
+                {
+                    "required": [
+                        "script"
+                    ]
+                }
+            ],
             "properties": {
                 "args": {
                     "$ref": "#/definitions/stringOrArrayOfStrings"
                 },
                 "file": {
                     "type": "string"
+                },
+                "script": {
+                    "type": "string"
                 }
             },
-            "required": [
-                "file"
-            ],
             "type": "object"
         },
         "uriOrArrayOfUris": {
@@ -293,12 +328,12 @@
         }
     },
     "properties": {
-        "_comment": {
-            "description": "Undocumented: only found in scoop/git* and 6 manifests in scoop-extras",
-            "type": "string"
-        },
         "##": {
             "description": "A comment.",
+            "type": "string"
+        },
+        "_comment": {
+            "description": "Undocumented: only found in scoop/git* and 6 manifests in scoop-extras",
             "type": "string"
         },
         "architecture": {
@@ -317,9 +352,6 @@
             "$ref": "#/definitions/autoupdate"
         },
         "bin": {
-            "$ref": "#/definitions/stringOrArrayOfStringsOrAnArrayOfArrayOfStrings"
-        },
-        "persist": {
             "$ref": "#/definitions/stringOrArrayOfStringsOrAnArrayOfArrayOfStrings"
         },
         "checkver": {
@@ -373,6 +405,9 @@
         "notes": {
             "$ref": "#/definitions/stringOrArrayOfStrings"
         },
+        "persist": {
+            "$ref": "#/definitions/stringOrArrayOfStringsOrAnArrayOfArrayOfStrings"
+        },
         "post_install": {
             "$ref": "#/definitions/stringOrArrayOfStrings"
         },
@@ -389,7 +424,7 @@
             "type": "object"
         },
         "shortcuts": {
-            "$ref": "#/definitions/arrayOfArrayOfStrings"
+            "$ref": "#/definitions/shortcutsArray"
         },
         "suggest": {
             "additionalProperties": false,
