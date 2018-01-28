@@ -4,10 +4,6 @@
             "bin": [
                 "ztw.exe"
             ],
-            "hash": [
-                "",
-                "270e1a8374e80973ac4565fd817aa99c4e64aa2792c11ac124ba8c292ad31d72"
-            ],
             "installer": {
                 "args": [
                     "/S",
@@ -17,17 +13,15 @@
             },
             "url": [
                 "http://www.zedtek.com/download/ztw22x86.exe",
-                "http://www.ztree.com/download/ztw24169.zip"
+                "http://www.zedtek.com/download/ztw24181.zip"
             ]
         },
         "64bit": {
             "bin": [
-                "ztw64.exe",
-                "ztw.exe"
-            ],
-            "hash": [
-                "e7c7977abf151223725b295fc506913d0ebe290b5ee9d45dcb2dede750344056",
-                "270e1a8374e80973ac4565fd817aa99c4e64aa2792c11ac124ba8c292ad31d72"
+                [
+                    "ztw64.exe",
+                    "ztw"
+                ]
             ],
             "installer": {
                 "args": [
@@ -38,7 +32,7 @@
             },
             "url": [
                 "http://www.zedtek.com/download/ztw22x64.exe",
-                "http://www.ztree.com/download/ztw24169.zip"
+                "http://www.zedtek.com/download/ztw24181.zip"
             ]
         }
     },
@@ -50,5 +44,5 @@
         ],
         "file": "Uninstall.exe"
     },
-    "version": "2.4.169"
+    "version": "2.4.181"
 }
