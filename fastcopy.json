@@ -1,12 +1,12 @@
 {
     "architecture": {
         "32bit": {
-            "hash": "20d5637db54116c7959794b31dbda249f163ebeb1079d19a96b990cf8f170c44",
-            "url": "https://ipmsg.org/archive/FastCopy340.zip"
+            "hash": "976059dbc074b51923640d65fa295ffaa3f8ceacb261b2314f170ab9b5834f34",
+            "url": "https://ipmsg.org/archive/FastCopy341.zip"
         },
         "64bit": {
-            "hash": "b1754976dd2e0a688c8a705b43f1b7ba8497c135fc99f2e2159084c10aad31a8",
-            "url": "https://ipmsg.org/archive/FastCopy340_x64.zip"
+            "hash": "ee31a89229e9f9625626dddf3af944e23f24fe214e5abfcdce2067bc386ef506",
+            "url": "https://ipmsg.org/archive/FastCopy341_x64.zip"
         }
     },
     "autoupdate": {
@@ -33,7 +33,11 @@
         "FastCopy2.ini",
         "Log"
     ],
-    "pre_install": "if (!(test-path \"$dir\\FastCopy2.ini\")) {echo '[main]' | out-file -encoding oem \"$dir\\FastCopy2.ini\"}; if (!(test-path \"$dir\\Log\")) {New-Item \"$dir\\Log\" -type directory -force}",
+    "pre_install": [
+        "if (!(test-path \"$dir\\FastCopy2.ini\")) {",
+        "echo '[main]' | out-file -encoding oem \"$dir\\FastCopy2.ini\"}",
+        "if (!(test-path \"$dir\\Log\")) {New-Item \"$dir\\Log\" -type directory -force}"
+    ],
     "shortcuts": [
         [
             "FastCopy.exe",
@@ -44,5 +48,5 @@
             "FastCopy Manual"
         ]
     ],
-    "version": "3.40"
+    "version": "3.41"
 }
