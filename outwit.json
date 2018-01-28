@@ -3,12 +3,12 @@
         "url": "https://www.spinellis.gr/sw/outwit/outwit-bin-$version.zip"
     },
     "bin": [
-        "bin\\docprop.exe",
-        "bin\\odbc.exe",
-        "bin\\readlink.exe",
-        "bin\\readlog.exe",
-        "bin\\winclip.exe",
-        "bin\\winreg.exe"
+        "bin/docprop.exe",
+        "bin/odbc.exe",
+        "bin/readlink.exe",
+        "bin/readlog.exe",
+        "bin/winclip.exe",
+        "bin/winreg.exe"
     ],
     "checkver": "The current version of <em>outwit</em> is ([\\d.]+)\\.",
     "description": "Diomidis Spinellis's outwit suite",

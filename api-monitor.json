@@ -13,11 +13,11 @@
     "license": "Freeware",
     "shortcuts": [
         [
-            "API Monitor (rohitab.com)\\apimonitor-x64.exe",
+            "API Monitor (rohitab.com)/apimonitor-x64.exe",
             "API Monitor - 64 bits"
         ],
         [
-            "API Monitor (rohitab.com)\\apimonitor-x86.exe",
+            "API Monitor (rohitab.com)/apimonitor-x86.exe",
             "API Monitor - 32 bits"
         ]
     ],

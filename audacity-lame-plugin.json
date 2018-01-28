@@ -10,7 +10,7 @@
     "hash": "f0475b9bdb73f67589252cecdc57d9e3c3f8302f2e0ddb544c515b70ed4e9d87",
     "homepage": "http://lame.buanzo.org/",
     "license": "http://lame.sourceforge.net/license.txt",
-    "post_install": "cp \"$dir\\*.dll\" \"$(appdir audacity)\\current\"",
+    "post_install": "cp \"$dir/*.dll\" \"$(appdir audacity)/current\"",
     "url": "https://lame.buanzo.org/lame_v3.99.5.zip",
     "version": "3.99.5"
 }
