@@ -6,8 +6,8 @@
         "isobuster.exe"
     ],
     "checkver": {
-        "url": "https://www.isobuster.com/download.php",
-        "re": "Download\\s+IsoBuster\\s+([\\d\\.]+)\\s*<"
+        "re": "Download\\s+IsoBuster\\s+([\\d\\.]+)\\s*<",
+        "url": "https://www.isobuster.com/download.php"
     },
     "description": "The ultimate data recovery software",
     "hash": "6dd8c4e0e624007a41a5929b26e496ce6ce1cddfa6c79f9e1f777ae10bda79fb",

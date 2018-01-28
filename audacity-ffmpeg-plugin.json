@@ -10,7 +10,10 @@
     "hash": "84b0669f71cfb44e557e54ae2c863b89cfa544d1ecf751d7114e2b5955eb0cb2",
     "homepage": "http://lame.buanzo.org/",
     "license": "LGPL-2.1",
-    "post_install": "cp \"$dir\\*.dll\" \"$(appdir audacity)\\current\"; cp \"$dir\\*.exe\" \"$(appdir audacity)\\current\"",
+    "post_install": [
+        "cp \"$dir\\*.dll\" \"$(appdir audacity)\\current\"",
+        "cp \"$dir\\*.exe\" \"$(appdir audacity)\\current\""
+    ],
     "url": "https://lame.buanzo.org/ffmpeg-win-2.2.2.zip",
     "version": "2.2.2"
 }
