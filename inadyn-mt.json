@@ -4,7 +4,7 @@
         "url": "https://sourceforge.net/projects/inadyn-mt/files/inadyn-mt/inadyn-mt.v.$version/inadyn-mt.v.$version.tar.gz"
     },
     "bin": [
-        "bin\\win32\\inadyn-mt.exe"
+        "bin/win32/inadyn-mt.exe"
     ],
     "checkver": "title=\"/inadyn-mt/inadyn-mt\\.v\\.([\\d.]+)",
     "description": "Dynamic DNS client",
