@@ -18,11 +18,12 @@ import re
 import subprocess
 import sys
 
+home = os.path.expanduser('~')
+
 if len(sys.argv) > 1:
     nirsoft_dir = sys.argv[1]
 else:
-    nirsoft_dir = os.path.join(os.environ['USERPROFILE'],
-                               'scoop/apps/nirlauncher/current/NirSoft')
+    nirsoft_dir = os.path.join(home, 'scoop/apps/nirlauncher/current/NirSoft')
 
 nirsoft_dir = re.sub(r'\\', '/', nirsoft_dir)
 nirsoft_nlp = os.path.join(nirsoft_dir, 'nirsoft.nlp')
