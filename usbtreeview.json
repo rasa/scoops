@@ -12,7 +12,7 @@
     "description": "USB device tree viewer",
     "homepage": "http://www.uwe-sieber.de/usbtreeview_e.html",
     "license": "Freeware",
-    "notes": "Hash for 3.1.2 is:\n    3c378232b0859955c69b5df61c6cd887c520b82453d2e39500ff3bfb00c785b2",
+    "notes": "Hash for 3.1.3 is:\n    7b1fbdce87f64496fa58ee9f0e038ac02fadb4d8471b52db88c2501025e6f427",
     "shortcuts": [
         [
             "usbtreeview.exe",
@@ -20,5 +20,5 @@
         ]
     ],
     "url": "http://www.uwe-sieber.de/files/usbtreeview.zip",
-    "version": "3.1.2"
+    "version": "3.1.3"
 }
