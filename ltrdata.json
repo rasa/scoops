@@ -306,6 +306,16 @@
     "description": "ltr-data.se freeware utilities",
     "homepage": "http://www.ltr-data.se/opencode.html/#CmdUtils",
     "license": "MIT",
-    "notes": "The following are GUI applications:\nassd\ncalldll\ncalldllw\nchkwsdll\ndenywin\nenumwinw\nFileOpen\nFSplitW\ngethostw\ngetuser\nkeylock\nlogonwrap\nlogout\nmsgbox\nnoexcept\nplaywavs\nprivproc\nregrepl\nritprogr\nrunwait\nrunwaitw\nsdonexit\nshc\nsleep\nsynctime\ntickcntw\ntscwrap\nw32ver\nwavplay\nwinlogoncfg\n",
-    "version": "17.07.01"
+    "notes": "Not including bunzip2, bzip2, and bzcat, as they are version 0.9.5c",
+    "shortcuts": [
+        [
+            "FSplitW.exe",
+            "ltrdata/FileSplit"
+        ],
+        [
+            "winlogoncfg.exe",
+            "ltrdata/Winlogon Configuration Tool"
+        ]
+    ],
+    "version": "2017.06.30"
 }
