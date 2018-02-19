@@ -9,9 +9,10 @@
     },
     "checkver": "RestartSrDev\\s+V([\\d.]+)\\s+-\\s+restarts",
     "description": "Restart safely removed media",
+    "hash": "b737c16561991ee54ec08b27301611472b86276b2e4cc1b24300888552026514",
     "homepage": "http://www.uwe-sieber.de/drivetools_e.html",
     "license": "Freeware",
-    "notes": "Hash for 2.0.1 is:\n    b737c16561991ee54ec08b27301611472b86276b2e4cc1b24300888552026514",
+    "notes": "RestartSrDev.exe reports it's actually version 2.0.1",
     "url": "http://www.uwe-sieber.de/files/restartsrdev.zip",
     "version": "2.0"
 }
