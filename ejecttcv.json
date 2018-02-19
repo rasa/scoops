@@ -9,9 +9,9 @@
     },
     "checkver": "EjectTcv\\s+V([\\d.]+)\\s+-\\s+'ejects'",
     "description": "Eject TrueCrypt/VeraCrypt volume",
+    "hash": "e06a2989226249e290f56d50673630d83b552c41b1ca481fa9957da3e6be9ef5",
     "homepage": "http://www.uwe-sieber.de/drivetools_e.html",
     "license": "Freeware",
-    "notes": "Hash for 2.8.3 is:\n    e06a2989226249e290f56d50673630d83b552c41b1ca481fa9957da3e6be9ef5",
     "url": "http://www.uwe-sieber.de/files/ejecttcv.zip",
     "version": "2.8.3"
 }
