@@ -23,7 +23,7 @@
         "FastCopy.exe"
     ],
     "checkver": {
-        "re": "FastCopy v([\\d.]+)",
+        "re": "FastCopy ver ([\\d.]+)",
         "url": "https://ipmsg.org/tools/fastcopy.html.en"
     },
     "description": "The Fastest Copy/Delete Software on Windows",
