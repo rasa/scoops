@@ -10,7 +10,7 @@
     "extract_dir": "cherrytree_0.38.4_win32_portable",
     "hash": "79cc58b0e4ca7ae1bba50367bf555f0f14708017142154f3512b806c6c60297d",
     "homepage": "https://www.giuspen.com/cherrytree",
-    "license": "Freeware",
+    "license": "GPL-3.0",
     "shortcuts": [
         [
             "bin/cherrytree.exe",
