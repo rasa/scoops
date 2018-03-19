@@ -1,7 +1,7 @@
 {
     "autoupdate": {
-        "url": "http://www.giuspen.com/software/cherrytree_$version_win32_portable.7z"
-    },
+        "url": "http://www.giuspen.com/software/cherrytree_${version}_win32_portable.7z"
+    },    
     "bin": "bin/cherrytree.exe",
     "checkver": {
         "re": "http://www.giuspen.com/software/cherrytree_([\\d.]+)_win32_portable.7z"
