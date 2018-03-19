@@ -59,7 +59,12 @@ UAS = {}
 
 NO_REFERRERS = ['sourceforge.net']
 
-TMP_DIR = 'l:/tmp'
+temp_drive = os.environ['TEMP_DRIVE']
+
+if not temp_drive:
+    temp_drive = 'l:'
+
+TMP_DIR = '%s/tmp' % temp_drive
 
 
 # https://stackoverflow.com/a/4829285/1432614
