@@ -1,0 +1,21 @@
+{
+    "autoupdate": {
+        "url": "https://technitium.com/download/tmac/TMACv${version}_Setup.zip"
+    },    
+    "bin": "tmac.exe",
+    "checkver": {
+        "re": "https://technitium.com/download/tmac/TMACv([\\d.]+)_Setup.zip"
+    },
+    "description": "Spoof MAC address",
+    "hash": "6e63becaf5c5e17a9d3afb6e2104eee3dbe473c8930ae8783eba0fedadb4a152",
+    "homepage": "https://technitium.com/tmac/",
+    "license": "Freeware",
+    "shortcuts": [
+        [
+            "tmac.exe",
+            "TMAC - Spoof MAC address"
+        ]
+    ],
+    "url": "https://technitium.com/download/tmac/TMACv6.0.7_Setup.zip",
+    "version": "6.0.7"
+}
