@@ -1,0 +1,39 @@
+{
+    "architecture": {
+        "32bit": {
+            "hash": "c25e5c0e7a19f2b2466edafe3b236d7ffc49c4aafea8f7feabe854073d5f8f66",
+            "url": "https://github.com/bitbeans/SimpleDnsCrypt/releases/download/0.5.3/SimpleDNSCrypt.msi"
+        },
+        "64bit": {
+            "hash": "2c30e1b7d65c3d93a9ea0b42180f4545feef3c4c27c047883d49adc771d10ccb",
+            "url": "https://github.com/bitbeans/SimpleDnsCrypt/releases/download/0.5.3/SimpleDNSCrypt64.msi"
+        }
+    },
+    "autoupdate": {
+        "architecture": {
+            "32bit": {
+                "url": "https://github.com/bitbeans/SimpleDnsCrypt/releases/download/$version/SimpleDNSCrypt.msi"
+            },
+            "64bit": {
+                "url": "https://github.com/bitbeans/SimpleDnsCrypt/releases/download/$version/SimpleDNSCrypt64.msi"
+            }
+        }
+    },
+    "bin": "SimpleDnsCrypt.exe",
+    "checkver": {
+        "github": "https://github.com/bitbeans/SimpleDnsCrypt"
+    },
+    "description": "Simple management tool for dnscrypt-proxy",
+    "homepage": "https://simplednscrypt.org/",
+    "license": "MIT",
+    "shortcuts": [
+        [
+            "SimpleDnsCrypt.exe",
+            "Simple DNSCrypt"
+        ]
+    ],
+    "uninstaller": {
+        "file": "Uninstall.exe"
+    },
+    "version": "0.5.3"
+}
