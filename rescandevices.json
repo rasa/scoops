@@ -1,4 +1,7 @@
 {
+    "autoupdate": {
+        "url": "http://www.uwe-sieber.de/files/rescandevices.zip"
+    },
     "bin": "RescanDevices.exe",
     "description": "Rescan devices",
     "hash": "68c28b4e8e84cbad0b8ac9c0963efd51ed95da36838af6927b732af68b5c4adc",

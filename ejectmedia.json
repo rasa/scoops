@@ -7,6 +7,9 @@
             "bin": "x64/EjectMedia.exe"
         }
     },
+    "autoupdate": {
+        "url": "http://www.uwe-sieber.de/files/ejectmedia.zip"
+    },
     "checkver": "EjectMedia\\s+V([\\d.]+)\\s+-\\s+ejects",
     "description": "Eject removable media",
     "hash": "018d74c35d8733f938972e4ccd5d763b7b98e01f543d78ab9192c9ad92a90a7d",

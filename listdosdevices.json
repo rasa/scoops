@@ -1,5 +1,8 @@
 {
     "_comment": "checkver to be: ListDosDevices\\s+V([\\d.]+)",
+    "autoupdate": {
+        "url": "http://www.uwe-sieber.de/files/listdosdevices.zip"
+    },
     "bin": "ListDosDevices.exe",
     "description": "List DOS devices",
     "hash": "751055e9f84436afef2cf0547c04b65a136c8ebaabe0f1f3f973a63d21c263dd",

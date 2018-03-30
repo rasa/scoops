@@ -7,6 +7,9 @@
             "bin": "x64/LoadMedia.exe"
         }
     },
+    "autoupdate": {
+        "url": "http://www.uwe-sieber.de/files/loadmedia.zip"
+    },
     "checkver": "LoadMedia\\s+V([\\d.]+)\\s+-\\s+Loads",
     "description": "Load removable media",
     "hash": "610925092f9b727559f01adada13f15c49a3adee2498125b50fb8b362cac6355",

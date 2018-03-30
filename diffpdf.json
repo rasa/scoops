@@ -1,4 +1,7 @@
 {
+    "autoupdate": {
+        "url": "http://soft.rubypdf.com/wp-content/uploads/2010/08/diffpdf-$version-win32-static.zip"
+    },
     "bin": "diffpdf.exe",
     "checkver": {
         "re": ">DiffPDF ([\\d.]+) Windows 32-bit Static Version",

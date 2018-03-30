@@ -7,6 +7,9 @@
             "bin": "x64/DriveCleanup.exe"
         }
     },
+    "autoupdate": {
+        "url": "http://www.uwe-sieber.de/files/drivecleanup.zip"
+    },
     "checkver": "DriveCleanup\\s+V([\\d.]+)",
     "description": "Remove nonpresent drives from the registry",
     "hash": "3f154eb826b8603fb647d38ea78a4a4ca8652e049f454942768d4ec6ece51e5d",

@@ -8,6 +8,9 @@
             "bin": "x64/remount.exe"
         }
     },
+    "autoupdate": {
+        "url": "http://www.uwe-sieber.de/files/remount.zip"
+    },
     "description": "Remount ejected volumes",
     "hash": "6df3b7dec8898e993fd0424f4863b1e2444801478230d7097a8ff7dd5ca9be21",
     "homepage": "http://www.uwe-sieber.de/drivetools_e.html",

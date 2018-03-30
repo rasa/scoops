@@ -7,6 +7,9 @@
             "bin": "x64/RemoveDrive.exe"
         }
     },
+    "autoupdate": {
+        "url": "http://www.uwe-sieber.de/files/removedrive.zip"
+    },
     "checkver": "RemoveDrive\\s+V([\\d.]+)\\s+-\\s+Safe",
     "description": "Safely removes drives",
     "hash": "813813f4baae9be4d24ec55ac42aebc66548a65702667f54ede60b912783aef2",
