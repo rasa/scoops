@@ -7,6 +7,9 @@
             "bin": "x64/RestartSrDev.exe"
         }
     },
+    "autoupdate": {
+        "url": "http://www.uwe-sieber.de/files/restartsrdev.zip"
+    },
     "checkver": "RestartSrDev\\s+V([\\d.]+)\\s+-\\s+restarts",
     "description": "Restart safely removed media",
     "hash": "b737c16561991ee54ec08b27301611472b86276b2e4cc1b24300888552026514",

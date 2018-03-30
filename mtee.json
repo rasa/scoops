@@ -1,4 +1,7 @@
 {
+    "autoupdate": {
+        "url": "https://codeload.github.com/ritchielawrence/mtee/legacy.zip/master#mtee.zip"
+    },
     "bin": "ritchielawrence-mtee-e4d4592/bin/Release/mtee.exe",
     "checkver": {
         "github": "https://github.com/ritchielawrence/mtee"

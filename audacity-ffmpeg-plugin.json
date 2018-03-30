@@ -1,4 +1,7 @@
 {
+    "autoupdate": {
+        "url": "https://lame.buanzo.org/ffmpeg-win-$version.zip"
+    },
     "checkver": {
         "re": "/ffmpeg-win-([\\d.]+).zip",
         "url": "http://lame.buanzo.org/"

@@ -7,6 +7,9 @@
             "extract_dir": "x64"
         }
     },
+    "autoupdate": {
+        "url": "http://www.uwe-sieber.de/files/usbtreeview.zip"
+    },
     "bin": "usbtreeview.exe",
     "checkver": "USB Device Tree Viewer V([\\d.]+)",
     "description": "USB device tree viewer",

@@ -1,4 +1,7 @@
 {
+    "autoupdate": {
+        "url": "https://lame.buanzo.org/lame_v$version.zip"
+    },
     "checkver": {
         "re": "lame_v([\\d.]+).zip",
         "url": "http://lame.buanzo.org/"

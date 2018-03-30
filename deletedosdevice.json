@@ -1,4 +1,7 @@
 {
+    "autoupdate": {
+        "url": "http://www.uwe-sieber.de/files/deletedosdevice.zip"
+    },
     "bin": "DeleteDosDevice.exe",
     "checkver": "Download\\s+V([\\d.]+):\\s*<a\\s+href=\"files/deletedosdevice",
     "description": "Delete DOS device",
