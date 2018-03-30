@@ -1,7 +1,7 @@
 {
     "architecture": {
         "32bit": {
-            "hash": "4404a83ccbad8d190decebb052a65291e6bbfadbc76615631ca15fcdb1910790",
+            "hash": "b0c45c3fc4f4030d626e122242b513433f9eac39150c97b07bf4a2862efa5ae3",
             "url": "http://download.xnview.com/XnViewMP-win.zip"
         },
         "64bit": {
@@ -36,5 +36,5 @@
             "XnView MP - Photo viewer, image resizer & batch converter"
         ]
     ],
-    "version": "0.9.0"
+    "version": "0.90"
 }
