@@ -10,10 +10,10 @@
         "audacity"
     ],
     "description": "LAME plugin for Audacity",
-    "hash": "f0475b9bdb73f67589252cecdc57d9e3c3f8302f2e0ddb544c515b70ed4e9d87",
+    "hash": "2ad66ed683b0074d0381055d387a871cce3c38626fea29ee30710f73cee12356",
     "homepage": "http://lame.buanzo.org/",
     "license": "http://lame.sourceforge.net/license.txt",
     "post_install": "cp \"$dir/*.dll\" \"$(appdir audacity)/current\"",
-    "url": "https://lame.buanzo.org/lame_v3.99.5.zip",
-    "version": "3.99.5"
+    "url": "https://lame.buanzo.org/lame_v3.100.zip",
+    "version": "3.100"
 }
