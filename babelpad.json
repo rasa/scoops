@@ -1,6 +1,6 @@
 {
     "bin": "BabelPad.exe",
-    "checkver": ">\\s*Version\\s+([\\d.]+)\\s*",
+    "checkver": ">\\s*Version\\s+([\\d.]+)\\s+\\(",
     "description": "Unicode text editor",
     "hash": "38b477b09eaaa029c42648d89566d2a22a85b306737032f852b8860a2aa54b70",
     "homepage": "http://www.babelstone.co.uk/Software/BabelPad.html",
