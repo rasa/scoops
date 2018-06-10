@@ -1,9 +1,6 @@
 {
-    "autoupdate": {
-        "url": "http://www.babelstone.co.uk/Software/$matchRelease/BabelMap.zip"
-    },
     "bin": "BabelMap.exe",
-    "checkver": "Version\\s+(?<version>[\\d.]+)\\s+\\([\\d-]+\\)</td>\\s*<td class=\"sl\"><a href=\"(?<release>\\d+)",
+    "checkver": ">\\s*Version\\s+([\\d.]+)\\s+\\(",
     "description": "Display Unicode character maps",
     "hash": "b2c0a981d65d569349a0c2b5a5fbeb6415e9cfc8054ea4e15f196f2d7abb9f86",
     "homepage": "http://www.babelstone.co.uk/Software/BabelMap.html",
@@ -14,6 +11,6 @@
             "BabelMap - Unicode character map viewer"
         ]
     ],
-    "url": "http://www.babelstone.co.uk/Software/3537/BabelMap.zip",
+    "url": "http://www.babelstone.co.uk/Download/BabelMap.zip",
     "version": "10.0.0.6"
 }
