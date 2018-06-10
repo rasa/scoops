@@ -1,9 +1,6 @@
 {
-    "autoupdate": {
-        "url": "http://www.babelstone.co.uk/Software/$matchRelease/BabelPad.zip"
-    },
     "bin": "BabelPad.exe",
-    "checkver": "Version\\s+(?<version>[\\d.]+)\\s+\\([\\d-]+\\)</td>\\s*<td class=\"sl\"><a href=\"(?<release>\\d+)",
+    "checkver": ">\\s*Version\\s+([\\d.]+)\\s*",
     "description": "Unicode text editor",
     "hash": "38b477b09eaaa029c42648d89566d2a22a85b306737032f852b8860a2aa54b70",
     "homepage": "http://www.babelstone.co.uk/Software/BabelPad.html",
@@ -14,6 +11,6 @@
             "BabelPad - Unicode text editor"
         ]
     ],
-    "url": "http://www.babelstone.co.uk/Software/3537/BabelPad.zip",
+    "url": "http://www.babelstone.co.uk/Download/BabelPad.zip",
     "version": "10.0.0.6"
 }
