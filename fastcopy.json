@@ -1,12 +1,12 @@
 {
     "architecture": {
         "32bit": {
-            "hash": "11ab63c68594e001c3cabfee48be3058cc22c15f4df1de81bc9abd2b2eac383e",
-            "url": "https://fastcopy.jp/archive/FastCopy350_installer.zip"
+            "hash": "e92232b9fc3bbd48f988bd09583f8cec706fe5d26b548063a0e5a421549784fa",
+            "url": "https://fastcopy.jp/archive/FastCopy351_installer.zip"
         },
         "64bit": {
-            "hash": "981035cc4090935486b0b5318655e4e414bb95425233a0e07a64693d49512ff3",
-            "url": "https://fastcopy.jp/archive/FastCopy350_installer64.zip"
+            "hash": "379ccfcbd37ba3ca878d26bedb33d64ed6ce2c4cfee00294fc485332beca9f1d",
+            "url": "https://fastcopy.jp/archive/FastCopy351_installer64.zip"
         }
     },
     "autoupdate": {
@@ -51,5 +51,5 @@
             "FastCopy Manual"
         ]
     ],
-    "version": "3.50"
+    "version": "3.51"
 }
