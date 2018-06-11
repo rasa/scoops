@@ -2,20 +2,20 @@
     "architecture": {
         "32bit": {
             "hash": "976059dbc074b51923640d65fa295ffaa3f8ceacb261b2314f170ab9b5834f34",
-            "url": "https://ipmsg.org/archive/FastCopy341.zip"
+            "url": "https://fastcopy.jp/archive/FastCopy350_installer.zip"
         },
         "64bit": {
             "hash": "ee31a89229e9f9625626dddf3af944e23f24fe214e5abfcdce2067bc386ef506",
-            "url": "https://ipmsg.org/archive/FastCopy341_x64.zip"
+            "url": "https://fastcopy.jp/archive/FastCopy350_installer64.zip"
         }
     },
     "autoupdate": {
         "architecture": {
             "32bit": {
-                "url": "https://ipmsg.org/archive/FastCopy$cleanVersion.zip"
+                "url": "https://fastcopy.jp/archive/FastCopy$cleanVersion_installer.zip"
             },
             "64bit": {
-                "url": "https://ipmsg.org/archive/FastCopy$cleanVersion_x64.zip"
+                "url": "https://fastcopy.jp/archive/FastCopy$cleanVersion_installer64.zip"
             }
         }
     },
@@ -24,10 +24,10 @@
     ],
     "checkver": {
         "re": "FastCopy ver ([\\d.]+)",
-        "url": "https://ipmsg.org/tools/fastcopy.html.en"
+        "url": "https://fastcopy.jp/en/"
     },
     "description": "The Fastest Copy/Delete Software on Windows",
-    "homepage": "https://ipmsg.org/tools/fastcopy.html.en",
+    "homepage": "https://fastcopy.jp/en/",
     "license": "GPL-3.0",
     "persist": [
         "FastCopy2.ini",
