@@ -1,4 +1,5 @@
 {
+    "_comment": "Disabled per https://github.com/rasa/scoops/issues/7",
     "architecture": {
         "32bit": {
             "hash": "e92232b9fc3bbd48f988bd09583f8cec706fe5d26b548063a0e5a421549784fa",
