@@ -1,6 +1,6 @@
 {
     "autoupdate": {
-        "url": "https://sourceforge.net/projects/rehash/files/rehash/$version/rehash-$version-win.zip"
+        "url": "https://downloads.sourceforge.net/project/rehash/files/rehash/$version/rehash-$version-win.zip"
     },
     "bin": "rehash.exe",
     "checkver": {
@@ -11,6 +11,6 @@
     "hash": "sha1:53b32ee2abea382e48eca7ac7fe02088498869b1",
     "homepage": "http://rehash.sourceforge.net/",
     "license": "BSD-2-Clause",
-    "url": "https://sourceforge.net/projects/rehash/files/rehash/0.2/rehash-0.2-win.zip",
+    "url": "https://downloads.sourceforge.net/project/rehash/files/rehash/0.2/rehash-0.2-win.zip",
     "version": "0.2"
 }
