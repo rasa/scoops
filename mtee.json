@@ -7,7 +7,7 @@
         "github": "https://github.com/ritchielawrence/mtee"
     },
     "description": "Split standard output to a file",
-    "hash": "0acf8e8602e641fc914b23537c7a90861c4b076e569e4521b95d37ad361eefa4",
+    "hash": "f05d9e9f9c9c841bf9eef7a6c5c3389344d2a532bfe10483260c36fbfc3abd47",
     "homepage": "https://ritchielawrence.github.io/mtee/",
     "license": "MIT",
     "url": "https://codeload.github.com/ritchielawrence/mtee/legacy.zip/master#mtee.zip",
