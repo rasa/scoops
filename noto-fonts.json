@@ -1,5 +1,8 @@
 {
     "_comment": "Windows 7 SP1 complained that NotoColorEmoji.ttf wasn't a valid font",
+    "autoupdate": {
+        "url": "https://noto-website-2.storage.googleapis.com/pkgs/Noto-hinted.zip"
+    },
     "description": "All noto fonts",
     "homepage": "https://www.google.com/get/noto/",
     "license": "OFL-1.1",

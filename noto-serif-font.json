@@ -1,4 +1,7 @@
 {
+    "autoupdate": {
+        "url": "https://noto-website-2.storage.googleapis.com/pkgs/NotoSerif-hinted.zip"
+    },
     "description": "Noto serif font",
     "homepage": "https://www.google.com/get/noto/",
     "license": "OFL-1.1",

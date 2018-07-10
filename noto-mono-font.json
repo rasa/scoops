@@ -1,4 +1,7 @@
 {
+    "autoupdate": {
+        "url": "https://noto-website-2.storage.googleapis.com/pkgs/NotoMono-hinted.zip"
+    },
     "description": "Noto monospaced font",
     "homepage": "https://www.google.com/get/noto/",
     "license": "OFL-1.1",

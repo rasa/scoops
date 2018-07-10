@@ -1,4 +1,7 @@
 {
+    "autoupdate": {
+        "url": "https://github.com/coherentgraphics/cpdf-binaries/raw/master/Windows/cpdf.exe"
+    },
     "bin": "cpdf.exe",
     "description": "Powerful PDF manipulation tool",
     "hash": "7486448e6d37a501bf77c0b29a6eafc5e8ee99d8a944721ff22ac194fd22ec59",

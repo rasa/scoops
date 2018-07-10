@@ -1,4 +1,7 @@
 {
+    "autoupdate": {
+        "url": "http://www.babelstone.co.uk/Software/Download/BabelPad.zip"
+    },
     "bin": "BabelPad.exe",
     "checkver": ">\\s*Version\\s+([\\d.]+)\\s+\\(",
     "description": "Unicode text editor",

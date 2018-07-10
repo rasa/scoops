@@ -300,6 +300,16 @@
             "url": "http://www.ltr-data.se/files/win64/exefiles.7z"
         }
     },
+    "autoupdate": {
+        "architecture": {
+            "32bit": {
+                "url": "http://www.ltr-data.se/files/exefiles.7z"
+            },
+            "64bit": {
+                "url": "http://www.ltr-data.se/files/win64/exefiles.7z"
+            }
+        }
+    },
     "depends": [
         "bzip2"
     ],

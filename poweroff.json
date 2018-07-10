@@ -1,4 +1,7 @@
 {
+    "autoupdate": {
+        "url": "http://users.pandora.be/jbosman/pwroff30.zip"
+    },
     "bin": "poweroff.exe",
     "checkver": {
         "re": "<p\\s+style=\"line-height:\\s+100%\">V([\\d.]+):\\s+\\d\\d-\\d\\d-\\d\\d\\d\\d",
