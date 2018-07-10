@@ -1,4 +1,7 @@
 {
+    "autoupdate": {
+        "url": "http://www.linux-usb.org/usb.ids"
+    },
     "depends": [
         "nirlauncher"
     ],
