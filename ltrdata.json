@@ -23,6 +23,7 @@
                 "cxrrestore.exe",
                 "denywin.exe",
                 "devioctl.exe",
+                "displaystring.exe",
                 "dos2nt.exe",
                 "dosdev.exe",
                 "dot2hex.exe",
@@ -93,6 +94,7 @@
                 "primtal.exe",
                 "privproc.exe",
                 "psmod.exe",
+                "querytrim.exe",
                 "radera.exe",
                 "rawcopy.exe",
                 "rdown.exe",
@@ -107,6 +109,7 @@
                 "roundft.exe",
                 "runwait.exe",
                 "runwaitw.exe",
+                "scrub.exe",
                 "sdonexit.exe",
                 "searchtreeforfile.exe",
                 "setprio.exe",
@@ -174,6 +177,7 @@
                 "cxrrestore.exe",
                 "denywin.exe",
                 "devioctl.exe",
+                "displaystring.exe",
                 "dos2nt.exe",
                 "dosdev.exe",
                 "dot2hex.exe",
@@ -242,6 +246,7 @@
                 "primtal.exe",
                 "privproc.exe",
                 "psmod.exe",
+                "querytrim.exe",
                 "radera.exe",
                 "rawcopy.exe",
                 "rdown.exe",
@@ -255,6 +260,7 @@
                 "roundft.exe",
                 "runwait.exe",
                 "runwaitw.exe",
+                "scrub.exe",
                 "searchtreeforfile.exe",
                 "setprio.exe",
                 "shlexec.exe",
@@ -327,5 +333,5 @@
             "ltrdata/Winlogon Configuration Tool"
         ]
     ],
-    "version": "2017.06.30"
+    "version": "2018.05.13"
 }
