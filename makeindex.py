@@ -444,11 +444,23 @@ lmap = {
 
 
 def do_license(v):
-    if re.search('^(http|ftp)', v):
-        v = '[%s](%s "%s")' % ('Link', v, v)
+    url = v
+    if 'identifier' in v:
+        identifier = v['identifier']
+    else:
+        identifier = ''
+    if 'url' in v:
+        url = v['url']
+    if re.search('^(http|ftp)', url):
+        if not identifier:
+            identifier = 'Link'
+        v = '[%s](%s "%s")' % (identifier, url, url)
         return v
 
-    parts = re.split('[/,\s]+', v)
+    if not identifier:
+        identifier = url
+
+    parts = re.split('[,|\s]+', identifier)
     v = ''
     for part in parts:
         if v > '':
