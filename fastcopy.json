@@ -1,24 +1,7 @@
 {
-    "_comment": "Disabled per https://github.com/rasa/scoops/issues/7",
-    "architecture": {
-        "32bit": {
-            "hash": "e92232b9fc3bbd48f988bd09583f8cec706fe5d26b548063a0e5a421549784fa",
-            "url": "https://fastcopy.jp/archive/FastCopy351_installer.zip"
-        },
-        "64bit": {
-            "hash": "379ccfcbd37ba3ca878d26bedb33d64ed6ce2c4cfee00294fc485332beca9f1d",
-            "url": "https://fastcopy.jp/archive/FastCopy351_installer64.zip"
-        }
-    },
+    "_comment": "See https://github.com/rasa/scoops/issues/7",
     "autoupdate": {
-        "architecture": {
-            "32bit": {
-                "url": "https://fastcopy.jp/archive/FastCopy$cleanVersion_installer.zip"
-            },
-            "64bit": {
-                "url": "https://fastcopy.jp/archive/FastCopy$cleanVersion_installer64.zip"
-            }
-        }
+        "url": "https://fastcopy.jp/archive/FastCopy$cleanVersion_installer.zip"
     },
     "bin": [
         "FastCopy.exe"
@@ -28,13 +11,22 @@
         "url": "https://fastcopy.jp/en/"
     },
     "description": "The Fastest Copy/Delete Software on Windows",
+    "hash": "f87524abf51d0cf738b4bf644c255c73677c8ee456c079297dd2f89fa2e05e41",
     "homepage": "https://fastcopy.jp/en/",
-    "license": "GPL-3.0",
+    "installer": {
+        "args": [
+            "/SILENT",
+            "/DIR=\"$dir\""
+        ],
+        "file": "FastCopy_installer.exe"
+    },
+    "license": "GPL-3.0-only",
     "persist": [
         "FastCopy2.ini",
         "Log"
     ],
     "pre_install": [
+        "Move-Item \"$dir\\FastCopy*_installer.exe\" \"$dir\\FastCopy_installer.exe\" -Force",
         "if (!(Test-Path \"$dir/FastCopy2.ini\")) {",
         "   Set-Content \"$dir/FastCopy2.ini\" -value '[main]'",
         "}",
@@ -52,5 +44,6 @@
             "FastCopy Manual"
         ]
     ],
-    "version": "3.51"
+    "url": "https://fastcopy.jp/archive/FastCopy352_installer.zip",
+    "version": "3.52"
 }
