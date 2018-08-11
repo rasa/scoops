@@ -30,6 +30,6 @@
     "checkver": "href=\"releases/gifsicle-([\\d.]+)",
     "description": "Manipulate GIF images",
     "homepage": "https://eternallybored.org/misc/gifsicle/",
-    "license": "GPL-2.0",
+    "license": "GPL-2.0-only",
     "version": "1.89"
 }

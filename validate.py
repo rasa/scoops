@@ -34,14 +34,17 @@ def decode(s):
     return s.decode('latin-1')
 
 
-schema_name = '%s/scoop/apps/scoop/current/schema.json' % os.environ[
-    'USERPROFILE']
+schema_name = 'D:/github/rasa/scoop/schema.json'
+
+if not os.path.isfile(schema_name):
+    schema_name = '%s/scoop/apps/scoop/current/schema.json' % os.environ[
+        'USERPROFILE']
 
 file = sys.argv[1]
 if re.match('^schema', file):
     sys.exit(0)
 
-print('Validating', file)
+print('Validating %s via %s' % (file, schema_name))
 
 with open(schema_name, 'r') as f:
     schema_data = json.load(f)
