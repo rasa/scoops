@@ -26,7 +26,7 @@
     ],
     "description": "VLC Blu-ray plugin",
     "homepage": "https://www.videolan.org/",
-    "license": "GPL-2.0",
+    "license": "GPL-2.0-only",
     "post_install": [
         "New-Item -ItemType Directory -Force -Path \"$($env:ProgramData)/aacs\" >$null",
         "Copy-Item \"$dir/KEYDB.cfg\" \"$($env:ProgramData)/aacs\"",
