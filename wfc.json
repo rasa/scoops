@@ -13,7 +13,7 @@
     "homepage": "https://www.binisoft.org/wfc.php",
     "installer": {
         "script": [
-            "sudo \"$dir\\wfc5setup.exe\" -install -close \"$dir\""
+            "sudo cmd.exe /c start /WAIT \"$dir\\wfc5setup.exe\" -install -close \"$dir\""
         ]
     },
     "license": "Freeware",
