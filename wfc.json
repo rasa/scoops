@@ -23,7 +23,7 @@
             "sudo sc.exe stop wfcs",
             "sudo sc.exe delete wfcs",
             "sudo reg.exe delete \"HKLM\\Software\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\Windows Firewall Control\" /f"
-        ]        
+        ]
     },
     "url": "https://www.binisoft.org/download/wfc5setup.exe",
     "version": "5.4.0.0"
