@@ -1,6 +1,6 @@
 {
     "autoupdate": {
-        "url": "https://technitium.com/download/tmac/TMACv${version}_Setup.zip"
+        "url": "https://technitium.com/download/tmac/TMACv$version_Setup.zip"
     },
     "bin": "tmac.exe",
     "checkver": {
