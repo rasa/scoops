@@ -1,6 +1,6 @@
 {
     "autoupdate": {
-        "url": "http://www.zedtek.com/download/ztw$cleanVersion.exe"
+        "url": "http://www.zedtek.com/download/ztw$cleanVersion.zip"
     },
     "checkver": {
         "re": ";\">v([\\d.]+)<"
