@@ -1,15 +1,5 @@
 {
     "_comment": "installer and uninstaller ignore the /S and /D options",
-    "autoupdate": {
-        "architecture": {
-            "32bit": {
-                "url": "http://www.zedtek.com/download/ztw$cleanVersionx86.exe#/dl.7z"
-            },
-            "64bit": {
-                "url": "http://www.zedtek.com/download/ztw$cleanVersionx64.exe#/dl.7z"
-            }
-        }
-    },
     "architecture": {
         "32bit": {
             "bin": [
@@ -27,6 +17,16 @@
             ],
             "hash": "e7c7977abf151223725b295fc506913d0ebe290b5ee9d45dcb2dede750344056",
             "url": "http://www.zedtek.com/download/ztw22x64.exe#/dl.7z"
+        }
+    },
+    "autoupdate": {
+        "architecture": {
+            "32bit": {
+                "url": "http://www.zedtek.com/download/ztw$cleanVersionx86.exe#/dl.7z"
+            },
+            "64bit": {
+                "url": "http://www.zedtek.com/download/ztw$cleanVersionx64.exe#/dl.7z"
+            }
         }
     },
     "checkver": ";\">v([\\d.]+)<",
