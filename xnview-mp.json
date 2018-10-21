@@ -1,11 +1,11 @@
 {
     "architecture": {
         "32bit": {
-            "hash": "c2ab197849a8f1f8c5285c6ec50661e9390b8911c1698e04150f09e8b84bbd2a",
+            "hash": "ddce70809f170e52617e3b139c6e58aa5307db5b8e77a97ae0e3de1f38a1a6cb",
             "url": "http://download.xnview.com/XnViewMP-win.zip"
         },
         "64bit": {
-            "hash": "7b94bb8e249716e79af661d90bb0158937347249d2c61ab9cbf8bb3703b415ee",
+            "hash": "f580805be136cc8acee881d54ec3e529e9e84464c878c32c9c11edb0e67ee7ec",
             "url": "http://download.xnview.com/XnViewMP-win-x64.zip"
         }
     },
@@ -36,5 +36,5 @@
             "XnView MP - Photo viewer, image resizer & batch converter"
         ]
     ],
-    "version": "0.91"
+    "version": "0.92"
 }

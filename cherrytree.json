@@ -8,7 +8,7 @@
     },
     "description": "Hierarchical note taking application",
     "extract_dir": "cherrytree_0.38.4_win32_portable",
-    "hash": "ab6a6822b4e950e6bcdde4cdda461a2c6135eff27e0f6f34ec5d6a3f1a002e4d",
+    "hash": "44fc5c5152fbb9398da6c96f47fbf543bd4792d6fa8cf6b63bd5fc67a9499fd4",
     "homepage": "https://www.giuspen.com/cherrytree",
     "license": "GPL-3.0",
     "shortcuts": [
@@ -17,6 +17,6 @@
             "Cherrytree - A hierarchical note taking application"
         ]
     ],
-    "url": "http://www.giuspen.com/software/cherrytree_0.38.5_win32_portable.7z",
-    "version": "0.38.5"
+    "url": "http://www.giuspen.com/software/cherrytree_0.38.6_win32_portable.7z",
+    "version": "0.38.6"
 }
