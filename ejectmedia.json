@@ -12,9 +12,9 @@
     },
     "checkver": "EjectMedia\\s+V([\\d.]+)\\s+-\\s+ejects",
     "description": "Eject removable media",
-    "hash": "018d74c35d8733f938972e4ccd5d763b7b98e01f543d78ab9192c9ad92a90a7d",
+    "hash": "cd46f2ccceb4b681e1f11408cc73688a4ff7934e91935c5e60cd4f6be47752fe",
     "homepage": "http://www.uwe-sieber.de/drivetools_e.html",
     "license": "Freeware",
     "url": "http://www.uwe-sieber.de/files/ejectmedia.zip",
-    "version": "2.7.4"
+    "version": "3.0.0"
 }
