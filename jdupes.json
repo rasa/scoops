@@ -1,14 +1,14 @@
 {
     "architecture": {
         "32bit": {
-            "extract_dir": "jdupes-1.10.4_win32",
-            "hash": "bcf117cb511395e95c6d99719caadef838ac6ee3d07eee2eaffaea249f51e64c",
-            "url": "https://github.com/jbruchon/jdupes/releases/download/v1.10.4/jdupes-1.10.4_win32.zip"
+            "extract_dir": "jdupes-1.11_win32",
+            "hash": "c7b2631b617e41eb34d62c4ff9cbddd3bef194126932aca73e841297c1f1ae22",
+            "url": "https://github.com/jbruchon/jdupes/releases/download/v1.11/jdupes-1.11_win32.zip"
         },
         "64bit": {
-            "extract_dir": "jdupes-1.10.4_win64",
-            "hash": "4f3da61d43f8c9ad0a697f08679b6c0c63289a669fe1b7f2ffa6610a20dfa3b5",
-            "url": "https://github.com/jbruchon/jdupes/releases/download/v1.10.4/jdupes-1.10.4_win64.zip"
+            "extract_dir": "jdupes-1.11_win64",
+            "hash": "c8f7e6dd54540d44127fc6827eb9cd92e5fc509615f24f9c41ab76c389c4d4d0",
+            "url": "https://github.com/jbruchon/jdupes/releases/download/v1.11/jdupes-1.11_win64.zip"
         }
     },
     "autoupdate": {
@@ -28,5 +28,5 @@
     "description": "A powerful duplicate file finder and an enhanced fork of 'fdupes'",
     "homepage": "https://github.com/jbruchon/jdupes",
     "license": "MIT",
-    "version": "1.10.4"
+    "version": "1.11"
 }
