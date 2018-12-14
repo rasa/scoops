@@ -1,0 +1,24 @@
+{
+    "bin": [
+        [
+            "Mvmc.Gui.exe",
+            "mvmc"
+        ]
+    ],
+    "depends": [
+        "vcredist2012"
+    ],
+    "description": "Convert VMs/disks from VMware to Hyper-V/Azure or convert computers and disks to Hyper-V",
+    "extract_dir": "Microsoft Virtual Machine Converter",
+    "hash": "520b0d08e0b9d2d95206369e56461d3873fb208f507fbccc28651d43aba37f33",
+    "homepage": "http://technet.microsoft.com/en-us/library/dn873998.aspx",
+    "license": "Freeware",
+    "shortcuts": [
+        [
+            "Mvmc.Gui.exe",
+            "Microsoft Virtual Machine Converter"
+        ]
+    ],
+    "url": "https://download.microsoft.com/download/9/1/E/91E9F42C-3F1F-4AD9-92B7-8DD65DA3B0C2/mvmc_setup.msi",
+    "version": "3.0"
+}
