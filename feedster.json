@@ -1,0 +1,34 @@
+{
+    "architecture": {
+        "32bit": {
+            "hash": "d1d9797ace73be87314fcc540847ed09ed0d80f34147d86cefc0b812c077750c",
+            "url": "https://github.com/rasa/feedster/releases/download/v0.3.0/feedster-windows-386.exe"
+        },
+        "64bit": {
+            "hash": "f93372936d3afa6110cc7930ca9fa5e7b020658ab74f8bfd03aacd4c5a7e4def",
+            "url": "https://github.com/rasa/feedster/releases/download/v0.3.0/feedster-windows-amd64.exe"
+        }
+    },
+    "autoupdate": {
+        "architecture": {
+            "32bit": {
+                "hash": {
+                    "url": "https://github.com/rasa/feedster/releases/download/v$version/feedster-windows-386.exe.sha256"
+                },
+                "url": "https://github.com/rasa/feedster/releases/download/v$version/feedster-windows-386.exe"
+            },
+            "64bit": {
+                "hash": {
+                    "url": "https://github.com/rasa/feedster/releases/download/v$version/feedster-windows-amd64.exe.sha256"
+                },
+                "url": "https://github.com/rasa/feedster/releases/download/v$version/feedster-windows-amd64.exe"
+            }
+        }
+    },
+    "bin": "feedster.exe",
+    "checkver": "github",
+    "description": "Easily tag MP3 files and generate iTunes podcast feed",
+    "homepage": "https://github.com/rasa/feedster",
+    "license": "MIT",
+    "version": "0.3.0"
+}
