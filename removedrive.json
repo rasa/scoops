@@ -12,9 +12,9 @@
     },
     "checkver": "RemoveDrive\\s+V([\\d.]+)\\s+-\\s+Safe",
     "description": "Safely removes drives",
-    "hash": "fde2fbe882e9259a4ab9595c61aa43d88252eac6b7593cb978263e8bea04f8a2",
+    "hash": "b63ba89da257845f1a8b51b07227c9aa2bb33ac19ec37eb0b75523d31cbfafd9",
     "homepage": "http://www.uwe-sieber.de/drivetools_e.html",
     "license": "Freeware",
     "url": "http://www.uwe-sieber.de/files/removedrive.zip",
-    "version": "3.0.0"
+    "version": "3.1.0"
 }

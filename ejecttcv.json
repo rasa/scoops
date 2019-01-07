@@ -12,9 +12,9 @@
     },
     "checkver": "EjectTcv\\s+V([\\d.]+)\\s+-\\s+'ejects'",
     "description": "Eject TrueCrypt/VeraCrypt volume",
-    "hash": "cdb455e10294f42ca5cdf315704c7558fc2172e5ee81bb475ac58154f052bb2c",
+    "hash": "6a3e50b9cd7e1d3bc914161ae73c08a91b94112333292fcb25421aa71ba9075d",
     "homepage": "http://www.uwe-sieber.de/drivetools_e.html",
     "license": "Freeware",
     "url": "http://www.uwe-sieber.de/files/ejecttcv.zip",
-    "version": "3.0.0"
+    "version": "3.1.0"
 }
