@@ -2,12 +2,12 @@
     "_comment": "license_url: http://www.win-rar.com/winrarlicense.html?&L=0",
     "architecture": {
         "32bit": {
-            "hash": "b9852714c9f46bd6de740eb72ed901ddc38e897d242209cee84f0ed2b5bb76d8",
-            "url": "https://www.rarlab.com/rar/wrar561.exe"
+            "hash": "2b56b58a2ec260589770b377256831d5c3d0f4efe012b109f2c9d31fcc855ff7",
+            "url": "https://www.rarlab.com/rar/wrar570.exe"
         },
         "64bit": {
-            "hash": "7c4f3300ae333f36b2e94e48ac392b88fc7c4562d190994359821c56d4b81859",
-            "url": "https://www.rarlab.com/rar/winrar-x64-561.exe"
+            "hash": "5e5ae8476052b973b427fe4991aeee2bf5b05ceae5bb45ed67849d06cb031471",
+            "url": "https://www.rarlab.com/rar/winrar-x64-570.exe"
         }
     },
     "autoupdate": {
@@ -39,5 +39,5 @@
     },
     "license": "Shareware",
     "notes": "Winrar is shareware, but unrar is freeware",
-    "version": "5.61"
+    "version": "5.70"
 }
