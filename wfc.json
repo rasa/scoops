@@ -1,13 +1,13 @@
 {
     "autoupdate": {
-        "url": "https://www.binisoft.org/download/wfc5setup.exe"
+        "url": "https://www.binisoft.org/download/wfc$majorVersionsetup.exe"
     },
     "checkver": {
         "re": ">(\\d.\\d.\\d.\\d+)<"
     },
     "depends": "sudo",
     "description": "Powerful tool which extends the functionality of Windows Firewall and provides new extra features which makes Windows Firewall better",
-    "hash": "8dd146f054d1667187d11d242e51877b480d69061695991573940bde7f2d6285",
+    "hash": "61758d0dd3c4f592abf8a411eafce22ede8e3a32a5aab175284914c7f66eb78e",
     "homepage": "https://www.binisoft.org/wfc.php",
     "installer": {
         "script": "sudo cmd.exe /c start /WAIT \"$dir\\wfc5setup.exe\" -install -close \"$dir\""
@@ -21,6 +21,6 @@
             "sudo reg.exe delete \"HKLM\\Software\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\Windows Firewall Control\" /f"
         ]
     },
-    "url": "https://www.binisoft.org/download/wfc5setup.exe",
-    "version": "5.4.1.0"
+    "url": "https://www.binisoft.org/download/wfc6setup.exe",
+    "version": "6.0.0.0"
 }
