@@ -2,7 +2,7 @@
     "bin": "Toms Hash Explorer.exe",
     "description": "Calculate cryptographic hash values (GUI)",
     "hash": "f9b205b73e3891dfd6d3aa455f2c922da0803af2f84fd73ea9bcef520d48d006",
-    "homepage": "http://www.mannerud.org/software/toms-hash-explorer/",
+    "homepage": "https://www.mannerud.org/tom-andreas/software/toms-hash-explorer/",
     "license": "Freeware",
     "pre_install": "& \"$dir/setup.exe\" /SP- /SILENT /NOCANCEL /NOCLOSEAPPLICATIONS /NORESTART /DIR=\"$dir\"",
     "shortcuts": [
@@ -14,6 +14,6 @@
     "uninstaller": {
         "file": "unins000.exe"
     },
-    "url": "http://www.mannerud.org/downloads/Toms_Hash_Explorer_v1.2.zip",
+    "url": "http://www.mannerud.org/tom-andreas/downloads/Toms_Hash_Explorer_v1.2.zip",
     "version": "1.2"
 }
