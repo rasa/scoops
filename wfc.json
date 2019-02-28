@@ -7,10 +7,10 @@
     },
     "depends": "sudo",
     "description": "Powerful tool which extends the functionality of Windows Firewall and provides new extra features which makes Windows Firewall better",
-    "hash": "61758d0dd3c4f592abf8a411eafce22ede8e3a32a5aab175284914c7f66eb78e",
+    "hash": "bffe3186ff96e35ec0cd40799e8d8c27f71524efaa816960071e4be8f973e880",
     "homepage": "https://www.binisoft.org/wfc.php",
     "installer": {
-        "script": "sudo cmd.exe /c start /WAIT \"$dir\\wfc5setup.exe\" -install -close \"$dir\""
+        "script": "sudo cmd.exe /c start /WAIT \"$dir\\wfc6setup.exe\" -install -close \"$dir\""
     },
     "license": "Freeware",
     "uninstaller": {
