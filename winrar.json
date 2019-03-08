@@ -1,5 +1,8 @@
 {
-    "_comment": "license_url: http://www.win-rar.com/winrarlicense.html?&L=0",
+    "_comment": [
+        "license_url: http://www.win-rar.com/winrarlicense.html?&L=0",
+        "Superseded by https://github.com/lukesampson/scoop-extras/blob/master/bucket/winrar.json"
+    ],
     "architecture": {
         "32bit": {
             "hash": "2b56b58a2ec260589770b377256831d5c3d0f4efe012b109f2c9d31fcc855ff7",
