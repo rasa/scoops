@@ -1,4 +1,5 @@
 {
+    "_comment": "Don't forget to update exe name hardcoded in installer/script",
     "autoupdate": {
         "url": "https://www.binisoft.org/download/wfc$majorVersionsetup.exe"
     },
@@ -7,7 +8,7 @@
     },
     "depends": "sudo",
     "description": "Powerful tool which extends the functionality of Windows Firewall and provides new extra features which makes Windows Firewall better",
-    "hash": "bffe3186ff96e35ec0cd40799e8d8c27f71524efaa816960071e4be8f973e880",
+    "hash": "535c7f214e16ef525f546e5dadf4124ffdc7eab0b6089cdc0da56888ec24bd2d",
     "homepage": "https://www.binisoft.org/wfc.php",
     "installer": {
         "script": "sudo cmd.exe /c start /WAIT \"$dir\\wfc6setup.exe\" -install -close \"$dir\""
@@ -22,5 +23,5 @@
         ]
     },
     "url": "https://www.binisoft.org/download/wfc6setup.exe",
-    "version": "6.0.0.0"
+    "version": "6.0.2.0"
 }
