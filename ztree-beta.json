@@ -16,7 +16,7 @@
         "There is no way to uninstall just the beta version"
     ],
     "post_install": [
-        "cp \"$dir/*.*\" \"$(appdir ztree)/current\""
+        "cp \"$dir/*.*\" \"$(appdir ztree $global)/current\""
     ],
     "url": "http://www.zedtek.com/download/ztw24181.zip",
     "version": "2.4.181"
