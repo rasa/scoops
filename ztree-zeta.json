@@ -16,7 +16,7 @@
         "There is no way to uninstall just the zeta version"
     ],
     "post_install": [
-        "cp \"$dir/*.*\" \"$(appdir ztree)/current\""
+        "cp \"$dir/*.*\" \"$(appdir ztree $global)/current\""
     ],
     "url": "http://www.zedtek.com/download/ztw24186.zip",
     "version": "2.4.186"
