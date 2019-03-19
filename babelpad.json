@@ -5,7 +5,7 @@
     "bin": "BabelPad.exe",
     "checkver": ">\\s*Version\\s+([\\d.]+)\\s+\\(",
     "description": "Unicode text editor",
-    "hash": "c4b44962288ce52012a54f4b2cf6cd5547a0c4a4dc49537d9a623e393678ce2f",
+    "hash": "4e70b750d5b6b9e59f34e6321661365a79d158a9683d9c92bcf67a0061c3164a",
     "homepage": "http://www.babelstone.co.uk/Software/BabelPad.html",
     "license": "Freeware",
     "shortcuts": [
@@ -15,5 +15,5 @@
         ]
     ],
     "url": "http://www.babelstone.co.uk/Software/Download/BabelPad.zip",
-    "version": "12.0.0.2"
+    "version": "12.0.0.3"
 }
