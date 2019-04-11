@@ -1,12 +1,12 @@
 {
     "architecture": {
         "32bit": {
-            "hash": "b3b0ba87448b6df9cc45b3b94cf3d54f6082077c52e63b37ce4935289065f5bd",
-            "url": "https://github.com/bitbeans/SimpleDnsCrypt/releases/download/0.6.2/SimpleDNSCrypt.msi"
+            "hash": "c214751a1206b0434de59a9f0ba9cfdc80a0952c1d06aa076bcbfba71eaebc0b",
+            "url": "https://github.com/bitbeans/SimpleDnsCrypt/releases/download/0.6.4/SimpleDNSCrypt.msi"
         },
         "64bit": {
-            "hash": "6e0cf662795a8680197ace2e5871dc242ec888f87a0e905c774ada24b90e2686",
-            "url": "https://github.com/bitbeans/SimpleDnsCrypt/releases/download/0.6.2/SimpleDNSCrypt64.msi"
+            "hash": "f6c381cc7717a027f977321fc02dda60f80954982ddd8d4e4b1c9b6eeeda752f",
+            "url": "https://github.com/bitbeans/SimpleDnsCrypt/releases/download/0.6.4/SimpleDNSCrypt64.msi"
         }
     },
     "autoupdate": {
@@ -35,5 +35,5 @@
     "uninstaller": {
         "file": "Uninstall.exe"
     },
-    "version": "0.6.2"
+    "version": "0.6.4"
 }
