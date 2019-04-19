@@ -96,6 +96,7 @@ scoop bucket add rasa https://github.com/rasa/scoops.git
 |[ztree](http://www.ztree.com/html/ztreewin.htm "http://www.ztree.com/html/ztreewin.htm")|[2.2](http://www.ztree.com/html/ztreewin.htm "http://www.ztree.com/html/ztreewin.htm")|Text-mode file/directory manager|[Shareware](https://en.wikipedia.org/wiki/Shareware "https://en.wikipedia.org/wiki/Shareware")|
 |[ztree-beta](http://www.ztree.com/html/beta.htm "http://www.ztree.com/html/beta.htm")|[2.4.181](http://www.ztree.com/html/beta.htm "http://www.ztree.com/html/beta.htm")|Text-mode file/directory manager (beta version)|[Shareware](https://en.wikipedia.org/wiki/Shareware "https://en.wikipedia.org/wiki/Shareware")|
 |[ztree-zeta](http://www.ztw3.com/forum/search.php?search=[zeta] "http://www.ztw3.com/forum/search.php?search=[zeta]")|[2.4.186](http://www.ztw3.com/forum/search.php?search=[zeta] "http://www.ztw3.com/forum/search.php?search=[zeta]")|Text-mode file/directory manager (zeta version)|[Shareware](https://en.wikipedia.org/wiki/Shareware "https://en.wikipedia.org/wiki/Shareware")|
+
 <!-- </apps> -->
 
 ## Migrated Apps
