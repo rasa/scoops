@@ -5,7 +5,7 @@
     "bin": "BabelMap.exe",
     "checkver": ">\\s*Version\\s+([\\d.]+)\\s+\\(",
     "description": "Display Unicode character maps",
-    "hash": "3a08594d12e63eaae9c0c6aa7ae2167ba0b604be9ab99d844e48e8e44361e389",
+    "hash": "3285b9c237db93f67c78a3c7e81e2f623345c54e4d44b8f6919e2d8913875527",
     "homepage": "http://www.babelstone.co.uk/Software/BabelMap.html",
     "license": "Freeware",
     "shortcuts": [
@@ -15,5 +15,5 @@
         ]
     ],
     "url": "http://www.babelstone.co.uk/Software/Download/BabelMap.zip",
-    "version": "12.0.0.1"
+    "version": "12.1.0.1"
 }
