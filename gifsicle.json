@@ -1,14 +1,14 @@
 {
     "architecture": {
         "32bit": {
-            "extract_dir": "gifsicle-1.89-win32",
-            "hash": "d9b2b29f383b5235be6c3518131febd55c1a4bb48cb39975cbac13e073094938",
-            "url": "https://eternallybored.org/misc/gifsicle/releases/gifsicle-1.89-win32.zip"
+            "extract_dir": "gifsicle-1.92-win32",
+            "hash": "f857433178044be987e328715919b73613254d7bb8452038d492921cf6e92e63",
+            "url": "https://eternallybored.org/misc/gifsicle/releases/gifsicle-1.92-win32.zip"
         },
         "64bit": {
-            "extract_dir": "gifsicle-1.89-win64",
-            "hash": "8c1fe58644fddc8fc1e3ccd97a048630f8e1e0df196931825dfbe5c3f93882f5",
-            "url": "https://eternallybored.org/misc/gifsicle/releases/gifsicle-1.89-win64.zip"
+            "extract_dir": "gifsicle-1.92-win64",
+            "hash": "de06320f02a1aa5330a084a0d7d1aeae370ec0ce51992bef64881b0ebcabaff9",
+            "url": "https://eternallybored.org/misc/gifsicle/releases/gifsicle-1.92-win64.zip"
         }
     },
     "autoupdate": {
@@ -31,5 +31,5 @@
     "description": "Manipulate GIF images",
     "homepage": "https://eternallybored.org/misc/gifsicle/",
     "license": "GPL-2.0-only",
-    "version": "1.89"
+    "version": "1.92"
 }

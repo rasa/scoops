@@ -1,23 +1,17 @@
 {
     "autoupdate": {
-        "url": "http://www.zedtek.com/download/ztw$cleanVersion.exe"
+        "url": "http://www.ztree.com/download/ztw$cleanVersion.zip"
     },
     "checkver": {
         "re": "\\[Zeta\\] v([\\d.]+)\\s+"
     },
-    "depends": [
-        "ztree"
-    ],
+    "depends": "ztree",
     "description": "Text-mode file/directory manager (zeta version)",
-    "hash": "5221c445026a97c3dc313452725f06a4e4fb9fff1c7cd9e4f8ad042d5e166f8a",
+    "hash": "1ce729ff17b56f766147e931960fd55a8b9ce2e1ee07606feef7d6b9ace105f8",
     "homepage": "http://www.ztw3.com/forum/search.php?search=[zeta]",
     "license": "Shareware",
-    "notes": [
-        "There is no way to uninstall just the zeta version"
-    ],
-    "post_install": [
-        "cp \"$dir/*.*\" \"$(appdir ztree $global)/current\""
-    ],
-    "url": "http://www.zedtek.com/download/ztw24186.zip",
-    "version": "2.4.186"
+    "notes": "There is no way to uninstall just the zeta version",
+    "post_install": "cp \"$dir/*.*\" \"$(appdir ztree $global)/current\"",
+    "url": "http://www.ztree.com/download/ztw24187.zip",
+    "version": "2.4.187"
 }
