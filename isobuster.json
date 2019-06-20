@@ -8,7 +8,7 @@
         "url": "https://www.isobuster.com/download.php"
     },
     "description": "The ultimate data recovery software",
-    "hash": "380ba4a7c9dcced8ad868f0334a1cf6d1bae8bbc93300143a98d830a317fe2a7",
+    "hash": "43b46423038c58a22e02a1c7986e867d9698576e72965bfa6ef5441233ddb5f9",
     "homepage": "https://www.isobuster.com/",
     "innosetup": true,
     "license": "Shareware",
@@ -19,5 +19,5 @@
         ]
     ],
     "url": "https://www.isobuster.com/dl.php?d=isobuster.com&v=1&l=0#/isobuster_install.exe",
-    "version": "4.3"
+    "version": "4.4"
 }
