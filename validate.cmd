@@ -13,6 +13,6 @@ for %%i in (%_1%) do (
     if exist "%%~i.failed" (
         del "%%~i.failed"
     )
-    py -2 %~dp0\validate.py "%%~i"
+    py -3 %~dp0\validate.py "%%~i"
 )
 exit /b 0
