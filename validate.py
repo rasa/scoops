@@ -34,11 +34,24 @@ def decode(s):
     return s.decode('latin-1')
 
 
-schema_name = 'D:/github/rasa/scoop/schema.json'
+schema_name = 'c:/scoop/apps/scoop/current/schema.json'
 
 if not os.path.isfile(schema_name):
-    schema_name = '%s/scoop/apps/scoop/current/schema.json' % os.environ[
-        'USERPROFILE']
+    if 'SCOOP_HOME' in os.environ:
+        schema_name = '%s/schema.json' % os.environ['SCOOP_HOME']
+
+if not os.path.isfile(schema_name):
+    if 'SCOOP' in os.environ:
+        schema_name = '%s/apps/scoop/current/schema.json' % os.environ['SCOOP']
+
+if not os.path.isfile(schema_name):
+    if 'USERPROFILE' in os.environ:
+        schema_name = '%s/scoop/apps/scoop/current/schema.json' % os.environ[
+            'USERPROFILE']
+
+if not os.path.isfile(schema_name):
+    print("File not found: schema.json")
+    sys.exit(1)
 
 file = sys.argv[1]
 if re.match('^schema', file):
