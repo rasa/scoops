@@ -137,7 +137,7 @@ To view existing bugs, or report a new bug, please see [issues](../../issues).
 
 ## License
 
-This project is [MIT licensed](LICENSE).
+This project is [MIT licensed](https://smithii.mit-license.org/).
 
 ## Contact
 
