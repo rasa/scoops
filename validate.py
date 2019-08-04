@@ -57,7 +57,7 @@ file = sys.argv[1]
 if re.match('^schema', file):
     sys.exit(0)
 
-print('Validating %s via %s' % (file, schema_name))
+#print('Validating %s via %s' % (file, schema_name))
 
 with open(schema_name, 'r') as f:
     schema_data = json.load(f)
@@ -77,10 +77,11 @@ try:
     validate(json_data, schema_data)
 
 except Exception as e:
+    print("%s failed" % file)
     trace = traceback.format_exc()
-    print(trace)
-    with open(failed, 'a+') as f:
-        f.write(trace)
+    print(e)
+    #with open(failed, 'a+') as f:
+    #   f.write(trace)
     sys.exit(1)
 
 sys.exit(0)
