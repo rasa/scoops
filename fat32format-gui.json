@@ -1,0 +1,18 @@
+{
+    "autoupdate": {
+        "url": "http://www.ridgecrop.demon.co.uk/guiformat.exe"
+    },
+    "bin": "guiformat.exe",
+    "description": "Format disk media using FAT32 (GUI)",
+    "hash": "",
+    "homepage": "http://www.ridgecrop.demon.co.uk/index.htm?guiformat.htm",
+    "license": "GPL-2.0-only",
+    "shortcuts": [
+        [
+        "guiformat.exe",
+        "Fat32 format"
+        ]
+    ],
+    "url": "http://www.ridgecrop.demon.co.uk/guiformat.exe",
+    "version": "1.01"
+}
