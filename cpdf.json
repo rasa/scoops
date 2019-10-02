@@ -3,10 +3,13 @@
         "url": "https://github.com/coherentgraphics/cpdf-binaries/raw/master/Windows/cpdf.exe"
     },
     "bin": "cpdf.exe",
+    "checkver": {
+        "github": "https://github.com/johnwhitington/cpdf-source"
+    },
     "description": "Powerful PDF manipulation tool",
-    "hash": "7486448e6d37a501bf77c0b29a6eafc5e8ee99d8a944721ff22ac194fd22ec59",
+    "hash": "5c6025434adcc95b6cd558fc6dd412352d57b04c1d4839078c056c6491eed8c3",
     "homepage": "http://community.coherentpdf.com/",
     "license": "Freeware",
     "url": "https://github.com/coherentgraphics/cpdf-binaries/raw/master/Windows/cpdf.exe",
-    "version": "2.2-patchlevel1"
+    "version": "2.3"
 }
