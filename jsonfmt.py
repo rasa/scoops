@@ -7,6 +7,7 @@
 from jsoncomment import JsonComment
 # from jsonschema import validate
 
+from collections import OrderedDict
 import json
 import os
 import pprint
@@ -82,7 +83,7 @@ keys = [
 ]
 
 old_json = json_data
-new_json = {}
+new_json = OrderedDict()
 for key in keys:
     new_json = add(key, json_data, new_json)
     if key in old_json:

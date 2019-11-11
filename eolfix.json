@@ -1,13 +1,13 @@
 {
-    "bin": "eolfix.exe",
-    "hash": "1d674daed4b5ab7d8de21c14d108b78dd6cd7bfcfb34db264bbf3a09cc65a62f",
-    "description": "Report & fix end-of-line characters",
-    "license": "MIT",
-    "checkver": "github",
-    "url": "https://github.com/rasa/eolfix/releases/download/v0.3.0/eolfix-0.3.0-win32.zip",
     "version": "0.3.0",
+    "description": "Report & fix end-of-line characters",
+    "homepage": "https://github.com/rasa/eolfix",
+    "license": "MIT",
+    "hash": "1d674daed4b5ab7d8de21c14d108b78dd6cd7bfcfb34db264bbf3a09cc65a62f",
+    "url": "https://github.com/rasa/eolfix/releases/download/v0.3.0/eolfix-0.3.0-win32.zip",
+    "bin": "eolfix.exe",
+    "checkver": "github",
     "autoupdate": {
         "url": "https://github.com/rasa/eolfix/releases/download/v$version/eolfix-$version-win32.zip"
-    },
-    "homepage": "https://github.com/rasa/eolfix"
+    }
 }

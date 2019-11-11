@@ -1,17 +1,17 @@
 {
+    "version": "5.52",
+    "description": "Enhanced Mitigation Experience Toolkit",
+    "homepage": "https://technet.microsoft.com/en-us/security/jj653751",
+    "license": "MSEULA",
+    "hash": "419740d3f8557a0c93b9181a5eaabb12a2b4a7a6843e83b02dfb4b080fbc31de",
+    "url": "https://download.microsoft.com/download/F/3/6/F366901C-F3CB-4A94-B377-5611740B8B19/EMET%20Setup.msi",
     "bin": [
         "EMET_GUI.exe"
     ],
-    "hash": "419740d3f8557a0c93b9181a5eaabb12a2b4a7a6843e83b02dfb4b080fbc31de",
-    "description": "Enhanced Mitigation Experience Toolkit",
-    "license": "MSEULA",
-    "url": "https://download.microsoft.com/download/F/3/6/F366901C-F3CB-4A94-B377-5611740B8B19/EMET%20Setup.msi",
     "shortcuts": [
         [
             "EMET_GUI.exe",
             "Enhanced Mitigation Experience Toolkit"
         ]
-    ],
-    "version": "5.52",
-    "homepage": "https://technet.microsoft.com/en-us/security/jj653751"
+    ]
 }

@@ -1,13 +1,13 @@
 {
-    "bin": "lsdsk.exe",
-    "hash": "dd27b551df15bf59a977b2eb1a4b2415f9f7c68830393e0f84decb602b060984",
-    "description": "List mounted disks",
-    "license": "MIT",
-    "checkver": "github",
-    "url": "https://github.com/rasa/lsdsk/releases/download/v1.8/lsdsk-1.8-win32.zip",
     "version": "1.8",
+    "description": "List mounted disks",
+    "homepage": "https://github.com/rasa/lsdsk",
+    "license": "MIT",
+    "hash": "dd27b551df15bf59a977b2eb1a4b2415f9f7c68830393e0f84decb602b060984",
+    "url": "https://github.com/rasa/lsdsk/releases/download/v1.8/lsdsk-1.8-win32.zip",
+    "bin": "lsdsk.exe",
+    "checkver": "github",
     "autoupdate": {
         "url": "https://github.com/rasa/lsdsk/releases/download/v$version/lsdsk-$version-win32.zip"
-    },
-    "homepage": "https://github.com/rasa/lsdsk"
+    }
 }

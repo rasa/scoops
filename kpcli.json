@@ -1,17 +1,17 @@
 {
+    "version": "3.3",
+    "description": "Command line tool for keepass databases (.kdb or .kdbx)",
+    "homepage": "https://sourceforge.net/projects/kpcli/",
+    "license": "Artistic-1.0-Perl",
+    "hash": "sha1:54cc664bf5597356cbb8fe042b81d7f78833855d",
+    "url": "https://downloads.sourceforge.net/project/kpcli/files/kpcli-3.3.exe",
     "pre_install": "Copy-Item \"$dir/kpcli-*.exe\" \"$dir/kpcli.exe\"",
     "bin": "kpcli.exe",
-    "hash": "sha1:54cc664bf5597356cbb8fe042b81d7f78833855d",
-    "description": "Command line tool for keepass databases (.kdb or .kdbx)",
-    "license": "Artistic-1.0-Perl",
     "checkver": {
         "url": "https://sourceforge.net/projects/kpcli/files/",
         "re": "kpcli-([\\d.]+)\\.exe"
     },
-    "url": "https://downloads.sourceforge.net/project/kpcli/files/kpcli-3.3.exe",
-    "version": "3.3",
     "autoupdate": {
         "url": "https://downloads.sourceforge.net/project/kpcli/files/kpcli-$version.exe"
-    },
-    "homepage": "https://sourceforge.net/projects/kpcli/"
+    }
 }

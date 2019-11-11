@@ -1,4 +1,19 @@
 {
+    "##": "Maintainers: when updating this manifest to a new version, you might like to also update git.json",
+    "version": "2.24.0.windows.2",
+    "homepage": "https://git-for-windows.github.io/",
+    "license": "GPL-2.0-only",
+    "architecture": {
+        "32bit": {
+            "url": "https://github.com/git-for-windows/git/releases/download/v2.24.0.windows.2/PortableGit-2.24.0.2-32-bit.7z.exe#/dl.7z",
+            "hash": "6ac4761e2711cb584f2df1fbc27b677a03c745cfef0bae55604bc27a5c26d68b"
+        },
+        "64bit": {
+            "url": "https://github.com/git-for-windows/git/releases/download/v2.24.0.windows.2/PortableGit-2.24.0.2-64-bit.7z.exe#/dl.7z",
+            "hash": "353d0e1566d8897cb7afe2f6f9088bac17182ca43416feadec1c16f5c3bb9e0f"
+        }
+    },
+    "post_install": "git config --global credential.helper manager",
     "bin": [
         "cmd\\git.exe",
         "cmd\\gitk.exe",
@@ -14,22 +29,9 @@
         "usr\\bin\\ssh-keyscan.exe",
         "usr\\bin\\tig.exe"
     ],
-    "license": "GPL-2.0-only",
     "checkver": {
         "url": "https://github.com/git-for-windows/git/releases/latest",
         "re": "v(?<version>[\\d\\w.]+)/PortableGit-(?<short>[\\d.]+).*\\.exe"
-    },
-    "##": "Maintainers: when updating this manifest to a new version, you might like to also update git.json",
-    "version": "2.24.0.windows.2",
-    "architecture": {
-        "32bit": {
-            "url": "https://github.com/git-for-windows/git/releases/download/v2.24.0.windows.2/PortableGit-2.24.0.2-32-bit.7z.exe#/dl.7z",
-            "hash": "6ac4761e2711cb584f2df1fbc27b677a03c745cfef0bae55604bc27a5c26d68b"
-        },
-        "64bit": {
-            "url": "https://github.com/git-for-windows/git/releases/download/v2.24.0.windows.2/PortableGit-2.24.0.2-64-bit.7z.exe#/dl.7z",
-            "hash": "353d0e1566d8897cb7afe2f6f9088bac17182ca43416feadec1c16f5c3bb9e0f"
-        }
     },
     "autoupdate": {
         "hash": {
@@ -44,7 +46,5 @@
                 "url": "https://github.com/git-for-windows/git/releases/download/v$matchVersion/PortableGit-$matchShort-64-bit.7z.exe#/dl.7z"
             }
         }
-    },
-    "homepage": "https://git-for-windows.github.io/",
-    "post_install": "git config --global credential.helper manager"
+    }
 }

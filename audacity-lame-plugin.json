@@ -1,22 +1,22 @@
 {
-    "hash": "2ad66ed683b0074d0381055d387a871cce3c38626fea29ee30710f73cee12356",
+    "version": "3.100",
     "description": "LAME plugin for Audacity",
+    "homepage": "http://lame.buanzo.org/",
     "license": {
         "url": "https://sourceforge.net/p/lame/svn/HEAD/tree/trunk/lame/COPYING",
         "identifier": "LGPL-2.0-Only"
     },
+    "depends": [
+        "audacity"
+    ],
+    "hash": "2ad66ed683b0074d0381055d387a871cce3c38626fea29ee30710f73cee12356",
+    "url": "https://lame.buanzo.org/lame_v3.100.zip",
+    "post_install": "cp \"$dir/*.dll\" \"$(appdir audacity $global)/current\"",
     "checkver": {
         "url": "http://lame.buanzo.org/",
         "re": "lame_v([\\d.]+).zip"
     },
-    "url": "https://lame.buanzo.org/lame_v3.100.zip",
-    "depends": [
-        "audacity"
-    ],
-    "version": "3.100",
     "autoupdate": {
         "url": "https://lame.buanzo.org/lame_v$version.zip"
-    },
-    "homepage": "http://lame.buanzo.org/",
-    "post_install": "cp \"$dir/*.dll\" \"$(appdir audacity $global)/current\""
+    }
 }

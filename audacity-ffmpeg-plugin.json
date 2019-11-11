@@ -1,22 +1,22 @@
 {
-    "hash": "84b0669f71cfb44e557e54ae2c863b89cfa544d1ecf751d7114e2b5955eb0cb2",
+    "version": "2.2.2",
     "description": "FFMPEG plugin for Audacity",
+    "homepage": "http://lame.buanzo.org/",
     "license": "LGPL-2.1-only",
+    "depends": [
+        "audacity"
+    ],
+    "hash": "84b0669f71cfb44e557e54ae2c863b89cfa544d1ecf751d7114e2b5955eb0cb2",
+    "url": "https://lame.buanzo.org/ffmpeg-win-2.2.2.zip",
+    "post_install": [
+        "cp \"$dir/*.dll\" \"$(appdir audacity $global)/current\"",
+        "cp \"$dir/*.exe\" \"$(appdir audacity $global)/current\""
+    ],
     "checkver": {
         "url": "http://lame.buanzo.org/",
         "re": "/ffmpeg-win-([\\d.]+).zip"
     },
-    "url": "https://lame.buanzo.org/ffmpeg-win-2.2.2.zip",
-    "depends": [
-        "audacity"
-    ],
-    "version": "2.2.2",
     "autoupdate": {
         "url": "https://lame.buanzo.org/ffmpeg-win-$version.zip"
-    },
-    "homepage": "http://lame.buanzo.org/",
-    "post_install": [
-        "cp \"$dir/*.dll\" \"$(appdir audacity $global)/current\"",
-        "cp \"$dir/*.exe\" \"$(appdir audacity $global)/current\""
-    ]
+    }
 }
