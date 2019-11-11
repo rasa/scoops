@@ -1,10 +1,11 @@
 {
+    "version": "2018.03.25",
     "description": "VLC Blu-ray plugin",
+    "homepage": "https://www.videolan.org/",
     "license": "GPL-2.0-only",
     "depends": [
         "vlc"
     ],
-    "version": "2018.03.25",
     "architecture": {
         "32bit": {
             "url": [
@@ -27,7 +28,6 @@
             ]
         }
     },
-    "homepage": "https://www.videolan.org/",
     "post_install": [
         "New-Item -ItemType Directory -Force -Path \"$($env:ProgramData)/aacs\" >$null",
         "Copy-Item \"$dir/KEYDB.cfg\" \"$($env:ProgramData)/aacs\"",

@@ -1,10 +1,8 @@
 {
-    "hash": "c8f0f68710da1989a507b37d95e664ff1f57b33cffc72685f546169e1c3035c4",
-    "description": "Remove nonpresent drives from the registry",
-    "license": "Freeware",
-    "checkver": "DriveCleanup\\s+V([\\d.]+)",
-    "url": "http://www.uwe-sieber.de/files/drivecleanup.zip",
     "version": "1.6",
+    "description": "Remove nonpresent drives from the registry",
+    "homepage": "http://www.uwe-sieber.de/drivetools_e.html",
+    "license": "Freeware",
     "architecture": {
         "32bit": {
             "bin": "Win32/DriveCleanup.exe"
@@ -13,8 +11,10 @@
             "bin": "x64/DriveCleanup.exe"
         }
     },
+    "hash": "c8f0f68710da1989a507b37d95e664ff1f57b33cffc72685f546169e1c3035c4",
+    "url": "http://www.uwe-sieber.de/files/drivecleanup.zip",
+    "checkver": "DriveCleanup\\s+V([\\d.]+)",
     "autoupdate": {
         "url": "http://www.uwe-sieber.de/files/drivecleanup.zip"
-    },
-    "homepage": "http://www.uwe-sieber.de/drivetools_e.html"
+    }
 }

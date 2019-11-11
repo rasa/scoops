@@ -1,21 +1,12 @@
 {
+    "version": "2019.07.16",
     "description": "ltr-data.se freeware utilities",
+    "homepage": "http://www.ltr-data.se/opencode.html/#CmdUtils",
     "license": "MIT",
-    "shortcuts": [
-        [
-            "FSplitW.exe",
-            "ltrdata/FileSplit"
-        ],
-        [
-            "winlogoncfg.exe",
-            "ltrdata/Winlogon Configuration Tool"
-        ]
-    ],
     "notes": "Not including bunzip2, bzip2, and bzcat, as they are version 0.9.5c",
     "depends": [
         "bzip2"
     ],
-    "version": "2019.07.16",
     "architecture": {
         "32bit": {
             "bin": [
@@ -329,6 +320,16 @@
             "hash": "069e7062f23532603f9f84262ce6fa79669a6ed786bd02a358a77cc9b0be3f32"
         }
     },
+    "shortcuts": [
+        [
+            "FSplitW.exe",
+            "ltrdata/FileSplit"
+        ],
+        [
+            "winlogoncfg.exe",
+            "ltrdata/Winlogon Configuration Tool"
+        ]
+    ],
     "autoupdate": {
         "architecture": {
             "32bit": {
@@ -338,6 +339,5 @@
                 "url": "http://www.ltr-data.se/files/win64/exefiles.7z"
             }
         }
-    },
-    "homepage": "http://www.ltr-data.se/opencode.html/#CmdUtils"
+    }
 }

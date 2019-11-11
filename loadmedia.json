@@ -1,10 +1,8 @@
 {
-    "hash": "529f49c38969f3bcac1fad7928af59acbc74334f09394a4ce6dbb0b1fbbd728d",
-    "description": "Load removable media",
-    "license": "Freeware",
-    "checkver": "LoadMedia\\s+V([\\d.]+)\\s+-\\s+Loads",
-    "url": "http://www.uwe-sieber.de/files/loadmedia.zip",
     "version": "1.5",
+    "description": "Load removable media",
+    "homepage": "http://www.uwe-sieber.de/drivetools_e.html",
+    "license": "Freeware",
     "architecture": {
         "32bit": {
             "bin": "Win32/LoadMedia.exe"
@@ -13,8 +11,10 @@
             "bin": "x64/LoadMedia.exe"
         }
     },
+    "hash": "529f49c38969f3bcac1fad7928af59acbc74334f09394a4ce6dbb0b1fbbd728d",
+    "url": "http://www.uwe-sieber.de/files/loadmedia.zip",
+    "checkver": "LoadMedia\\s+V([\\d.]+)\\s+-\\s+Loads",
     "autoupdate": {
         "url": "http://www.uwe-sieber.de/files/loadmedia.zip"
-    },
-    "homepage": "http://www.uwe-sieber.de/drivetools_e.html"
+    }
 }

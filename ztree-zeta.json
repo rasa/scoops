@@ -1,17 +1,17 @@
 {
-    "hash": "3c79188d13db63f5b3e86addf46141477620158d18f6a91fbc10438827515463",
+    "version": "2.4.191",
     "description": "Text-mode file/directory manager (zeta version)",
+    "homepage": "http://www.ztw3.com/forum/search.php?search=[zeta]",
     "license": "Shareware",
+    "notes": "There is no way to uninstall just the zeta version",
+    "depends": "ztree",
+    "hash": "3c79188d13db63f5b3e86addf46141477620158d18f6a91fbc10438827515463",
+    "url": "http://www.ztree.com/download/ztw24191.zip",
+    "post_install": "cp \"$dir/*.*\" \"$(appdir ztree $global)/current\"",
     "checkver": {
         "re": "\\[Zeta\\] v([\\d.]+)\\s+"
     },
-    "url": "http://www.ztree.com/download/ztw24191.zip",
-    "notes": "There is no way to uninstall just the zeta version",
-    "depends": "ztree",
-    "version": "2.4.191",
     "autoupdate": {
         "url": "http://www.ztree.com/download/ztw$cleanVersion.zip"
-    },
-    "homepage": "http://www.ztw3.com/forum/search.php?search=[zeta]",
-    "post_install": "cp \"$dir/*.*\" \"$(appdir ztree $global)/current\""
+    }
 }
