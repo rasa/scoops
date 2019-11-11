@@ -2,12 +2,12 @@
     "##": "Maintainers: when updating this manifest to a new version, you might like to also update git.json",
     "architecture": {
         "32bit": {
-            "hash": "33388028d45c685201490b0c621d2dbfde89d902a7257771f18de9bb37ae1b9a",
-            "url": "https://github.com/git-for-windows/git/releases/download/v2.23.0.windows.1/PortableGit-2.23.0-32-bit.7z.exe#/dl.7z"
+            "hash": "6ac4761e2711cb584f2df1fbc27b677a03c745cfef0bae55604bc27a5c26d68b",
+            "url": "https://github.com/git-for-windows/git/releases/download/v2.24.0.windows.2/PortableGit-2.24.0.2-32-bit.7z.exe#/dl.7z"
         },
         "64bit": {
-            "hash": "501d8be861ebb8694df3f47f1f673996b1d1672e12559d4a07fae7a2eca3afc7",
-            "url": "https://github.com/git-for-windows/git/releases/download/v2.23.0.windows.1/PortableGit-2.23.0-64-bit.7z.exe#/dl.7z"
+            "hash": "353d0e1566d8897cb7afe2f6f9088bac17182ca43416feadec1c16f5c3bb9e0f",
+            "url": "https://github.com/git-for-windows/git/releases/download/v2.24.0.windows.2/PortableGit-2.24.0.2-64-bit.7z.exe#/dl.7z"
         }
     },
     "autoupdate": {
@@ -46,5 +46,5 @@
     "homepage": "https://git-for-windows.github.io/",
     "license": "GPL-2.0-only",
     "post_install": "git config --global credential.helper manager",
-    "version": "2.23.0.windows.1"
+    "version": "2.24.0.windows.2"
 }
