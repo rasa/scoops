@@ -1,14 +1,22 @@
 {
+    "bin": [
+        "gifdiff.exe",
+        "gifsicle.exe"
+    ],
+    "description": "Manipulate GIF images",
+    "license": "GPL-2.0-only",
+    "checkver": "href=\"releases/gifsicle-([\\d.]+)",
+    "version": "1.92",
     "architecture": {
         "32bit": {
             "extract_dir": "gifsicle-1.92-win32",
-            "hash": "f857433178044be987e328715919b73613254d7bb8452038d492921cf6e92e63",
-            "url": "https://eternallybored.org/misc/gifsicle/releases/gifsicle-1.92-win32.zip"
+            "url": "https://eternallybored.org/misc/gifsicle/releases/gifsicle-1.92-win32.zip",
+            "hash": "f857433178044be987e328715919b73613254d7bb8452038d492921cf6e92e63"
         },
         "64bit": {
             "extract_dir": "gifsicle-1.92-win64",
-            "hash": "de06320f02a1aa5330a084a0d7d1aeae370ec0ce51992bef64881b0ebcabaff9",
-            "url": "https://eternallybored.org/misc/gifsicle/releases/gifsicle-1.92-win64.zip"
+            "url": "https://eternallybored.org/misc/gifsicle/releases/gifsicle-1.92-win64.zip",
+            "hash": "de06320f02a1aa5330a084a0d7d1aeae370ec0ce51992bef64881b0ebcabaff9"
         }
     },
     "autoupdate": {
@@ -23,13 +31,5 @@
             }
         }
     },
-    "bin": [
-        "gifdiff.exe",
-        "gifsicle.exe"
-    ],
-    "checkver": "href=\"releases/gifsicle-([\\d.]+)",
-    "description": "Manipulate GIF images",
-    "homepage": "https://eternallybored.org/misc/gifsicle/",
-    "license": "GPL-2.0-only",
-    "version": "1.92"
+    "homepage": "https://eternallybored.org/misc/gifsicle/"
 }

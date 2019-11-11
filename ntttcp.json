@@ -1,4 +1,9 @@
 {
+    "hash": "090fe61913513bd55a56e59354e50b0b1ddab17721446345223d05dede4b8f0f",
+    "description": "Profile and Measure Windows Networking Performance",
+    "license": "Custom",
+    "url": "https://gallery.technet.microsoft.com/NTttcp-Version-528-Now-f8b12769/file/159655/1/NTttcp-v5.33.zip",
+    "version": "5.33",
     "architecture": {
         "32bit": {
             "bin": "x86fre/NTttcp.exe"
@@ -7,10 +12,5 @@
             "bin": "amd64fre/NTttcp.exe"
         }
     },
-    "description": "Profile and Measure Windows Networking Performance",
-    "hash": "090fe61913513bd55a56e59354e50b0b1ddab17721446345223d05dede4b8f0f",
-    "homepage": "https://gallery.technet.microsoft.com/NTttcp-Version-528-Now-f8b12769",
-    "license": "Custom",
-    "url": "https://gallery.technet.microsoft.com/NTttcp-Version-528-Now-f8b12769/file/159655/1/NTttcp-v5.33.zip",
-    "version": "5.33"
+    "homepage": "https://gallery.technet.microsoft.com/NTttcp-Version-528-Now-f8b12769"
 }

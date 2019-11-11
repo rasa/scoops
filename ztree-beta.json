@@ -1,23 +1,23 @@
 {
-    "autoupdate": {
-        "url": "http://www.zedtek.com/download/ztw$cleanVersion.zip"
-    },
+    "hash": "eb8c4c5b80ddc4c31227249b7d1af2dfe85d86bbe73e6bd44f254948f141f75f",
+    "description": "Text-mode file/directory manager (beta version)",
+    "license": "Shareware",
     "checkver": {
         "re": ";\">v([\\d.]+)<"
     },
-    "depends": [
-        "ztree"
-    ],
-    "description": "Text-mode file/directory manager (beta version)",
-    "hash": "eb8c4c5b80ddc4c31227249b7d1af2dfe85d86bbe73e6bd44f254948f141f75f",
-    "homepage": "http://www.ztree.com/html/beta.htm",
-    "license": "Shareware",
+    "url": "http://www.zedtek.com/download/ztw24181.zip",
     "notes": [
         "There is no way to uninstall just the beta version"
     ],
+    "depends": [
+        "ztree"
+    ],
+    "version": "2.4.181",
+    "autoupdate": {
+        "url": "http://www.zedtek.com/download/ztw$cleanVersion.zip"
+    },
+    "homepage": "http://www.ztree.com/html/beta.htm",
     "post_install": [
         "cp \"$dir/*.*\" \"$(appdir ztree $global)/current\""
-    ],
-    "url": "http://www.zedtek.com/download/ztw24181.zip",
-    "version": "2.4.181"
+    ]
 }

@@ -1,23 +1,23 @@
 {
-    "autoupdate": {
-        "url": "https://www.isobuster.com/dl.php?d=isobuster.com&v=1&l=0#/isobuster_install.exe"
-    },
     "bin": "isobuster.exe",
-    "checkver": {
-        "re": "Download\\s+IsoBuster\\s+([\\d\\.]+)\\s*<",
-        "url": "https://www.isobuster.com/download.php"
-    },
-    "description": "The ultimate data recovery software",
     "hash": "43b46423038c58a22e02a1c7986e867d9698576e72965bfa6ef5441233ddb5f9",
-    "homepage": "https://www.isobuster.com/",
-    "innosetup": true,
+    "description": "The ultimate data recovery software",
     "license": "Shareware",
+    "checkver": {
+        "url": "https://www.isobuster.com/download.php",
+        "re": "Download\\s+IsoBuster\\s+([\\d\\.]+)\\s*<"
+    },
+    "url": "https://www.isobuster.com/dl.php?d=isobuster.com&v=1&l=0#/isobuster_install.exe",
     "shortcuts": [
         [
             "isobuster.exe",
             "ISOBuster"
         ]
     ],
-    "url": "https://www.isobuster.com/dl.php?d=isobuster.com&v=1&l=0#/isobuster_install.exe",
-    "version": "4.4"
+    "innosetup": true,
+    "version": "4.4",
+    "autoupdate": {
+        "url": "https://www.isobuster.com/dl.php?d=isobuster.com&v=1&l=0#/isobuster_install.exe"
+    },
+    "homepage": "https://www.isobuster.com/"
 }

@@ -1,26 +1,26 @@
 {
-    "autoupdate": {
-        "extract_dir": "gsmartcontrol-$version-win32",
-        "url": "https://downloads.sourceforge.net/project/gsmartcontrol/files/$version/gsmartcontrol-$version-win32.zip"
-    },
     "bin": [
         "gsmartcontrol.exe"
     ],
-    "checkver": "/gsmartcontrol-([\\d.]+)-win32\\.zip",
-    "depends": [
-        "smartmontools"
-    ],
-    "description": "GUI frontend for smartmontools (Read SMART data from disks)",
-    "extract_dir": "gsmartcontrol-1.1.3-win32",
     "hash": "sha1:2fb4c852f8d890b5fa545f81651375798b9f3b82",
-    "homepage": "http://gsmartcontrol.sourceforge.net/home/index.php/Downloads",
+    "description": "GUI frontend for smartmontools (Read SMART data from disks)",
     "license": "GPL-2.0",
+    "checkver": "/gsmartcontrol-([\\d.]+)-win32\\.zip",
+    "url": "https://downloads.sourceforge.net/project/gsmartcontrol/files/1.1.3/gsmartcontrol-1.1.3-win32.zip",
+    "extract_dir": "gsmartcontrol-1.1.3-win32",
     "shortcuts": [
         [
             "gsmartcontrol.exe",
             "GSmartControl - frontend for SmartMonTools"
         ]
     ],
-    "url": "https://downloads.sourceforge.net/project/gsmartcontrol/files/1.1.3/gsmartcontrol-1.1.3-win32.zip",
-    "version": "1.1.3"
+    "depends": [
+        "smartmontools"
+    ],
+    "version": "1.1.3",
+    "autoupdate": {
+        "extract_dir": "gsmartcontrol-$version-win32",
+        "url": "https://downloads.sourceforge.net/project/gsmartcontrol/files/$version/gsmartcontrol-$version-win32.zip"
+    },
+    "homepage": "http://gsmartcontrol.sourceforge.net/home/index.php/Downloads"
 }

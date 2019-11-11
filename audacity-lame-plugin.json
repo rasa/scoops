@@ -1,22 +1,22 @@
 {
-    "autoupdate": {
-        "url": "https://lame.buanzo.org/lame_v$version.zip"
+    "hash": "2ad66ed683b0074d0381055d387a871cce3c38626fea29ee30710f73cee12356",
+    "description": "LAME plugin for Audacity",
+    "license": {
+        "url": "https://sourceforge.net/p/lame/svn/HEAD/tree/trunk/lame/COPYING",
+        "identifier": "LGPL-2.0-Only"
     },
     "checkver": {
-        "re": "lame_v([\\d.]+).zip",
-        "url": "http://lame.buanzo.org/"
+        "url": "http://lame.buanzo.org/",
+        "re": "lame_v([\\d.]+).zip"
     },
+    "url": "https://lame.buanzo.org/lame_v3.100.zip",
     "depends": [
         "audacity"
     ],
-    "description": "LAME plugin for Audacity",
-    "hash": "2ad66ed683b0074d0381055d387a871cce3c38626fea29ee30710f73cee12356",
-    "homepage": "http://lame.buanzo.org/",
-    "license": {
-        "identifier": "LGPL-2.0-Only",
-        "url": "https://sourceforge.net/p/lame/svn/HEAD/tree/trunk/lame/COPYING"
+    "version": "3.100",
+    "autoupdate": {
+        "url": "https://lame.buanzo.org/lame_v$version.zip"
     },
-    "post_install": "cp \"$dir/*.dll\" \"$(appdir audacity $global)/current\"",
-    "url": "https://lame.buanzo.org/lame_v3.100.zip",
-    "version": "3.100"
+    "homepage": "http://lame.buanzo.org/",
+    "post_install": "cp \"$dir/*.dll\" \"$(appdir audacity $global)/current\""
 }

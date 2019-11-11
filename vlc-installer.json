@@ -1,12 +1,21 @@
 {
+    "description": "Download and install the VLC media player and related plugins (deprecated)",
+    "license": "MIT",
+    "checkver": "github",
+    "notes": "WARNING: The uninstaller will display a popup window",
+    "uninstaller": {
+        "args": "/S",
+        "file": "Uninstall-vlc_installer.exe"
+    },
+    "version": "2.2.4",
     "architecture": {
         "32bit": {
-            "hash": "67b8ea781fda9f8c13f672443dab0a437c4365fb757e121234f3ad0f2dc654a7",
-            "url": "https://github.com/rasa/vlc_installer/releases/download/v2.2.4/vlc_installer-2.2.4-win32.zip"
+            "url": "https://github.com/rasa/vlc_installer/releases/download/v2.2.4/vlc_installer-2.2.4-win32.zip",
+            "hash": "67b8ea781fda9f8c13f672443dab0a437c4365fb757e121234f3ad0f2dc654a7"
         },
         "64bit": {
-            "hash": "12910e0b8785d778247e431e2f05f7cb14869265569ef075539fd0e6a35a48b4",
-            "url": "https://github.com/rasa/vlc_installer/releases/download/v2.2.4/vlc_installer-2.2.4-win64.zip"
+            "url": "https://github.com/rasa/vlc_installer/releases/download/v2.2.4/vlc_installer-2.2.4-win64.zip",
+            "hash": "12910e0b8785d778247e431e2f05f7cb14869265569ef075539fd0e6a35a48b4"
         }
     },
     "autoupdate": {
@@ -19,9 +28,6 @@
             }
         }
     },
-    "checkver": "github",
-    "description": "Download and install the VLC media player and related plugins (deprecated)",
-    "homepage": "https://github.com/rasa/vlc_installer",
     "installer": {
         "args": [
             "/S",
@@ -29,11 +35,5 @@
         ],
         "file": "vlc_installer.exe"
     },
-    "license": "MIT",
-    "notes": "WARNING: The uninstaller will display a popup window",
-    "uninstaller": {
-        "args": "/S",
-        "file": "Uninstall-vlc_installer.exe"
-    },
-    "version": "2.2.4"
+    "homepage": "https://github.com/rasa/vlc_installer"
 }

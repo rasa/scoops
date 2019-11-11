@@ -1,4 +1,21 @@
 {
+    "description": "ltr-data.se freeware utilities",
+    "license": "MIT",
+    "shortcuts": [
+        [
+            "FSplitW.exe",
+            "ltrdata/FileSplit"
+        ],
+        [
+            "winlogoncfg.exe",
+            "ltrdata/Winlogon Configuration Tool"
+        ]
+    ],
+    "notes": "Not including bunzip2, bzip2, and bzcat, as they are version 0.9.5c",
+    "depends": [
+        "bzip2"
+    ],
+    "version": "2019.07.16",
     "architecture": {
         "32bit": {
             "bin": [
@@ -155,8 +172,8 @@
                 "xcopynt.exe",
                 "xorsum.exe"
             ],
-            "hash": "ab3a3b9c5a9a975753a38e621215721b6c32a2cade437a61768b7d517ffbda1c",
-            "url": "http://www.ltr-data.se/files/exefiles.7z"
+            "url": "http://www.ltr-data.se/files/exefiles.7z",
+            "hash": "ab3a3b9c5a9a975753a38e621215721b6c32a2cade437a61768b7d517ffbda1c"
         },
         "64bit": {
             "bin": [
@@ -308,8 +325,8 @@
                 "xcopynt.exe",
                 "xorsum.exe"
             ],
-            "hash": "069e7062f23532603f9f84262ce6fa79669a6ed786bd02a358a77cc9b0be3f32",
-            "url": "http://www.ltr-data.se/files/win64/exefiles.7z"
+            "url": "http://www.ltr-data.se/files/win64/exefiles.7z",
+            "hash": "069e7062f23532603f9f84262ce6fa79669a6ed786bd02a358a77cc9b0be3f32"
         }
     },
     "autoupdate": {
@@ -322,22 +339,5 @@
             }
         }
     },
-    "depends": [
-        "bzip2"
-    ],
-    "description": "ltr-data.se freeware utilities",
-    "homepage": "http://www.ltr-data.se/opencode.html/#CmdUtils",
-    "license": "MIT",
-    "notes": "Not including bunzip2, bzip2, and bzcat, as they are version 0.9.5c",
-    "shortcuts": [
-        [
-            "FSplitW.exe",
-            "ltrdata/FileSplit"
-        ],
-        [
-            "winlogoncfg.exe",
-            "ltrdata/Winlogon Configuration Tool"
-        ]
-    ],
-    "version": "2019.07.16"
+    "homepage": "http://www.ltr-data.se/opencode.html/#CmdUtils"
 }
