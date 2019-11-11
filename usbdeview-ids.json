@@ -1,13 +1,15 @@
 {
-    "autoupdate": {
-        "url": "http://www.linux-usb.org/usb.ids"
-    },
+    "description": "USB device database used by Nirsoft's usbdeview",
+    "license": "GPL-2.0-only",
+    "url": "http://www.linux-usb.org/usb.ids",
     "depends": [
         "nirlauncher"
     ],
-    "description": "USB device database used by Nirsoft's usbdeview",
+    "version": "latest",
+    "autoupdate": {
+        "url": "http://www.linux-usb.org/usb.ids"
+    },
     "homepage": "http://www.linux-usb.org/usb-ids.html",
-    "license": "GPL-2.0-only",
     "post_install": [
         "if (Test-Path \"$(appdir nirlauncher $global)\") {",
         "   Copy-Item \"$dir/usb.ids\" \"$(appdir nirlauncher $global)/current/NirSoft/usb.ids\"",
@@ -15,7 +17,5 @@
         "if (Test-Path \"$(appdir nirlauncher $global)\") {",
         "   Copy-Item \"$dir/usb.ids\" \"$(appdir nirlauncher $global)/current/NirSoft/x64/usb.ids\"",
         "}"
-    ],
-    "url": "http://www.linux-usb.org/usb.ids",
-    "version": "latest"
+    ]
 }

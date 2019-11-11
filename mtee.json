@@ -1,15 +1,15 @@
 {
-    "autoupdate": {
-        "url": "https://codeload.github.com/ritchielawrence/mtee/legacy.zip/master#mtee.zip"
-    },
     "bin": "ritchielawrence-mtee-e4d4592/bin/Release/mtee.exe",
+    "hash": "f05d9e9f9c9c841bf9eef7a6c5c3389344d2a532bfe10483260c36fbfc3abd47",
+    "description": "Split standard output to a file",
+    "license": "MIT",
     "checkver": {
         "github": "https://github.com/ritchielawrence/mtee"
     },
-    "description": "Split standard output to a file",
-    "hash": "f05d9e9f9c9c841bf9eef7a6c5c3389344d2a532bfe10483260c36fbfc3abd47",
-    "homepage": "https://ritchielawrence.github.io/mtee/",
-    "license": "MIT",
     "url": "https://codeload.github.com/ritchielawrence/mtee/legacy.zip/master#mtee.zip",
-    "version": "2.21"
+    "version": "2.21",
+    "autoupdate": {
+        "url": "https://codeload.github.com/ritchielawrence/mtee/legacy.zip/master#mtee.zip"
+    },
+    "homepage": "https://ritchielawrence.github.io/mtee/"
 }

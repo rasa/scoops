@@ -1,4 +1,9 @@
 {
+    "hash": "0efe8e3add1ce1aa77fecb3300aa5445dafacdc2e38ec36175cffbf74fadaf3d",
+    "description": "List USB drives",
+    "license": "Freeware",
+    "url": "http://www.uwe-sieber.de/files/listusbdrives.zip",
+    "version": "5.2.8",
     "architecture": {
         "32bit": {
             "bin": "Win32/ListUsbDrives.exe"
@@ -10,10 +15,5 @@
     "autoupdate": {
         "url": "http://www.uwe-sieber.de/files/listusbdrives.zip"
     },
-    "description": "List USB drives",
-    "hash": "0efe8e3add1ce1aa77fecb3300aa5445dafacdc2e38ec36175cffbf74fadaf3d",
-    "homepage": "http://www.uwe-sieber.de/usbdlm_e.html",
-    "license": "Freeware",
-    "url": "http://www.uwe-sieber.de/files/listusbdrives.zip",
-    "version": "5.2.8"
+    "homepage": "http://www.uwe-sieber.de/usbdlm_e.html"
 }

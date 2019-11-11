@@ -1,22 +1,12 @@
 {
-    "autoupdate": {
-        "url": "http://go.microsoft.com/fwlink/?LinkId=14188#/htmlhelp.exe"
-    },
     "bin": [
         "hhc.exe",
         "hhw.exe"
     ],
-    "description": "Microsoft HTML Help Compiler",
     "hash": "b2b3140d42a818870c1ab13c1c7b8d4536f22bd994fa90aade89729a6009a3ae",
-    "homepage": "https://msdn.microsoft.com/en-us/library/windows/desktop/ms669985(v=vs.85).aspx",
-    "installer": {
-        "args": [
-            "/Q",
-            "/C",
-            "/T:\"$dir\""
-        ]
-    },
+    "description": "Microsoft HTML Help Compiler",
     "license": "Freeware",
+    "url": "http://go.microsoft.com/fwlink/?LinkId=14188#/htmlhelp.exe",
     "shortcuts": [
         [
             "hhw.exe",
@@ -27,6 +17,16 @@
             "Microsoft HTML Help Compiler/Microsoft HTML Help Image Editor"
         ]
     ],
-    "url": "http://go.microsoft.com/fwlink/?LinkId=14188#/htmlhelp.exe",
-    "version": "1.3"
+    "version": "1.3",
+    "autoupdate": {
+        "url": "http://go.microsoft.com/fwlink/?LinkId=14188#/htmlhelp.exe"
+    },
+    "installer": {
+        "args": [
+            "/Q",
+            "/C",
+            "/T:\"$dir\""
+        ]
+    },
+    "homepage": "https://msdn.microsoft.com/en-us/library/windows/desktop/ms669985(v=vs.85).aspx"
 }
