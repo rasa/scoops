@@ -5,8 +5,8 @@
     "homepage": "https://www.binisoft.org/wfc.php",
     "license": "Freeware",
     "depends": "sudo",
-    "hash": "535c7f214e16ef525f546e5dadf4124ffdc7eab0b6089cdc0da56888ec24bd2d",
     "url": "https://www.binisoft.org/download/wfc6setup.exe",
+    "hash": "535c7f214e16ef525f546e5dadf4124ffdc7eab0b6089cdc0da56888ec24bd2d",
     "installer": {
         "script": "sudo cmd.exe /c start /WAIT \"$dir\\wfc6setup.exe\" -install -close \"$dir\""
     },

@@ -3,8 +3,8 @@
     "description": "Microsoft HTML Help Compiler",
     "homepage": "https://msdn.microsoft.com/en-us/library/windows/desktop/ms669985(v=vs.85).aspx",
     "license": "Freeware",
-    "hash": "b2b3140d42a818870c1ab13c1c7b8d4536f22bd994fa90aade89729a6009a3ae",
     "url": "http://go.microsoft.com/fwlink/?LinkId=14188#/htmlhelp.exe",
+    "hash": "b2b3140d42a818870c1ab13c1c7b8d4536f22bd994fa90aade89729a6009a3ae",
     "installer": {
         "args": [
             "/Q",

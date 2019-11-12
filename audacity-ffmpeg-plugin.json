@@ -6,8 +6,8 @@
     "depends": [
         "audacity"
     ],
-    "hash": "84b0669f71cfb44e557e54ae2c863b89cfa544d1ecf751d7114e2b5955eb0cb2",
     "url": "https://lame.buanzo.org/ffmpeg-win-2.2.2.zip",
+    "hash": "84b0669f71cfb44e557e54ae2c863b89cfa544d1ecf751d7114e2b5955eb0cb2",
     "post_install": [
         "cp \"$dir/*.dll\" \"$(appdir audacity $global)/current\"",
         "cp \"$dir/*.exe\" \"$(appdir audacity $global)/current\""

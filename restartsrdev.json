@@ -12,8 +12,8 @@
             "bin": "x64/RestartSrDev.exe"
         }
     },
-    "hash": "f401521063b6c0ce30c8d659e7e5f7629abc07bdb6814adc2bda8b5a34cf7c92",
     "url": "http://www.uwe-sieber.de/files/restartsrdev.zip",
+    "hash": "f401521063b6c0ce30c8d659e7e5f7629abc07bdb6814adc2bda8b5a34cf7c92",
     "checkver": "RestartSrDev\\s+V([\\d.]+)\\s+-\\s+restarts",
     "autoupdate": {
         "url": "http://www.uwe-sieber.de/files/restartsrdev.zip"

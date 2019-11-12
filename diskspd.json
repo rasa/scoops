@@ -11,6 +11,6 @@
             "bin": "amd64fre/diskspd.exe"
         }
     },
-    "hash": "fd830ec6de0f0acd4fd91826ef218676e98347d17de13ac412d967bf5ae326aa",
-    "url": "https://gallery.technet.microsoft.com/DiskSpd-a-robust-storage-6cd2f223/file/152702/1/Diskspd-v2.0.17.zip"
+    "url": "https://gallery.technet.microsoft.com/DiskSpd-a-robust-storage-6cd2f223/file/152702/1/Diskspd-v2.0.17.zip",
+    "hash": "fd830ec6de0f0acd4fd91826ef218676e98347d17de13ac412d967bf5ae326aa"
 }

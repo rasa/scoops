@@ -3,8 +3,8 @@
     "description": "Unicode text editor",
     "homepage": "http://www.babelstone.co.uk/Software/BabelPad.html",
     "license": "Freeware",
-    "hash": "ce1e90235331c4b343b82d27c23c3dad503fa7569c6567e5c278742b46657b5c",
     "url": "http://www.babelstone.co.uk/Software/Download/BabelPad.zip",
+    "hash": "ce1e90235331c4b343b82d27c23c3dad503fa7569c6567e5c278742b46657b5c",
     "bin": "BabelPad.exe",
     "shortcuts": [
         [

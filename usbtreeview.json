@@ -11,8 +11,8 @@
             "extract_dir": "x64"
         }
     },
-    "hash": "68d5dd469a1c8522a762fd0a7f743fd40475b25fbdb121a0546f50d908467468",
     "url": "http://www.uwe-sieber.de/files/usbtreeview.zip",
+    "hash": "68d5dd469a1c8522a762fd0a7f743fd40475b25fbdb121a0546f50d908467468",
     "bin": "usbtreeview.exe",
     "shortcuts": [
         [

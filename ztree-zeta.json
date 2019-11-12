@@ -5,8 +5,8 @@
     "license": "Shareware",
     "notes": "There is no way to uninstall just the zeta version",
     "depends": "ztree",
-    "hash": "3c79188d13db63f5b3e86addf46141477620158d18f6a91fbc10438827515463",
     "url": "http://www.ztree.com/download/ztw24191.zip",
+    "hash": "3c79188d13db63f5b3e86addf46141477620158d18f6a91fbc10438827515463",
     "post_install": "cp \"$dir/*.*\" \"$(appdir ztree $global)/current\"",
     "checkver": {
         "re": "\\[Zeta\\] v([\\d.]+)\\s+"

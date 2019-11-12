@@ -12,8 +12,8 @@
             "bin": "x64/FFB.exe"
         }
     },
-    "hash": "c2a4a4e2373fa079742d502c8134f0c0eed7c519774118110f39b71f2d5a363d",
     "url": "http://www.uwe-sieber.de/files/FFB.zip",
+    "hash": "c2a4a4e2373fa079742d502c8134f0c0eed7c519774118110f39b71f2d5a363d",
     "autoupdate": {
         "url": "http://www.uwe-sieber.de/files/FFB.zip"
     }
