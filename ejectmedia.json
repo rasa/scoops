@@ -11,8 +11,8 @@
             "bin": "x64/EjectMedia.exe"
         }
     },
-    "hash": "6b2d6462598f9c48599dd6f70aae7a67e008388efbd12b0aac882fe164b6bee0",
     "url": "http://www.uwe-sieber.de/files/ejectmedia.zip",
+    "hash": "6b2d6462598f9c48599dd6f70aae7a67e008388efbd12b0aac882fe164b6bee0",
     "checkver": "EjectMedia\\s+V([\\d.]+)\\s+-\\s+ejects",
     "autoupdate": {
         "url": "http://www.uwe-sieber.de/files/ejectmedia.zip"

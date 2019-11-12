@@ -11,8 +11,8 @@
             "bin": "x64/DriveCleanup.exe"
         }
     },
-    "hash": "c8f0f68710da1989a507b37d95e664ff1f57b33cffc72685f546169e1c3035c4",
     "url": "http://www.uwe-sieber.de/files/drivecleanup.zip",
+    "hash": "c8f0f68710da1989a507b37d95e664ff1f57b33cffc72685f546169e1c3035c4",
     "checkver": "DriveCleanup\\s+V([\\d.]+)",
     "autoupdate": {
         "url": "http://www.uwe-sieber.de/files/drivecleanup.zip"

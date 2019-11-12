@@ -11,8 +11,8 @@
             "bin": "x64/EjectTcv.exe"
         }
     },
-    "hash": "26a7557bc6a148f7060004e6c34aff84305aec67e803aba3dc7a369933233350",
     "url": "http://www.uwe-sieber.de/files/ejecttcv.zip",
+    "hash": "26a7557bc6a148f7060004e6c34aff84305aec67e803aba3dc7a369933233350",
     "checkver": "EjectTcv\\s+V([\\d.]+)\\s+-\\s+'ejects'",
     "autoupdate": {
         "url": "http://www.uwe-sieber.de/files/ejecttcv.zip"

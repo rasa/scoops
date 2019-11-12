@@ -9,8 +9,8 @@
     "depends": [
         "ztree"
     ],
-    "hash": "eb8c4c5b80ddc4c31227249b7d1af2dfe85d86bbe73e6bd44f254948f141f75f",
     "url": "http://www.zedtek.com/download/ztw24181.zip",
+    "hash": "eb8c4c5b80ddc4c31227249b7d1af2dfe85d86bbe73e6bd44f254948f141f75f",
     "post_install": [
         "cp \"$dir/*.*\" \"$(appdir ztree $global)/current\""
     ],

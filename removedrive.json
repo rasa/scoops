@@ -11,8 +11,8 @@
             "bin": "x64/RemoveDrive.exe"
         }
     },
-    "hash": "0c24ab565f4aad46c9f60b15531294484aec6672a6e0c85b150906bd55cba641",
     "url": "http://www.uwe-sieber.de/files/removedrive.zip",
+    "hash": "0c24ab565f4aad46c9f60b15531294484aec6672a6e0c85b150906bd55cba641",
     "checkver": "RemoveDrive\\s+V([\\d.]+)\\s+-\\s+Safe",
     "autoupdate": {
         "url": "http://www.uwe-sieber.de/files/removedrive.zip"

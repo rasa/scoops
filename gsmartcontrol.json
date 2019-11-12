@@ -6,8 +6,8 @@
     "depends": [
         "smartmontools"
     ],
-    "hash": "sha1:2fb4c852f8d890b5fa545f81651375798b9f3b82",
     "url": "https://downloads.sourceforge.net/project/gsmartcontrol/files/1.1.3/gsmartcontrol-1.1.3-win32.zip",
+    "hash": "sha1:2fb4c852f8d890b5fa545f81651375798b9f3b82",
     "extract_dir": "gsmartcontrol-1.1.3-win32",
     "bin": [
         "gsmartcontrol.exe"
