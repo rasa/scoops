@@ -5,6 +5,5 @@ set _1=%*
 if not defined _1 set _1=*.json
 
 for %%i in (%_1%) do (
-    py jsonfmt.py "%%~i"
+    py %~dp0jsonfmt.py "%%~i"
 )
-
