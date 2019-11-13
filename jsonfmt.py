@@ -8,6 +8,7 @@ from jsoncomment import JsonComment
 # from jsonschema import validate
 
 from collections import OrderedDict
+import io
 import json
 import os
 import pprint
@@ -94,10 +95,10 @@ if old_json:
     sys.exit(1)
 
 new_data = json.dumps(
-    new_json, sort_keys=False, indent=4, separators=(',', ': '))
-with open(file + '.tmp', 'wb') as f:
-    new_data = new_data.encode('utf-8')
-    new_data += b"\n"
+    new_json, sort_keys=False, indent=4, separators=(',', ': '), ensure_ascii=False)
+# new_data = new_data.encode('utf-8')
+new_data += "\n"
+with io.open(file + '.tmp', 'w', encoding='utf-8', newline='\r\n') as f:
     f.write(new_data)
 
 if os.path.isfile(file + '.bak'):
