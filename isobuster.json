@@ -4,7 +4,7 @@
     "homepage": "https://www.isobuster.com/",
     "license": "Shareware",
     "url": "https://www.isobuster.com/dl.php?d=isobuster.com&v=1&l=0#/isobuster_install.exe",
-    "hash": "43b46423038c58a22e02a1c7986e867d9698576e72965bfa6ef5441233ddb5f9",
+    "hash": "cae9e2bf37ec048dbacf765073fadfcd1b49f12a8fe9aa0a0a61622beb38e441",
     "innosetup": true,
     "bin": "isobuster.exe",
     "shortcuts": [
