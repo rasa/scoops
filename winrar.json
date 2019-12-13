@@ -3,19 +3,19 @@
         "license_url: http://www.win-rar.com/winrarlicense.html?&L=0",
         "Superseded by https://github.com/lukesampson/scoop-extras/blob/master/bucket/winrar.json"
     ],
-    "version": "5.71",
+    "version": "5.80",
     "description": "Compress/uncompress RAR files",
     "homepage": "http://www.rarlab.com/",
     "license": "Shareware",
     "notes": "Winrar is shareware, but unrar is freeware",
     "architecture": {
         "32bit": {
-            "url": "https://www.rarlab.com/rar/wrar571.exe",
-            "hash": "df5432792436545c8255f98cbf659ceca63e13d29c1cc74944ab70e34feb96fa"
+            "url": "https://www.rarlab.com/rar/wrar580.exe",
+            "hash": "c6abfdbaa4958a6d3f01f92a9bd0c675ab985340b5fbf3d1e2dd0ae9dcff8491"
         },
         "64bit": {
-            "url": "https://www.rarlab.com/rar/winrar-x64-571.exe",
-            "hash": "fd820bf82edbaa4be20fd3b644a05754d95d71de60fe79ab983c3318e0697540"
+            "url": "https://www.rarlab.com/rar/winrar-x64-580.exe",
+            "hash": "f94e7e695398e6148da03c06ad4452b8875aab117acc80cdd373a0b75cafe488"
         }
     },
     "installer": {
