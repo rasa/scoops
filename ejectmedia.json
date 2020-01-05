@@ -1,5 +1,5 @@
 {
-    "version": "3.1.3",
+    "version": "3.2.0",
     "description": "Eject removable media",
     "homepage": "http://www.uwe-sieber.de/drivetools_e.html",
     "license": "Freeware",
@@ -12,7 +12,7 @@
         }
     },
     "url": "http://www.uwe-sieber.de/files/ejectmedia.zip",
-    "hash": "6b2d6462598f9c48599dd6f70aae7a67e008388efbd12b0aac882fe164b6bee0",
+    "hash": "4723fa07b39ac44693224efd872c3e112691d815256935a92cc82aa1068564ac",
     "checkver": "EjectMedia\\s+V([\\d.]+)\\s+-\\s+ejects",
     "autoupdate": {
         "url": "http://www.uwe-sieber.de/files/ejectmedia.zip"
