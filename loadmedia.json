@@ -12,7 +12,7 @@
         }
     },
     "url": "http://www.uwe-sieber.de/files/loadmedia.zip",
-    "hash": "529f49c38969f3bcac1fad7928af59acbc74334f09394a4ce6dbb0b1fbbd728d",
+    "hash": "282bf6bd2c737f5c0fff48c6b3cf6ac65c94562c3a1f8cbbb49078bba1032875",
     "checkver": "LoadMedia\\s+V([\\d.]+)\\s+-\\s+Loads",
     "autoupdate": {
         "url": "http://www.uwe-sieber.de/files/loadmedia.zip"
