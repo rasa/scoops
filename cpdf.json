@@ -4,7 +4,7 @@
     "homepage": "http://community.coherentpdf.com/",
     "license": "Freeware",
     "url": "https://github.com/coherentgraphics/cpdf-binaries/raw/master/Windows/cpdf.exe",
-    "hash": "5c6025434adcc95b6cd558fc6dd412352d57b04c1d4839078c056c6491eed8c3",
+    "hash": "c21d898fec5fd8d30c2b512fc64cb7d81edb95679445b5efbff5447a7edb42b7",
     "bin": "cpdf.exe",
     "checkver": {
         "github": "https://github.com/johnwhitington/cpdf-source"
