@@ -3,7 +3,7 @@ setlocal EnableDelayedExpansion EnableExtensions
 
 set _1=%*
 
-if not defined _1 set _1=*.json
+if not defined _1 set _1=bucket\*.json
 
 set error=
 

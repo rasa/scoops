@@ -23,7 +23,7 @@ specs.pop(0)
 if len(specs) == 0:
     specs = ['*.json']
 
-for file in os.listdir('.'):
+for file in os.listdir('bucket'):
     accept = False
     for spec in specs:
         if fnmatch.fnmatch(file, spec):
@@ -38,8 +38,6 @@ for file in os.listdir('.'):
         row = {}
         (name, ext) = os.path.splitext(os.path.basename(file))
         if re.search('^_', name):
-            continue
-        if re.search('^schema', name):
             continue
         if 'checkver' in j:
             continue
