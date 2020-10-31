@@ -32,7 +32,7 @@ import stat
 import subprocess
 import sys
 # import time
-import urllib2
+# import urllib2
 # import zipfile
 
 from six.moves.urllib.parse import urlsplit, urlunsplit  # pylint: disable=import-error
@@ -68,14 +68,16 @@ TMP_DIR = '%s/tmp' % temp_drive
 
 
 # https://stackoverflow.com/a/4829285/1432614
+# pylint: disable=W0613 # Unused argument 'func' (unused-argument)
 def on_rm_error(func, path, exc_info):
+    """ @todo docstring me """
     # path contains the path of the file that couldn't be removed
     # let's just assume that it's read-only and unlink it.
     os.chmod(path, stat.S_IWRITE)
     return os.unlink(path)
 
 
-class CheckURLs(object):
+class CheckURLs:
     """ @todo docstring me """
 
     def __init__(self):
@@ -109,7 +111,8 @@ class CheckURLs(object):
         scheme = self.get_scheme(url).lower()
         return re.search(r'^(https|http)$', scheme, re.I) is not None
 
-    def get_scheme(self, url):
+    @staticmethod
+    def get_scheme(url):
         """ @todo docstring me """
 
         parts = list(urlsplit(url))
@@ -118,7 +121,8 @@ class CheckURLs(object):
         logging.warning('Cannot split %s', url)
         return None
 
-    def get_host(self, url):
+    @staticmethod
+    def get_host(url):
         """ @todo docstring me """
 
         parts = list(urlsplit(url))
@@ -162,7 +166,8 @@ class CheckURLs(object):
         parts[0] = new_scheme
         return urlunsplit(parts)
 
-    def get_referer(self, url):
+    @staticmethod
+    def get_referer(url):
         """ @todo docstring me """
         parts = list(urlsplit(url))
         if len(parts) < 2:
@@ -179,6 +184,7 @@ class CheckURLs(object):
         return urlunsplit([parts[0], parts[1], base, '', ''])
 
     def get_filenames(self, url, key):
+        """ @todo docstring me """
         INVALID_FILE_CHARS = '<>"|?*:/\\%'
 
         m = re.search(r'/([^/]+)/?$', url)
@@ -194,7 +200,7 @@ class CheckURLs(object):
 
         self.head_file = os.path.join(self.tmp_dir, '.' + file)
 
-        (basename, extension) = os.path.splitext(file)
+        (basename, _) = os.path.splitext(file)
 
         if basename == file:
             self.zip_dir = ''
@@ -211,8 +217,11 @@ class CheckURLs(object):
 
         return True
 
-    def rmtree(self, dir):
-        def on_rm_error(func, path, exc_info):
+    @staticmethod
+    def rmtree(sdir):
+        """ @todo docstring me """
+        def _on_rm_error(func, path, exc_info):
+            """ @todo docstring me """
             logging.error('path=%s', path)
             # path contains the path of the file that couldn't be removed
             # let's just assume that it's read-only and unlink it.
@@ -220,7 +229,7 @@ class CheckURLs(object):
             return os.unlink(path)
 
         # https://stackoverflow.com/a/4829285/1432614
-        return shutil.rmtree(dir, onerror=on_rm_error)
+        return shutil.rmtree(sdir, onerror=_on_rm_error)
 
     def save(self, url, data, key):
         """ @todo docstring me """
@@ -249,6 +258,7 @@ class CheckURLs(object):
         return True
 
     def save_headers(self):
+        """ @todo docstring me """
         if not os.path.exists(self.tmp_dir):
             os.makedirs(self.tmp_dir)
         # logging.debug("Saving %s", self.head_file)
@@ -328,10 +338,10 @@ class CheckURLs(object):
             r = requests.get(url, headers=headers)
             status = r.status_code
             data = r.content
-        if DOWNLOADER == 'urllib2':
-            request = urllib2.Request(url, headers=headers)
-            data = urllib2.urlopen(request).read()
-            status = request.getcode()
+        # if DOWNLOADER == 'urllib2':
+        #     request = urllib2.Request(url, headers=headers)
+        #     data = urllib2.urlopen(request).read()
+        #     status = request.getcode()
         return (status, data)
 
     def unzip(self, url, data, key):
@@ -354,36 +364,34 @@ class CheckURLs(object):
         logging.debug(cmd)
         os.system(cmd)
         return True
-        """
-        try:
-            z = zipfile.ZipFile(self.zip_file, 'r')
-            # https://stackoverflow.com/a/9813471/1432614
-            for f in z.infolist():
-                name, date_time = f.filename, f.date_time
-                # logging.debug("name='%s'", name)
-                name = os.path.join(self.zip_dir, name)
-                if not os.path.exists(os.path.dirname(name)):
-                    # logging.debug("Creating directory '%s'", os.path.dirname(name))
-                    os.makedirs(os.path.dirname(name))
-                # logging.debug("Creating '%s'", name)
-                z.extract(f, self.zip_dir)
-                # with open(name, 'w') as outFile:
-                #     outFile.write(z.open(f).read())
-                date_time = time.mktime(date_time + (0, 0, -1))
-                if os.path.exists(name):
-                    # logging.debug("Setting time")
-                    os.utime(name, (date_time, date_time))
-                else:
-                    pass
-                    # logging.debug("Cannot set time as file not found: %s", name)
+        # try:
+        #     z = zipfile.ZipFile(self.zip_file, 'r')
+        #     # https://stackoverflow.com/a/9813471/1432614
+        #     for f in z.infolist():
+        #         name, date_time = f.filename, f.date_time
+        #         # logging.debug("name='%s'", name)
+        #         name = os.path.join(self.zip_dir, name)
+        #         if not os.path.exists(os.path.dirname(name)):
+        #             # logging.debug("Creating directory '%s'", os.path.dirname(name))
+        #             os.makedirs(os.path.dirname(name))
+        #         # logging.debug("Creating '%s'", name)
+        #         z.extract(f, self.zip_dir)
+        #         # with open(name, 'w') as outFile:
+        #         #     outFile.write(z.open(f).read())
+        #         date_time = time.mktime(date_time + (0, 0, -1))
+        #         if os.path.exists(name):
+        #             # logging.debug("Setting time")
+        #             os.utime(name, (date_time, date_time))
+        #         else:
+        #             pass
+        #             # logging.debug("Cannot set time as file not found: %s", name)
 
-            # z.extractall(self.zip_dir)
-        except Exception as e:
-            logging.exception(e)
-        finally:
-            z.close()
-        return True
-        """
+        #     # z.extractall(self.zip_dir)
+        # except Exception as e:
+        #     logging.exception(e)
+        # finally:
+        #     z.close()
+        # return True
 
     def get(self, url, key='', whine=True):
         """ @todo docstring me """
@@ -421,22 +429,23 @@ class CheckURLs(object):
             self.save(url, data, key)
             self.unzip(url, data, key)
             return data
-        except Exception as e:
+        except Exception as exc:
             reason = ''
-            if hasattr(e, 'reason'):
-                reason = e.reason
-            elif hasattr(e, 'code'):
-                reason = e.code
-            if type(e).__name__ in ssl_errors:
+            # pylint: disable=E1101 # Instance of 'Exception' has no 'reason' member (no-member)
+            if hasattr(exc, 'reason'):
+                reason = exc.reason
+            elif hasattr(exc, 'code'):
+                reason = exc.code
+            if type(exc).__name__ in ssl_errors:
                 logging.debug('%s: Exception %s: %s (%s)', key,
-                              type(e).__name__, reason, url)
+                              type(exc).__name__, reason, url)
                 return False
             logging.error('%s: Exception %s: %s (%s)', key,
-                          type(e).__name__, reason, url)
-            logging.exception(e)
+                          type(exc).__name__, reason, url)
+            logging.exception(exc)
             return False
 
-    def check_url(self, url, key, hash='', desc=''):
+    def check_url(self, url, key, _hash='', desc=''):
         """ @todo docstring me """
 
         hashmap = {
@@ -448,8 +457,8 @@ class CheckURLs(object):
 
         if desc:
             key += '.' + desc
-        logging.debug('%s: %s (%s)', key, url, hash)
-        if not hash and self.is_https(url) and not self.check_exists:
+        logging.debug('%s: %s (%s)', key, url, _hash)
+        if not _hash and self.is_https(url) and not self.check_exists:
             return False
 
         if self.check_https and not self.is_https(url):
@@ -461,7 +470,7 @@ class CheckURLs(object):
         if self.check_exists:
             retry = self.is_https(new_url)
         else:
-            retry = new_url != url and hash
+            retry = new_url != url and _hash
         content = self.get(new_url, key, not retry)
         if retry and not content:
             if self.check_exists:
@@ -474,31 +483,31 @@ class CheckURLs(object):
             logging.debug('%s: No content for %s', key, new_url)
             return False
 
-        if self.check_hash and hash:
-            logging.debug('%s: Verifying hash %s', key, hash)
-            m = re.search(r':([^:]+)$', hash)
+        if self.check_hash and _hash:
+            logging.debug('%s: Verifying hash %s', key, _hash)
+            m = re.search(r':([^:]+)$', _hash)
             if m:
-                hash = m.group(1).strip()
-            hashlen = len(hash)
+                _hash = m.group(1).strip()
+            hashlen = len(_hash)
             if hashlen not in hashmap:
                 logging.error('%s: Unknown hash type %s: %s', key, hashlen,
-                              hash)
+                              _hash)
             else:
                 h = hashlib.new(hashmap[hashlen])
                 h.update(content)
                 chash = h.hexdigest().lower()
-                if chash == hash.lower():
+                if chash == _hash.lower():
                     logging.debug('%s: Hashes match:  %s', key, chash)
                 else:
                     output = subprocess.check_output(['file', self.tmp_file])
                     if re.search(r'html', output, re.I) is None:
                         logging.error('%s: Found %s, expected %s (%s)', key,
-                                      chash, hash, url)
+                                      chash, _hash, url)
                         for line in output.splitlines():
                             line = line.split()
                             if line:
                                 logging.error(line)
-                        self.data = re.sub(hash, chash, self.data)
+                        self.data = re.sub(_hash, chash, self.data)
 
         if new_url == url:
             return ''
@@ -515,7 +524,7 @@ class CheckURLs(object):
         logging.debug('%s: Returning ""', key)
         return ''
 
-    def check_urls(self, url_or_list, key, hash='', desc=''):
+    def check_urls(self, url_or_list, key, _hash='', desc=''):
         """ @todo docstring me """
 
         # if desc:
@@ -525,16 +534,16 @@ class CheckURLs(object):
             schemes = []
             for index, url in enumerate(url_or_list):
                 hash_value = ''
-                if isinstance(hash, list):
-                    if len(hash) > index:
-                        hash_value = hash[index]
+                if isinstance(_hash, list):
+                    if len(_hash) > index:
+                        hash_value = _hash[index]
                 schemes.append(self.check_url(url, key, hash_value, desc))
 
             return schemes
 
-        return self.check_url(url_or_list, key, hash, desc)
+        return self.check_url(url_or_list, key, _hash, desc)
 
-    def process(self, j, key, hash='', desc=''):
+    def process(self, j, key, _hash='', desc=''):
         """ @todo docstring me """
 
         if key not in j:
@@ -543,12 +552,12 @@ class CheckURLs(object):
             if 'url' not in j[key]:
                 return False
 
-            if not hash and self.check_hash and 'hash' in j[key]:
-                hash = j[key]['hash']
+            if not _hash and self.check_hash and 'hash' in j[key]:
+                _hash = j[key]['hash']
 
-            return self.check_urls(j[key]['url'], key, hash, desc)
+            return self.check_urls(j[key]['url'], key, _hash, desc)
 
-        return self.check_urls(j[key], key, hash, desc)
+        return self.check_urls(j[key], key, _hash, desc)
 
     def _fix_scheme(self, url, key, scheme='https', desc=''):
         """ @todo docstring me """
@@ -611,7 +620,9 @@ class CheckURLs(object):
         logging.info("fix_schemes: scheme=%s", scheme)
         return self._fix_schemes(j[key], key, scheme, desc)
 
-    def schemes_changed(self, schemes):
+    @staticmethod
+    def schemes_changed(schemes):
+        """ @todo docstring me """
         if isinstance(schemes, list):
             for scheme in schemes:
                 if scheme:
@@ -656,12 +667,12 @@ class CheckURLs(object):
                 self.data = f.read()
             orig_data = self.data
             j = parser.loads(self.data)
-            hash = ''
+            _hash = ''
             if self.check_hash and 'hash' in j:
-                hash = j['hash']
+                _hash = j['hash']
             scheme = self.process(j, 'homepage')
             scheme = self.process(j, 'license')
-            scheme = self.process(j, 'url', hash)
+            scheme = self.process(j, 'url', _hash)
             if self.schemes_changed(scheme):
                 logging.info("run: url: scheme=%s", scheme)
                 self.fix_schemes(j, 'autoupdate', scheme)

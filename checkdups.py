@@ -35,12 +35,12 @@ exclude_dirs = [
     r'%USERPROFILE%\scoop\apps\git\current\mingw64\bin'
 ]
 
-for i, dir in enumerate(exclude_dirs):
-    exclude_dirs[i] = os.path.expandvars(dir)
+for i, _dir in enumerate(exclude_dirs):
+    exclude_dirs[i] = os.path.expandvars(_dir)
 
 max_path = 0
 
-map = {}
+amap = {}
 
 for path in paths:
     p = path.lower().rstrip("\\")
@@ -54,8 +54,8 @@ for path in paths:
         print("path not found: '%s'" % path)
         continue
     skip = False
-    for dir in exclude_dirs:
-        if dir.upper().find(path.upper()) >= 0:
+    for adir in exclude_dirs:
+        if adir.upper().find(path.upper()) >= 0:
             skip = True
     if skip:
         continue
@@ -70,9 +70,9 @@ for path in paths:
         if file not in exes:
             exes[file] = []
         exes[file].append(path)
-        if file not in map:
-            map[file] = {}
-        map[file][path] = 1
+        if file not in amap:
+            amap[file] = {}
+        amap[file][path] = 1
 
 files = []
 
@@ -88,9 +88,9 @@ for file in files:
 
 for file in files:
     skip = False
-    for dir in include_dirs:
-        for path in map[file]:
-            if dir.upper().find(path.upper()) >= 0:
+    for adir in include_dirs:
+        for path in amap[file]:
+            if adir.upper().find(path.upper()) >= 0:
                 skip = True
                 break
     if skip:
