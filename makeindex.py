@@ -433,7 +433,7 @@ for k in OSI:
 
 lmap = {
     'commercial': 'https://en.m.wikipedia.org/wiki/Software_license#Proprietary_software_licenses',
-    'freeware': 'https://en.wikipedia.org/wiki/Freeware',  
+    'freeware': 'https://en.wikipedia.org/wiki/Freeware',
     'proprietary': 'https://en.m.wikipedia.org/wiki/Software_license#Proprietary_software_licenses',
     'public_domain': 'https://wiki.creativecommons.org/wiki/Public_domain',
     'public domain': 'https://wiki.creativecommons.org/wiki/Public_domain',
