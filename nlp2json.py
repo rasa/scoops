@@ -31,13 +31,13 @@ try:
     with io.open(nirlauncher_json, 'r', encoding='utf-8') as f:
         data = json.load(f)
 except IOError as err:
-    exit(err)
+    sys.exit(err)
 
 try:
     with io.open(nirsoft_nlp, 'r', encoding='utf-8') as f:
         lines = f.readlines()
 except IOError as err:
-    exit(err)
+    sys.exit(err)
 
 exes = {}
 
@@ -118,10 +118,10 @@ try:
         f.write(json_dump)
         f.write('\n')
 except IOError as err:
-    exit(err)
+    sys.exit(err)
 
 try:
     os.remove(nirlauncher_json)
     os.rename(nirlauncher_tmp, nirlauncher_json)
 except IOError as err:
-    exit(err)
+    sys.exit(err)

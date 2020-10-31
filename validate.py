@@ -11,9 +11,6 @@ from __future__ import (
     #  unicode_literals
 )
 
-from jsoncomment import JsonComment
-from jsonschema import validate
-
 import json
 import os
 # import pprint
@@ -21,8 +18,12 @@ import re
 import sys
 import traceback
 
+from jsoncomment import JsonComment
+from jsonschema import validate
+
 
 def decode(s):
+    """ doc me """
     if sys.version_info >= (3, 0):
         return s
 

@@ -4,9 +4,6 @@
 
 # ### imports ###
 
-from jsoncomment import JsonComment
-# from jsonschema import validate
-
 from collections import OrderedDict
 import io
 import json
@@ -14,8 +11,11 @@ import os
 import pprint
 import sys
 
+from jsoncomment import JsonComment
+# from jsonschema import validate
 
 def decode(s):
+    """ doc me """
     if sys.version_info >= (3, 0):
         return s
 
@@ -28,12 +28,14 @@ def decode(s):
 
 
 def touch(filename, mtime):
+    """ doc me """
     with open(filename, 'a+'):
         pass
     os.utime(filename, (mtime, mtime))
     return 0
 
 def add(key, old, new):
+    """ doc me """
     if key in old:
         new[key] = old[key]
     return new
@@ -43,7 +45,7 @@ if file == 'schema.json':
     sys.exit(0)
 print('Updating %s' % file)
 
-mtime = os.path.getmtime(file)
+# mtime = os.path.getmtime(file)
 
 with open(file, 'r') as f:
     jstr = f.read()
@@ -85,10 +87,10 @@ keys = [
 
 old_json = json_data
 new_json = OrderedDict()
-for key in keys:
-    new_json = add(key, json_data, new_json)
-    if key in old_json:
-        del old_json[key]
+for akey in keys:
+    new_json = add(akey, json_data, new_json)
+    if akey in old_json:
+        del old_json[akey]
 
 if old_json:
     pprint.pprint(old_json)
