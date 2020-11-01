@@ -515,7 +515,7 @@ def main():
     specs.pop(0)
 
     if len(specs) == 0:
-        specs = ['*.json']
+        specs = ['bucket/*.json']
 
     keys = [
         'checkver',
