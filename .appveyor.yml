@@ -1,7 +1,19 @@
 skip_commits:
   files:
-    - '**/*.md'
+    - '.editorconfig'
+    - '.gitignore'
+    - 'LICENSE'
+    - 'Makefile'
+    - 'Vagrantfile'
+    - '.github/**/*'
     - '.vscode/**/*'
+    - 'deprecated/**/*'
+    - 'wip/**/*'
+    - '**/*.cmd'
+    - '**/*.md'
+    - '**/*.py'
+    - '**/*.sh'
+    - '**/*.txt'
 cache:
   - '%USERPROFILE%\Documents\WindowsPowerShell\Modules -> .appveyor.yml'
 matrix:
