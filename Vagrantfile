@@ -18,5 +18,6 @@ Vagrant.configure('2') do |config|
   config.vm.provision 'file', source: '~/.ssh', destination: '~/.ssh'
   config.vm.provision 'file', source: '~/.gitconfig', destination: '~/.gitconfig'
   config.vm.provision 'file', source: './.cache', destination: '~/scoop/cache'
-  config.vm.provision 'shell', path: 'https://gist.githubusercontent.com/Ash258/e143436e2f9183a650424d635b535e51/raw/ShovelProvision.ps1'
+                                    # https://gist.githubusercontent.com/Ash258/e143436e2f9183a650424d635b535e51/raw/ShovelProvision.ps1'
+  config.vm.provision 'shell', path: 'https://gist.githubusercontent.com/rasa/a0aff910ae7dfbc5aa213b0d9e51d48c/raw/ShovelProvision.ps1'
 end
