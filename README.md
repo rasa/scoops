@@ -38,7 +38,6 @@ scoop bucket add rasa https://github.com/rasa/scoops.git
 |[eolfix](https://github.com/rasa/eolfix "https://github.com/rasa/eolfix")|[0.3.0](https://github.com/rasa/eolfix "https://github.com/rasa/eolfix")|Report & fix end-of-line characters|[MIT](https://opensource.org/licenses/MIT "https://opensource.org/licenses/MIT")|
 |[exetype](https://github.com/rasa/exetype "https://github.com/rasa/exetype")|[1.5](https://github.com/rasa/exetype "https://github.com/rasa/exetype")|Display the type of a Windows EXE file|[MIT](https://opensource.org/licenses/MIT "https://opensource.org/licenses/MIT")|
 |[fat32format](https://github.com/0xbadfca11/fat32format "https://github.com/0xbadfca11/fat32format")|[a027932](https://github.com/0xbadfca11/fat32format "https://github.com/0xbadfca11/fat32format")|Format disk media using FAT32|[GPL-2.0-only](https://opensource.org/licenses/GPL-2.0-only "https://opensource.org/licenses/GPL-2.0-only")|
-|[fat32format-gui](http://www.ridgecrop.demon.co.uk/index.htm?guiformat.htm "http://www.ridgecrop.demon.co.uk/index.htm?guiformat.htm")|[<i>1.01</i>](http://www.ridgecrop.demon.co.uk/index.htm?guiformat.htm "http://www.ridgecrop.demon.co.uk/index.htm?guiformat.htm")|Format disk media using FAT32 (GUI)|[GPL-2.0-only](https://opensource.org/licenses/GPL-2.0-only "https://opensource.org/licenses/GPL-2.0-only")|
 |[feedster](https://github.com/rasa/feedster "https://github.com/rasa/feedster")|[0.5.0](https://github.com/rasa/feedster "https://github.com/rasa/feedster")|Easily tag MP3 files and generate iTunes podcast feed|[MIT](https://opensource.org/licenses/MIT "https://opensource.org/licenses/MIT")|
 |[ffb](http://www.uwe-sieber.de/drivetools_e.html "http://www.uwe-sieber.de/drivetools_e.html")|[<i>0.9</i>](http://www.uwe-sieber.de/drivetools_e.html "http://www.uwe-sieber.de/drivetools_e.html")|Flush file buffers|[Freeware](https://en.wikipedia.org/wiki/Freeware "https://en.wikipedia.org/wiki/Freeware")|
 |[getjpegs](https://github.com/rasa/getjpegs "https://github.com/rasa/getjpegs")|[1.5](https://github.com/rasa/getjpegs "https://github.com/rasa/getjpegs")|Recover .jpg files directly from disk|[MIT](https://opensource.org/licenses/MIT "https://opensource.org/licenses/MIT")|
@@ -131,6 +130,14 @@ The following apps have been migrated to another scoop bucket:
 |[scoop](https://github.com/ScoopInstaller/Main/blob/master/bucket/x264.json)|[x264-8bit](https://www.videolan.org/developers/x264.html "https://www.videolan.org/developers/x264.html")|[17.01.30](https://www.videolan.org/developers/x264.html "https://www.videolan.org/developers/x264.html")|H.264/MPEG-4 AVC video encoder (8 bit)|[GPL-2.0](https://opensource.org/licenses/GPL-2.0 "https://opensource.org/licenses/GPL-2.0")|
 |[scoop](https://github.com/ScoopInstaller/Main/blob/master/bucket/xmlstarlet.json)|[xmlstarlet](http://xmlstar.sourceforge.net/ "http://xmlstar.sourceforge.net/")|[1.6.1](https://sourceforge.net/projects/xmlstar/files/ "https://sourceforge.net/projects/xmlstar/files/")|Transform, query, validate, and edit XML files|[MIT](https://opensource.org/licenses/MIT "https://opensource.org/licenses/MIT")|
 |[extras](https://github.com/lukesampson/scoop-extras/blob/master/bucket/xnviewmp.json)|[xnview-mp](https://www.xnview.com/en/xnviewmp/ "https://www.xnview.com/en/xnviewmp/")|[0.97.1](https://www.xnview.com/en/xnviewmp/ "https://www.xnview.com/en/xnviewmp/")|Photo viewer, image resizer & batch converter|[Freeware](https://en.wikipedia.org/wiki/Freeware "https://en.wikipedia.org/wiki/Freeware")|
+
+## Deprecated
+
+The following apps have been deprecated:
+
+|New Bucket|Name|Version|Description|License|
+|------------|----|-------|-----------|-------|
+|[fat32format-gui](http://www.ridgecrop.demon.co.uk/index.htm?guiformat.htm "http://www.ridgecrop.demon.co.uk/index.htm?guiformat.htm")|[<i>1.01</i>](http://www.ridgecrop.demon.co.uk/index.htm?guiformat.htm "http://www.ridgecrop.demon.co.uk/index.htm?guiformat.htm")|Format disk media using FAT32 (GUI)|[GPL-2.0-only](https://opensource.org/licenses/GPL-2.0-only "https://opensource.org/licenses/GPL-2.0-only")|
 
 ## Bugs
 
