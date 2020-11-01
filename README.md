@@ -81,7 +81,6 @@ scoop bucket add rasa https://github.com/rasa/scoops.git
 |[seterlvl](https://github.com/rasa/seterlvl "https://github.com/rasa/seterlvl")|[1.4](https://github.com/rasa/seterlvl "https://github.com/rasa/seterlvl")|Set the errorlevel and exit|[MIT](https://opensource.org/licenses/MIT "https://opensource.org/licenses/MIT")|
 |[simple-dnscrypt](https://simplednscrypt.org/ "https://simplednscrypt.org/")|[0.7.1](https://simplednscrypt.org/ "https://simplednscrypt.org/")|Simple management tool for dnscrypt-proxy|[MIT](https://opensource.org/licenses/MIT "https://opensource.org/licenses/MIT")|
 |[time-it](https://github.com/rasa/time_it "https://github.com/rasa/time_it")|[1.2](https://github.com/rasa/time_it "https://github.com/rasa/time_it")|Time disk I/O|[MIT](https://opensource.org/licenses/MIT "https://opensource.org/licenses/MIT")|
-|[tmac](https://technitium.com/tmac/ "https://technitium.com/tmac/")|[6.0.7](https://technitium.com/tmac/ "https://technitium.com/tmac/")|Spoof MAC address|[Freeware](https://en.wikipedia.org/wiki/Freeware "https://en.wikipedia.org/wiki/Freeware")|
 |[usbdeview-ids](http://www.linux-usb.org/usb-ids.html "http://www.linux-usb.org/usb-ids.html")|[<i>latest</i>](http://www.linux-usb.org/usb-ids.html "http://www.linux-usb.org/usb-ids.html")|USB device database used by Nirsoft's usbdeview|[GPL-2.0-only](https://opensource.org/licenses/GPL-2.0-only "https://opensource.org/licenses/GPL-2.0-only")|
 |[usbtreeview](http://www.uwe-sieber.de/usbtreeview_e.html "http://www.uwe-sieber.de/usbtreeview_e.html")|[3.4.0](http://www.uwe-sieber.de/usbtreeview_e.html "http://www.uwe-sieber.de/usbtreeview_e.html")|USB device tree viewer|[Freeware](https://en.wikipedia.org/wiki/Freeware "https://en.wikipedia.org/wiki/Freeware")|
 |[vlc-bluray-plugin](https://www.videolan.org/ "https://www.videolan.org/")|[<i>2018.03.25</i>](https://www.videolan.org/ "https://www.videolan.org/")|VLC Blu-ray plugin|[GPL-2.0-only](https://opensource.org/licenses/GPL-2.0-only "https://opensource.org/licenses/GPL-2.0-only")|
@@ -138,6 +137,7 @@ The following apps have been deprecated:
 |New Bucket|Name|Version|Description|License|
 |------------|----|-------|-----------|-------|
 |[fat32format-gui](http://www.ridgecrop.demon.co.uk/index.htm?guiformat.htm "http://www.ridgecrop.demon.co.uk/index.htm?guiformat.htm")|[<i>1.01</i>](http://www.ridgecrop.demon.co.uk/index.htm?guiformat.htm "http://www.ridgecrop.demon.co.uk/index.htm?guiformat.htm")|Format disk media using FAT32 (GUI)|[GPL-2.0-only](https://opensource.org/licenses/GPL-2.0-only "https://opensource.org/licenses/GPL-2.0-only")|
+|[tmac](https://technitium.com/tmac/ "https://technitium.com/tmac/")|[6.0.7](https://technitium.com/tmac/ "https://technitium.com/tmac/")|Spoof MAC address|[Freeware](https://en.wikipedia.org/wiki/Freeware "https://en.wikipedia.org/wiki/Freeware")|
 
 ## Bugs
 
