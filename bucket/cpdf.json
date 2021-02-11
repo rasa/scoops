@@ -6,7 +6,7 @@
         "identifier": "Freeware",
         "url": "https://raw.githubusercontent.com/coherentgraphics/cpdf-binaries/master/LICENSE"
     },
-    "architechure": {
+    "architecture": {
         "64bit": {
             "url": "https://raw.githubusercontent.com/coherentgraphics/cpdf-binaries/master/Windows/cpdf.exe",
             "hash": "2b72fd07725dcc050d98db476cf9c617207d4fb4e745a4b6f28d98bcf1818054"
@@ -21,11 +21,13 @@
         "github": "https://github.com/johnwhitington/cpdf-source"
     },
     "autoupdate": {
-        "64bit": {
+        "architecture": {
+            "64bit": {
             "url": "https://raw.githubusercontent.com/coherentgraphics/cpdf-binaries/master/Windows/cpdf.exe"
-        },
-        "32bit": {
-            "url": "https://raw.githubusercontent.com/coherentgraphics/cpdf-binaries/master/Windows32bit/cpdf.exe"
+            },
+            "32bit": {
+                "url": "https://raw.githubusercontent.com/coherentgraphics/cpdf-binaries/master/Windows32bit/cpdf.exe"
+            }
         }
     }
 }
