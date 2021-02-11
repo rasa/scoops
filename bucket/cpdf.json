@@ -1,5 +1,5 @@
 {
-    "version": "2.3.2",
+    "version": "2.3.1",
     "description": "Powerful PDF manipulation tool",
     "homepage": "http://community.coherentpdf.com/",
     "license": {
@@ -23,7 +23,7 @@
     "autoupdate": {
         "architecture": {
             "64bit": {
-            "url": "https://raw.githubusercontent.com/coherentgraphics/cpdf-binaries/master/Windows/cpdf.exe"
+                "url": "https://raw.githubusercontent.com/coherentgraphics/cpdf-binaries/master/Windows/cpdf.exe"
             },
             "32bit": {
                 "url": "https://raw.githubusercontent.com/coherentgraphics/cpdf-binaries/master/Windows32bit/cpdf.exe"
