@@ -138,8 +138,8 @@ The following apps have been migrated to another scoop bucket:
 
 The following apps have been deprecated:
 
-|New Bucket|Name|Version|Description|License|
-|------------|----|-------|-----------|-------|
+|Name|Version|Description|License|
+|----|-------|-----------|-------|
 |[fat32format-gui](http://www.ridgecrop.demon.co.uk/index.htm?guiformat.htm "http://www.ridgecrop.demon.co.uk/index.htm?guiformat.htm")|[<i>1.01</i>](http://www.ridgecrop.demon.co.uk/index.htm?guiformat.htm "http://www.ridgecrop.demon.co.uk/index.htm?guiformat.htm")|Format disk media using FAT32 (GUI)|[GPL-2.0-only](https://opensource.org/licenses/GPL-2.0-only "https://opensource.org/licenses/GPL-2.0-only")|
 |[tmac](https://technitium.com/tmac/ "https://technitium.com/tmac/")|[6.0.7](https://technitium.com/tmac/ "https://technitium.com/tmac/")|Spoof MAC address|[Freeware](https://en.wikipedia.org/wiki/Freeware "https://en.wikipedia.org/wiki/Freeware")|
 |[vlc-bluray-plugin](https://www.videolan.org/ "https://www.videolan.org/")|[<i>2018.03.25</i>](https://www.videolan.org/ "https://www.videolan.org/")|VLC Blu-ray plugin|[GPL-2.0-only](https://opensource.org/licenses/GPL-2.0-only "https://opensource.org/licenses/GPL-2.0-only")|
