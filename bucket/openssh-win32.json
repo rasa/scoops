@@ -36,7 +36,7 @@
     ],
     "checkver": {
         "github": "https://github.com/PowerShell/Win32-OpenSSH",
-        "regex": "tree/v([\\w.-]+)\""
+        "regex": "tree/[vV]([\\w.-]+)\""
     },
     "autoupdate": {
         "architecture": {
