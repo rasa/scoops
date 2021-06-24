@@ -4,7 +4,7 @@
 
 Custom scoop packages.
 
-None of the apps in this repository require elevated (administrator) privileges to install.
+wfc is the only app in this repository that requires elevated (administrator) privileges to install.
 
 ## Usage
 
