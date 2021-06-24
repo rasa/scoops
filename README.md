@@ -1,6 +1,6 @@
 # scoops
 [![Build Status](https://ci.appveyor.com/api/projects/status/github/rasa/scoops?svg=true)](https://ci.appveyor.com/project/rasa/scoops "Build Status")
-![Excavator](https://github.com/rasa/scoops/workflows/Excavator/badge.svg)
+[![Excavator](https://github.com/rasa/scoops/actions/workflows/schedule.yml/badge.svg)](https://github.com/rasa/scoops/actions/workflows/schedule.yml)
 
 Custom scoop packages.
 
