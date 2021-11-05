@@ -10,6 +10,8 @@ import subprocess
 import sys
 
 home = os.path.expanduser('~')
+slash = '\\'
+eslash = re.escape(slash)
 
 if len(sys.argv) > 1:
     nirsoft_dir = sys.argv[1]
@@ -81,7 +83,8 @@ for base in sorted(exes, key=str.lower):
     print("%-25s %s" % (os.path.splitext(base)[0], desc))
 
     path = os.path.join('NirSoft', h['exe'])
-    path = re.sub(r'\\', '/', path)
+    path = re.sub(r'\\', eslash, path)
+    path = re.sub(eslash + eslash, eslash, path)
     data['architecture']['32bit']['bin'].append(path)
 
     # Get binary information
@@ -93,7 +96,7 @@ for base in sorted(exes, key=str.lower):
             appname = h['AppName']
         else:
             appname = os.path.splitext(base)[0]
-        name = '%s/%s' % ('NirSoft', appname)
+        name = '%s%s%s' % ('NirSoft', slash, appname)
         if desc:
             name += ' - ' + desc
         data['architecture']['32bit']['shortcuts'].append([path, name])
@@ -104,7 +107,8 @@ for base in sorted(exes, key=str.lower):
         continue
 
     path = os.path.join('NirSoft', h['exe64'])
-    path = re.sub(r'\\', '/', path)
+    path = re.sub(r'\\', eslash, path)
+    path = re.sub(eslash + eslash, eslash, path)
     data['architecture']['64bit']['bin'].append(path)
     if re.search('Subsystem = Windows GUI', stdout):
         data['architecture']['64bit']['shortcuts'].append([path, name])
