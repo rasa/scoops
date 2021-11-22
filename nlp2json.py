@@ -2,130 +2,111 @@
 # -*- coding: utf-8 -*-
 """ @todo add docstring """
 
-import io
+import configparser
 import json
 import os
 import re
 import subprocess
 import sys
-
-home = os.path.expanduser('~')
-slash = '\\'
-eslash = re.escape(slash)
+from collections import OrderedDict
 
 if len(sys.argv) > 1:
+    if '-h' in sys.argv[1:] or '--help' in sys.argv[1:]:
+        print(f'Usage: {sys.argv[0]} [path\\to\\NirSoft [path\\to\\nirlauncher.json]]')
+        sys.exit(0)
     nirsoft_dir = sys.argv[1]
 else:
-    nirsoft_dir = os.path.join(home, 'scoop/apps/nirlauncher/current/NirSoft')
-    if not os.path.exists(nirsoft_dir):
-        nirsoft_dir = os.path.join(os.getenv('SCOOP'), 'apps/nirlauncher/current/NirSoft')
+    nirsoft_dir = os.path.join(
+            os.getenv('SCOOP', default=os.path.expanduser('~/scoop')),
+            'apps/nirlauncher/current/NirSoft')
 nirsoft_dir = os.path.normpath(nirsoft_dir)
-
-nirsoft_nlp = os.path.normpath(os.path.join(nirsoft_dir, 'nirsoft.nlp'))
+nirsoft_nlp = os.path.join(nirsoft_dir, 'nirsoft.nlp')
 
 if len(sys.argv) > 2:
     nirlauncher_json = sys.argv[2]
 else:
-    nirlauncher_json = os.path.join(os.path.dirname(nirsoft_dir), 'manifest.json')
+    nirlauncher_json = os.path.join(nirsoft_dir, '../manifest.json')
 nirlauncher_json = os.path.normpath(nirlauncher_json)
 
 try:
-    with io.open(nirlauncher_json, 'r', encoding='utf-8') as f:
-        data = json.load(f)
-except IOError as err:
+    with open(nirsoft_nlp, 'r', encoding='utf-8') as f:
+        nlp = configparser.ConfigParser()
+        nlp.read_file(f)
+except OSError as err:
     sys.exit(err)
 
 try:
-    with io.open(nirsoft_nlp, 'r', encoding='utf-8') as f:
-        lines = f.readlines()
-except IOError as err:
+    with open(nirlauncher_json, 'r', encoding='utf-8') as f:
+        manifest = json.load(f)
+except OSError as err:
     sys.exit(err)
 
-exes = {}
+manifest['architecture']['64bit']['bin'] = []
+manifest['architecture']['64bit']['shortcuts'] = []
+manifest['architecture']['32bit']['bin'] = []
+manifest['architecture']['32bit']['shortcuts'] = []
 
-h = {}
+a64b = manifest['architecture']['64bit']['bin']
+a64s = manifest['architecture']['64bit']['shortcuts']
+a32b = manifest['architecture']['32bit']['bin']
+a32s = manifest['architecture']['32bit']['shortcuts']
 
-for line in lines:
-    if re.match(r'\[', line):
-        if 'exe' in h:
-            if h['exe']:
-                exes[os.path.basename(h['exe'])] = h
-        h = {}
-        continue
-    m = re.match(r'([^=]+)=(.*)', line)
-    if not m:
-        continue
-    k = m.group(1).strip()
-    v = m.group(2).strip()
-    h[k] = v
+a64b.append('NirLauncher.exe')
+a64s.append(['NirLauncher.exe', 'NirLauncher'])
+a32b.append('NirLauncher.exe')
+a32s.append(['NirLauncher.exe', 'NirLauncher'])
 
-data['architecture']['32bit']['bin'] = ["Nirlauncher.exe"]
-data['architecture']['32bit']['shortcuts'] = [[
-    "Nirlauncher.exe",
-    "Nirlauncher - Run over 200 freeware utilities from nirsoft.net"
-]]
-data['architecture']['64bit']['bin'] = ["Nirlauncher.exe"]
-data['architecture']['64bit']['shortcuts'] = [[
-    "Nirlauncher.exe",
-    "Nirlauncher - Run over 200 freeware utilities from nirsoft.net"
-]]
+def cleanup(s, name):
+    s = s.strip()
+    if not s:
+        return s
+    s = s.replace('"', "'")
+    s = s.replace('/', ',')
+    s = s.replace(',', ', ')
+    first, *rest = s.split()
+    first = first.lower()
+    if [first, rest[0]] in [[name.lower(), 'is'], ['this', 'utility']]:
+        rest = rest[1:]
+        if ' '.join(rest[0:4]).lower() == 'a small utility that':
+            rest = rest[4:]
+        first = rest.pop(0).lower()
+    if first in ['csv,', 'dns', 'gui', 'mac', 'qr', 'usb']:
+        first = first.upper()
+    else:
+        first = first.capitalize()
+    return ' '.join([' -', first, *rest]).rstrip('.')
 
-for base in sorted(exes, key=str.lower):
-    h = exes[base]
-    desc = h['ShortDesc']
-    desc = re.sub(r'"', "'", desc)
-    desc = re.sub(r'[/\\]', ",", desc)
-    desc = re.sub(r'[<>\|\?\*:/]', "", desc)
+def isgui(x):
+    p = os.path.join(nirsoft_dir, x)
+    o = subprocess.check_output(['7z.exe', 'l', p], universal_newlines=True)
+    return bool(re.search('Subsystem = Windows GUI', o))
 
-    desc = desc.rstrip('.')
-    if desc:
-        desc = desc[0].upper() + desc[1:]
-    print("%-25s %s" % (os.path.splitext(base)[0], desc))
+for i in range(int(nlp['General']['SoftwareCount'])):
+    sw = nlp[f'Software{i}']
+    bin32 = sw['exe'].strip()
+    bin64 = sw['exe64'].strip() or bin32
+    name = sw['AppName'].strip() or bin32.removesuffix('.exe')
+    gui = isgui(bin32)
+    bin32 = f'NirSoft\\{bin32}'
+    bin64 = f'NirSoft\\{bin64}'
+    a64b.append(bin64)
+    a32b.append(bin32)
+    if gui:
+        desc = cleanup(sw["ShortDesc"], name)
+        shortcut = f'NirSoft\\{name}{desc}'
+        a64s.append([bin64, shortcut])
+        a32s.append([bin32, shortcut])
 
-    path = os.path.join('NirSoft', h['exe'])
-    path = re.sub(r'\\', eslash, path)
-    path = re.sub(eslash + eslash, eslash, path)
-    data['architecture']['32bit']['bin'].append(path)
-
-    # Get binary information
-    fullpath = os.path.join(nirsoft_dir, h['exe'])
-    stdout = subprocess.check_output(['7z.exe', 'l', fullpath], universal_newlines=True)
-
-    if re.search('Subsystem = Windows GUI', stdout):
-        if 'AppName' in h and h['AppName']:
-            appname = h['AppName']
-        else:
-            appname = os.path.splitext(base)[0]
-        name = '%s%s%s' % ('NirSoft', slash, appname)
-        if desc:
-            name += ' - ' + desc
-        data['architecture']['32bit']['shortcuts'].append([path, name])
-    if 'exe64' not in h or not h['exe64']:
-        data['architecture']['64bit']['bin'].append(path)
-        if re.search('Subsystem = Windows GUI', stdout):
-            data['architecture']['64bit']['shortcuts'].append([path, name])
-        continue
-
-    path = os.path.join('NirSoft', h['exe64'])
-    path = re.sub(r'\\', eslash, path)
-    path = re.sub(eslash + eslash, eslash, path)
-    data['architecture']['64bit']['bin'].append(path)
-    if re.search('Subsystem = Windows GUI', stdout):
-        data['architecture']['64bit']['shortcuts'].append([path, name])
-
-json_dump = json.dumps(data, sort_keys=False, indent=4, separators=(',', ': '))
-
-nirlauncher_tmp = nirlauncher_json + '.tmp'
+nirlauncher_temp = nirlauncher_json + '.tmp'
 
 try:
-    with io.open(nirlauncher_tmp, 'w', newline='\n', encoding='utf-8') as f:
-        f.write(json_dump)
+    with open(nirlauncher_temp, 'w', encoding='utf-8') as f:
+        json.dump(manifest, f, indent=4)
         f.write('\n')
-except IOError as err:
+except OSError as err:
     sys.exit(err)
 
 try:
-    os.remove(nirlauncher_json)
-    os.rename(nirlauncher_tmp, nirlauncher_json)
-except IOError as err:
+    os.replace(nirlauncher_temp, nirlauncher_json)
+except OSError as err:
     sys.exit(err)
