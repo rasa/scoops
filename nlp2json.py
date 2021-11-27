@@ -76,7 +76,10 @@ def cleanup(s, name):
         first = first.capitalize()
     return ' '.join([' -', first, *rest]).rstrip('.')
 
-def isgui(x):
+def isgui(x, g):
+    if g == 'Command-Line Utilities':
+        # early return, plus eliminate some false positives
+        return False
     p = os.path.join(nirsoft_dir, x)
     o = subprocess.check_output(['7z.exe', 'l', p], universal_newlines=True)
     return bool(re.search('Subsystem = Windows GUI', o))
@@ -85,14 +88,16 @@ for i in range(int(nlp['General']['SoftwareCount'])):
     sw = nlp[f'Software{i}']
     bin32 = sw['exe'].strip()
     bin64 = sw['exe64'].strip() or bin32
+    group = sw['group'].strip()
+    group = nlp[f'Group{group}']['Name'].strip()
     name = sw['AppName'].strip() or bin32.removesuffix('.exe')
-    gui = isgui(bin32)
+    gui = isgui(bin32, group)
     bin32 = f'NirSoft\\{bin32}'
     bin64 = f'NirSoft\\{bin64}'
     a64b.append(bin64)
     a32b.append(bin32)
     if gui:
-        desc = cleanup(sw["ShortDesc"], name)
+        desc = cleanup(sw['ShortDesc'], name)
         shortcut = f'NirSoft\\{name}{desc}'
         a64s.append([bin64, shortcut])
         a32s.append([bin32, shortcut])
