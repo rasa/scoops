@@ -21,7 +21,7 @@ jobs:
     - uses: EndBug/add-and-commit@v7
       with:
         add: 'README.md'
-        branch: master
-        author_name: Ross Smith II
-        author_email: ross@smithii.com
+        # branch: master
+        # author_name: Ross Smith II
+        # author_email: ross@smithii.com
         message: 'chore: update app index [ci skip]'
