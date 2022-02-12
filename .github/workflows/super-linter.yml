@@ -17,7 +17,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  run-lint:
+  super-linter:
     runs-on: ubuntu-latest
     steps:
       - name: Run actions/checkout@v2
