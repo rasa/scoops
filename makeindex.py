@@ -527,8 +527,8 @@ def main():
 
     rows = {}
 
-    cmdline = ["git", "ls-files"]
-    proc = subprocess.Popen(cmdline, stdout=subprocess.PIPE, shell=True)
+    # cmdline = ["git", "ls-files"]
+    proc = subprocess.Popen("git ls-files", stdout=subprocess.PIPE, shell=True)
     (out, _) = proc.communicate()
 
     files = out.splitlines()
