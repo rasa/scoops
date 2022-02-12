@@ -5,10 +5,10 @@ on:
   - cron: '59 */4 * * *'
 #   pull_request:
 #     types: [closed]
-name: Make Index
+name: update-readme
 jobs:
-  makeIndex:
-    name: makeIndex
+  update-readme:
+    name: update-readme
 #     if: github.event_name == 'workflow_dispatch' || github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     steps:
