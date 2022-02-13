@@ -27,4 +27,4 @@ BASH_SHELLCHECK_ARGUMENTS: '--external-sources --enable=all --exclude SC2310,SC2
 BASH_SHFMT_ARGUMENTS: '-ci -i 2'
 PRINT_ALPACA: false
 # these files have comments in them, and jsonlint reject comments:
-JSON_JSONLINT_FILTER_REGEX_EXCLUDE: '((.vscode|Code/User)/(extensions|keybindings|settings))\.json'
+JSON_JSONLINT_FILTER_REGEX_EXCLUDE: '((.vscode|Code/User)/(extensions|keybindings|settings|Template))\.jsonc?'
