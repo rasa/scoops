@@ -7,22 +7,24 @@
 from __future__ import (
     absolute_import,
     division,
-    print_function  # ,
+    print_function,  # ,
     #  unicode_literals
 )
 
 import datetime
+
 # import fnmatch
 import glob
+
 # import json
 import re
 import os
 import subprocess
 import sys
 
-path = os.environ['PATH']
+path = os.environ["PATH"]
 
-paths = path.split(';')
+paths = path.split(";")
 
 seen_paths = {}
 
@@ -30,9 +32,9 @@ exes = {}
 
 include_dirs = []  # ['c:\\bin']
 exclude_dirs = [
-    r'%USERPROFILE%\scoop\apps\imagemagick\current',
-    r'%SystemDrive%\GnuWin32\bin',
-    r'%USERPROFILE%\scoop\apps\git\current\mingw64\bin'
+    r"%USERPROFILE%\scoop\apps\imagemagick\current",
+    r"%SystemDrive%\GnuWin32\bin",
+    r"%USERPROFILE%\scoop\apps\git\current\mingw64\bin",
 ]
 
 for i, _dir in enumerate(exclude_dirs):
@@ -97,20 +99,16 @@ for file in files:
         continue
     print("%s:" % file)
     for path in exes[file]:
-        full = path + '\\' + file
+        full = path + "\\" + file
         # q = '"%s"' % full
         # print("q=%s" % q)
-        out = 'n/a'
-        if re.search('(com|dll|exe)$', file) is not None:
-            p = subprocess.Popen(
-                ['sigcheck.exe', '-nobanner', '-n', full],
-                stdout=subprocess.PIPE,
-                stderr=subprocess.PIPE)
+        out = "n/a"
+        if re.search("(com|dll|exe)$", file) is not None:
+            p = subprocess.Popen(["sigcheck.exe", "-nobanner", "-n", full], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
             out, err = p.communicate()
             out = out.strip()
         mtime = os.path.getmtime(full)
-        out += datetime.datetime.fromtimestamp(mtime).strftime(
-            ' (%Y-%m-%d %H:%M:%S)')
+        out += datetime.datetime.fromtimestamp(mtime).strftime(" (%Y-%m-%d %H:%M:%S)")
         print("  %*s: %s" % (-max_path, path, out))
 
 sys.exit(0)
