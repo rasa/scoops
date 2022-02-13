@@ -7,7 +7,7 @@
 from __future__ import (
     absolute_import,
     division,
-    print_function  # ,
+    print_function,  # ,
     #  unicode_literals
 )
 
@@ -21,9 +21,9 @@ specs = sys.argv
 specs.pop(0)
 
 if len(specs) == 0:
-    specs = ['*.json']
+    specs = ["*.json"]
 
-for file in os.listdir('bucket'):
+for file in os.listdir("bucket"):
     accept = False
     for spec in specs:
         if fnmatch.fnmatch(file, spec):
@@ -33,18 +33,18 @@ for file in os.listdir('bucket'):
     if not accept:
         continue
 
-    with open(file, 'r') as f:
+    with open(file, "r") as f:
         j = json.load(f)
         row = {}
         (name, ext) = os.path.splitext(os.path.basename(file))
-        if re.search('^_', name):
+        if re.search("^_", name):
             continue
-        if 'checkver' in j:
+        if "checkver" in j:
             continue
-        if 'homepage' in j:
-            url = j['homepage']
+        if "homepage" in j:
+            url = j["homepage"]
         else:
-            url = 'https://www.google.com/search?q=' + name
+            url = "https://www.google.com/search?q=" + name
         print("%s: %s" % (name, url))
 
 sys.exit(0)

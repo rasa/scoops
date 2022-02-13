@@ -7,7 +7,7 @@
 from __future__ import (
     absolute_import,
     division,
-    print_function  # ,
+    print_function,  # ,
     #  unicode_literals
 )
 
@@ -17,24 +17,26 @@ import os
 import sys
 
 from jsoncomment import JsonComment
+
 # from jsonschema import validate
 
+
 def decode(s):
-    """ doc me """
-    for encoding in 'utf-8-sig', 'utf-16':
+    """doc me"""
+    for encoding in "utf-8-sig", "utf-16":
         try:
             return s.decode(encoding)
         except UnicodeDecodeError:
             continue
-    return s.decode('latin-1')
+    return s.decode("latin-1")
 
 
-scoop_root = '%USERPROFILE%/scoop'
+scoop_root = "%USERPROFILE%/scoop"
 scoop_root = os.path.expandvars(scoop_root)
-buckets_root = scoop_root + '/buckets'
+buckets_root = scoop_root + "/buckets"
 
 buckets = [
-    scoop_root + '/apps/scoop/current/bucket',
+    scoop_root + "/apps/scoop/current/bucket",
     # buckets_root + '/extras',
     # buckets_root + '/nirsoft',
     # buckets_root + '/rasa'
@@ -45,28 +47,28 @@ parser = JsonComment(json)
 amap = {}
 
 for bucket in buckets:
-    for json_file in glob.glob(bucket + '/*.json'):
-        with open(json_file, 'rb') as f:
+    for json_file in glob.glob(bucket + "/*.json"):
+        with open(json_file, "rb") as f:
             jstr = f.read()
             jstr_no_bom = decode(jstr)
             json_data = parser.loads(jstr_no_bom)
-            if 'bin' not in json_data:
+            if "bin" not in json_data:
                 continue
             base = os.path.basename(json_file)
             base = os.path.splitext(base)[0]
             adir = os.path.basename(os.path.dirname(json_file))
-            repo = adir + '/' + base
-            bins = json_data['bin']
+            repo = adir + "/" + base
+            bins = json_data["bin"]
             if len(bins) == 0:
                 continue
-            if type(bins).__name__ != 'list':
+            if type(bins).__name__ != "list":
                 bins = [bins]
             if len(bins) == 0:
                 continue
-            if type(bins).__name__ != 'list':
+            if type(bins).__name__ != "list":
                 bins = [bins]
             for abin in bins:
-                if type(abin).__name__ == 'list':
+                if type(abin).__name__ == "list":
                     if len(abin) > 1:
                         file = str(abin[1])
                     else:
