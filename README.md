@@ -128,7 +128,6 @@ The following apps have been migrated to another scoop bucket:
 |[main](https://github.com/ScoopInstaller/Main/blob/master/bucket/unrar.json)|[unrar](http://www.rarlab.com/ "http://www.rarlab.com/")|[5.40](http://www.rarlab.com/download.htm "http://www.rarlab.com/download.htm")|Uncompress RAR files|[Freeware](https://en.wikipedia.org/wiki/Freeware "https://en.wikipedia.org/wiki/Freeware")|
 |[extras](https://github.com/ScoopInstaller/Extras/blob/master/bucket/windowsspyblocker.json)|[wsb](https://github.com/crazy-max/WindowsSpyBlocker "https://github.com/crazy-max/WindowsSpyBlocker")|[4.22.0](https://github.com/crazy-max/WindowsSpyBlocker "https://github.com/crazy-max/WindowsSpyBlocker")|WindowsSpyBlocker shield blocks spying and tracking on Windows systems|[MIT](https://opensource.org/licenses/MIT "https://opensource.org/licenses/MIT")|
 |[main](https://github.com/ScoopInstaller/Main/blob/master/bucket/wkhtmltopdf.json)|[wkhtmltopdf](http://wkhtmltopdf.org/ "http://wkhtmltopdf.org/")|[0.12.4](http://wkhtmltopdf.org/downloads.html "http://wkhtmltopdf.org/downloads.html")|Render HTML into PDF|[LGPL-3.0](https://opensource.org/licenses/LGPL-3.0 "https://opensource.org/licenses/LGPL-3.0")|
-|[main](https://github.com/ScoopInstaller/Main/blob/master/bucket/x264-10bit.json)|[x264-10bit](https://www.videolan.org/developers/x264.html "https://www.videolan.org/developers/x264.html")|[17.01.30](https://www.videolan.org/developers/x264.html "https://www.videolan.org/developers/x264.html")|H.264/MPEG-4 AVC video encoder (10 bit)|[GPL-2.0](https://opensource.org/licenses/GPL-2.0 "https://opensource.org/licenses/GPL-2.0")|
 |[main](https://github.com/ScoopInstaller/Main/blob/master/bucket/x264.json)|[x264-8bit](https://www.videolan.org/developers/x264.html "https://www.videolan.org/developers/x264.html")|[17.01.30](https://www.videolan.org/developers/x264.html "https://www.videolan.org/developers/x264.html")|H.264/MPEG-4 AVC video encoder (8 bit)|[GPL-2.0](https://opensource.org/licenses/GPL-2.0 "https://opensource.org/licenses/GPL-2.0")|
 |[main](https://github.com/ScoopInstaller/Main/blob/master/bucket/xmlstarlet.json)|[xmlstarlet](http://xmlstar.sourceforge.net/ "http://xmlstar.sourceforge.net/")|[1.6.1](https://sourceforge.net/projects/xmlstar/files/ "https://sourceforge.net/projects/xmlstar/files/")|Transform, query, validate, and edit XML files|[MIT](https://opensource.org/licenses/MIT "https://opensource.org/licenses/MIT")|
 |[extras](https://github.com/ScoopInstaller/Extras/blob/master/bucket/xnviewmp.json)|[xnview-mp](https://www.xnview.com/en/xnviewmp/ "https://www.xnview.com/en/xnviewmp/")|[0.97.1](https://www.xnview.com/en/xnviewmp/ "https://www.xnview.com/en/xnviewmp/")|Photo viewer, image resizer & batch converter|[Freeware](https://en.wikipedia.org/wiki/Freeware "https://en.wikipedia.org/wiki/Freeware")|
@@ -144,6 +143,14 @@ The following apps have been deprecated:
 |[tmac](https://technitium.com/tmac/ "https://technitium.com/tmac/")|[6.0.7](https://technitium.com/tmac/ "https://technitium.com/tmac/")|Spoof MAC address|[Freeware](https://en.wikipedia.org/wiki/Freeware "https://en.wikipedia.org/wiki/Freeware")|
 |[vlc-bluray-plugin](https://www.videolan.org/ "https://www.videolan.org/")|[<i>2018.03.25</i>](https://www.videolan.org/ "https://www.videolan.org/")|VLC Blu-ray plugin|[GPL-2.0-only](https://opensource.org/licenses/GPL-2.0-only "https://opensource.org/licenses/GPL-2.0-only")|
 |[vlc-installer](https://github.com/rasa/vlc_installer "https://github.com/rasa/vlc_installer")|[2.2.4](https://github.com/rasa/vlc_installer "https://github.com/rasa/vlc_installer")|Download and install the VLC media player and related plugins (deprecated)|[MIT](https://opensource.org/licenses/MIT "https://opensource.org/licenses/MIT")|
+
+## Removed
+
+The following apps have been removed:
+
+|Name|Version|Description|License|
+|----|-------|-----------|-------|
+|[main](https://github.com/ScoopInstaller/Main/blob/master/bucket/x264-10bit.json)|[x264-10bit](https://www.videolan.org/developers/x264.html "https://www.videolan.org/developers/x264.html")|[17.01.30](https://www.videolan.org/developers/x264.html "https://www.videolan.org/developers/x264.html")|H.264/MPEG-4 AVC video encoder (10 bit)|[GPL-2.0](https://opensource.org/licenses/GPL-2.0 "https://opensource.org/licenses/GPL-2.0")|
 
 ## Bugs
 
