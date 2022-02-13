@@ -430,7 +430,7 @@ OSIS = [
 
 OSImap = {}
 for osi in OSIS:
-    OSImap[osi.lower()] = "https://opensource.org/licenses/%s" % osi
+    OSImap[osi.lower()] = "https://spdx.org/licenses/%s" % osi
 
 lmap = {
     "commercial": "https://en.m.wikipedia.org/wiki/Software_license#Proprietary_software_licenses",
