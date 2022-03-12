@@ -91,7 +91,9 @@ for i in range(int(nlp["General"]["SoftwareCount"])):
     bin64 = sw["exe64"].strip() or bin32
     group = sw["group"].strip()
     group = nlp[f"Group{group}"]["Name"].strip()
-    name = sw["AppName"].strip() or bin32.removesuffix(".exe")
+    name = sw["AppName"].strip() # or bin32.removesuffix(".exe")
+    if not name:
+        name = re.sub(r'\.exe$', '', bin32)
     gui = isgui(bin32, group)
     bin32 = f"NirSoft\\{bin32}"
     bin64 = f"NirSoft\\{bin64}"
