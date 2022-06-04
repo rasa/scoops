@@ -28,7 +28,7 @@ max_line_length = 80
 indent_size = 4
 
 # Makefiles require tab indentation
-[*.{mak,mk}[Mm]akefile{,.*},GNUmakefile]
+[{Makefile{,.*},makefile{,.*},GNUMakefile{,.*},*.mak,*.mk}]
 indent_style = tab
 
 [*.md]
