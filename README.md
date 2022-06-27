@@ -5,7 +5,7 @@
 [![ci](https://github.com/rasa/scoops/actions/workflows/excavator.yml/badge.svg)](https://github.com/rasa/scoops/actions/workflows/excavator.yml)
 [![license](https://img.shields.io/github/license/rasa/scoops.svg?style=flat-square)](https://github.com/rasa/scoops/blob/master/LICENSE)
 [![repo size](https://img.shields.io/github/repo-size/rasa/scoops.svg?style=flat-square)](https://github.com/rasa/scoops)
-[![awesome](https://awesome.re/mentioned-badge-flat.svg)](https://github.com/scoopinstaller/awesome/blob/master/README.md)    
+[![awesome](https://awesome.re/mentioned-badge-flat.svg)](https://github.com/scoopinstaller/awesome/blob/master/README.md)
 
 Custom scoop packages.
 
