@@ -1,6 +1,11 @@
 # scoops
+<!--
 [![Build Status](https://ci.appveyor.com/api/projects/status/github/rasa/scoops?svg=true)](https://ci.appveyor.com/project/rasa/scoops "Build Status")
-[![Excavator](https://github.com/rasa/scoops/actions/workflows/schedule.yml/badge.svg)](https://github.com/rasa/scoops/actions/workflows/schedule.yml)
+-->
+[![ci](https://github.com/rasa/scoops/actions/workflows/excavator.yml/badge.svg)](https://github.com/rasa/scoops/actions/workflows/excavator.yml)
+[![license](https://img.shields.io/github/license/rasa/scoops.svg?style=flat-square)](https://github.com/rasa/scoops/blob/master/LICENSE)
+[![repo size](https://img.shields.io/github/repo-size/rasa/scoops.svg?style=flat-square)](https://github.com/rasa/scoops)
+[![awesome](https://awesome.re/mentioned-badge-flat.svg)](https://github.com/scoopinstaller/awesome/blob/master/README.md)    
 
 Custom scoop packages.
 
@@ -16,7 +21,7 @@ To add this bucket to scoop, type:
 scoop bucket add rasa https://github.com/rasa/scoops.git
 ```
 
-You can also install apps without adding the bucket via
+You can also install apps without adding the bucket. For example:
 
 ```sh
 scoop install https://raw.githubusercontent.com/rasa/scoops/master/bucket/android-messages.json
