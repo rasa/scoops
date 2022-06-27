@@ -12,8 +12,14 @@ wfc is the only app in this repository that requires elevated (administrator) pr
 
 To add this bucket to scoop, type:
 
-```
+```sh
 scoop bucket add rasa https://github.com/rasa/scoops.git
+```
+
+You can also install apps without adding the bucket via
+
+```sh
+scoop install https://raw.githubusercontent.com/rasa/scoops/master/bucket/android-messages.json
 ```
 
 ## Apps
