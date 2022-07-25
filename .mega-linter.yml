@@ -10,7 +10,7 @@ APPLY_FIXES: all # When active, APPLY_FIXES must also be defined as environment 
   # - SPELL # Uncomment to disable checks of spelling mistakes
 DISABLE_LINTERS:
   - BASH_EXEC  # @TODO fix BASH_EXEC issues before enabling:
-  # - BASH_SHELLCHECK 
+  # - BASH_SHELLCHECK
   # - BASH_SHFMT
   - COPYPASTE_JSCPD
   - POWERSHELL_POWERSHELL  # Upstream code
