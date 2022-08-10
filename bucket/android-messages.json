@@ -16,10 +16,15 @@
             "Expand-7zipArchive \"$dir\\app-64.7z\" \"$dir\" -Removal"
         ]
     },
-    "bin": "AndroidMessages.exe",
+    "bin": [
+        [
+            "Android Messages.exe",
+            "AndroidMessages"
+        ]
+    ],
     "shortcuts": [
         [
-            "AndroidMessages.exe",
+            "Android Messages.exe",
             "Android Messages"
         ]
     ],
