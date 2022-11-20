@@ -16,5 +16,8 @@
     "checkver": {
         "github": "https://github.com/microsoft/diskspd",
         "regex": "tag/v([\\w.-]+)"
+    },
+    "autoupdate": {
+        "url": "https://github.com/microsoft/diskspd/releases/download/v$version/DiskSpd.zip"
     }
 }
