@@ -2,19 +2,23 @@
 on:
   workflow_dispatch:
   schedule:
-  - cron: '59 */4 * * *'
+  # Run daily at 00:59 UTC
+  - cron: '59 * * * *'
+
 #   pull_request:
 #     types: [closed]
 name: update-readme
 jobs:
   update-readme:
     name: update-readme
-#     if: github.event_name == 'workflow_dispatch' || github.event.pull_request.merged == true
+    # if: github.event_name == 'workflow_dispatch' || github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     steps:
     - uses: actions/setup-python@v2
       with:
-        python-version: '3.9'
+        python-version: '3.10'
+        cache: 'pip' # caching pip dependencies
+
     - uses: actions/checkout@master
     - run: |
         python makeindex.py
