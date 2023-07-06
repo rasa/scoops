@@ -4,23 +4,10 @@
     "version": "1.8.9",
     "license": "Freeware",
     "url": "https://12noon.com/files/dc2_1.8.9.zip",
-    "hash": "",
+    "hash": "db1fd0c320e47d6cf761f03cea640954b9477e7ea34ccb609e7de6b78417b432",
     "architecture": {
-        "32bit": {
-            "bin": [
-                [
-                    "dc2x86.exe",
-                    "dc2"
-                ]
-            ]
-        },
         "64bit": {
-            "bin": [
-                [
-                    "dc2.exe",
-                    "dc2"
-                ]
-            ]
+            "bin": "dc2.exe"
         }
     }
 }
