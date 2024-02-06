@@ -1,0 +1,33 @@
+---
+# ~/.github/linters/.yamllint.yml
+# Docs: https://yamllint.readthedocs.io/en/stable/configuration.html
+# ML:   https://megalinter.io/latest/descriptors/yaml_yamllint/
+# MLT:  https://github.com/oxsecurity/megalinter/blob/main/TEMPLATES/.yamllint.yml
+
+# For `default` and `relaxed` configurations, see:
+# https://yamllint.readthedocs.io/en/stable/configuration.html#default-configuration
+
+extends: relaxed
+# ignore-from-file: [.gitignore]
+locale: en_US.UTF-8
+rules:
+  colons:
+    max-spaces-after: -1
+  comments:
+    min-spaces-from-content: 1 # Used to follow prettier standard: https://github.com/prettier/prettier/pull/10926
+  empty-lines:
+    max: 99
+    max-start: 99
+    max-end: 9
+  line-length:
+    level: warning
+    max: 132 # default: 80
+    allow-non-breakable-words: true
+    allow-non-breakable-inline-mappings: true
+  new-line-at-end-of-file: disable
+  new-lines:
+    level: warning
+    type: unix
+  trailing-spaces: disable
+  truthy:
+    check-keys: false

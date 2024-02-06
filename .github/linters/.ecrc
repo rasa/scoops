@@ -1,18 +1,20 @@
 {
+  "$comment": "Copied from: rasa/dotfiles/.github/linters/.bandit.yml",
+  "$comment2": "EDIT THE ABOVE FILE, NOT THIS COPY, OR YOUR CHANGES WILL BE LOST!",
+  "Version": "2.7.2",
   "Verbose": false,
   "Debug": false,
   "IgnoreDefaults": false,
   "SpacesAftertabs": false,
-  "NoColor": false,
-  "exclude": [
-  ],
+  "NoColor": true,
+  "Exclude": [],
   "AllowedContentTypes": [],
   "PassedFiles": [],
   "Disable": {
     "EndOfLine": false,
-    "Indentation": true,
+    "Indentation": false,
     "InsertFinalNewline": false,
-    "TrimTrailingWhitespace": true,
+    "TrimTrailingWhitespace": false,
     "IndentSize": false,
     "MaxLineLength": false
   }

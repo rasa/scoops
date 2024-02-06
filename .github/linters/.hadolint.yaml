@@ -1,0 +1,14 @@
+---
+# ~/.github/linters/.hadolint.yaml
+
+# failure-threshold: error
+
+# Rules: https://github.com/hadolint/hadolint?tab=readme-ov-file#rules
+override:
+  style:
+    # DL3018 warning: Pin versions in apk add. Instead of apk add <package> use apk add <package>=<version>.
+    - DL3018
+    # DL3006 warning: Always tag the version of an image explicitly
+    - DL3006
+
+# cspell:ignore hadolint
