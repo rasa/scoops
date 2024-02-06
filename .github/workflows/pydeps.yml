@@ -1,0 +1,220 @@
+---
+# Copied from: rasa/dotfiles/.github/workflows/pydeps.yml
+# EDIT THE ABOVE FILE, NOT THIS COPY, OR YOUR CHANGES WILL BE LOST!
+# checkov:skip=CKV_GHA_7:The build output cannot be affected by user parameters
+#   other than the build entry point and the top-level source location.
+#   GitHub Actions workflow_dispatch inputs MUST be empty.
+# $schema https://json.schemastore.org/github-workflow.json
+
+name: pydeps
+
+env:
+  DEFAULT_MASK: "**/*requirements*.txt"
+
+on: # yamllint disable-line rule:truthy
+  schedule:
+    # run every day at 15:17 UTC (07:17 PST/08:17 PDT)
+    - cron: "17 15 * * *"
+    #        ┬  ┬  ┬  ┬  ┬                               # *    : run every 5 min/every 1 hour/every 1 day/every 1 mon
+    #        │  │  │  │  └─ day of week (0-6 or SUN-SAT) # */X  : run every X min/every X hour/every X day/every X mon
+    #        │  │  │  └──── month (1-12 or JAN-DEC)      # A,B  : run when min/hour/day/mon = A or B
+    #        │  │  └─────── day of month (1-31)          # A-B  : run every min/hour/day/mon between A and B
+    #        │  └────────── hour (0-23) (UTC/GMT+0)      # A-B/X: run every X min/hour/day/mon between A and B
+    #        └───────────── minute (0-59)                # Ex: '0 9-17/2 * * 1-5' : 9/11/1/3/5 on Mon/Tue/Wed/Thu/Fri
+  push:
+    branches:
+      - main
+      - master # @TODO remove
+    paths:
+      - "**/*requirements*.txt"
+  workflow_call:
+    inputs:
+      # checkov:skip=CKV_GHA_7
+      mask:
+        type: string
+        default: "**/*requirements*.txt"
+        description: "File mask for requirements*.txt file(s)"
+  workflow_dispatch: # Allows you to run this workflow manually from the Actions tab
+    inputs:
+      # checkov:skip=CKV_GHA_7
+      mask:
+        type: string
+        default: "**/*requirements*.txt"
+        description: "File mask for requirements*.txt file(s)"
+
+concurrency:
+  group: ${{ github.workflow }}
+  cancel-in-progress: true
+
+jobs:
+  job:
+    runs-on: ${{ matrix.os }}
+    defaults:
+      run:
+        # force Windows to use bash:
+        shell: bash
+        # shell: bash -v -x {0}
+        # shell: bash --noprofile --norc -e -o pipefail {0}
+    strategy:
+      fail-fast: true
+      max-parallel: 1
+      # yamllint disable-line rule:line-length
+      # https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#choosing-github-hosted-runners
+      matrix:
+        os:
+          - ubuntu-latest # aka ubuntu-22.04
+          # - windows-latest # aka windows-2022
+          # - macos-latest # aka macos-12 (macos-13 in beta)
+        python-version:
+          # - "3.10"
+          - "3.11"
+          # - "3.12"
+    steps:
+      - name: USES actions/checkout@v4.1.1
+        uses: actions/checkout@v4.1.1
+        with:
+          show-progress: false
+
+      - name: RUN gather file list
+        continue-on-error: true
+        run: |
+          mask="${{ inputs.mask || env.DEFAULT_MASK }}"
+          printf "mask=%s\n" "${mask}"
+          dir=$(dirname "${mask}")
+          base=$(basename "${mask}")
+          if [[ "${dir}" == "**" ]]; then
+            dir=.
+            depth=99
+          else
+            depth=1
+          fi
+          mapfile -t < <(find "${dir}" -maxdepth "${depth}" -type f -iname "${base}")
+          printf 'Found %d files matching %s:\n' "${#MAPFILE[@]}" "${mask}"
+          typeset -p MAPFILE
+          printf 'serialized=%s\n' "$(typeset -p MAPFILE | base64 -w 0)" >>"${GITHUB_ENV}"
+          ((${#MAPFILE[@]}>0))
+
+      - name: RUN find duplicate packages, if any, across all requirements files
+        if: success()
+        run: |
+          eval "$(base64 -d <<<"${serialized}")"
+          tmp1=$(mktemp)
+          cat "${MAPFILE[@]}" \
+            | grep -o '^[^#]*' \
+            | sed -E 's/\s+//g' \
+            | sort -u \
+            | sed -E 's/[<>~!]+/=/g' \
+            | grep '=' \
+            | cut -d'=' -f 1 \
+            | sort \
+            | uniq -d > "${tmp1}"
+          printf "Duplicates found: "
+          wc -l < "${tmp1}"
+          if [[ -s "${tmp1}" ]]; then
+            printf "\n"
+            cat "${tmp1}"
+            printf "\n"
+            sed -e 's/^/\^/g' "${tmp1}" \
+              | grep -H -f - "${MAPFILE[@]}" \
+              | sed "s|^|::notice::|g"
+          fi
+          exit 0
+
+      - name: USES actions/setup-python@v5.0.0
+        if: success()
+        uses: actions/setup-python@v5.0.0
+        with:
+          python-version: ${{ matrix.python-version }}
+          # yamllint disable-line rule:line-length
+          # see https://stackoverflow.com/questions/73789054/reusable-github-action-workflow-with-actions-setup-python-fails-because-it-cant
+          # cache: 'pip'
+          # cache-dependency-path: '${{ inputs.mask }}'
+
+      - name: RUN pip install --upgrade pip
+        if: success()
+        run: |
+          python -m pip install --upgrade pip
+
+      - name: RUN pip install pipdeptree pipreqs pur
+        if: success()
+        run: |
+          pip install pipdeptree pipreqs pur
+
+      - name: RUN sed -E -i.bak -e '/^\s*#/d; /^\s*$/d;' requirements.txt
+        if: success()
+        run: |
+          eval "$(base64 -d <<<"${serialized}")"
+          sed -E -i.bak -e '/^\s*#/d; /^\s*$/d;' "${MAPFILE[@]}"
+          pr -f -n "${MAPFILE[@]}" \
+            | tr -s '\n'
+
+      - name: RUN pipreqs --print --diff requirements.txt
+        if: success()
+        run: |
+          eval "$(base64 -d <<<"${serialized}")"
+          for file in "${MAPFILE[@]}"; do
+            printf '\n%s:\n' "${file}"
+            pipreqs --print --diff "${file}" 2>/dev/null || true
+          done
+
+      - name: RUN pur --dry-run --dry-run-changed --no-recursive --requirement requirements.txt
+        if: success()
+        run: |
+          eval "$(base64 -d <<<"${serialized}")"
+          for file in "${MAPFILE[@]}"; do
+            printf '\n%s: ' "${file}"
+            out=$(
+              pur --dry-run --dry-run-changed --no-recursive --requirement "${file}" \
+                | grep -v '==>' || true
+            )
+            if [[ -z "${out}" ]]; then
+              printf 'no changes found\n'
+              continue
+            fi
+            printf 'changes found:\n%s\n' "${out}"
+            # shellcheck disable=SC2001
+            sed "s|^|::notice::${file}:|g" <<<"${out}"
+          done
+
+      - name: RUN pur --no-recursive --requirement requirements.txt
+        if: success()
+        run: |
+          eval "$(base64 -d <<<"${serialized}")"
+          for file in "${MAPFILE[@]}"; do
+              printf '\n%s: ' "${file}"
+              out=$(
+                pur --no-recursive --requirement "${file}" \
+                  | grep -v '==>' || true
+              )
+              if grep -q 'All requirements up-to-date' <<<"${out}"; then
+                printf 'no changes found\n'
+                continue
+              fi
+              printf 'changes found:\n%s\n' "${out}"
+              # shellcheck disable=SC2001
+              sed "s|^|::notice::${file}:|g" <<<"${out}"
+          done
+
+      - name: RUN pip install -r requirements.txt
+        if: success()
+        run: |
+          eval "$(base64 -d <<<"${serialized}")"
+          for file in "${MAPFILE[@]}"; do
+            printf '\n%s: ' "${file}"
+            pip install -r "${file}" || true
+          done
+
+      - name: RUN pipdeptree --warn silence
+        if: success()
+        run: |
+          pipdeptree --warn silence || true
+
+      - name: RUN pipdeptree --freeze --warn silence | grep -E '^[a-zA-Z0-9\-]+'
+        if: success()
+        run: |
+          pipdeptree --freeze --warn silence \
+            | grep -E '^[a-zA-Z0-9\-]+' || true
+
+# cspell:ignore pipreqs
+
+# cSpell:ignore noprofile, norc, pipdeptree, pydeps
