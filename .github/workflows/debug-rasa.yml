@@ -1,0 +1,63 @@
+---
+# $schema https://json.schemastore.org/github-workflow.json
+# ./.github/workflows/debug-rasa.yaml
+# checkov:skip=CKV_GHA_7:The build output cannot be affected by user parameters
+#   other than the build entry point and the top-level source location.
+#   GitHub Actions workflow_dispatch inputs MUST be empty.
+
+name: debug-rasa
+
+env:
+  WORKFLOW_USER: rasa
+  WORKFLOW_REPO: workflows
+
+on: # yamllint disable-line rule:truthy
+  # push:
+  #   branches:
+  #     - main
+  # pull_request:
+  #   branches:
+  #     - main
+  workflow_call: # Required so this workflow can be called from another workflow
+    inputs:
+      workflow_user:
+        description: "Github user name (default is 'rasa')"
+        required: false
+        type: string
+      workflow_repo:
+        description: "Github repository name (default is 'workflows')"
+        required: false
+        type: string
+  workflow_dispatch: # Allows you to run this workflow manually from the Actions tab
+    inputs:
+      # checkov:skip=CKV_GHA_7
+      workflow_user:
+        description: "Github user name (default is 'rasa')"
+        required: false
+        type: string
+      # checkov:skip=CKV_GHA_7
+      workflow_repo:
+        description: "Github repository name (default is 'workflows')"
+        required: false
+        type: string
+
+concurrency:
+  group: ${{ github.workflow }}
+  cancel-in-progress: true
+
+jobs:
+  debug-rasa:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: set vars
+        run: |
+          printf 'WORKFLOW_USER=%s\n' "${{ inputs.workflow_user }}" >> "${GITHUB_ENV}"
+          printf 'WORKFLOW_REPO=%s\n' "${{ inputs.workflow_repo }}" >> "${GITHUB_ENV}"
+      - name: USES crazy-max/ghaction-dump-context@v2.1.0
+        uses: crazy-max/ghaction-dump-context@v2.1.0
+        with:
+          workflow_user: ${{ inputs.workflow_user }}
+          workflow_repo: ${{ inputs.workflow_repo }}
+        env:
+          WORKFLOW_USER: ${{ env.WORKFLOW_USER }}
+          WORKFLOW_REPO: ${{ env.WORKFLOW_REPO }}
