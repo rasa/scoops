@@ -1,0 +1,11 @@
+---
+# cSpell:disable
+# ~/.cspell/overrides.yml
+
+# Manually curated list of paths/files to not spellcheck
+ignorePaths:
+
+# Manually curated list of words to treat as incorrectly spelled
+# flagWords:
+#   - notaword1
+#   - notaword2

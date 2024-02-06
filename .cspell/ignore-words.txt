@@ -1,0 +1,5 @@
+## cSpell:disable
+##  ~/.cspell/ignore-words.txt
+## Auto-generated cSpell dictionary of words to assume are correctly spelled
+## See https://cspell.org/docs/dictionaries-custom/
+##
