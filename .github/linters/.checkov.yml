@@ -1,0 +1,24 @@
+---
+# Copied from: rasa/dotfiles/.github/linters/.checkov.yml
+# EDIT THE ABOVE FILE, NOT THIS COPY, OR YOUR CHANGES WILL BE LOST!
+# schema see https://github.com/bridgecrewio/checkov/issues/5241
+# Source: https://github.com/oxsecurity/megalinter/blob/main/TEMPLATES/.checkov.yml
+# You can see all available properties here: https://github.com/bridgecrewio/checkov#configuration-using-a-config-file
+
+quiet: true
+
+skip-check:
+  # MegaLinter ignores CKV_DOCKER_2 by default
+  # CKV_DOCKER_2: "Ensure that HEALTHCHECK instructions have been added to container images"
+  - CKV_DOCKER_2
+
+  # CKV_DOCKER_7: "Ensure the base image uses a non latest version tag"
+  - CKV_DOCKER_7
+
+  # CKV_GHA_7: "The build output cannot be affected by user parameters other than the build entry point and the
+  # top-level source location. GitHub Actions workflow_dispatch inputs MUST be empty.
+  - CKV_GHA_7
+
+  # CKV2_GHA_1: "Ensure top-level permissions are not set to write-all"
+  - CKV2_GHA_1
+

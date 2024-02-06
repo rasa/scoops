@@ -1,0 +1,20 @@
+---
+# Copied from: rasa/dotfiles/linters/.prettierrc.yaml
+# EDIT THE ABOVE FILE, NOT THIS COPY, OR YOUR CHANGES WILL BE LOST!
+
+# Docs: https://prettier.io/docs/en/options
+
+# Specify the line length that the printer will wrap on.
+# See https://prettier.io/docs/en/options#print-width
+printWidth: 132 # default: 80
+
+# Print trailing commas wherever possible in multi-line comma-separated syntactic structures
+# See https://prettier.io/docs/en/options#trailing-commas
+trailingComma: "es5" # default: all
+
+# arrowParens: "avoid" # default: always
+# semi: false          # default: true
+# singleQuote: true    # default: false
+# tabWidth: 4          # default: 2
+
+

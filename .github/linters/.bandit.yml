@@ -1,1 +1,15 @@
-skips: ['B603']
+---
+# Copied from: rasa/dotfiles/.github/linters/.bandit.yml
+# EDIT THE ABOVE FILE, NOT THIS COPY, OR YOUR CHANGES WILL BE LOST!
+# Docs: https://bandit.readthedocs.io/en/latest/
+# ML:   https://megalinter.io/latest/descriptors/python_bandit/
+# MLT:  https://github.com/oxsecurity/megalinter/blob/main/TEMPLATES/.bandit.yml
+
+# Default location: ~/.bandit (.ini file)
+
+# See https://bandit.readthedocs.io/en/latest/config.html#
+skips:
+  # https://bandit.readthedocs.io/en/latest/plugins/b101_assert_used.html
+  - B101
+  # https://bandit.readthedocs.io/en/latest/plugins/b603_subprocess_without_shell_equals_true.html
+  - B603

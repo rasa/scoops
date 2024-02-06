@@ -1,0 +1,35 @@
+# ~/github/linters/.pylintrc
+# Docs: https://pylint.pycqa.org/en/latest/user_guide/configuration/index.html
+# ML:   https://megalinter.io/latest/descriptors/python_pylint/
+# MLT:  https://github.com/oxsecurity/megalinter/blob/main/TEMPLATES/.pylintrc
+
+# Keep in sync with ~/.pylintrc
+# Generate default via:
+#   pylint --rcfile /dev/null --generate-rcfile >~/.pylintrc
+
+[BASIC]
+argument-rgx=[a-z_][a-z0-9_]*$
+attr-rgx=[a-z_][a-z0-9_]*$
+module-rgx=[A-Za-z_][A-Za-z0-9_-]*$
+variable-rgx=[a-z_][a-z0-9_]*$
+
+[FORMAT]
+max-line-length=132
+max-module-lines=9999
+
+[MASTER]
+load-plugins=pylint.extensions.no_self_use
+
+[MESSAGES CONTROL]
+disable=import-error, E0401,
+  duplicate-code, R0801,
+  useless-option-value, R0022
+
+# https://pylint.pycqa.org/en/latest/user_guide/messages/message_control.html#detecting-useless-disables
+# disable for now as local and megalinter pylints produce different results
+# enable=useless-suppression, I0021
+
+[REPORTS]
+score=no
+
+# cSpell:ignore pylint, pylintrc, pylints, rcfile

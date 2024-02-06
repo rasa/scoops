@@ -1,0 +1,22 @@
+# ~/.github/linters/lychee.toml
+# Docs: https://lychee.cli.rs/#/usage/config
+# ML:   https://megalinter.io/latest/descriptors/spell_lychee/
+# MLT:  None?
+# Example: https://github.com/lycheeverse/lychee/blob/master/lychee.example.toml
+# Example: https://github.com/oxsecurity/megalinter/blob/main/.lycheeignore
+
+# Exclude checking all private IPs:
+exclude_all_private = true
+
+# Exclude URLs and mail addresses from checking (supports regex).
+exclude = [
+    "https://oxsecurity.github.io/megalinter/configuration/",
+    "https://github/",
+    "https://zeustracker.abuse.ch/blocklist.php\\?download=domainblocklist",
+    # addresses false positive:
+    #   Invalid: Email doesn't exist or is syntactically incorrect
+    "'\\w+@\\w+\\.com",
+    "account_email='\\w+@.*\\.com",
+    "root@[\\w.]+",
+    "file:///.*",
+]

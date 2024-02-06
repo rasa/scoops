@@ -1,0 +1,54 @@
+---
+# ~/.github/linters/.markdown-lint.yaml
+# Docs: https://github.com/DavidAnson/markdownlint
+# ML:   https://megalinter.io/latest/descriptors/markdown_markdownlint/
+# MLT:  https://github.com/oxsecurity/megalinter/blob/main/TEMPLATES/.markdownlint.json
+
+# See https://github.com/DavidAnson/markdownlint/blob/main/schema/.markdownlint.yaml
+
+# Rules by id
+# MD004/ul-style - Unordered list style
+MD004: false # false == disabled
+
+# MD007/ul-indent - Unordered list indentation
+MD007:
+  indent: 2
+
+# MD013/line-length - Line length
+MD013:
+  # Number of characters (default is 80)
+  line_length: 2047
+
+# was commented out in rasa/dotfiles
+# MD018/no-missing-space-atx - No space after hash on atx style heading
+MD018: false # false == disabled
+
+# was commented out in rasa/dotfiles
+# MD020/no-missing-space-closed-atx - No space inside hashes on closed atx style heading
+MD020: false # false == disabled
+
+# MD026/no-trailing-punctuation - Trailing punctuation in heading
+MD026:
+  # Punctuation characters
+  punctuation: ".,;:!。，；:"
+
+# MD029/ol-prefix - Ordered list item prefix
+MD029: false # false == disabled
+
+# MD033/no-inline-html - Inline HTML
+MD033: false # false == disabled
+
+# was commented out in rasa/dotfiles
+# MD034/no-bare-urls - Bare URL used
+MD034: false # false == disabled
+
+# MD036/no-emphasis-as-heading/no-emphasis-as-header - Emphasis used instead of a heading
+MD036: false # false == disabled
+
+# was commented out in rasa/dotfiles
+# MD042/no-empty-links - No empty links
+MD042: false # false == disabled
+
+# doesn't appear in https://github.com/DavidAnson/markdownlint/blob/main/schema/.markdownlint.yaml
+# # Rules by tags
+# blank_lines: false  # Error on blank lines

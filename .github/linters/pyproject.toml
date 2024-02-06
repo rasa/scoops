@@ -1,0 +1,17 @@
+# .github/linters/pyproject.toml
+# Docs: https://black.readthedocs.io/en/stable/usage_and_configuration/the_basics.html#configuration-format
+# ML:   https://megalinter.io/latest/descriptors/python_black/
+# MLT:  https://github.com/oxsecurity/megalinter/tree/main/TEMPLATES/pyproject.toml
+
+[tool.black]
+
+# https://black.readthedocs.io/en/stable/usage_and_configuration/the_basics.html#l-line-length
+line-length = 132 # default = 88
+
+# https://black.readthedocs.io/en/stable/usage_and_configuration/the_basics.html#q-quiet
+quiet = true
+
+# https://black.readthedocs.io/en/stable/usage_and_configuration/the_basics.html#t-target-version
+target-versions = ["py310", "py311"]
+
+# cspell:ignore pyproject

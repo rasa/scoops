@@ -1,0 +1,9 @@
+# ~/.github/linters/.ruff.toml
+# Docs: https://beta.ruff.rs/docs/configuration/
+# ML:   https://megalinter.io/latest/descriptors/python_ruff/
+# MLT:  https://github.com/oxsecurity/megalinter/blob/main/TEMPLATES/.ruff.toml
+
+line-length = 132 # default = 88
+
+# Assume Python 3.11
+target-version = "py311"
