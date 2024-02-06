@@ -164,6 +164,6 @@ jobs:
             }}
           check_branch_existence: ${{ startsWith(github.event.inputs.check_branch_existence, 'Keep') && 'Y' || '' }}
           check_pullrequest_exist: ${{ startsWith(github.event.inputs.check_pullrequest_exist, 'Keep') && 'Y' || '' }}
-          dry_run: ${{ github.event.inputs.dry_run && 'Y' || '' }}
+          dry_run: ${{ (github.event.inputs.dry_run == true) && 'Y' || '' }}
 
 # cSpell:ignore ghaction, Mattraks, pullrequest
