@@ -138,8 +138,8 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           retain_days: "30" # default: 30
           keep_minimum_runs: "6" # default: 6
-          check_branch_existence: "Y" # default: false
-          check_pullrequest_exist: "Y" # default: false
+          check_branch_existence: "Y" # default: Y
+          check_pullrequest_exist: "Y" # default: Y
 
       - name: Non-scheduled run (github.event_name != 'schedule')
         if: github.event_name != 'schedule'
@@ -156,8 +156,8 @@ jobs:
               && 'action_required,cancelled,failure,skipped'
               || github.event.inputs.delete_run_by_conclusion_pattern
             }}
-          check_branch_existence: ${{ startsWith(github.event.inputs.check_branch_existence, "Y") && "Y" || "" }}
-          check_pullrequest_exist: ${{ startsWith(github.event.inputs.check_pullrequest_exist, "Y") && "Y" || "" }}
+          check_branch_existence: ${{ startsWith(github.event.inputs.check_branch_existence, 'Y') && 'Y' || '' }}
+          check_pullrequest_exist: ${{ startsWith(github.event.inputs.check_pullrequest_exist, 'Y') && 'Y' || '' }}
           dry_run: ${{ github.event.inputs.dry_run }}
 
 # cSpell:ignore ghaction, Mattraks, pullrequest
