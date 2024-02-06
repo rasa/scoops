@@ -62,7 +62,7 @@ on: # yamllint disable-line rule:truthy
         default: "6"
       # checkov:skip=CKV_GHA_7
       delete_workflow_pattern:
-        description:Workflow name/filename (optional)
+        description: "Workflow name/filename (optional)"
         # Name or filename of the workflow (if not set, all workflows are targeted)
       # checkov:skip=CKV_GHA_7
       delete_workflow_by_state_pattern:
@@ -144,8 +144,8 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           retain_days: "30" # default: 30
           keep_minimum_runs: "6" # default: 6
-          check_branch_existence: "N" # default: N
-          check_pullrequest_exist: "N" # default: N
+          check_branch_existence: "Skip" # default: N
+          check_pullrequest_exist: "Skip" # default: N
 
       - name: Non-scheduled run (github.event_name != 'schedule')
         if: github.event_name != 'schedule'
