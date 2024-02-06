@@ -121,7 +121,7 @@ jobs:
 
       - name: Scheduled run (github.event_name == 'schedule')
         if: github.event_name == 'schedule'
-        uses: Mattraks/delete-workflow-runs@v2.0.6
+        uses: Mattraks/delete-workflow-runs@main
         with:
           repository: ${{ github.repository }}
           token: ${{ secrets.GITHUB_TOKEN }}
