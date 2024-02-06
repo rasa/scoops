@@ -1,0 +1,6 @@
+# cSpell:disable
+# ~/.cspell/correct-words.txt
+# Manually curated cSpell dictionary of words (and filenames) to treat as correctly spelled
+
+rasa
+RASA
