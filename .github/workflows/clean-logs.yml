@@ -38,10 +38,10 @@ on: # yamllint disable-line rule:truthy
       dry_run:
         type: boolean
       check_branch_existence:
-        default: ""
+        default: "Skip"
         type: string
       check_pullrequest_exist:
-        default: ""
+        default: "Skip"
         type: string
       repository:
         type: string
@@ -50,20 +50,24 @@ on: # yamllint disable-line rule:truthy
     inputs:
       # checkov:skip=CKV_GHA_7
       retain_days:
-        description: Days-worth of runs to keep for each workflow
+        description: Days to keep
+        # Days-worth of runs to keep for each workflow
         required: true
         default: "30"
       # checkov:skip=CKV_GHA_7
       keep_minimum_runs:
-        description: Minimum runs to keep for each workflow
+        description: Runs to keep
+        # Minimum runs to keep for each workflow
         required: true
         default: "6"
       # checkov:skip=CKV_GHA_7
       delete_workflow_pattern:
-        description: Name or filename of the workflow (if not set, all workflows are targeted)
+        description: Name or filename of the workflow (optional)
+        # Name or filename of the workflow (if not set, all workflows are targeted)
       # checkov:skip=CKV_GHA_7
       delete_workflow_by_state_pattern:
-        description: "Filter workflows by state: active, deleted, disabled_fork, disabled_inactivity, disabled_manually"
+        description: State to delete
+        # "Filter workflows by state: active, deleted, disabled_fork, disabled_inactivity, disabled_manually"
         required: true
         default: ALL
         type: choice
@@ -75,7 +79,8 @@ on: # yamllint disable-line rule:truthy
           - disabled_manually
       # checkov:skip=CKV_GHA_7
       delete_run_by_conclusion_pattern:
-        description: "Remove runs based on conclusion: action_required, cancelled, failure, skipped, success"
+        description: Conclusion to delete
+        # "Remove runs based on conclusion: action_required, cancelled, failure, skipped, success"
         required: true
         default: ALL
         type: choice
@@ -93,22 +98,22 @@ on: # yamllint disable-line rule:truthy
         type: boolean
       # checkov:skip=CKV_GHA_7
       check_branch_existence:
-        description: Skip deleting logs of existing branches?
+        description: Delete logs of existing branches
         # If the workflow was triggered by a branch, the branch must be deleted before the workflow run is deleted as well.
-        default: "Y"
+        default: "Skip"
         type: choice
         options:
-          - "Y"
-          - "N"
+          - "Skip"
+          - "Delete"
       # checkov:skip=CKV_GHA_7
       check_pullrequest_exist:
-        description: Skip deleting logs for active PRs?
+        description: Delete logs for active PRs
         # If the run is linked to a pull request, the deletion is skipped.
-        default: "Y"
+        default: "Skip"
         type: choice
         options:
-          - "Y"
-          - "N"
+          - "Skip"
+          - "Delete"
       # checkov:skip=CKV_GHA_7
       repository:
         description: Name of repository (e.g., user/repo) (default is current repository).
@@ -138,8 +143,8 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           retain_days: "30" # default: 30
           keep_minimum_runs: "6" # default: 6
-          check_branch_existence: "Y" # default: Y
-          check_pullrequest_exist: "Y" # default: Y
+          check_branch_existence: "N" # default: N
+          check_pullrequest_exist: "N" # default: N
 
       - name: Non-scheduled run (github.event_name != 'schedule')
         if: github.event_name != 'schedule'
@@ -156,8 +161,8 @@ jobs:
               && 'action_required,cancelled,failure,skipped'
               || github.event.inputs.delete_run_by_conclusion_pattern
             }}
-          check_branch_existence: ${{ startsWith(github.event.inputs.check_branch_existence, 'Y') && 'Y' || '' }}
-          check_pullrequest_exist: ${{ startsWith(github.event.inputs.check_pullrequest_exist, 'Y') && 'Y' || '' }}
+          check_branch_existence: ${{ startsWith(github.event.inputs.check_branch_existence, 'Skip') && 'Y' || '' }}
+          check_pullrequest_exist: ${{ startsWith(github.event.inputs.check_pullrequest_exist, 'Skip') && 'Y' || '' }}
           dry_run: ${{ github.event.inputs.dry_run }}
 
 # cSpell:ignore ghaction, Mattraks, pullrequest
