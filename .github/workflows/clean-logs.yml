@@ -38,10 +38,10 @@ on: # yamllint disable-line rule:truthy
       dry_run:
         type: boolean
       check_branch_existence:
-        default: "Y"
+        default: ""
         type: string
       check_pullrequest_exist:
-        default: "Y"
+        default: ""
         type: string
       repository:
         type: string
@@ -93,20 +93,22 @@ on: # yamllint disable-line rule:truthy
         type: boolean
       # checkov:skip=CKV_GHA_7
       check_branch_existence:
-        description: If the workflow was triggered by a branch, the branch must be deleted before the workflow run is deleted as well.
+        description: Skip deleting logs of existing branches?
+        # If the workflow was triggered by a branch, the branch must be deleted before the workflow run is deleted as well.
         default: "Y"
         type: choice
         options:
           - "Y"
-          - ""
+          - "N"
       # checkov:skip=CKV_GHA_7
       check_pullrequest_exist:
-        description: If the run is linked to a pull request, the deletion is skipped.
+        description: Skip deleting logs for active PRs?
+        # If the run is linked to a pull request, the deletion is skipped.
         default: "Y"
         type: choice
         options:
           - "Y"
-          - ""
+          - "N"
       # checkov:skip=CKV_GHA_7
       repository:
         description: Name of repository (e.g., user/repo) (default is current repository).
@@ -154,8 +156,8 @@ jobs:
               && 'action_required,cancelled,failure,skipped'
               || github.event.inputs.delete_run_by_conclusion_pattern
             }}
-          check_branch_existence: ${{ github.event.inputs.check_branch_existence }}
-          check_pullrequest_exist: ${{ github.event.inputs.check_pullrequest_exist }}
+          check_branch_existence: ${{ startsWith(github.event.inputs.check_branch_existence, "Y") && "Y" || "" }}
+          check_pullrequest_exist: ${{ startsWith(github.event.inputs.check_pullrequest_exist, "Y") && "Y" || "" }}
           dry_run: ${{ github.event.inputs.dry_run }}
 
 # cSpell:ignore ghaction, Mattraks, pullrequest
