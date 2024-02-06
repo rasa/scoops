@@ -70,8 +70,8 @@ jobs:
           - "3.11"
           # - "3.12"
     steps:
-      - name: USES actions/checkout@v4
-        uses: actions/checkout@v4
+      - name: USES actions/checkout@v4.1.1
+        uses: actions/checkout@v4.1.1
         with:
           show-progress: false
 
@@ -120,9 +120,9 @@ jobs:
           fi
           exit 0
 
-      - name: USES actions/setup-python@v5
+      - name: USES actions/setup-python@v5.0.0
         if: success()
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v5.0.0
         with:
           python-version: ${{ matrix.python-version }}
           # yamllint disable-line rule:line-length
