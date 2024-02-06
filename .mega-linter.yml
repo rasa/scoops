@@ -1,30 +1,104 @@
 ---
+# yamllint disable rule:line-length
+# $schema https://raw.githubusercontent.com/megalinter/megalinter/main/megalinter/descriptors/schemas/megalinter-configuration.jsonschema.json
+# ~/.mega-linter.yml
 # Configuration file for MegaLinter
-# See all available variables at https://megalinter.github.io/configuration/ and in linters documentation
+# See all available variables at https://megalinter.io/latest/configuration/ and in linters documentation
 
-APPLY_FIXES: all # When active, APPLY_FIXES must also be defined as environment variable (in github/workflows/mega-linter.yml or other CI tool)
-# ENABLE: # If you use ENABLE variable, all other languages/formats/tooling formats will be disabled by default
-# ENABLE_LINTERS: # If you use ENABLE_LINTERS variable, all other linters will be disabled by default
-# DISABLE:
-  # - COPYPASTE # Uncomment to disable checks of excessive copy-pastes
-  # - SPELL # Uncomment to disable checks of spelling mistakes
-DISABLE_LINTERS:
-  - BASH_EXEC  # @TODO fix BASH_EXEC issues before enabling:
-  # - BASH_SHELLCHECK
-  # - BASH_SHFMT
-  - COPYPASTE_JSCPD
-  - POWERSHELL_POWERSHELL  # Upstream code
-  - SPELL_CSPELL # insanely noisy
-PRINT_ALL_FILES: false
-SHOW_ELAPSED_TIME: true
-EMAIL_REPORTER_EMAIL: rasa7777@gmail.com
-FILEIO_REPORTER: true
-JSON_REPORTER: true
-GITHUB_STATUS_REPORTER: false
-PLUGINS:
-  - https://raw.githubusercontent.com/megalinter/megalinter/main/.automation/test/mega-linter-plugin-test/test.megalinter-descriptor.yml
-BASH_SHELLCHECK_ARGUMENTS: '--external-sources --enable=all --exclude SC2310,SC2312'
-BASH_SHFMT_ARGUMENTS: '-ci -i 2'
-PRINT_ALPACA: false
-# these files have comments in them, and jsonlint reject comments:
-JSON_JSONLINT_FILTER_REGEX_EXCLUDE: '((.vscode|Code/User)/(extensions|keybindings|settings|Template))\.jsonc?'
+EXTENDS:  https://raw.githubusercontent.com/rasa/workflows/main/.github/mega-linter-shared.yml
+
+# reset to defaults to diagnose:
+# https://github.com/rasa/workflows/actions/runs/6618009620/job/17975524372#step:5:150
+# PYTHON_MYPY_CONFIG_FILE: "/dev/null"
+PYTHON_MYPY_ARGUMENTS: "--install-types --ignore-missing-imports"
+#  --ignore-missing-imports
+#  --no-warn-unused-ignores
+#  --disable-error-code no-any-return
+
+## FILTERS ##
+
+## CONVERT ERRORS TO WARNINGS ##
+
+# quiet validation errors:
+# ACTION_ACTIONLINT_DISABLE_ERRORS: true
+
+# quiet validation errors:
+# ACTION_ACTIONLINT_ARGUMENTS: >
+#  -ignore 'property "workflow_update_github_pat" is not defined in .+'
+
+# quiet validation errors:
+# EDITORCONFIG_EDITORCONFIG_CHECKER_DISABLE_ERRORS: true
+# # or quiet completely:
+# EDITORCONFIG_EDITORCONFIG_CHECKER_ARGUMENTS: >-
+#   -disable-indent-size
+#   -disable-end-of-line
+#   -disable-indentation
+
+# quiet validation errors:
+# PYTHON_BANDIT_DISABLE_ERRORS: true
+# or quiet completely:
+# PYTHON_BANDIT_ARGUMENTS: "--skip B101,B404,B603"
+
+# quiet validation errors:
+#   .github/metadata.py
+# PYTHON_MYPY_DISABLE_ERRORS: true
+# or quiet completely:
+# PYTHON_MYPY_ARGUMENTS: >-
+#  --ignore-missing-imports
+#  --no-warn-unused-ignores
+#  --disable-error-code no-any-return
+#  --install-types
+#  --non-interactive
+#  --strict
+
+# quiet validation errors:
+# PYTHON_PYLINT_DISABLE_ERRORS: true
+# or quiet completely:
+# PYTHON_PYLINT_ARGUMENTS: >-
+#  --disable consider-using-f-string
+#  --disable fixme
+#  --disable import-error
+#  --disable invalid-name
+#  --disable missing-class-docstring
+#  --disable missing-function-docstring
+#  --disable no-else-return
+#  --disable no-self-use
+#  --disable redefined-outer-name
+#  --disable subprocess-run-check
+#  --disable too-many-locals
+#  --disable too-many-public-methods
+#  --disable unspecified-encoding
+
+# quiet validation errors:
+# REPOSITORY_CHECKOV_DISABLE_ERRORS: true
+# or quiet completely:
+# REPOSITORY_CHECKOV_ARGUMENTS: "--skip-check CKV2_GHA_1,CKV_GHA_7"
+
+# quiet validation errors:
+#   fatal: detected dubious ownership in repository at '/github/workspace/.git'
+# REPOSITORY_DEVSKIM_DISABLE_ERRORS: true
+#
+#
+
+# Old settings:
+
+# DISABLE_LINTERS:
+#   - BASH_EXEC  # @TODO fix BASH_EXEC issues before enabling:
+#   # - BASH_SHELLCHECK
+#   # - BASH_SHFMT
+#   - COPYPASTE_JSCPD
+#   - POWERSHELL_POWERSHELL  # Upstream code
+#   - SPELL_CSPELL # insanely noisy
+# PRINT_ALL_FILES: false
+# SHOW_ELAPSED_TIME: true
+# EMAIL_REPORTER_EMAIL: rasa7777@gmail.com
+# FILEIO_REPORTER: true
+# JSON_REPORTER: true
+# GITHUB_STATUS_REPORTER: false
+# PLUGINS:
+#   - https://raw.githubusercontent.com/megalinter/megalinter/main/.automation/test/mega-linter-plugin-test/test.megalinter-descriptor.yml
+# BASH_SHELLCHECK_ARGUMENTS: '--external-sources --enable=all --exclude SC2310,SC2312'
+# BASH_SHFMT_ARGUMENTS: '-ci -i 2'
+# PRINT_ALPACA: false
+# # these files have comments in them, and jsonlint reject comments:
+# JSON_JSONLINT_FILTER_REGEX_EXCLUDE: '((.vscode|Code/User)/(extensions|keybindings|settings|Template))\.jsonc?'
