@@ -1,0 +1,39 @@
+---
+# Copied from: rasa/dotfiles/.github/dependabot.yml
+# EDIT THE ABOVE FILE OR YOUR CHANGES WILL BE LOST!
+# yamllint disable rule:line-length
+# Docs: https://docs.github.com/en/code-security/dependabot/dependabot-version-updates/configuration-options-for-the-dependabot.yml-file
+version: 2
+updates:
+  - package-ecosystem: "github-actions"
+    directory: "/" # == /.github/workflows/
+    schedule:
+      interval: "daily"
+      time: "08:00"
+      timezone: "America/Los_Angeles"
+    reviewers:
+      - "rasa"
+    commit-message:
+      prefix: "[action] "
+  - package-ecosystem: "pip"
+    directory: "/"
+    schedule:
+      interval: "daily"
+      time: "08:00"
+      timezone: "America/Los_Angeles"
+    reviewers:
+      - "rasa"
+    commit-message:
+      prefix: "[pip] "
+      prefix-development: "[pip dev] "
+  - package-ecosystem: "docker"
+    directory: "/"
+    schedule:
+      interval: "daily"
+      time: "08:00"
+      timezone: "America/Los_Angeles"
+    reviewers:
+      - "rasa"
+    commit-message:
+      prefix: "[docker] "
+
