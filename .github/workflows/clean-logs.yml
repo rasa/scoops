@@ -38,11 +38,11 @@ on: # yamllint disable-line rule:truthy
       dry_run:
         type: boolean
       check_branch_existence:
-        default: true
-        type: boolean
+        default: "Y"
+        type: string
       check_pullrequest_exist:
-        default: true
-        type: boolean
+        default: "Y"
+        type: string
       repository:
         type: string
   
@@ -94,13 +94,13 @@ on: # yamllint disable-line rule:truthy
       # checkov:skip=CKV_GHA_7
       check_branch_existence:
         description: If the workflow was triggered by a branch, the branch must be deleted before the workflow run is deleted as well.
-        default: "Y" # true
-        type: string # boolean seems not to work
+        default: "Y"
+        type: string
       # checkov:skip=CKV_GHA_7
       check_pullrequest_exist:
         description: If the run is linked to a pull request, the deletion is skipped.
-        default: "Y" # true
-        type: string # boolean seems not to work
+        default: "Y"
+        type: string
       # checkov:skip=CKV_GHA_7
       repository:
         description: Name of repository (e.g., user/repo) (default is current repository).
@@ -116,8 +116,11 @@ jobs:
   clean-logs:
     runs-on: ubuntu-latest
     steps:
-      - name: crazy-max/ghaction-dump-context@v2.1.0
-        uses: crazy-max/ghaction-dump-context@v2.1.0
+      # Was crazy-max/ghaction-dump-context@v2.1.0
+      # but it reports a deprecation error:
+      # Node.js 16 actions are deprecated. Please update the following actions to use Node.js 20: actions/github-script@v6.
+      - name: rasa/ghaction-dump-context@master
+        uses: rasa/ghaction-dump-context@master
 
       - name: Scheduled run (github.event_name == 'schedule')
         if: github.event_name == 'schedule'
@@ -125,10 +128,10 @@ jobs:
         with:
           repository: ${{ github.repository }}
           token: ${{ secrets.GITHUB_TOKEN }}
-          retain_days: "1" # default: 30
-          keep_minimum_runs: "1" # default: 6
-          check_branch_existence: "" # default: false
-          check_pullrequest_exist: "" # default: false
+          retain_days: "30" # default: 30
+          keep_minimum_runs: "6" # default: 6
+          check_branch_existence: "Y" # default: false
+          check_pullrequest_exist: "Y" # default: false
 
       - name: Non-scheduled run (github.event_name != 'schedule')
         if: github.event_name != 'schedule'
