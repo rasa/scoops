@@ -1,0 +1,509 @@
+---
+# $schema https://json.schemastore.org/github-workflow.json
+# ./.github/workflows/debug-matrix.yaml
+# https://docs.github.com/en/actions/using-github-hosted-runners/about-github-hosted-runners#preinstalled-software
+# yamllint disable rule:line-length
+
+name: debug-matrix
+
+on: # yamllint disable-line rule:truthy
+  # pull_request:
+  #   branches:
+  #     - main
+  push:
+    branches:
+      - main
+      - master # @TODO remove
+    paths:
+      - .github/scripts/debug-*
+      - .github/workflows/debug-matrix.yaml
+  workflow_call: # Required so this workflow can be called from another workflow
+  workflow_dispatch: # Allows you to run this workflow manually from the Actions tab
+
+concurrency:
+  group: ${{ github.workflow }}
+  cancel-in-progress: true
+
+jobs:
+  debug-matrix:
+    runs-on: ${{ matrix.os }}
+    continue-on-error: true
+    defaults:
+      run:
+        # Docs: https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#jobsjob_idstepsshell
+        shell: bash --noprofile --norc -e -u -o pipefail -v -x {0}
+    strategy:
+      fail-fast: false
+      max-parallel: 1
+      # Docs: https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#choosing-github-hosted-runners
+      matrix:
+        os:
+          # https://github.com/actions/runner-images/tree/main#available-images
+          # https://docs.github.com/en/actions/using-github-hosted-runners/about-github-hosted-runners/about-github-hosted-runners#supported-runners-and-hardware-resources
+          - ubuntu-latest  # aka ubuntu-22.04
+          - windows-latest # aka windows-2022
+          - macos-latest   # aka macos-12
+          - macos-13       # beta
+          # is this coming?:
+          # - macos-13-arm64 # https://github.com/actions/runner-images/blob/main/images/macos/macos-13-arm64-Readme.md
+          # - ubuntu-20.04
+          # - windows-2019
+          # - macos-11
+    steps:
+      - name: USES crazy-max/ghaction-dump-context@v2.1.0
+        uses: crazy-max/ghaction-dump-context@v2.1.0
+
+      - if: runner.os == 'Linux'
+        name: List installed apt/snap packages (Linux)
+        continue-on-error: true
+        run: |
+          # bash: List installed apt/snap packages (Linux)
+          echo "apt --manual-installed:"
+          apt list --manual-installed | sort
+          echo "apt list --installed:"
+          apt list --installed | sort
+          # echo "apt-mark:"
+          # apt-mark showmanual
+          echo "snap list:"
+          snap list | sort
+
+      - if: runner.os == 'macOS'
+        name: List installed pkgutil/brew packages (macOS)
+        continue-on-error: true
+        run: |
+          # bash: List installed pkgutil/brew packages (macOS)
+          echo "pkgutil:"
+          pkgutil --pkgs | sort
+          echo "brew list:"
+          brew list --versions | sort || true
+
+      - if: runner.os == 'Windows'
+        name: USES MinoruSekine/setup-scoop@main
+        uses: MinoruSekine/setup-scoop@main
+        with:
+          buckets: extras versions
+        continue-on-error: true
+
+      - if: runner.os == 'Windows'
+        name: List installed choco/scoop/winget packages (Windows)
+        shell: cmd
+        continue-on-error: true
+        run: |
+          @rem cmd: List installed choco/scoop/winget packages (Windows)
+
+          echo scoop --version:
+          call scoop --version
+
+          echo choco --version:
+          choco --version
+
+          echo winget --version (if installed):
+          where /q winget && winget --version
+
+          echo scoop list:
+          call scoop list
+
+          echo choco list:
+          choco list --include-programs --yes
+
+          @rem main/git main/innounp main/dark main/lessmsi
+          call scoop install --skip --no-update-scoop main/7zip
+          call scoop install --skip --no-update-scoop versions/winget-preview
+
+          echo winget list:
+          winget list --disable-interactivity --accept-source-agreements | sort
+
+          echo winget --info:
+          winget --info --disable-interactivity
+
+          @rem https://github.com/actions/runner-images/issues/6472#issue-1422886379
+          @rem yamllint disable rule:line-length
+          @rem yamllint disable
+          @rem yamllint disable-line rule:line-length
+          @rem Invoke-WebRequest -Uri 'https://aka.ms/Microsoft.VCLibs.x64.14.00.Desktop.appx' -OutFile 'VCLibs.appx' | Out-Null # automatically downloads latest version
+          @rem yamllint disable-line rule:line-length
+          @rem Invoke-WebRequest -Uri 'https://github.com/microsoft/winget-cli/releases/download/latest/Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.msixbundle' -OutFile 'winget.msixbundle' | Out-Null
+          @rem yamllint disable-line rule:line-length
+          @rem $ReleaseInfo = Invoke-RestMethod 'https://api.github.com/repos/microsoft/winget-cli/releases/latest'
+          @rem yamllint disable-line rule:line-length
+          @rem Invoke-WebRequest -Uri $ReleaseInfo.assets.Where({ $_.name.EndsWith('License1.xml') }).browser_download_url -OutFile 'license.xml' | Out-Null # because the prefix of the file changes with every release
+          @rem yamllint disable-line rule:line-length
+          @rem Add-AppxProvisionedPackage -Online -PackagePath winget.msixbundle -LicensePath license.xml -DependencyPackagePath VCLibs.appx | Out-Null
+          @rem yamllint enable
+
+      # - if: false # runner.os == 'Windows'
+      #   shell: powershell
+      #   run: |
+      #     $hasPackageManager = Get-AppPackage -name 'Microsoft.DesktopAppInstaller'
+      #     if (!$hasPackageManager -or [version]$hasPackageManager.Version -lt [version]"1.10.0.0") {
+      #       "Installing winget Dependencies"
+      #       Add-AppxPackage -Path 'https://aka.ms/Microsoft.VCLibs.x64.14.00.Desktop.appx'
+      #       $releases_url = 'https://api.github.com/repos/microsoft/winget-cli/releases/latest'
+
+      #       [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+      #       # yamllint disable-line rule:line-length
+      #       $releases = Invoke-RestMethod -uri $releases_url
+      #       $latestRelease = $releases.assets | Where { $_.browser_download_url.EndsWith('msixbundle') } | Select -First 1
+
+      #       "Installing winget from $($latestRelease.browser_download_url)"
+      #       Add-AppxPackage -Path $latestRelease.browser_download_url
+      #     } else {
+      #       "winget already installed"
+      #     }
+      #     #### Creating settings.json #####
+      #     if ([System.Security.Principal.WindowsIdentity]::GetCurrent().IsSystem) {
+      #       # yamllint disable-line rule:line-length
+      #       $SettingsPath = "$Env:windir\system32\config\systemprofile\AppData\Local\Microsoft\WinGet\Settings\settings.json"
+      #     } else {
+      #      # yamllint disable-line rule:line-length
+      #       $SettingsPath = "$env:LOCALAPPDATA\Packages\Microsoft.DesktopAppInstaller_8wekyb3d8bbwe\LocalState\settings.json"
+      #     }
+      #     if (Test-Path $SettingsPath) {
+      #       $ConfigFile = Get-Content -Path $SettingsPath | Where-Object {$_ -notmatch '//'} | ConvertFrom-Json
+      #     }
+      #     if (!$ConfigFile){
+      #       $ConfigFile = @{}
+      #     }
+      #     if ($ConfigFile.installBehavior.preferences.scope) {
+      #       $ConfigFile.installBehavior.preferences.scope = "Machine"
+      #     } else {
+      #       Add-Member -InputObject $ConfigFile -MemberType NoteProperty -Name 'installBehavior' -Value $(
+      #         New-Object PSObject -Property $(@{preferences = $(
+      #           New-Object PSObject -Property $(@{scope = "Machine"}))
+      #         })
+      #       ) -Force
+      #     }
+      #     $ConfigFile | ConvertTo-Json | Out-File $SettingsPath -Encoding utf8 -Force
+
+      - name: USES actions/checkout
+        uses: actions/checkout@v4.1.1
+        with:
+          show-progress: false
+
+      # https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#jobsjob_idstepsshell
+      # - if: contains(fromJSON('["Linux", "macOS"]'), runner.os)
+      - name: RUN sh ./.github/scripts/debug*.sh
+        # default: sh -e {0}
+        shell: sh -e -v -x {0}
+        continue-on-error: true
+        run: |
+          mapfile -t < <(find ./.github/scripts -name 'debug*.sh') || true
+          for script in "${MAPFILE[@]}"; do
+            "${script}" "$0" "$@" || true
+          done
+
+      - name: RUN bash ./.github/scripts/debug*.bash
+        # default: bash --noprofile --norc -eo pipefail {0}
+        # shell: bash
+        continue-on-error: true
+        run: |
+          mapfile -t < <(find ./.github/scripts -name 'debug*.bash') || true
+          for script in "${MAPFILE[@]}"; do
+            "${script}" "$0" "$@" || true
+          done
+
+      - name: RUN bash ./.github/scripts/debug*.bash
+        # default: bash --noprofile --norc -eo pipefail {0}
+        shell: bash
+        continue-on-error: true
+        run: |
+          mapfile -t < <(find ./.github/scripts -name 'debug*.bash') || true
+          for script in "${MAPFILE[@]}"; do
+            "${script}" "$0" "$@" || true
+          done
+
+      - name: RUN pwsh ./.github/scripts/debug*.ps1
+        # default: pwsh -command ". '{0}'"
+        shell: pwsh -Noninteractive -command ". '{0}'"
+        continue-on-error: true
+        run: |
+          Get-ChildItem ".github\scripts\debug*.ps1" | Foreach-Object { & $_.FullName "pwsh" }
+          Exit 0
+
+      - if: runner.os == 'Windows'
+        name: RUN powershell ./.github/scripts/debug*.ps1 (Windows)
+        # default: powershell -command ". '{0}'"
+        shell: powershell -Noninteractive -command ". '{0}'"
+        continue-on-error: true
+        run: |
+          Get-ChildItem ".github\scripts\debug*.ps1" | Foreach-Object { & $_.FullName "powershell" }
+          Exit 0
+
+      - if: runner.os == 'Windows'
+        name: RUN cmd .github/scripts/debug*.cmd (Windows)
+        # default: %ComSpec% /D /E:ON /V:OFF /S /C "CALL "{0}""
+        # /D     Ignore registry AutoRun commands
+        # /E:ON  Enable CMD Command Extensions
+        # /V:OFF Disable delayed environment variable expansion
+        # /S     Strip " quote characters from command.
+        # /C     Run Command and then terminate
+        shell: 'cmd /D /E:ON /V:ON /S /C "CALL "{0}""'
+        continue-on-error: true
+        run: |
+          for %%A in (.github\scripts\debug*.ps1) do "%%~A" "%~fs0" %*
+          exit 0
+
+      - if: runner.os == 'Linux'
+        name: RUN list executables (Linux)
+        continue-on-error: true
+        run: |
+          # list executables (Linux)
+          IFS=: read -r -a paths <<<"${PATH}"
+          find "${paths[@]}" -maxdepth 1 -type f,l -executable -printf '%P\t%h\n' | \
+            LC_COLLATE=C sort --ignore-case -u | \
+            column -ts $'\t' || true
+
+      - if: runner.os == 'macOS'
+        name: RUN list executables (macOS)
+        continue-on-error: true
+        run: |
+          # list executables (macOS)
+          which bash
+          which sh
+          IFS=: read -r -a paths <<<"${PATH}"
+          find "${paths[@]}" -maxdepth 1 -perm +111 -type f -or -type l -print | \
+            awk '{b=$0;sub(/\/.*\//,"", b);sub(/\/[a-z]*$/,"",$0);print b "\t" $0}' | \
+            LC_COLLATE=C sort --ignore-case -u | \
+            column -ts $'\t' || true
+
+      - if: runner.os == 'Windows'
+        name: RUN list executables (Windows)
+        shell: bash
+        continue-on-error: true
+        run: |
+          # list executables (Windows)
+          set -vx
+          IFS=: read -r -a paths <<<"${PATH}"
+          find "${paths[@]}" -maxdepth 1 -type f,l -regextype posix-extended -iregex '.*\.(bat|cmd|com|exe)$' -printf '%P\t%h\n' | \
+            LC_COLLATE=C sort --ignore-case -u | \
+            column -ts $'\t' || true
+
+      - name: RUN python (inline)
+        # default: python {0}
+        # note: this is python2 on macos-12
+        shell: python
+        continue-on-error: true
+        run: |
+          # python (inline)
+          import os
+          import pprint
+          import sys
+          print("os.name=%s" % os.name)
+          print("sys.executable=%s" % sys.executable)
+          print("sys.argv=")
+          pprint.pprint(sys.argv)
+          print("sys.version=%s" % sys.version)
+          print("sys.platform=%s" % sys.platform)
+          print("os.environ=")
+          pprint.pprint(dict(os.environ), width=4096)
+          sys.exit(0)
+
+      - # if: runner.os == 'Linux'
+        name: RUN install pip
+        continue-on-error: true
+        run: |
+          # install pip
+          set -x
+          type -P pip >/dev/null && exit 0
+          PYTHON=$(type -P python3 python py python2 | head -n 1 || true)
+          # shellcheck disable=SC2139 # This expands when defined, not when used. Consider escaping
+          alias pip="${PYTHON} -m pip"
+          sudo=$(type -P sudo || true)
+
+          pyversion=$("${PYTHON}" -c 'import sys; print(sys.version_info[0]);')
+
+          if command -v apt-get >/dev/null; then
+            sudo apt-get -qq -y update
+
+            if ((pyversion>2)); then
+              sudo apt-get -qq -y install python3-pip
+              exit 0
+            fi
+
+            sudo apt-get -qq -y install python-pip
+            exit 0
+          fi
+
+          GET_PIP_URL==https://bootstrap.pypa.io/pip/2.7/get-pip.py
+          curl -s -o get-pip.py "${GET_PIP_URL}"
+
+          ${sudo} "${PYTHON}" get-pip.py
+
+      - name: RUN upgrade pip
+        shell: bash
+        continue-on-error: true
+        run: |
+          # upgrade pip
+          set -x
+          PYTHON=$(type -P python3 python py python2 | head -n 1 || true)
+          if ! type -P pip >/dev/null; then
+            # shellcheck disable=SC2139 # This expands when defined, not when used. Consider escaping
+            alias pip="${PYTHON} -m pip"
+          fi
+          sudo=$(type -P sudo || true)
+
+          ${sudo} "${PYTHON}" -m pip install --upgrade pip
+
+      - name: RUN pip list
+        shell: bash
+        continue-on-error: true
+        run: |
+          # pip list
+          set -x
+          PYTHON=$(type -P python3 python py python2 | head -n 1 || true)
+          if ! type -P pip >/dev/null; then
+            # shellcheck disable=SC2139 # This expands when defined, not when used. Consider escaping
+            alias pip="${PYTHON} -m pip"
+          fi
+
+          echo "pip list:"
+          pip list
+          echo "pip list --outdated:"
+          pip list --outdated
+
+      - name: RUN pip install future
+        shell: bash
+        continue-on-error: true
+        run: |
+          # pip install future
+          set -vx
+          PYTHON=$(type -P python3 python py python2 | head -n 1 || true)
+          if ! type -P pip >/dev/null; then
+            # shellcheck disable=SC2139 # This expands when defined, not when used. Consider escaping
+            alias pip="${PYTHON} -m pip"
+          fi
+          sudo=$(type -P sudo || true)
+
+          if pip show future >/dev/null; then
+            exit 0
+          fi
+
+          py_version=$("${PYTHON}" -c 'import sys; print(sys.version_info[0]);')
+
+          if command -v apt-get >/dev/null; then
+            if ((py_version==3)); then
+              app=python3-future
+            else
+              app=python-future
+            fi
+            ${sudo} apt-get -y install "${app}"
+            if pip show future >/dev/null; then
+              exit 0
+            fi
+          fi
+
+          ${sudo} pip --no-python-version-warning --no-input install future
+          if pip show future >/dev/null; then
+            exit 0
+          fi
+
+          # --root-user-action=ignore
+          ${sudo} pip install --upgrade setuptools
+
+          # https://github.com/PythonCharmers/python-future/issues/604
+          PYTHON_FUTURE_URL="https://github.com/PythonCharmers/python-future/archive/master.tar.gz"
+          curl -s "${PYTHON_FUTURE_URL}" | tar xzf -
+
+          cd python-future-master/src
+          ${sudo} "${PYTHON}" setup.py install
+          cd ..
+          rm -fr python-future-master
+
+          pip show future
+          exit $?
+
+      - name: RUN python .github/scripts/debug*.py (via os.system)
+        # default: python {0}
+        # note: this is python2 on macos-12
+        shell: python
+        continue-on-error: true
+        run: |
+          # python .github/scripts/debug*.py (via os.system)
+          import glob
+          import os
+          import sys
+          scripts = glob.iglob("./.github/scripts/debug*.py")
+          for script in scripts:
+            args = [sys.executable, script]
+            args += sys.argv[:1]
+            print("Executing %s" % " ".join(args))
+            os.system(" ".join(args))
+          sys.exit(0)
+
+      - name: RUN python3 (inline)
+        shell: python3 {0}
+        continue-on-error: true
+        run: |
+          # python3 (inline)
+          import os
+          import pprint
+          import sys
+          print("os.name=%s" % os.name)
+          print("sys.executable=%s" % sys.executable)
+          print("sys.argv=")
+          pprint.pprint(sys.argv)
+          print("sys.version=%s" % sys.version)
+          print("sys.platform=%s" % sys.platform)
+          print("os.environ=")
+          pprint.pprint(dict(os.environ), width=4096)
+          sys.exit(0)
+
+      - name: RUN python3 .github/scripts/debug*.py (via subprocess.run)
+        shell: python3 {0}
+        continue-on-error: true
+        run: |
+          # python3 .github/scripts/debug*.py (via subprocess.run)
+          import glob
+          import pprint
+          import subprocess
+          import sys
+          scripts = glob.iglob("./.github/scripts/debug*.py")
+          for script in scripts:
+            args = [sys.executable, script]
+            args += sys.argv[:1]
+            print("Executing %s" % " ".join(args))
+            rv = subprocess.run(args)
+            print("rv=")
+            pprint.pprint(rv)
+          sys.exit(0)
+
+      - name: RUN python3 .github/scripts/debug*.py (via subprocess.run/shell=true)
+        shell: python3 {0}
+        continue-on-error: true
+        run: |
+          # python3 .github/scripts/debug*.py (via subprocess.run/shell=true)
+          import glob
+          import pprint
+          import subprocess
+          import sys
+          scripts = glob.iglob("./.github/scripts/debug*.py")
+          for script in scripts:
+            args = [sys.executable, script]
+            args += sys.argv[:1]
+            print("Executing %s" % " ".join(args))
+            rv = subprocess.run(args, shell=True)
+            print("rv:")
+            pprint.pprint(rv)
+            print('stdout:')
+            pprint.pprint(rv.stdout)
+            print('stderr:')
+            pprint.pprint(rv.stderr)
+          sys.exit(0)
+
+      - name: RUN python .github/scripts/debug-vars.py
+        shell: python .github/scripts/debug-vars.py {0}
+        continue-on-error: true
+        run: |
+          # shell: python .github/scripts/debug-vars.py {0}
+
+      - name: RUN python3 .github/scripts/debug-vars.py
+        shell: python3 .github/scripts/debug-vars.py {0}
+        continue-on-error: true
+        run: |
+          # shell: python3 .github/scripts/debug-vars.py {0}
+
+# cspell:ignore
+
+# cSpell:ignore bbwe, choco, innounp, iregex, lessmsi, Minoru, msixbundle
+# cSpell:ignore Noninteractive, noprofile, norc, pkgs, pyversion, regextype, Sekine
+# cSpell:ignore showmanual, wekyb, winget
