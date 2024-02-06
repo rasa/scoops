@@ -95,12 +95,18 @@ on: # yamllint disable-line rule:truthy
       check_branch_existence:
         description: If the workflow was triggered by a branch, the branch must be deleted before the workflow run is deleted as well.
         default: "Y"
-        type: string
+        type: choice
+        options:
+          - "Y"
+          - ""
       # checkov:skip=CKV_GHA_7
       check_pullrequest_exist:
         description: If the run is linked to a pull request, the deletion is skipped.
         default: "Y"
-        type: string
+        type: choice
+        options:
+          - "Y"
+          - ""
       # checkov:skip=CKV_GHA_7
       repository:
         description: Name of repository (e.g., user/repo) (default is current repository).
