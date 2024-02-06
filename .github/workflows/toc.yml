@@ -1,0 +1,49 @@
+---
+# Copied from: rasa/dotfiles/.github/workflows/toc.yml
+# EDIT THE ABOVE FILE, NOT THIS COPY, OR YOUR CHANGES WILL BE LOST!
+# $schema https://json.schemastore.org/github-workflow.json
+
+name: toc
+
+on: # yamllint disable-line rule:truthy
+  pull_request:
+    branches:
+      - main
+      - master # @TODO remove
+    paths:
+      - "**/*.md"
+  push:
+    paths:
+      - "**/*.md"
+  workflow_dispatch: # Allows you to run this workflow manually from the Actions tab
+
+concurrency:
+  group: ${{ github.workflow }}
+  cancel-in-progress: true
+
+jobs:
+  job:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    env:
+      GH_TOC_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+      - name: USES actions/checkout@v4.1.1
+        uses: actions/checkout@v4.1.1
+        with:
+          show-progress: false
+
+      - name: RUN gh-md-toc
+        run: |
+          curl -fsSL --output gh-md-toc https://raw.githubusercontent.com/ekalinin/github-markdown-toc/HEAD/gh-md-toc
+          chmod a+x gh-md-toc
+          find . -type f -iname '*.md' -exec ./gh-md-toc --indent 0 --no-backup --hide-footer --skip-header {} \;
+          rm -f gh-md-toc
+          true
+
+      - name: USES stefanzweifel/git-auto-commit-action@v5.0.0
+        uses: stefanzweifel/git-auto-commit-action@v5.0.0
+        with:
+          commit_message: "docs: auto update table-of-contents in markdown"
+
+# cSpell:ignore stefanzweifel
