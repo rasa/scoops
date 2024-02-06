@@ -1,3 +1,7 @@
+# Copied from: rasa/dotfiles/.editorconfig
+# EDIT THE ABOVE FILE OR YOUR CHANGES WILL BE LOST!
+# Docs: https://editorconfig.org/#file-format-details
+
 # EditorConfig (is awesome): https://editorconfig.github.io
 
 # * top-most EditorConfig file
@@ -13,28 +17,105 @@ insert_final_newline = true
 trim_trailing_whitespace = true
 
 # Batch files require CRLF newlines
-[*.{bat,cmd,[Bb][Aa][Tt],[Cc][Mm][Dd]]
+[*.{bat,cmd,BAT,CMD}]
+# a la VT102/Televideo 950
+max_line_length = 132
 end_of_line = crlf
 
 # MSVC project files require CRLF newlines
-[*.{dsp,dsw}]
+[*.{dsp,dsw,sln,vcproj,vcprops,DSP,DSW,SLN,VCPROJ,VCPROPS}]
+max_line_length = 132
 end_of_line = crlf
 
 # Google JavaScript Style Guide (https://google.github.io/styleguide/javascriptguide.xml)
 [*.js]
-max_line_length = 80
+max_line_length = 132
+# @TODO max_line_length = 80
 
 [*.json]
-indent_size = 4
+indent_size = unset
+# https://github.com/zaach/jsonlint
+# generates files that do not have final newlines
+# so, the setting:
+#     "trailing-newline": false
+# was added to
+# https://github.com/rasa/workflows/blob/main/.github/linters/.jsonlintrc.json
+# per
+# https://github.com/prantlf/jsonlint/tree/master?tab=readme-ov-file#usage
+# GitHub UI always adds final newlines, when files are edited
+insert_final_newline = unset
 
 # Makefiles require tab indentation
 [{Makefile{,.*},makefile{,.*},GNUMakefile{,.*},*.mak,*.mk}]
 indent_style = tab
-
-[*.md]
-trim_trailing_whitespace = false
+max_line_length = 132
+# @TODO max_line_length = 80
 
 # Google Python Style Guide (https://google.github.io/styleguide/pyguide.html)
 [*.py]
 indent_size = 4
-max_line_length = 80
+max_line_length = 132
+# @TODO max_line_length = 80
+
+# Google Shell Style Guide (https://google.github.io/styleguide/shellguide.html)
+[*.sh]
+# shfmt uses these settings:
+# like -i=2
+indent_style = space
+indent_size = 2
+# --language-variant
+# shell_variant      = posix # like -ln=posix
+binary_next_line   = true # like -bn
+# --case-indent
+switch_case_indent = true # like -ci
+# space_redirects    = true # like -sr
+# keep_padding       = true # like -kp
+# --func-next-line
+# function_next_line = true # like -fn
+max_line_length = 132
+# @TODO max_line_length = 80
+
+[*.vbs]
+indent_size = unset
+max_line_length = 132
+# @TODO max_line_length = 80
+
+# json files without .json extension:
+[{.ecrc,.textlintrc}]
+insert_final_newline = unset
+
+# unrooted file extensions:
+[*.{cmd.*,diff,ignore,patch,txt,wip}]
+end_of_line = unset
+indent_size = unset
+indent_style = unset
+insert_final_newline = unset
+trim_trailing_whitespace = unset
+
+# unrooted directories:
+[{.ignore,.vendor,.wip,ignore,vendor,wip}/**]
+end_of_line = unset
+indent_size = unset
+indent_style = unset
+insert_final_newline = unset
+trim_trailing_whitespace = unset
+
+# unrooted files:
+[{archive,plug.vim}]
+end_of_line = unset
+indent_size = unset
+indent_style = unset
+insert_final_newline = unset
+trim_trailing_whitespace = unset
+
+# rooted files/directories:
+[/{.docker/*,.fonts.conf,.gitconfig,.mylogin.cnf*,.toprc,.vscode/default.code-snippets}]
+end_of_line = unset
+indent_size = unset
+indent_style = unset
+insert_final_newline = unset
+trim_trailing_whitespace = unset
+
+# cspell:ignore ecrc, jsonlint, Makefiles, mylogin, textlintrc, toprc
+
+# cSpell:ignore Televideo, vcproj, VCPROJ, vcprops, VCPROPS
