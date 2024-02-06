@@ -127,12 +127,12 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           retain_days: "1" # default: 30
           keep_minimum_runs: "1" # default: 6
-          check_branch_existence: true # default: false
-          check_pullrequest_exist: true # default: false
+          check_branch_existence: "" # default: false
+          check_pullrequest_exist: "" # default: false
 
       - name: Non-scheduled run (github.event_name != 'schedule')
         if: github.event_name != 'schedule'
-        uses: Mattraks/delete-workflow-runs@v2.0.6
+        uses: Mattraks/delete-workflow-runs@main
         with:
           repository: ${{ github.event.inputs.repository || github.repository }}
           token: ${{ secrets.GITHUB_TOKEN }}
