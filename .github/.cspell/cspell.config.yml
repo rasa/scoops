@@ -1,0 +1,26 @@
+---
+# cSpell:disable
+# Copied from: rasa/dotfiles/.github/.cspell/cspell.config.yml
+# EDIT THE ABOVE FILE OR YOUR CHANGES WILL BE LOST!
+# yaml-language-server: $schema=https://raw.githubusercontent.com/streetsidesoftware/cspell/main/cspell.schema.json
+
+dictionaries:
+  - '.github/correct-words.txt'
+  - '.github/ignore-words.txt'
+  - '.github/ignore-filenames.txt'
+dictionaryDefinitions:
+  - addWords: true
+    description: 'Manually curated list of words (and filenames) to treat as correctly spelled (in shared .github repo)'
+    name: '.github/correct-words.txt'
+    path: 'correct-words.txt'
+  - addWords: true
+    description: 'Auto-generated list of words assumed correctly spelled until triaged (in shared .github repo)'
+    name: '.github/ignore-words.txt'
+    path: 'ignore-words.txt'
+  - addWords: true
+    description: 'Auto-generated list of filenames assumed correctly spelled until triaged (in shared .github repo)'
+    name: '.github/ignore-filenames.txt'
+    path: 'ignore-filenames.txt'
+import:
+  - '../../.cspell/common-settings.yml'
+  - 'overrides.yml'
