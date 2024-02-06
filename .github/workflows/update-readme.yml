@@ -14,17 +14,17 @@ jobs:
     # if: github.event_name == 'workflow_dispatch' || github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/setup-python@v4.7.0
+    - uses: actions/setup-python@v5
       with:
-        python-version: '3.10'
+        python-version: '3.12'
         # unused:
         # cache: 'pip' # caching pip dependencies
 
-    - uses: actions/checkout@v3.6.0
+    - uses: actions/checkout@v4
     - run: |
         python makeindex.py
 
-    - uses: EndBug/add-and-commit@v9.1.3
+    - uses: EndBug/add-and-commit@v9
       with:
         add: 'README.md'
         # branch: master
