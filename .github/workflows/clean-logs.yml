@@ -7,7 +7,7 @@
 #   other than the build entry point and the top-level source location.
 #   GitHub Actions workflow_dispatch inputs MUST be empty.
 
-name: clean-logs
+name: clean-workflows
 
 on: # yamllint disable-line rule:truthy
   schedule:
@@ -38,10 +38,10 @@ on: # yamllint disable-line rule:truthy
       dry_run:
         type: boolean
       check_branch_existence:
-        default: "Skip"
+        default: "Keep"
         type: string
       check_pullrequest_exist:
-        default: "Skip"
+        default: "Keep"
         type: string
       repository:
         type: string
@@ -98,21 +98,21 @@ on: # yamllint disable-line rule:truthy
         type: boolean
       # checkov:skip=CKV_GHA_7
       check_branch_existence:
-        description: Clean logs of existing branches
+        description: Clean workflows of existing branches
         # If the workflow was triggered by a branch, the branch must be deleted before the workflow run is deleted as well.
-        default: "Skip"
+        default: "Keep"
         type: choice
         options:
-          - "Skip"
+          - "Keep"
           - "Delete"
       # checkov:skip=CKV_GHA_7
       check_pullrequest_exist:
-        description: Clean logs for active PRs
+        description: Clean workflows for active PRs
         # If the run is linked to a pull request, the deletion is skipped.
-        default: "Skip"
+        default: "Keep"
         type: choice
         options:
-          - "Skip"
+          - "Keep"
           - "Delete"
       # checkov:skip=CKV_GHA_7
       repository:
@@ -144,8 +144,8 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           retain_days: "30" # default: 30
           keep_minimum_runs: "6" # default: 6
-          check_branch_existence: "Skip" # default: N
-          check_pullrequest_exist: "Skip" # default: N
+          check_branch_existence: "Keep" # default: Keep
+          check_pullrequest_exist: "Keep" # default: Keep
 
       - name: Non-scheduled run (github.event_name != 'schedule')
         if: github.event_name != 'schedule'
@@ -162,8 +162,8 @@ jobs:
               && 'action_required,cancelled,failure,skipped'
               || github.event.inputs.delete_run_by_conclusion_pattern
             }}
-          check_branch_existence: ${{ startsWith(github.event.inputs.check_branch_existence, 'Skip') && 'Y' || '' }}
-          check_pullrequest_exist: ${{ startsWith(github.event.inputs.check_pullrequest_exist, 'Skip') && 'Y' || '' }}
-          dry_run: ${{ github.event.inputs.dry_run }}
+          check_branch_existence: ${{ startsWith(github.event.inputs.check_branch_existence, 'Keep') && 'Y' || '' }}
+          check_pullrequest_exist: ${{ startsWith(github.event.inputs.check_pullrequest_exist, 'Keep') && 'Y' || '' }}
+          dry_run: ${{ github.event.inputs.dry_run && 'Y' || '' }}
 
 # cSpell:ignore ghaction, Mattraks, pullrequest
