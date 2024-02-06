@@ -1,0 +1,162 @@
+---
+# Copied from: rasa/dotfiles/.github/mega-linter-shared.yml
+# EDIT THE ABOVE FILE OR YOUR CHANGES WILL BE LOST!
+# yamllint disable rule:line-length
+# $schema https://raw.githubusercontent.com/megalinter/megalinter/main/megalinter/descriptors/schemas/megalinter-configuration.jsonschema.json
+
+## FILTERS ##
+
+FILTER_REGEX_EXCLUDE: >-
+  (?ix)(
+    megalinter-reports/ |
+    mega-linter.log |
+    \.git/
+  )
+
+## CONVERT ERRORS TO WARNINGS ##
+
+# Produces too many false positives:
+COPYPASTE_JSCPD_DISABLE_ERRORS: true
+
+# Don't fail if a site is down, or their cert has expired:
+MARKDOWN_MARKDOWN_LINK_CHECK_DISABLE_ERRORS: true
+
+# Produces too many false positives:
+REPOSITORY_DEVSKIM_DISABLE_ERRORS: true
+
+# Don't require actions use SHAs:
+REPOSITORY_KICS_DISABLE_ERRORS: true
+
+# Whines about files in .git which aren't in the repo:
+REPOSITORY_TRUFFLEHOG_DISABLE_ERRORS: true
+
+# Don't fail if a site is down, or their cert has expired:
+SPELL_LYCHEE_DISABLE_ERRORS: true
+
+# Could not find a schema to validate: .github/linters/*
+YAML_V8R_DISABLE_ERRORS: true
+
+## COMMAND ARGUMENTS ##
+
+# https://www.shellcheck.net/wiki/SC2310 :
+# This function is invoked in an 'if' condition so set -e will be disabled. Invoke separately if failures should cause the script to exit.
+# https://www.shellcheck.net/wiki/SC2312 :
+# Consider invoking this command separately to avoid masking its return value (or use '|| true' to ignore).
+BASH_SHELLCHECK_ARGUMENTS: "--external-sources --enable=all --exclude SC2310,SC2312"
+
+# See https://google.github.io/styleguide/shellguide.html
+# binary_next_line   = true # like -bn
+# switch_case_indent = true # like -ci
+# indent_size = 2
+# indent_style = space
+BASH_SHFMT_ARGUMENTS: "-bn -ci -i 2"
+
+# DL3006 warning: Always tag the version of an image explicitly
+# DL3018 warning: Pin versions in apk add. Instead of apk add <package> use apk add <package>=<version>.
+DOCKERFILE_HADOLINT_ARGUMENTS: "--style DL3006 --style DL3018" # --failure-threshold error
+
+# Allow for comments in json files:
+JSON_JSONLINT_ARGUMENTS: "--mode cjson"
+
+# Default is ~/.markdownlint.json, but yaml is nicer :)
+MARKDOWN_MARKDOWNLINT_CONFIG_FILE: ".github/linters/.markdownlint.yaml"
+
+# Doesn't seem to quiet logs:
+PYTHON_MYPY_ARGUMENTS: "--install-types --non-interactive"
+
+# Default is ~/pyrightconfig.json
+PYTHON_PYRIGHT_ARGUMENTS: "-p .github/linters/.pyrightconfig-loose.json"
+
+# CKV2_GHA_1: "Ensure top-level permissions are not set to write-all"
+# CKV_DOCKER_2: "Ensure that HEALTHCHECK instructions have been added to container images"
+# CKV_DOCKER_7: "Ensure the base image uses a non latest version tag"
+REPOSITORY_CHECKOV_ARGUMENTS: "--skip-check CKV2_GHA_1,CKV_DOCKER_2,CKV_DOCKER_7"
+
+# Skip .mypy_cache (as it doesn't work when .mypy_cache is included in FILTER_REGEX_EXCLUDE):
+REPOSITORY_DEVSKIM_ARGUMENTS:
+  ["--ignore-globs", "**/megalinter-reports/**,**/.git/**,**/.mypy_cache/**"]
+# megalinter already passes `--skip-git-ignored-files`:
+# https://github.com/oxsecurity/megalinter/blob/43943881/megalinter/descriptors/repository.megalinter-descriptor.yml#L78
+
+# this appears to have fixed the issue:
+REPOSITORY_GIT_DIFF_ARGUMENTS: "--ignore-space-change" # didn't fix it: --ignore-space-at-eol
+
+# Only show misspelled words, and the filename
+# See https://github.com/streetsidesoftware/cspell-cli?tab=readme-ov-file#lint
+SPELL_CSPELL_ARGUMENTS: "--no-color --quiet"
+
+# Use yaml, default is ~/.prettierrc.json
+TYPESCRIPT_PRETTIER_CONFIG_FILE: ".github/linters/.prettierrc.yaml"
+
+# I don't know if 2 'verbose's increases verbosity:
+YAML_V8R_ARGUMENTS: "--verbose --verbose"
+
+#
+YAML_V8R_FILTER_REGEX_EXCLUDE: >-
+  (?ix)(
+    \.trivyignore
+  )
+
+## GLOBAL SETTINGS ##
+
+# When active, APPLY_FIXES must also be defined as environment variable (in github/workflows/mega-linter.yml or other CI)
+APPLY_FIXES: all # default: none
+
+# Don't print logo
+PRINT_ALPACA: false # default: true
+
+# Include total elapsed time:
+SHOW_ELAPSED_TIME: true # default: false
+
+###############################################################################################
+## COMMENTED OUT ##
+
+## CONVERT ERRORS TO WARNINGS ##
+
+# Save error reporting for more important issues:
+# EDITORCONFIG_EDITORCONFIG_CHECKER_DISABLE_ERRORS: true
+
+# Reports variable assignment as targets:
+# MAKEFILE_CHECKMAKE_DISABLE_ERRORS: true
+
+# Reporting errant whitespace where there is none:
+# REPOSITORY_GIT_DIFF_DISABLE_ERRORS: true
+
+# Don't fail on spelling errors (for now):
+# SPELL_CSPELL_DISABLE_ERRORS: true
+
+## COMMAND ARGUMENTS ##
+
+# doesn't provide any helpful info:
+# EDITORCONFIG_EDITORCONFIG_CHECKER_ARGUMENTS: '--debug --verbose'
+
+## GLOBAL SETTINGS ##
+
+# needs EMAIL_REPORTER_SMTP_PASSWORD to work:
+# EMAIL_REPORTER_EMAIL: ''
+
+# FILEIO_REPORTER: true # default: false
+
+# Quiet logs:
+# [GitHub Status Reporter] Error posting Status for JSONwith prettier: 403
+# GitHub API response: {"message":"Resource not accessible by integration","documentation_url":"https://docs.github.com/rest/commits/statuses#create-a-commit-status"}
+# GITHUB_STATUS_REPORTER: true # default: false
+
+# JSON_REPORTER: true # default: false
+
+# LOG_LEVEL: DEBUG # default: INFO
+
+# PRINT_ALL_FILES: true # default: false
+
+# This error:
+#   WARNING: there is a new pyright version available (v1.1.270 -> v1.1.280).
+#   Please install the new version or set PYRIGHT_PYTHON_FORCE_VERSION to `latest`
+# suggests the below, but including it causes the file to fail validation.
+# PYRIGHT_PYTHON_FORCE_VERSION: 'latest'
+
+# REPORT_OUTPUT_FOLDER: '${GITHUB_WORKSPACE}/.cache/mega-linter'
+#
+# cspell:ignore CHECKMAKE, HADOLINT, HEALTHCHECK, MARKDOWNLINT, markdownlint
+# cspell:ignore MYPY, mypy, PYRIGHT, pyright, pyrightconfig
+
+# cSpell:ignore cjson, DEVSKIM, JSONLINT, KICS, TRUFFLEHOG
