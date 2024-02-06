@@ -27,8 +27,8 @@ jobs:
           # default is 1 per https://github.com/actions/checkout#usage
           fetch-depth: 0
 
-      - name: Run github/super-linter@v4
-        uses: github/super-linter@v4
+      - name: Run github/super-linter@v5
+        uses: github/super-linter@v5
         env:
           DEFAULT_BRANCH: $default-branch
           # FILTER_REGEX_EXCLUDE:
