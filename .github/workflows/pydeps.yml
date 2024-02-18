@@ -91,12 +91,17 @@ jobs:
           mapfile -t < <(find "${dir}" -maxdepth "${depth}" -type f -iname "${base}")
           printf 'Found %d files matching %s:\n' "${#MAPFILE[@]}" "${mask}"
           typeset -p MAPFILE
-          printf 'serialized=%s\n' "$(typeset -p MAPFILE | base64 -w 0)" >>"${GITHUB_ENV}"
+          serialized=$(typeset -p MAPFILE | base64 -w 0)
+          printf 'len(serialized)=%d\n' "${#serialized}"
+          printf 'serialized=%s\n' "${serialized}" >>"${GITHUB_ENV}"
+          # fail if MAPFILE is empty
           ((${#MAPFILE[@]}>0))
 
       - name: RUN find duplicate packages, if any, across all requirements files
         if: success()
         run: |
+          serialized="${serialized:-}"
+          printf 'len(serialized)=%d\n' "${#serialized}"
           eval "$(base64 -d <<<"${serialized}")"
           tmp1=$(mktemp)
           cat "${MAPFILE[@]}" \
