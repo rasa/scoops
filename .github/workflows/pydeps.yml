@@ -110,11 +110,10 @@ jobs:
           printf 'Found %d files matching %s:\n' "${#MAPFILE[@]}" "${mask}"
           tmp1=$(mktemp)
           cat "${MAPFILE[@]}" \
-            | grep -o '^[^#]*' \
+            | grep -E '^\s*[^#]' \
             | sed -E 's/\s+//g' \
             | sort -u \
             | sed -E 's/[<>~!]+/=/g' \
-            | grep '=' \
             | cut -d'=' -f 1 \
             | sort \
             | uniq -d > "${tmp1}"
