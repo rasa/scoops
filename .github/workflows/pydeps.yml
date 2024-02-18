@@ -100,9 +100,14 @@ jobs:
       - name: RUN find duplicate packages, if any, across all requirements files
         if: success()
         run: |
+          set -v -x
           serialized="${serialized:-}"
           printf 'len(serialized)=%d\n' "${#serialized}"
-          eval "$(base64 -d <<<"${serialized}")"
+          deserialized=$(base64 -d <<<"${serialized}")
+          printf 'len(deserialized)=%d\n' "${#deserialized}"
+          eval "${deserialized}"
+          mask="${{ inputs.mask || env.DEFAULT_MASK }}"
+          printf 'Found %d files matching %s:\n' "${#MAPFILE[@]}" "${mask}"
           tmp1=$(mktemp)
           cat "${MAPFILE[@]}" \
             | grep -o '^[^#]*' \
