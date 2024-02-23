@@ -91,20 +91,29 @@ jobs:
           mapfile -t < <(find "${dir}" -maxdepth "${depth}" -type f -iname "${base}")
           printf 'Found %d files matching %s:\n' "${#MAPFILE[@]}" "${mask}"
           typeset -p MAPFILE
-          printf 'serialized=%s\n' "$(typeset -p MAPFILE | base64 -w 0)" >>"${GITHUB_ENV}"
+          serialized=$(typeset -p MAPFILE | base64 -w 0)
+          printf 'len(serialized)=%d\n' "${#serialized}"
+          printf 'serialized=%s\n' "${serialized}" >>"${GITHUB_ENV}"
+          # fail if MAPFILE is empty
           ((${#MAPFILE[@]}>0))
 
       - name: RUN find duplicate packages, if any, across all requirements files
         if: success()
         run: |
-          eval "$(base64 -d <<<"${serialized}")"
+          set -v -x
+          serialized="${serialized:-}"
+          printf 'len(serialized)=%d\n' "${#serialized}"
+          deserialized=$(base64 -d <<<"${serialized}")
+          printf 'len(deserialized)=%d\n' "${#deserialized}"
+          eval "${deserialized}"
+          mask="${{ inputs.mask || env.DEFAULT_MASK }}"
+          printf 'Found %d files matching %s:\n' "${#MAPFILE[@]}" "${mask}"
           tmp1=$(mktemp)
           cat "${MAPFILE[@]}" \
-            | grep -o '^[^#]*' \
+            | grep -E '^\s*[^#]' \
             | sed -E 's/\s+//g' \
             | sort -u \
             | sed -E 's/[<>~!]+/=/g' \
-            | grep '=' \
             | cut -d'=' -f 1 \
             | sort \
             | uniq -d > "${tmp1}"
