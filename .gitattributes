@@ -3,6 +3,7 @@
 .git/hooks/* text eol=lf
 
 *.sh	eol=lf
+.github/* -text
 
 # *.cmd	eol=crlf
 # *.bat	eol=crlf
