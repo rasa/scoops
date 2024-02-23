@@ -1,8 +1,8 @@
-* -text
-# retain windows line-endings when needed:
-*.bat text eol=crlf
-*.cmd text eol=crlf
-
+# retain windows line-endings in case checked out on mac or linux
+* text eol=crlf
 .git/hooks/* text eol=lf
 
 *.sh	eol=lf
+
+# *.cmd	eol=crlf
+# *.bat	eol=crlf
