@@ -2,6 +2,7 @@
 * text eol=crlf
 .git/hooks/* text eol=lf
 
+*.yml -text
 *.sh	eol=lf
 
 # *.cmd	eol=crlf
