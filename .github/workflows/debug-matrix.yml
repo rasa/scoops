@@ -50,8 +50,8 @@ jobs:
           # - windows-2019
           # - macos-11
     steps:
-      - name: USES crazy-max/ghaction-dump-context@v2.2.0
-        uses: crazy-max/ghaction-dump-context@v2.2.0
+      - name: USES crazy-max/ghaction-dump-context@v2.3.0
+        uses: crazy-max/ghaction-dump-context@v2.3.0
 
       - if: runner.os == 'Linux'
         name: List installed apt/snap packages (Linux)
