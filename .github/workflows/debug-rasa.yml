@@ -53,8 +53,8 @@ jobs:
         run: |
           printf 'WORKFLOW_USER=%s\n' "${{ inputs.workflow_user }}" >> "${GITHUB_ENV}"
           printf 'WORKFLOW_REPO=%s\n' "${{ inputs.workflow_repo }}" >> "${GITHUB_ENV}"
-      - name: USES crazy-max/ghaction-dump-context@v2.2.0
-        uses: crazy-max/ghaction-dump-context@v2.2.0
+      - name: USES crazy-max/ghaction-dump-context@v2.3.0
+        uses: crazy-max/ghaction-dump-context@v2.3.0
         with:
           workflow_user: ${{ inputs.workflow_user }}
           workflow_repo: ${{ inputs.workflow_repo }}
