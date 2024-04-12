@@ -41,8 +41,8 @@ jobs:
           rm -f gh-md-toc
           true
 
-      - name: USES stefanzweifel/git-auto-commit-action@v5.0.0
-        uses: stefanzweifel/git-auto-commit-action@v5.0.0
+      - name: USES stefanzweifel/git-auto-commit-action@v5.0.1
+        uses: stefanzweifel/git-auto-commit-action@v5.0.1
         with:
           commit_message: "docs: auto update table-of-contents in markdown"
 
