@@ -153,7 +153,7 @@ jobs:
 
       # Upload MegaLinter artifacts
       - name: Archive production artifacts
-        uses: actions/upload-artifact@v4.3.6 # changed from v3 by @rasa
+        uses: actions/upload-artifact@v4.4.0 # changed from v3 by @rasa
         if: success() || failure() # changed by @rasa: was ${{ success() }} || ${{ failure() }}
         with:
           name: MegaLinter reports
