@@ -57,7 +57,6 @@
                 ],
                 "Contig64.exe",
                 "Coreinfo.exe",
-                "ctrl2cap.exe",
                 "Dbgview.exe",
                 "Desktops.exe",
                 [
@@ -305,7 +304,6 @@
                 "Clockres.exe",
                 "Contig.exe",
                 "Coreinfo.exe",
-                "ctrl2cap.exe",
                 "Dbgview.exe",
                 "Desktops.exe",
                 "disk2vhd.exe",
