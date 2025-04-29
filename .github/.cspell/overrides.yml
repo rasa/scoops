@@ -4,11 +4,11 @@
 # EDIT THE ABOVE FILE OR YOUR CHANGES WILL BE LOST!
 
 # Manually curated list of paths/files to not spellcheck
-# ignorePaths:
-#   - path/to/file1
-#   - path/to/file2
+ignorePaths:
+#   - '**/path/to/file1'
+#   - '**/path/to/file2'
 
 # Manually curated list of words to treat as incorrectly spelled
-# flagWords:
+flagWords:
 #   - notaword1
 #   - notaword2
