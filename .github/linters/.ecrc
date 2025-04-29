@@ -1,13 +1,16 @@
 {
-  "$comment": "Copied from: rasa/dotfiles/.github/linters/.bandit.yml",
+  "$comment": "Copied from: rasa/dotfiles/.github/linters/.ecrc",
   "$comment2": "EDIT THE ABOVE FILE, NOT THIS COPY, OR YOUR CHANGES WILL BE LOST!",
-  "Version": "2.7.2",
+  "Version": "v3.2.1",
   "Verbose": false,
   "Debug": false,
   "IgnoreDefaults": false,
-  "SpacesAftertabs": false,
+  "SpacesAfterTabs": false,
   "NoColor": true,
-  "Exclude": [],
+  "Exclude": [
+    "go.mod",
+    "go sum"
+  ],
   "AllowedContentTypes": [],
   "PassedFiles": [],
   "Disable": {

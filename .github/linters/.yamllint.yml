@@ -1,5 +1,7 @@
 ---
 # ~/.github/linters/.yamllint.yml
+# Copied from: rasa/dotfiles/.github/linters/.yamllint.yml
+# EDIT THE ABOVE FILE, NOT THIS COPY, OR YOUR CHANGES WILL BE LOST!
 # Docs: https://yamllint.readthedocs.io/en/stable/configuration.html
 # ML:   https://megalinter.io/latest/descriptors/yaml_yamllint/
 # MLT:  https://github.com/oxsecurity/megalinter/blob/main/TEMPLATES/.yamllint.yml

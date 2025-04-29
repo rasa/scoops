@@ -1,14 +1,20 @@
 ---
 # ~/.github/linters/.hadolint.yaml
+# Copied from: rasa/dotfiles/.github/linters/.hadolint.yaml
+# EDIT THE ABOVE FILE, NOT THIS COPY, OR YOUR CHANGES WILL BE LOST!
 
 # failure-threshold: error
 
 # Rules: https://github.com/hadolint/hadolint?tab=readme-ov-file#rules
 override:
   style:
-    # DL3018 warning: Pin versions in apk add. Instead of apk add <package> use apk add <package>=<version>.
-    - DL3018
     # DL3006 warning: Always tag the version of an image explicitly
     - DL3006
+    # DL3007 warning: Using latest is prone to errors if the image will ever update.
+    # Pin the version explicitly to a release tag
+    - DL3007
+    # DL3018 warning: Pin versions in apk add.
+    # Instead of apk add <package> use apk add <package>=<version>.
+    - DL3018
 
 # cspell:ignore hadolint

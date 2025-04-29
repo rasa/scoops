@@ -1,4 +1,6 @@
 # ~/github/linters/.pylintrc
+# Copied from: rasa/dotfiles/.github/linters/.pylintrc
+# EDIT THE ABOVE FILE, NOT THIS COPY, OR YOUR CHANGES WILL BE LOST!
 # Docs: https://pylint.pycqa.org/en/latest/user_guide/configuration/index.html
 # ML:   https://megalinter.io/latest/descriptors/python_pylint/
 # MLT:  https://github.com/oxsecurity/megalinter/blob/main/TEMPLATES/.pylintrc
@@ -31,5 +33,3 @@ disable=import-error, E0401,
 
 [REPORTS]
 score=no
-
-# cSpell:ignore pylint, pylintrc, pylints, rcfile
