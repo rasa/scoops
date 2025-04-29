@@ -1,21 +1,21 @@
 ---
 # Copied from: rasa/dotfiles/.github/workflows/dependabot.yml
 # EDIT THE ABOVE FILE, NOT THIS COPY, OR YOUR CHANGES WILL BE LOST!
-# $schema https://json.schemastore.org/github-workflow.json
+# yaml-language-server: $schema https://json.schemastore.org/github-workflow.json
 
 name: dependabot
 
 on: # yamllint disable-line rule:truthy
   # See https://stackoverflow.com/a/74959635
-  pull_request_target:
-    branches:
-      - main
-      - master # @TODO remove
-  push:
-    branches:
-      - main
-      - master # @TODO remove
-  workflow_call: # Required so this workflow can be called from another workflow
+  # pull_request_target:
+  #  branches:
+  #    - main
+  #    - master # @TODO remove
+  # push:
+  #  branches:
+  #    - main
+  #    - master # @TODO remove
+  # workflow_call: # Required so this workflow can be called from another workflow
   workflow_dispatch: # Allows you to run this workflow manually from the Actions tab
 
 concurrency:
@@ -23,23 +23,22 @@ concurrency:
   cancel-in-progress: true
 
 permissions:
-  pull-requests: write
   contents: write
+  pull-requests: write
 
 jobs:
-  job:
-    runs-on: ubuntu-latest
+  dependabot:
+    name: dependabot
+    runs-on: ubuntu-24.04
     # See https://github.com/dependabot/fetch-metadata?tab=readme-ov-file#enabling-auto-merge
-    if: startsWith(github.event.pull_request.user.login, 'dependabot')
+    # if: startsWith(github.event.pull_request.user.login, 'dependabot')
     steps:
-      - name: Dependabot metadata
+      - uses: dependabot/fetch-metadata@v2.3.0
         id: dependabot-metadata
-        uses: dependabot/fetch-metadata@v2.2.0
 
-      - name: Enable auto-merge for Dependabot PRs
+      - run: gh pr merge --auto --merge ${{ github.event.pull_request.html_url }}
         # if: steps.dependabot-metadata.outputs.update-type == 'version-update:semver-patch'
-        run: gh pr merge --auto --merge "$PR_URL"
+        # was: run: gh pr merge --auto --merge "${PR_URL}"
         env:
-          PR_URL: ${{ github.event.pull_request.html_url }}
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
+          # PR_URL: ${{ github.event.pull_request.html_url }}
