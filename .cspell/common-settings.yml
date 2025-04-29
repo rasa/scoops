@@ -42,17 +42,17 @@ dictionaries:
   - 'cpp'
   - 'cpp-legacy'
   # - '!csharp'
-  - '!css'
-  - '!fonts'
-  - '!go'
-  - '!golang'
+  - 'css'
+  - 'fonts'
+  - 'go'
+  - 'golang'
   # - '!latex'
   - '!lorem-ipsum'
-  - '!makefile' # missing in vscode's extension 3.0.1
+  - 'makefile' # missing in vscode's extension 3.0.1
   # - '!node'
   # - '!scala'
   - 'softwareTerms' # missing on GitHub?
-  - '!typescript'
+  - 'typescript'
 enableFiletypes:
   ## cli defaults:
   # - 'dart'
@@ -80,6 +80,7 @@ enableFiletypes:
   - 'shellscript'
   - 'sql'
   - '!svelte'
+# Check filenames that begin with a period:
 enableGlobDot: true
 ignorePaths:
   - '**/.git/**'
