@@ -4,39 +4,39 @@
 # EDIT THE ABOVE FILE, NOT THIS COPY, OR YOUR CHANGES WILL BE LOST!
 # yaml-language-server: $schema=https://raw.githubusercontent.com/streetsidesoftware/cspell/main/cspell.schema.json
 dictionaries:
-  - '.cspell/correct-words.txt'
-  - '.cspell/ignore-words.txt'
-  - '.cspell/ignore-filenames.txt'
-  - '.github/correct-words.txt'
-  - '.github/ignore-words.txt'
-  - '.github/ignore-filenames.txt'
+  - 'local-correct-words'
+  - 'local-ignore-words'
+  - 'local-ignore-filenames'
+  - 'github-correct-words'
+  - 'github-ignore-words'
+  - 'github-ignore-filenames'
 dictionaryDefinitions:
   - addWords: true
     description: 'Manually curated list of words (and filenames) to treat as correctly spelled (local to this repo)'
-    name: '.cspell/correct-words.txt'
-    path: 'correct-words.txt'
+    name: 'local-correct-words'
+    path: './correct-words.txt'
   - addWords: true
     description: 'Auto-generated list of words assumed correctly spelled until triaged (local to this repo)'
-    name: '.cspell/ignore-words.txt'
-    path: 'ignore-words.txt'
+    name: 'local-ignore-words'
+    path: './ignore-words.txt'
   - addWords: true
     description: 'Auto-generated list of filenames assumed correctly spelled until triaged (local to this repo)'
-    name: '.cspell/ignore-filenames.txt'
-    path: 'ignore-filenames.txt'
+    name: 'local-ignore-filenames'
+    path: './ignore-filenames.txt'
   - addWords: true
     description: 'Manually curated list of words (and filenames) to treat as correctly spelled (in shared .github repo)'
-    name: '.github/correct-words.txt'
+    name: 'github-correct-words'
     path: '../.github/.cspell/correct-words.txt'
   - addWords: true
     description: 'Auto-generated list of words assumed correctly spelled until triaged (in shared .github repo)'
-    name: '.github/ignore-words.txt'
+    name: 'github-ignore-words'
     path: '../.github/.cspell/ignore-words.txt'
   - addWords: true
     description: 'Auto-generated list of filenames assumed correctly spelled until triaged (in shared .github repo)'
-    name: '.github/ignore-filenames.txt'
+    name: 'github-ignore-filenames'
     path: '../.github/.cspell/ignore-filenames.txt'
 import:
-  - 'common-settings.yml'
+  - './common-settings.yml'
   - '../.github/.cspell/overrides.yml'
   # include local overrides after shared overrides:
-  - 'overrides.yml'
+  - './overrides.yml'
