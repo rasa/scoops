@@ -4,3 +4,5 @@
 ## cSpell dictionary of manually curated list of words (and filenames) to treat as correctly spelled
 
 cicd
+rasa
+RASA
