@@ -1,4 +1,6 @@
 # ~/.github/linters/lychee.toml
+# Copied from: rasa/dotfiles/.github/linters/lychee.toml
+# EDIT THE ABOVE FILE, NOT THIS COPY, OR YOUR CHANGES WILL BE LOST!
 # Docs: https://lychee.cli.rs/#/usage/config
 # ML:   https://megalinter.io/latest/descriptors/spell_lychee/
 # MLT:  None?

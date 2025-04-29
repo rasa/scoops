@@ -1,0 +1,45 @@
+# Copied from: rasa/dotfiles/.github/linters/revive.toml
+# EDIT THE ABOVE FILE, NOT THIS COPY, OR YOUR CHANGES WILL BE LOST!
+# Docs: https://revive.run/docs/#custom-configuration
+# ML:   https://megalinter.io/latest/descriptors/go_revive/
+# MLT:  none
+# Source: https://revive.run/docs#recommended-configuration
+
+ignoreGeneratedHeader = false
+severity = "warning"
+confidence = 0.8
+errorCode = 0
+warningCode = 0
+
+[rule.blank-imports]
+[rule.context-as-argument]
+[rule.context-keys-type]
+[rule.dot-imports]
+[rule.error-return]
+[rule.error-strings]
+[rule.error-naming]
+[rule.exported]
+  # quiets: exported var x should have comment or be unexported
+  Disabled = true
+# [rule.file-header]
+#  arguments = ["Copyright.*", "SPDX-License-Identifier: MIT"]
+[rule.if-return]
+[rule.increment-decrement]
+[rule.var-naming]
+  # quieting: don't use underscores in Go names
+  Disabled = true
+[rule.var-declaration]
+[rule.package-comments]
+  # quieting: should have a package comment (even though there is one)
+  Disabled = true
+[rule.range]
+[rule.receiver-naming]
+[rule.time-naming]
+[rule.unexported-return]
+[rule.indent-error-flow]
+[rule.errorf]
+[rule.empty-block]
+[rule.superfluous-else]
+[rule.unused-parameter]
+[rule.unreachable-code]
+[rule.redefines-builtin-id]
