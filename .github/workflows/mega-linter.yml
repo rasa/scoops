@@ -1,8 +1,8 @@
 ---
 # Copied from: rasa/dotfiles/.github/workflows/mega-linter.yml
 # EDIT THE ABOVE FILE, NOT THIS COPY, OR YOUR CHANGES WILL BE LOST!
+# yaml-language-server: $schema https://json.schemastore.org/github-workflow.json
 # yamllint disable rule:line-length
-# $schema https://json.schemastore.org/github-workflow.json
 # checkov:skip=CKV_GHA_7:The build output cannot be affected by user parameters
 #   other than the build entry point and the top-level source location.
 #   GitHub Actions workflow_dispatch inputs MUST be empty.
@@ -14,14 +14,14 @@ name: mega-linter
 on: # yamllint disable-line rule:truthy
   # Comment this line to trigger action only on pull-requests
   # (not recommended if you don't pay for GH Actions)
-  push:
-    branches:
-      - main
-      - master # @TODO remove
+  # push:
+  #  branches:
+  #    - main
+  #    - master # @TODO remove
   pull_request:
-    branches:
-      - main
-      - master # @TODO remove
+    # branches:
+    #   - main
+    #   - master # @TODO remove
 
 # <@rasa>
   workflow_call: # Required so this workflow can be called from another workflow
@@ -30,7 +30,7 @@ on: # yamllint disable-line rule:truthy
       fetch_depth:
         # description: "Number of commits to fetch. 0 indicates all history for all branches and tags."
         type: string
-        default: "1"
+        default: "0"
       # checkov:skip=CKV_GHA_7
       validate_all_codebase:
         # description: "Validate the entire code base (enter any value)"
@@ -42,7 +42,7 @@ on: # yamllint disable-line rule:truthy
       fetch_depth:
         description: "Number of commits to fetch. 0 indicates all history for all branches and tags."
         type: string
-        default: "1"
+        default: "0"
       # checkov:skip=CKV_GHA_7
       validate_all_codebase:
         description: "Validate the entire code base."
@@ -74,9 +74,9 @@ env:
   APPLY_FIXES_MODE: commit
 
 jobs:
-  megalinter:
+  mega-linter:
     name: MegaLinter
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
 
     # <@rasa>
     # defaults:
@@ -94,7 +94,7 @@ jobs:
     steps:
       # Git Checkout
       - name: Checkout Code
-        uses: actions/checkout@v4.1.1 # was v4, changed by @rasa
+        uses: actions/checkout@v4.2.2 # was v4, changed by @rasa
         with:
           token: ${{ secrets.PAT || secrets.GITHUB_TOKEN }}
 
@@ -243,7 +243,3 @@ jobs:
           commit_message: "[MegaLinter] Apply linters fixes"
           commit_user_name: megalinter-bot
           commit_user_email: nicolas.vuillamy@ox.security
-
-# cspell:ignore stefanzweifel
-
-# cSpell:ignore noprofile, norc
