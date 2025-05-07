@@ -1,0 +1,21 @@
+---
+# Copied from: rasa/dotfiles/.github/linters/.golangci.yml
+# EDIT THE ABOVE FILE, NOT THIS COPY, OR YOUR CHANGES WILL BE LOST!
+# Docs: https://golangci-lint.run/usage/configuration/#config-file
+# ML:   https://megalinter.io/latest/descriptors/go_golangci_lint/
+# MLT:  https://github.com/oxsecurity/megalinter/blob/main/TEMPLATES/.golangci.yml
+# yaml-language-server: $schema=https://golangci-lint.run/jsonschema/golangci.jsonschema.json
+
+timeout: 5m
+
+linters:
+  # disable-all: true
+  enable:
+    - gofmt
+    - gocritic
+    - gosimple
+    - govet
+    - ineffassign
+    - staticcheck
+    - typecheck
+    - unused

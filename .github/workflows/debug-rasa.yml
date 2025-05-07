@@ -1,6 +1,8 @@
 ---
-# $schema https://json.schemastore.org/github-workflow.json
 # ./.github/workflows/debug-rasa.yaml
+# Copied from: rasa/dotfiles/.github/debug-rasa.yaml
+# EDIT THE ABOVE FILE, NOT THIS COPY, OR YOUR CHANGES WILL BE LOST!
+# yaml-language-server: $schema https://json.schemastore.org/github-workflow.json
 # checkov:skip=CKV_GHA_7:The build output cannot be affected by user parameters
 #   other than the build entry point and the top-level source location.
 #   GitHub Actions workflow_dispatch inputs MUST be empty.
@@ -12,10 +14,10 @@ env:
   WORKFLOW_REPO: workflows
 
 on: # yamllint disable-line rule:truthy
-  # push:
+  # pull_request:
   #   branches:
   #     - main
-  # pull_request:
+  # push:
   #   branches:
   #     - main
   workflow_call: # Required so this workflow can be called from another workflow
@@ -47,17 +49,14 @@ concurrency:
 
 jobs:
   debug-rasa:
-    runs-on: ubuntu-22.04
+    name: debug-rasa
+    runs-on: ubuntu-24.04
+
     steps:
-      - name: set vars
+      - name: Set workflow variables with fallback
         run: |
-          printf 'WORKFLOW_USER=%s\n' "${{ inputs.workflow_user }}" >> "${GITHUB_ENV}"
-          printf 'WORKFLOW_REPO=%s\n' "${{ inputs.workflow_repo }}" >> "${GITHUB_ENV}"
-      - name: USES crazy-max/ghaction-dump-context@v2.3.0
-        uses: crazy-max/ghaction-dump-context@v2.3.0
-        with:
-          workflow_user: ${{ inputs.workflow_user }}
-          workflow_repo: ${{ inputs.workflow_repo }}
-        env:
-          WORKFLOW_USER: ${{ env.WORKFLOW_USER }}
-          WORKFLOW_REPO: ${{ env.WORKFLOW_REPO }}
+          echo "WORKFLOW_USER=${{ inputs.workflow_user || env.WORKFLOW_USER }}" >>"${GITHUB_ENV}"
+          echo "WORKFLOW_REPO=${{ inputs.workflow_repo || env.WORKFLOW_REPO }}" >>"${GITHUB_ENV}"
+
+      - uses: crazy-max/ghaction-dump-context@v2.3.0
+

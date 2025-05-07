@@ -1,4 +1,6 @@
 # ~/.github/linters/.flake8
+# Copied from: rasa/dotfiles/.github/linters/.flake8.yaml
+# EDIT THE ABOVE FILE, NOT THIS COPY, OR YOUR CHANGES WILL BE LOST!
 # Docs: https://flake8.pycqa.org/en/latest/user/configuration.html
 # ML:   https://megalinter.io/latest/descriptors/python_flake8/
 # MLT:  https://github.com/github/super-linter/blob/main/TEMPLATES/.flake8

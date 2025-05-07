@@ -14,18 +14,23 @@ end_of_line = lf
 indent_size = 2
 indent_style = space
 insert_final_newline = true
+max_line_length = unset
 trim_trailing_whitespace = true
 
 # Batch files require CRLF newlines
 [*.{bat,cmd,BAT,CMD}]
+end_of_line = crlf
 # a la VT102/Televideo 950
 max_line_length = 132
-end_of_line = crlf
 
 # MSVC project files require CRLF newlines
 [*.{dsp,dsw,sln,vcproj,vcprops,DSP,DSW,SLN,VCPROJ,VCPROPS}]
-max_line_length = 132
 end_of_line = crlf
+max_line_length = 132
+
+[{go.mod,go.sum,*.go}]
+indent_style = tab
+indent_size = 8
 
 # Google JavaScript Style Guide (https://google.github.io/styleguide/javascriptguide.xml)
 [*.js]
@@ -47,15 +52,14 @@ insert_final_newline = unset
 
 # Makefiles require tab indentation
 [{Makefile{,.*},makefile{,.*},GNUMakefile{,.*},*.mak,*.mk}]
+indent_size = 8
 indent_style = tab
 max_line_length = 132
-# @TODO max_line_length = 80
 
 # Google Python Style Guide (https://google.github.io/styleguide/pyguide.html)
 [*.py]
 indent_size = 4
 max_line_length = 132
-# @TODO max_line_length = 80
 
 # Google Shell Style Guide (https://google.github.io/styleguide/shellguide.html)
 [*.sh]
@@ -73,19 +77,17 @@ switch_case_indent = true # like -ci
 # --func-next-line
 # function_next_line = true # like -fn
 max_line_length = 132
-# @TODO max_line_length = 80
 
 [*.vbs]
 indent_size = unset
 max_line_length = 132
-# @TODO max_line_length = 80
 
 # json files without .json extension:
 [{.ecrc,.textlintrc}]
 insert_final_newline = unset
 
 # unrooted file extensions:
-[*.{cmd.*,diff,ignore,patch,txt,wip}]
+[*.{cmd.*,diskpart,diff,ignore,old,patch,sqbpro,txt,wip}]
 end_of_line = unset
 indent_size = unset
 indent_style = unset
@@ -116,6 +118,5 @@ indent_style = unset
 insert_final_newline = unset
 trim_trailing_whitespace = unset
 
-# cspell:ignore ecrc, jsonlint, Makefiles, mylogin, textlintrc, toprc
-
-# cSpell:ignore Televideo, vcproj, VCPROJ, vcprops, VCPROPS
+# cspell:ignore diskpart, ecrc, jsonlint, Makefiles, mylogin, sqbpro, Televideo
+# cspell:ignore textlintrc, toprc, vcproj, VCPROJ, vcprops, VCPROPS

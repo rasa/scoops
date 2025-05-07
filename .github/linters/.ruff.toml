@@ -1,4 +1,6 @@
 # ~/.github/linters/.ruff.toml
+# Copied from: rasa/dotfiles/.github/linters/.ruff.toml
+# EDIT THE ABOVE FILE, NOT THIS COPY, OR YOUR CHANGES WILL BE LOST!
 # Docs: https://beta.ruff.rs/docs/configuration/
 # ML:   https://megalinter.io/latest/descriptors/python_ruff/
 # MLT:  https://github.com/oxsecurity/megalinter/blob/main/TEMPLATES/.ruff.toml

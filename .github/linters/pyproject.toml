@@ -1,4 +1,6 @@
 # .github/linters/pyproject.toml
+# Copied from: rasa/dotfiles/.github/linters/pyproject.toml
+# EDIT THE ABOVE FILE, NOT THIS COPY, OR YOUR CHANGES WILL BE LOST!
 # Docs: https://black.readthedocs.io/en/stable/usage_and_configuration/the_basics.html#configuration-format
 # ML:   https://megalinter.io/latest/descriptors/python_black/
 # MLT:  https://github.com/oxsecurity/megalinter/tree/main/TEMPLATES/pyproject.toml
@@ -12,6 +14,6 @@ line-length = 132 # default = 88
 quiet = true
 
 # https://black.readthedocs.io/en/stable/usage_and_configuration/the_basics.html#t-target-version
-target-versions = ["py310", "py311"]
+target-version = ["py310", "py311", "py312"]
 
 # cspell:ignore pyproject

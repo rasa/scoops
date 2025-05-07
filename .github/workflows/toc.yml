@@ -1,49 +1,59 @@
 ---
 # Copied from: rasa/dotfiles/.github/workflows/toc.yml
 # EDIT THE ABOVE FILE, NOT THIS COPY, OR YOUR CHANGES WILL BE LOST!
-# $schema https://json.schemastore.org/github-workflow.json
+# yaml-language-server: $schema https://json.schemastore.org/github-workflow.json
 
 name: toc
 
 on: # yamllint disable-line rule:truthy
   pull_request:
-    branches:
-      - main
-      - master # @TODO remove
     paths:
-      - "**/*.md"
+      - '**.md'
   push:
     paths:
-      - "**/*.md"
+      - '**.md'
+  workflow_call:
   workflow_dispatch: # Allows you to run this workflow manually from the Actions tab
 
 concurrency:
   group: ${{ github.workflow }}
   cancel-in-progress: true
 
+env:
+  TOC_URL: https://raw.githubusercontent.com/ekalinin/github-markdown-toc/HEAD/gh-md-toc
+
 jobs:
-  job:
-    runs-on: ubuntu-latest
+  toc:
+    name: toc
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: write # Required to push changes to repo.
     timeout-minutes: 5
     env:
       GH_TOC_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
-      - name: USES actions/checkout@v4.1.1
-        uses: actions/checkout@v4.1.1
+      - uses: actions/checkout@v4.2.2
         with:
+          fetch-depth: 1
           show-progress: false
 
-      - name: RUN gh-md-toc
+      - name: gh-md-toc **/*.md
         run: |
-          curl -fsSL --output gh-md-toc https://raw.githubusercontent.com/ekalinin/github-markdown-toc/HEAD/gh-md-toc
-          chmod a+x gh-md-toc
-          find . -type f -iname '*.md' -exec ./gh-md-toc --indent 0 --no-backup --hide-footer --skip-header {} \;
-          rm -f gh-md-toc
-          true
+          # gh-md-toc **/*.md
+          mapfile -t < <(git ls-files '*.[Mm][Dd]')
+          if ((${#MAPFILE[@]}==0)); then
+            printf 'No .md files found in %s\n' "${PWD}"
+            exit 0
+          fi
+          printf 'Downloading %s\n' "${TOC_URL}"
+          tmp1=$(mktemp)
+          curl -fsSL --output "${tmp1}" "${TOC_URL}"
+          chmod a+x "${tmp1}" || true
+          printf 'Processing %d .md files...\n' "${#MAPFILE[@]}"
+          # shellcheck source=/dev/null
+          source "${tmp1}" --indent 0 --no-backup --hide-footer --skip-header "${MAPFILE[@]}"
+          rm -fr "${tmp1}"
 
-      - name: USES stefanzweifel/git-auto-commit-action@v5.1.0
-        uses: stefanzweifel/git-auto-commit-action@v5.1.0
+      - uses: stefanzweifel/git-auto-commit-action@v5.2.0
         with:
-          commit_message: "docs: auto update table-of-contents in markdown"
-
-# cSpell:ignore stefanzweifel
+          commit_message: "docs: auto update table-of-contents in *.md files"

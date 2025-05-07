@@ -1,18 +1,18 @@
 ---
 # Copied from: rasa/dotfiles/.github/workflows/clean-logs.yml
 # EDIT THE ABOVE FILE, NOT THIS COPY, OR YOUR CHANGES WILL BE LOST!
+# yaml-language-server: $schema https://json.schemastore.org/github-workflow.json
 # yamllint disable rule:line-length
-# $schema https://json.schemastore.org/github-workflow.json
 # checkov:skip=CKV_GHA_7:The build output cannot be affected by user parameters
 #   other than the build entry point and the top-level source location.
 #   GitHub Actions workflow_dispatch inputs MUST be empty.
 
-name: clean-workflows
+name: clean-logs
 
 on: # yamllint disable-line rule:truthy
   schedule:
-  # runs at 20:02 UTC (12:02 PST) every day.
-  - cron: "02 20 * * *"
+    # runs at 20:02 UTC (12:02 PST) every day.
+    - cron: "02 20 * * *"
   #        ┬  ┬  ┬  ┬  ┬                               # *    : run every 5 min/every 1 hour/every 1 day/every 1 mon
   #        │  │  │  │  └─ day of week (0-6 or SUN-SAT) # */X  : run every X min/every X hour/every X day/every X mon
   #        │  │  │  └──── month (1-12 or JAN-DEC)      # A,B  : run when min/hour/day/mon = A or B
@@ -45,7 +45,7 @@ on: # yamllint disable-line rule:truthy
         type: string
       repository:
         type: string
-  
+
   workflow_dispatch: # Allows you to run this workflow manually from the Actions tab
     inputs:
       # checkov:skip=CKV_GHA_7
@@ -98,22 +98,22 @@ on: # yamllint disable-line rule:truthy
         type: boolean
       # checkov:skip=CKV_GHA_7
       check_branch_existence:
-        description: Clean workflows of existing branches
+        description: Existing branch workflows
         # If the workflow was triggered by a branch, the branch must be deleted before the workflow run is deleted as well.
         default: "Keep"
         type: choice
         options:
           - "Keep"
-          - "Delete"
+          - "Remove"
       # checkov:skip=CKV_GHA_7
       check_pullrequest_exist:
-        description: Clean workflows for active PRs
+        description: Active PR workflows
         # If the run is linked to a pull request, the deletion is skipped.
         default: "Keep"
         type: choice
         options:
           - "Keep"
-          - "Delete"
+          - "Remove"
       # checkov:skip=CKV_GHA_7
       repository:
         description: Repository (user/repo) (optional)
@@ -126,19 +126,24 @@ concurrency:
   # Source: https://mail.python.org/archives/list/pypa-committers@python.org/thread/PCBCQMJF64JGRBOX7E2EE4YLKHT4DI55/
   group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.sha }}
 
+permissions: write-all
+
 jobs:
   clean-logs:
-    runs-on: ubuntu-latest
+    name: clean-logs
+    runs-on: ubuntu-24.04
     steps:
       # Was crazy-max/ghaction-dump-context@v2.1.0
       # but it reports a deprecation error:
       # Node.js 16 actions are deprecated. Please update the following actions to use Node.js 20: actions/github-script@v6.
-      - name: rasa/ghaction-dump-context@master
-        uses: rasa/ghaction-dump-context@master
+      # - name: rasa/ghaction-dump-context@master
+      #   uses: rasa/ghaction-dump-context@master
+      - uses: crazy-max/ghaction-dump-context@v2.3.0
 
-      - name: Scheduled run (github.event_name == 'schedule')
+      - name: Run rasa/delete-workflow-runs@main (Scheduled run)
         if: github.event_name == 'schedule'
         uses: rasa/delete-workflow-runs@main
+        # was Mattraks/delete-workflow-runs@main
         with:
           repository: ${{ github.repository }}
           token: ${{ secrets.GITHUB_TOKEN }}
@@ -147,9 +152,10 @@ jobs:
           check_branch_existence: "Keep" # default: Keep
           check_pullrequest_exist: "Keep" # default: Keep
 
-      - name: Non-scheduled run (github.event_name != 'schedule')
+      - name: Run rasa/delete-workflow-runs@main (Non-scheduled run)
         if: github.event_name != 'schedule'
         uses: rasa/delete-workflow-runs@main
+        # was Mattraks/delete-workflow-runs@main
         with:
           repository: ${{ github.event.inputs.repository || github.repository }}
           token: ${{ secrets.GITHUB_TOKEN }}
@@ -162,8 +168,6 @@ jobs:
               && 'action_required,cancelled,failure,skipped'
               || github.event.inputs.delete_run_by_conclusion_pattern
             }}
-          check_branch_existence: ${{ startsWith(github.event.inputs.check_branch_existence, 'Keep') && 'Y' || '' }}
-          check_pullrequest_exist: ${{ startsWith(github.event.inputs.check_pullrequest_exist, 'Keep') && 'Y' || '' }}
-          dry_run: ${{ (github.event.inputs.dry_run == true) && 'Y' || '' }}
-
-# cSpell:ignore ghaction, Mattraks, pullrequest
+          check_branch_existence: ${{ github.event.inputs.check_branch_existence   == 'Keep' && 'true' || null }}
+          check_pullrequest_exist: ${{ github.event.inputs.check_pullrequest_exist == 'Keep' && 'true' || null }}
+          dry_run: ${{ github.event.inputs.dry_run == true && 'true' || null }}

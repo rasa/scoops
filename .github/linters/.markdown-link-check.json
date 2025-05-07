@@ -1,4 +1,5 @@
 {
+  "$schema": "https://json.schemastore.org/markdown-link-check.json",
   "aliveStatusCodes": [
     200,
     206,
@@ -6,40 +7,31 @@
   ],
   "ignorePatterns": [
     {
-      "pattern": "^https?://0+\\.",
-      "reason": "private ip: 0.0.0.0/8"
+      "pattern": "^https?://0+\\."
     },
     {
-      "pattern": "^https?://10\\.",
-      "reason": "private ip: 10.0.0.0/8"
+      "pattern": "^https?://10\\."
     },
     {
-      "pattern": "^https?://127\\.",
-      "reason": "private ip: 127.0.0.0/8"
+      "pattern": "^https?://127\\."
     },
     {
-      "pattern": "^https?://169\\.254\\.",
-      "reason": "private ip: 169.154.0.0/16"
+      "pattern": "^https?://169\\.254\\."
     },
     {
-      "pattern": "^https?://172\\.(1[6-9]|2[0-9]|3[01])\\.",
-      "reason": "private ip: 172.16.0.0/12"
+      "pattern": "^https?://172\\.(1[6-9]|2[0-9]|3[01])\\."
     },
     {
-      "pattern": "^https?://192\\.168\\.",
-      "reason": "private ip: 192.168.0.0/16"
+      "pattern": "^https?://192\\.168\\."
     },
     {
-      "pattern": "^https?://100\\.(6[4-9]|[789][0-9]|1[01][0-9]|12[0-7])\\.",
-      "reason": "private ip: 100.64.0.0/10"
+      "pattern": "^https?://100\\.(6[4-9]|[789][0-9]|1[01][0-9]|12[0-7])\\."
     },
     {
-      "pattern": "^https://github\\.com/rasa/",
-      "reason": "401"
+      "pattern": "^https://github\\.com/rasa/"
     },
     {
-      "pattern": "^https://sysupgrade.openwrt.org/?",
-      "reason": "404 (ephemeral)"
+      "pattern": "^https://sysupgrade.openwrt.org/?"
     }
   ],
   "retryCount": 5,
