@@ -33,7 +33,7 @@ jobs:
     # See https://github.com/dependabot/fetch-metadata?tab=readme-ov-file#enabling-auto-merge
     # if: startsWith(github.event.pull_request.user.login, 'dependabot')
     steps:
-      - uses: dependabot/fetch-metadata@v2.3.0
+      - uses: dependabot/fetch-metadata@v2.4.0
         id: dependabot-metadata
 
       - run: gh pr merge --auto --merge ${{ github.event.pull_request.html_url }}
