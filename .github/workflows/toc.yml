@@ -8,10 +8,10 @@ name: toc
 on: # yamllint disable-line rule:truthy
   pull_request:
     paths:
-      - '**/README*.md'
+      - '**/*.md'
   push:
     paths:
-      - '**/README*.md'
+      - '**/*.md'
   workflow_call:
   workflow_dispatch: # Allows you to run this workflow manually from the Actions tab
 
@@ -40,9 +40,9 @@ jobs:
       - name: gh-md-toc **/*.md
         run: |
           # gh-md-toc **/*.md
-          mapfile -t < <(git ls-files '*.[Mm][Dd]')
+          mapfile -t < <(git grep -l '<!--ts-->' | grep -i '\.md$')
           if ((${#MAPFILE[@]}==0)); then
-            printf 'No .md files found in %s\n' "${PWD}"
+            printf 'No tagged .md files found in %s\n' "${PWD}"
             exit 0
           fi
           printf 'Downloading %s\n' "${TOC_URL}"
