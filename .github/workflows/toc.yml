@@ -8,10 +8,10 @@ name: toc
 on: # yamllint disable-line rule:truthy
   pull_request:
     paths:
-      - '**.md'
+      - '**/README*.md'
   push:
     paths:
-      - '**.md'
+      - '**/README*.md'
   workflow_call:
   workflow_dispatch: # Allows you to run this workflow manually from the Actions tab
 
