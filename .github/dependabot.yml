@@ -12,8 +12,6 @@ updates:
       interval: "daily"
       time: "08:00"
       timezone: "America/Los_Angeles"
-    reviewers:
-      - "rasa"
     commit-message:
       prefix: "[action] "
 
@@ -24,8 +22,6 @@ updates:
       interval: "daily"
       time: "08:00"
       timezone: "America/Los_Angeles"
-    reviewers:
-      - "rasa"
     commit-message:
       prefix: "[pip] "
       prefix-development: "[pip dev] "
@@ -37,8 +33,6 @@ updates:
       interval: "daily"
       time: "08:00"
       timezone: "America/Los_Angeles"
-    reviewers:
-      - "rasa"
     commit-message:
       prefix: "[docker] "
 
@@ -49,8 +43,6 @@ updates:
       interval: "daily"
       time: "08:00"
       timezone: "America/Los_Angeles"
-    reviewers:
-      - "rasa"
     commit-message:
       prefix: "[gomod] "
 
