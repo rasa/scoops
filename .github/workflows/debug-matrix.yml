@@ -48,7 +48,8 @@ jobs:
           # - ubuntu-24.04-arm
           # aka ubuntu-latest:
           # - ubuntu-22.04
-          - windows-11-arm
+          # waiting on https://github.com/rhysd/actionlint/pull/542
+          # - windows-11-arm
           - windows-2025
           # aka windows-latest:
           # - windows-2022
