@@ -52,7 +52,7 @@ jobs:
           - windows-11-arm
           - windows-2025
           # aka windows-latest:
-          # - windows-2022
+          - windows-2022
           # https://github.com/actions/runner-images/issues/10686
           # in preview mode:
           # aka macos-15-xlarge (arm64)
@@ -72,7 +72,7 @@ jobs:
           # Deprecated:
           # - macos-12
           # - ubuntu-20.04
-          # - windows-2019
+          - windows-2019
           # https://github.blog/changelog/2024-05-20-actions-upcoming-changes-to-github-hosted-macos-runners/
           # Gone on 28-Jun-24:
           # - macos-11
