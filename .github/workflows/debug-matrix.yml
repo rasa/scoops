@@ -49,7 +49,7 @@ jobs:
           # aka ubuntu-latest:
           # - ubuntu-22.04
           # waiting on https://github.com/rhysd/actionlint/pull/542
-          # - windows-11-arm
+          - windows-11-arm
           - windows-2025
           # aka windows-latest:
           # - windows-2022
@@ -536,7 +536,31 @@ jobs:
         run: |
           # shell: python3 .github/scripts/debug-vars.py {0}
 
-      - run: ./.github/scripts/create-ramdisk.ps1
+      - run: ./.github/scripts/create-ntfs-volume.ps1
+        if: runner.os == 'Windows'
+        # default is bash
+        shell: pwsh
+        continue-on-error: true
+
+      - run: ./.github/scripts/create-exfat-volume.ps1
+        if: runner.os == 'Windows'
+        # default is bash
+        shell: pwsh
+        continue-on-error: true
+
+      - run: ./.github/scripts/create-fat32-volume.ps1
+        if: runner.os == 'Windows'
+        # default is bash
+        shell: pwsh
+        continue-on-error: true
+
+      - run: ./.github/scripts/create-fat-volume.ps1
+        if: runner.os == 'Windows'
+        # default is bash
+        shell: pwsh
+        continue-on-error: true
+
+      - run: ./.github/scripts/create-refs-volume.ps1
         if: runner.os == 'Windows'
         # default is bash
         shell: pwsh
