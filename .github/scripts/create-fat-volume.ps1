@@ -7,4 +7,4 @@ Mount-VHD -Path $vhdfile
 $disk = Get-Disk | Where-Object PartitionStyle -Eq 'RAW'
 Initialize-Disk -InputObject $disk -PartitionStyle GPT -PassThru |
   New-Partition -UseMaximumSize -DriveLetter 'Q' |
-  Format-Volume -FileSystem FAT32 -NewFileSystemLabel "FAT_Q.1GB" -Confirm:$false
+  Format-Volume -FileSystem FAT -NewFileSystemLabel "FAT_Q.1GB" -Confirm:$false

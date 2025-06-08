@@ -7,4 +7,4 @@ Mount-VHD -Path $vhdfile
 $disk = Get-Disk | Where-Object PartitionStyle -Eq 'RAW'
 Initialize-Disk -InputObject $disk -PartitionStyle GPT -PassThru |
   New-Partition -UseMaximumSize -DriveLetter 'N' |
-  Format-Volume -FileSystem EXFAT -NewFileSystemLabel "NTFS_N.1GB" -Confirm:$false
+  Format-Volume -FileSystem NTFS -NewFileSystemLabel "NTFS_N.1GB" -Confirm:$false
