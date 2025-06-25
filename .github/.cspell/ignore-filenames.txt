@@ -12,5 +12,4 @@ golangci
 jsonlintrc
 pydeps
 pylintrc
-ramdisk
 textlintrc
