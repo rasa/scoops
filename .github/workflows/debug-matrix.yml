@@ -17,7 +17,7 @@ on: # yamllint disable-line rule:truthy
       - main
       - master # @TODO remove
     paths:
-      - .github/scripts/debug-*
+      - .github/scripts/*
       - .github/workflows/debug-matrix.yml
   workflow_call: # Required so this workflow can be called from another workflow
   workflow_dispatch: # Allows you to run this workflow manually from the Actions tab
@@ -564,6 +564,12 @@ jobs:
         if: runner.os == 'Windows'
         # default is bash
         shell: pwsh
+        continue-on-error: true
+
+      - run: |
+          format R: /FS:ReFS /Q /Y /V:REFS_R.1GB
+        if: runner.os == 'Windows'
+        shell: cmd
         continue-on-error: true
 
       - run: mountvol.exe
