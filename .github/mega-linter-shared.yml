@@ -117,6 +117,9 @@ REPOSITORY_TRUFFLEHOG_ARGUMENTS: "--exclude-paths=.git/"
 # See https://github.com/streetsidesoftware/cspell-cli?tab=readme-ov-file#lint
 SPELL_CSPELL_ARGUMENTS: "--no-color --quiet"
 
+# otherwise, it won't see it.
+SQL_SQLFLUFF_CONFIG_FILE: ".github/linters/.sqlfluff"
+
 # Use yaml, default is ~/.prettierrc.json
 TYPESCRIPT_PRETTIER_CONFIG_FILE: ".github/linters/.prettierrc.yaml"
 
