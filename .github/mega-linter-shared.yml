@@ -39,6 +39,9 @@ REPOSITORY_TRUFFLEHOG_DISABLE_ERRORS: true
 # Don't fail if a site is down, or their cert has expired:
 SPELL_LYCHEE_DISABLE_ERRORS: true
 
+# SQL files are sqlite, not TSQL.
+SQL_TSQLLINT_DISABLE_ERRORS: true
+
 # Could not find a schema to validate: .github/linters/*
 YAML_V8R_DISABLE_ERRORS: true
 
