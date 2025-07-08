@@ -87,7 +87,7 @@ max_line_length = 132
 insert_final_newline = unset
 
 # unrooted file extensions:
-[*.{cmd.*,diskpart,diff,ignore,old,patch,sqbpro,txt,wip}]
+[*.{cmd.*,csv,diskpart,diff,ignore,old,patch,sqbpro,tsv,txt,wip}]
 end_of_line = unset
 indent_size = unset
 indent_style = unset
