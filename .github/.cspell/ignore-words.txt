@@ -16,6 +16,8 @@
 ## whenever this file is regenerated.
 ##
 
+TSQLLINT
+
 adipiscing    #  4 hits in  1 file: linters/readme.md
 amet          #  4 hits in  1 file: linters/readme.md
 awalsh        #  4 hits in  1 file: workflows/shfmt.yml
