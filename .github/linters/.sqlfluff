@@ -2,7 +2,7 @@
 
 [sqlfluff]
 dialect = sqlite
-exclude_rules = L003,L004,L005,L009,L010,L016,L019,L036
+exclude_rules = L005,L010,L016,L019,L036
 
 [sqlfluff:indentation]
 tab_space_size = 2
