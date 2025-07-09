@@ -2,6 +2,22 @@
 
 [sqlfluff]
 dialect = sqlite
+exclude_rules = L003,L004,L005,L009,L010,L016,L019,L036
 
 [sqlfluff:indentation]
 tab_space_size = 2
+
+[sqlfluff:rules]
+tab_space_size = 2
+indent_unit = space
+
+[sqlfluff:rules:L003]
+# Indentation not enforced
+
+[sqlfluff:rules:L004]
+# Line length rule - default 80
+max_line_length = 132
+
+[sqlfluff:rules:L009]
+# No trailing whitespace rule - optional
+# allow_trailing_whitespace = True
