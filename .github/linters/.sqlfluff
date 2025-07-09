@@ -1,5 +1,7 @@
-
-## ./github/linters/.sqlfluff
+# ./github/linters/.sqlfluff
 
 [sqlfluff]
 dialect = sqlite
+
+[sqlfluff:indentation]
+tab_space_size = 2
