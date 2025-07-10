@@ -15,9 +15,6 @@ FILTER_REGEX_EXCLUDE: >-
 
 ##### CONVERT ERRORS TO WARNINGS #####
 
-# label "windows-11-arm" is unknown
-ACTION_ACTIONLINT_DISABLE_ERRORS: true
-
 # Produces too many false positives:
 COPYPASTE_JSCPD_DISABLE_ERRORS: true
 
