@@ -5,7 +5,7 @@
 # https://github.com/rhysd/actionlint/issues/424#issuecomment-2110743431
 self-hosted-runner:
   labels:
-    - ubuntu-24.04
+    - windows-11-arm
 
 paths:
   # This pattern matches any YAML file under the '.github/workflows/' directory.
