@@ -44,21 +44,21 @@ jobs:
           # https://docs.github.com/en/actions/using-github-hosted-runners/about-github-hosted-runners/about-github-hosted-runners#supported-runners-and-hardware-resources
           # https://github.blog/changelog/2024-05-14-github-hosted-runners-public-beta-of-ubuntu-24-04-is-now-available/
           # Beta, released 14-May-24:
-          - ubuntu-24.04
+          #- ubuntu-24.04
           # - ubuntu-24.04-arm
           # aka ubuntu-latest:
           # - ubuntu-22.04
           # waiting on https://github.com/rhysd/actionlint/pull/542
-          - windows-11-arm
+          # - windows-11-arm
           - windows-2025
           # aka windows-latest:
           - windows-2022
           # https://github.com/actions/runner-images/issues/10686
           # in preview mode:
           # aka macos-15-xlarge (arm64)
-          - macos-15
+          # - macos-15
           # amd64:
-          - macos-15-large
+          # - macos-15-large
           # https://github.blog/changelog/2024-04-01-macos-14-sonoma-is-generally-available-and-the-latest-macos-runner-image/
           # out of beta 1-Apr-24
           # aka macos-latest, macos-latest-xlarge or macos-14-xlarge (arm64):
@@ -537,38 +537,42 @@ jobs:
         run: |
           # shell: python3 .github/scripts/debug-vars.py {0}
 
-      - run: ./.github/scripts/create-ntfs-volume.ps1
+      - run: ./.github/scripts/create-vhdx.ps1 -FileSystem NTFS -DriveLetter N
         if: runner.os == 'Windows'
         # default is bash
         shell: pwsh
         continue-on-error: true
 
-      - run: ./.github/scripts/create-exfat-volume.ps1
+      - run: ./.github/scripts/create-vhdx.ps1 -FileSystem EXFAT -DriveLetter O
         if: runner.os == 'Windows'
         # default is bash
         shell: pwsh
         continue-on-error: true
 
-      - run: ./.github/scripts/create-fat32-volume.ps1
+      - run: ./.github/scripts/create-vhdx.ps1 -FileSystem FAT32 -DriveLetter P
         if: runner.os == 'Windows'
         # default is bash
         shell: pwsh
         continue-on-error: true
 
-      - run: ./.github/scripts/create-fat-volume.ps1
+      - run: ./.github/scripts/create-vhdx.ps1 -FileSystem FAT -DriveLetter Q
         if: runner.os == 'Windows'
         # default is bash
         shell: pwsh
         continue-on-error: true
 
-      - run: ./.github/scripts/create-refs-volume.ps1
+      - run: ./.github/scripts/create-vhdx.ps1 -FileSystem ReFS -DriveLetter R
         if: runner.os == 'Windows'
         # default is bash
         shell: pwsh
         continue-on-error: true
 
       - run: |
-          format R: /FS:ReFS /Q /Y /V:REFS_R.1GB
+          format N: /Q /Y /FS:NTFS  /V:NNTFS2GB
+          format O: /Q /Y /FS:ExFAT /V:OEXFAT2GB
+          format P: /Q /Y /FS:FAT32 /V:PFAT322GB
+          format Q: /Q /Y /FS:FAT   /V:QFAT2GB
+          format R: /Q /Y /FS:ReFS  /V:RREFS2GB
         if: runner.os == 'Windows'
         shell: cmd
         continue-on-error: true
@@ -583,7 +587,28 @@ jobs:
         shell: cmd
         continue-on-error: true
 
-      - run: DISM /Online /Add-Capability /CapabilityName:WMIC~~~~
+      - run: |
+          $types = @{
+            0 = 'Unknown'; 1 = 'No Root'; 2 = 'Removable'; 3 = 'Local'; 4 = 'Network';
+            5 = 'CD-ROM'; 6 = 'RAM Disk'
+          }
+          Get-CimInstance Win32_LogicalDisk | Select-Object DeviceID, VolumeName, Description, ProviderName, FileSystem,
+          @{Name='DriveType'; Expression={ $types[$_.DriveType] }}
+        if: runner.os == 'Windows'
+        shell: pwsh
+        continue-on-error: true
+        
+      - run: |
+          Set-MpPreference -DisableRealtimeMonitoring $true
+          Add-MpPreference -ExclusionPath "$env:TEMP"
+          Add-MpPreference -ExclusionProcess "dism.exe"
+        if: matrix.os == 'windows-2025'
+        shell: pwsh
+        continue-on-error: true
+
+      - run: |
+          where.exe /q wmic.exe && exit 0
+          DISM.exe /Online /Add-Capability /CapabilityName:WMIC~~~~
         if: runner.os == 'Windows'
         shell: cmd
         continue-on-error: true
