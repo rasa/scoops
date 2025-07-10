@@ -3,8 +3,15 @@
 [sqlfluff]
 dialect = sqlite
 # exclude_rules = L005,L010,L016,L019,L034,L036
-max_line_length = 132 # default: 80
-warnings = LT03 # Found trailing binary operator. Expected only leading near line breaks. [layout.operators]
+
+# max_line_length's default: 80
+max_line_length = 132
+
+# LT01: Expected single whitespace between comma ',' and quoted literal. [layout.spacing]
+# LT03: Found trailing binary operator. Expected only leading near line breaks. [layout.operators]
+# LT05: Unexpected exception: '<=' not supported between instances of 'str' and 'int';
+# ST06 Select wildcards then simple targets before calculations and aggregates. [structure.column_order]
+warnings = LT01,LT03,LT05,ST06
 
 [sqlfluff:indentation]
 indent_unit = space
