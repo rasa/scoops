@@ -2,19 +2,13 @@
 
 [sqlfluff]
 dialect = sqlite
-exclude_rules = L005,L010,L016,L019,L036
+# exclude_rules = L005,L010,L016,L019,L034,L036
+max_line_length = 132 # default: 80
+warnings = LT03 # Found trailing binary operator. Expected only leading near line breaks. [layout.operators]
 
 [sqlfluff:indentation]
-tab_space_size = 2
 indent_unit = space
+tab_space_size = 2
 
-[sqlfluff:rules:L003]
+[sqlfluff:rules:layout.indent]
 # Indentation not enforced
-
-[sqlfluff:rules:L004]
-# Line length rule - default 80
-max_line_length = 132
-
-[sqlfluff:rules:L009]
-# No trailing whitespace rule - optional
-# allow_trailing_whitespace = True
