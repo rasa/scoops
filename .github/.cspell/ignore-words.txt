@@ -16,6 +16,8 @@
 ## whenever this file is regenerated.
 ##
 
+dism
+DISM
 TSQLLINT
 
 adipiscing    #  4 hits in  1 file: linters/readme.md
