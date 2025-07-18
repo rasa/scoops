@@ -618,6 +618,11 @@ jobs:
         shell: cmd
         continue-on-error: true
 
+      - run: dir /o:n /q /r /s %USERPROFILE%
+        if: runner.os == 'Windows'
+        shell: cmd
+        continue-on-error: true
+
       - run: dir /o:n /q /r /s d:\
         if: runner.os == 'Windows'
         shell: cmd
