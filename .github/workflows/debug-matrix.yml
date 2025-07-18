@@ -618,12 +618,17 @@ jobs:
         shell: cmd
         continue-on-error: true
 
+      - run: dir /o:n /q /r c:\
+        if: runner.os == 'Windows'
+        shell: cmd
+        continue-on-error: true
+
       - run: dir /o:n /q /r /s %USERPROFILE%
         if: runner.os == 'Windows'
         shell: cmd
         continue-on-error: true
 
       - run: dir /o:n /q /r /s d:\
-        if: runner.os == 'Windows'
+        if: runner.os == 'Windows' && matrix.os != 'windows-2025'
         shell: cmd
         continue-on-error: true
