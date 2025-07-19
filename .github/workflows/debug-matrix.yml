@@ -40,29 +40,25 @@ jobs:
       # Docs: https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#choosing-github-hosted-runners
       matrix:
         os:
+          # aka ubuntu-latest:
+          - ubuntu-24.04
+          - ubuntu-24.04-arm
+          # not available yet:
           # - ubuntu-24.04-s390x
           # - ubuntu-24.04-ppc64le
           # https://github.com/actions/runner-images/tree/main#available-images
           # https://docs.github.com/en/actions/using-github-hosted-runners/about-github-hosted-runners/about-github-hosted-runners#supported-runners-and-hardware-resources
-          # https://github.blog/changelog/2024-05-14-github-hosted-runners-public-beta-of-ubuntu-24-04-is-now-available/
-          # Beta, released 14-May-24:
-          # - ubuntu-24.04
-          # - ubuntu-24.04-arm
-          # aka ubuntu-latest:
           # - ubuntu-22.04
+          # - ubuntu-22.04-arm
+          # aka windows-latest:
+          - windows-2025
+          - windows-2022
           # waiting on https://github.com/rhysd/actionlint/pull/542
           # - windows-11-arm
-          - windows-2025
-          # aka windows-latest:
-          - windows-2022
-          # https://github.com/actions/runner-images/issues/10686
-          # in preview mode:
           # aka macos-15-xlarge (arm64)
-          # - macos-15
+          - macos-15
           # amd64:
-          # - macos-15-large
-          # https://github.blog/changelog/2024-04-01-macos-14-sonoma-is-generally-available-and-the-latest-macos-runner-image/
-          # out of beta 1-Apr-24
+          - macos-15-large
           # aka macos-latest, macos-latest-xlarge or macos-14-xlarge (arm64):
           # - macos-14
           # aka macos-latest-large (amd64) (NOT FREE):
@@ -71,14 +67,8 @@ jobs:
           # - macos-13-xlarge
           # aka macos-13-large (amd64):
           # - macos-13
-          # Deprecated:
-          # - macos-12
-          # - ubuntu-20.04
           # Gone on 30-Jun-25 per https://github.com/actions/runner-images/issues/12045
           # - windows-2019
-          # https://github.blog/changelog/2024-05-20-actions-upcoming-changes-to-github-hosted-macos-runners/
-          # Gone on 28-Jun-24:
-          # - macos-11
     steps:
       - uses: crazy-max/ghaction-dump-context@v2.3.0
 
