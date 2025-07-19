@@ -94,7 +94,7 @@ jobs:
           echo "pkgutil:"
           pkgutil --pkgs | sort
           echo "brew list:"
-          brew list --versions | sort || true
+          brew list --versions | sort || :
 
       - name: Run MinoruSekine/setup-scoop@main (Windows)
         if: runner.os == 'Windows'
@@ -209,7 +209,7 @@ jobs:
           set +e
           # shellcheck disable=SC2044 # For loops over find output are fragile. Use find -exec or a while read loop
           for script in $(find ./.github/scripts -name 'debug*.sh'); do
-            "${script}" "$0" "$@" || true
+            "${script}" "$0" "$@" || :
           done
 
       - name: bash ./.github/scripts/debug*.bash
@@ -221,7 +221,7 @@ jobs:
           set +e
           mapfile -t < <(find ./.github/scripts -name 'debug*.bash') || true
           for script in "${MAPFILE[@]}"; do
-            "${script}" "$0" "$@" || true
+            "${script}" "$0" "$@" || :
           done
 
       - name: bash ./.github/scripts/debug*.bash
@@ -233,7 +233,7 @@ jobs:
           set +e
           mapfile -t < <(find ./.github/scripts -name 'debug*.bash') || true
           for script in "${MAPFILE[@]}"; do
-            "${script}" "$0" "$@" || true
+            "${script}" "$0" "$@" || :
           done
 
       - name: pwsh ./.github/scripts/debug*.ps1
@@ -289,7 +289,7 @@ jobs:
           find "${paths[@]}" -maxdepth 1 -perm +111 -type f -or -type l -print | \
             awk '{b=$0;sub(/\/.*\//,"", b);sub(/\/[a-z]*$/,"",$0);print b "\t" $0}' | \
             LC_COLLATE=C sort --ignore-case -u | \
-            column -ts $'\t' || true
+            column -ts $'\t' || :
 
       - name: List executables (Windows)
         if: runner.os == 'Windows'
@@ -301,7 +301,7 @@ jobs:
           IFS=: read -r -a paths <<<"${PATH}"
           find "${paths[@]}" -maxdepth 1 -type f,l -regextype posix-extended -iregex '.*\.(bat|cmd|com|exe)$' -printf '%P\t%h\n' | \
             LC_COLLATE=C sort --ignore-case -u | \
-            column -ts $'\t' || true
+            column -ts $'\t' || :
 
       - name: python (inline)
         # default: python {0}
@@ -333,7 +333,7 @@ jobs:
           PYTHON=$(type -P python3 python py python2 | head -n 1 || true)
           # shellcheck disable=SC2139 # This expands when defined, not when used. Consider escaping
           alias pip="${PYTHON} -m pip"
-          sudo=$(type -P sudo || true)
+          sudo=$(type -P sudo || :)
 
           pyversion=$("${PYTHON}" -c 'import sys; print(sys.version_info[0]);')
 
@@ -365,10 +365,10 @@ jobs:
             # shellcheck disable=SC2139 # This expands when defined, not when used. Consider escaping
             alias pip="${PYTHON} -m pip"
           fi
-          sudo=$(type -P sudo || true)
-
-          ${sudo} "${PYTHON}" -m pip install --upgrade pip
-
+          if ! command -v apt-get &>/dev/null; then
+            ${sudo} "${PYTHON}" -m pip install "${PIP_OPTS[@]}" --upgrade pip
+            sudo=$(type -P sudo || :)
+          fi
       - name: pip list
         shell: bash
         continue-on-error: true
@@ -397,7 +397,7 @@ jobs:
             # shellcheck disable=SC2139 # This expands when defined, not when used. Consider escaping
             alias pip="${PYTHON} -m pip"
           fi
-          sudo=$(type -P sudo || true)
+          sudo=$(type -P sudo || :)
 
           if pip show future >/dev/null; then
             exit 0
