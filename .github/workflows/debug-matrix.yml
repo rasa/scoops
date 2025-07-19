@@ -366,7 +366,7 @@ jobs:
             alias pip="${PYTHON} -m pip"
           fi
           if ! command -v apt-get &>/dev/null; then
-            ${sudo} "${PYTHON}" -m pip install "${PIP_OPTS[@]}" --upgrade pip
+            ${sudo} "${PYTHON}" -m pip install --break-system-packages --user  --upgrade pip
             sudo=$(type -P sudo || :)
           fi
       - name: pip list
@@ -423,7 +423,7 @@ jobs:
           fi
 
           # --root-user-action=ignore
-          ${sudo} pip install --upgrade setuptools
+          ${sudo} pip install --break-system-packages --user --upgrade setuptools
 
           # https://github.com/PythonCharmers/python-future/issues/604
           PYTHON_FUTURE_URL="https://github.com/PythonCharmers/python-future/archive/master.tar.gz"
