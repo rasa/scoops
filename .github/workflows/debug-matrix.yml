@@ -40,6 +40,8 @@ jobs:
       # Docs: https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#choosing-github-hosted-runners
       matrix:
         os:
+          # - ubuntu-24.04-s390x
+          # - ubuntu-24.04-ppc64le
           # https://github.com/actions/runner-images/tree/main#available-images
           # https://docs.github.com/en/actions/using-github-hosted-runners/about-github-hosted-runners/about-github-hosted-runners#supported-runners-and-hardware-resources
           # https://github.blog/changelog/2024-05-14-github-hosted-runners-public-beta-of-ubuntu-24-04-is-now-available/
@@ -618,7 +620,7 @@ jobs:
         shell: cmd
         continue-on-error: true
 
-      - run: dir /o:n /q /r c:\
+      - run: dir /o:n /q /r %RUNNER_WORKSPACE%\\..
         if: runner.os == 'Windows'
         shell: cmd
         continue-on-error: true
@@ -629,6 +631,8 @@ jobs:
         continue-on-error: true
 
       - run: dir /o:n /q /r /s d:\
+        # windows-2025 removed drive D: per
+        #https://github.com/actions/runner-images/issues/12416
         if: runner.os == 'Windows' && matrix.os != 'windows-2025'
         shell: cmd
         continue-on-error: true
