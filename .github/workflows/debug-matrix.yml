@@ -601,11 +601,14 @@ jobs:
       - run: |
           where.exe /q wmic.exe && exit 0
           DISM.exe /Online /Add-Capability /CapabilityName:WMIC~~~~
-        if: runner.os == 'Windows'
+        if: false # runner.os == 'Windows'
+        # takes ~20 minutes on windows-2025 runner
         shell: cmd
         continue-on-error: true
 
-      - run: wmic.exe logicaldisk get DeviceID, VolumeName, Description, ProviderName, FileSystem, DriveType
+      - run:
+          where.exe /q wmic.exe || exit 0
+          wmic.exe logicaldisk get DeviceID, VolumeName, Description, ProviderName, FileSystem, DriveType
         if: runner.os == 'Windows'
         shell: cmd
         continue-on-error: true
