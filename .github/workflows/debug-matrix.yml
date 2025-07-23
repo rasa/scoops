@@ -627,7 +627,7 @@ jobs:
 
       - run: dir /o:n /q /r /s d:\
         # windows-2025 removed drive D: per
-        #https://github.com/actions/runner-images/issues/12416
+        # https://github.com/actions/runner-images/issues/12416
         if: runner.os == 'Windows' && matrix.os != 'windows-2025'
         shell: cmd
         continue-on-error: true
