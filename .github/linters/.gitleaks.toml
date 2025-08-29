@@ -23,6 +23,8 @@
     '''(.*?)(png|jpg|gif|doc|docx|pdf|bin|xls|pyc|zip)$''',
     '''(go.mod|go.sum)$''',
     # added by @rasa:
+    # will match go.tool.mod & go.tool.sum
+    '''go.*\.(mod|sum)$''',
     '''(?i)(.*?)(png|jpg|gif|doc|docx|pdf|bin|xls|pyc|zip)$''',
     '''(?i)\.(jpeg|xlsx)$''',
     ]
