@@ -32,7 +32,7 @@ jobs:
     env:
       GH_TOC_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
-      - uses: actions/checkout@v4.2.2
+      - uses: actions/checkout@v5
         with:
           fetch-depth: 1
           show-progress: false
