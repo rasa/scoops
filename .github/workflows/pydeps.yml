@@ -129,9 +129,9 @@ jobs:
           fi
           exit 0
 
-      - name: USES actions/setup-python@v5.0.0
+      - name: USES actions/setup-python@v6
         if: success()
-        uses: actions/setup-python@v5.0.0
+        uses: actions/setup-python@v6
         with:
           python-version: ${{ matrix.python-version }}
           # yamllint disable-line rule:line-length
