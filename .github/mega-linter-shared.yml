@@ -24,9 +24,6 @@ COPYPASTE_JSCPD_DISABLE_ERRORS: true
 # Fails if schema isn't found:
 JSON_V8R_DISABLE_ERRORS: true
 
-# Don't fail if a site is down, or their cert has expired:
-MARKDOWN_MARKDOWN_LINK_CHECK_DISABLE_ERRORS: true
-
 # Produces too many false positives:
 REPOSITORY_DEVSKIM_DISABLE_ERRORS: true
 
