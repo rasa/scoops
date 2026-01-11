@@ -8,9 +8,9 @@
 
 FILTER_REGEX_EXCLUDE: >-
   (?ix)(
-    megalinter-reports/ |
-    mega-linter.log |
-    \.git/
+    (^|/)\.git(/|$) |
+    (^|/)megalinter-reports(/|$) |
+    mega-linter\.log$
   )
 
 ##### CONVERT ERRORS TO WARNINGS #####
