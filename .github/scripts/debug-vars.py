@@ -1,11 +1,13 @@
 """
 Copied from: rasa/dotfiles/.github/scripts/debug-vars.py
+
 EDIT THE ABOVE FILE, NOT THIS COPY, OR YOUR CHANGES WILL BE LOST!
 """
 
 import os
 import pprint
 import sys
+
 print("os.name=", os.name)
 print("sys.executable=", sys.executable)
 print("sys.argv=")
