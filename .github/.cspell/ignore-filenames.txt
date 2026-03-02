@@ -13,3 +13,4 @@ jsonlintrc
 pydeps
 pylintrc
 textlintrc
+vhdx

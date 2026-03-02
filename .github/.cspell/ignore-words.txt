@@ -16,10 +16,6 @@
 ## whenever this file is regenerated.
 ##
 
-dism
-DISM
-TSQLLINT
-
 adipiscing    #  4 hits in  1 file: linters/readme.md
 amet          #  4 hits in  1 file: linters/readme.md
 awalsh        #  4 hits in  1 file: workflows/shfmt.yml
@@ -29,6 +25,8 @@ checkbashisms #  4 hits in  1 file: workflows/shellcheck.yml
 choco         # 10 hits in  1 file: workflows/debug-matrix.yml
 consectetur   #  4 hits in  1 file: linters/readme.md
 DEVSKIM       #  6 hits in  1 file: mega-linter-shared.yml
+dism          #  2 hits in  1 file: workflows/debug-matrix.yml
+DISM          #  2 hits in  1 file: workflows/debug-matrix.yml
 elit          #  4 hits in  1 file: linters/readme.md
 ghaction      #  4 hits in  1 file: workflows/clean-logs.yml
 gocritic      #  2 hits in  1 file: linters/.golangci.yml
@@ -47,21 +45,21 @@ luizm         #  4 hits in  1 file: workflows/shellcheck.yml
 Mattraks      #  4 hits in  1 file: workflows/clean-logs.yml
 Minoru        #  4 hits in  1 file: workflows/debug-matrix.yml
 msixbundle    #  6 hits in  1 file: workflows/debug-matrix.yml
-NNTFS         #  2 hits in  1 file: scripts/create-ntfs-volume.ps1
+NNTFS         #  2 hits in  1 file: workflows/debug-matrix.yml
 nullary       #  2 hits in  1 file: workflows/shellcheck.yml
-OEXFAT        #  2 hits in  1 file: scripts/create-exfat-volume.ps1
+OEXFAT        #  2 hits in  1 file: workflows/debug-matrix.yml
 pylints       #  2 hits in  1 file: linters/.pylintrc
-QFAT          #  2 hits in  1 file: scripts/create-fat-volume.ps1
+QFAT          #  2 hits in  1 file: workflows/debug-matrix.yml
 rcfile        #  2 hits in  1 file: linters/.pylintrc
-RREFS         #  2 hits in  1 file: scripts/create-refs-volume.ps1
+RREFS         #  2 hits in  1 file: workflows/debug-matrix.yml
 Sekine        #  4 hits in  1 file: workflows/debug-matrix.yml
 stefanzweifel #  8 hits in  4 files
 Termux        #  2 hits in  1 file: readme.md
 textlint      # 14 hits in  2 files
+TSQLLINT      #  2 hits in  1 file: mega-linter-shared.yml
 tsuyoshicho   #  2 hits in  1 file: workflows/shellcheck.yml
 unshim        #  6 hits in  1 file: readme.md
-vhdfile       # 30 hits in  5 files
-vhdx          # 10 hits in  5 files
+vhdfile       # 10 hits in  1 file: scripts/create-vhdx.ps1
 vimlint       #  2 hits in  1 file: workflows/shellcheck.yml
 vimlparser    #  2 hits in  1 file: workflows/shellcheck.yml
 vimrc         #  4 hits in  1 file: readme.md
@@ -88,6 +86,10 @@ yadm's        #  2 hits in  1 file: readme.md
 #   linters/readme.md: 4 hits
 # DEVSKIM      :  6 hits in  1 file
 #   mega-linter-shared.yml: 6 hits
+# dism         :  2 hits in  1 file
+#   workflows/debug-matrix.yml: 2 hits
+# DISM         :  2 hits in  1 file
+#   workflows/debug-matrix.yml: 2 hits
 # elit         :  4 hits in  1 file
 #   linters/readme.md: 4 hits
 # ghaction     :  4 hits in  1 file
@@ -125,19 +127,19 @@ yadm's        #  2 hits in  1 file: readme.md
 # msixbundle   :  6 hits in  1 file
 #   workflows/debug-matrix.yml: 6 hits
 # NNTFS        :  2 hits in  1 file
-#   scripts/create-ntfs-volume.ps1: 2 hits
+#   workflows/debug-matrix.yml: 2 hits
 # nullary      :  2 hits in  1 file
 #   workflows/shellcheck.yml: 2 hits
 # OEXFAT       :  2 hits in  1 file
-#   scripts/create-exfat-volume.ps1: 2 hits
+#   workflows/debug-matrix.yml: 2 hits
 # pylints      :  2 hits in  1 file
 #   linters/.pylintrc: 2 hits
 # QFAT         :  2 hits in  1 file
-#   scripts/create-fat-volume.ps1: 2 hits
+#   workflows/debug-matrix.yml: 2 hits
 # rcfile       :  2 hits in  1 file
 #   linters/.pylintrc: 2 hits
 # RREFS        :  2 hits in  1 file
-#   scripts/create-refs-volume.ps1: 2 hits
+#   workflows/debug-matrix.yml: 2 hits
 # Sekine       :  4 hits in  1 file
 #   workflows/debug-matrix.yml: 4 hits
 # stefanzweifel:  8 hits in  4 files
@@ -150,22 +152,14 @@ yadm's        #  2 hits in  1 file: readme.md
 # textlint     : 14 hits in  2 files
 #   linters/readme.md: 10 hits
 #   readme.md: 4 hits
+# TSQLLINT     :  2 hits in  1 file
+#   mega-linter-shared.yml: 2 hits
 # tsuyoshicho  :  2 hits in  1 file
 #   workflows/shellcheck.yml: 2 hits
 # unshim       :  6 hits in  1 file
 #   readme.md: 6 hits
-# vhdfile      : 30 hits in  5 files
-#   scripts/create-exfat-volume.ps1: 6 hits
-#   scripts/create-fat-volume.ps1: 6 hits
-#   scripts/create-fat32-volume.ps1: 6 hits
-#   scripts/create-ntfs-volume.ps1: 6 hits
-#   scripts/create-refs-volume.ps1: 6 hits
-# vhdx         : 10 hits in  5 files
-#   scripts/create-exfat-volume.ps1: 2 hits
-#   scripts/create-fat-volume.ps1: 2 hits
-#   scripts/create-fat32-volume.ps1: 2 hits
-#   scripts/create-ntfs-volume.ps1: 2 hits
-#   scripts/create-refs-volume.ps1: 2 hits
+# vhdfile      : 10 hits in  1 file
+#   scripts/create-vhdx.ps1: 10 hits
 # vimlint      :  2 hits in  1 file
 #   workflows/shellcheck.yml: 2 hits
 # vimlparser   :  2 hits in  1 file
