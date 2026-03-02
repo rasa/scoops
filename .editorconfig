@@ -88,6 +88,7 @@ insert_final_newline = unset
 
 # unrooted file extensions:
 [*.{cmd.*,csv,diskpart,diff,ignore,old,patch,sqbpro,tsv,txt,wip}]
+charset = unset
 end_of_line = unset
 indent_size = unset
 indent_style = unset
@@ -96,6 +97,7 @@ trim_trailing_whitespace = unset
 
 # unrooted directories:
 [{.ignore,.vendor,.wip,ignore,vendor,wip}/**]
+charset = unset
 end_of_line = unset
 indent_size = unset
 indent_style = unset
@@ -104,6 +106,7 @@ trim_trailing_whitespace = unset
 
 # unrooted files:
 [{archive,plug.vim}]
+charset = unset
 end_of_line = unset
 indent_size = unset
 indent_style = unset
@@ -112,11 +115,16 @@ trim_trailing_whitespace = unset
 
 # rooted files/directories:
 [/{.docker/*,.fonts.conf,.gitconfig,.mylogin.cnf*,.toprc,.vscode/default.code-snippets}]
+charset = unset
 end_of_line = unset
 indent_size = unset
 indent_style = unset
 insert_final_newline = unset
 trim_trailing_whitespace = unset
+
+# ignore UTF-16 files
+[*wmic-*.txt]
+charset = unset
 
 # cspell:ignore diskpart, ecrc, jsonlint, Makefiles, mylogin, sqbpro, Televideo
 # cspell:ignore textlintrc, toprc, vcproj, VCPROJ, vcprops, VCPROPS
