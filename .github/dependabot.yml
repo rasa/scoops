@@ -15,8 +15,7 @@ updates:
       prefix: "[action] "
 
   - package-ecosystem: "pip"
-    directories:
-      - "/**/*"
+    directory: "/"
     schedule:
       interval: "daily"
       time: "08:00"
