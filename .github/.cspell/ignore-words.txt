@@ -16,164 +16,225 @@
 ## whenever this file is regenerated.
 ##
 
-Autobuild
-
-adipiscing    #  4 hits in  1 file: linters/readme.md
-amet          #  4 hits in  1 file: linters/readme.md
-awalsh        #  4 hits in  1 file: workflows/shfmt.yml
-bbwe          #  2 hits in  1 file: workflows/debug-matrix.yml
-bootstrapper  #  6 hits in  2 files
-checkbashisms #  4 hits in  1 file: workflows/shellcheck.yml
-choco         # 10 hits in  1 file: workflows/debug-matrix.yml
-consectetur   #  4 hits in  1 file: linters/readme.md
-DEVSKIM       #  6 hits in  1 file: mega-linter-shared.yml
-dism          #  2 hits in  1 file: workflows/debug-matrix.yml
-DISM          #  2 hits in  1 file: workflows/debug-matrix.yml
-elit          #  4 hits in  1 file: linters/readme.md
-ghaction      #  4 hits in  1 file: workflows/clean-logs.yml
-gocritic      #  2 hits in  1 file: linters/.golangci.yml
-gofmt         #  2 hits in  1 file: linters/.golangci.yml
-gomod         #  4 hits in  1 file: dependabot.yml
-gosimple      #  2 hits in  1 file: linters/.golangci.yml
-govet         #  2 hits in  1 file: linters/.golangci.yml
-ineffassign   #  2 hits in  1 file: linters/.golangci.yml
-innounp       #  2 hits in  1 file: workflows/debug-matrix.yml
-Joblint       #  4 hits in  1 file: linters/.vale.ini
-JSONLINT      #  2 hits in  1 file: mega-linter-shared.yml
-KICS          #  2 hits in  1 file: mega-linter-shared.yml
-lessmsi       #  2 hits in  1 file: workflows/debug-matrix.yml
-ludeeus       #  2 hits in  1 file: workflows/shellcheck.yml
-luizm         #  4 hits in  1 file: workflows/shellcheck.yml
-Mattraks      #  4 hits in  1 file: workflows/clean-logs.yml
-Minoru        #  4 hits in  1 file: workflows/debug-matrix.yml
-msixbundle    #  6 hits in  1 file: workflows/debug-matrix.yml
-NNTFS         #  2 hits in  1 file: workflows/debug-matrix.yml
-nullary       #  2 hits in  1 file: workflows/shellcheck.yml
-OEXFAT        #  2 hits in  1 file: workflows/debug-matrix.yml
-pylints       #  2 hits in  1 file: linters/.pylintrc
-QFAT          #  2 hits in  1 file: workflows/debug-matrix.yml
-rcfile        #  2 hits in  1 file: linters/.pylintrc
-RREFS         #  2 hits in  1 file: workflows/debug-matrix.yml
-Sekine        #  4 hits in  1 file: workflows/debug-matrix.yml
-stefanzweifel #  8 hits in  4 files
-Termux        #  2 hits in  1 file: readme.md
-textlint      # 14 hits in  2 files
-TSQLLINT      #  2 hits in  1 file: mega-linter-shared.yml
-tsuyoshicho   #  2 hits in  1 file: workflows/shellcheck.yml
-unshim        #  6 hits in  1 file: readme.md
-vhdfile       # 10 hits in  1 file: scripts/create-vhdx.ps1
-vimlint       #  2 hits in  1 file: workflows/shellcheck.yml
-vimlparser    #  2 hits in  1 file: workflows/shellcheck.yml
-vimrc         #  4 hits in  1 file: readme.md
-wekyb         #  2 hits in  1 file: workflows/debug-matrix.yml
-xlarge        #  8 hits in  1 file: workflows/debug-matrix.yml
-yadm          # 12 hits in  2 files
-yadm's        #  2 hits in  1 file: readme.md
-# adipiscing   :  4 hits in  1 file
+adipiscing       #  4 hits in  1 file: linters/readme.md
+amet             #  4 hits in  1 file: linters/readme.md
+Autobuild        #  4 hits in  1 file: workflows/codeql.yml
+autobuild        #  2 hits in  1 file: workflows/codeql.yml
+awalsh           #  4 hits in  1 file: workflows/shfmt.yml
+bbwe             #  2 hits in  1 file: workflows/debug-matrix.yml
+bootstrapper     #  8 hits in  2 files
+checkbashisms    #  4 hits in  1 file: workflows/shellcheck.yml
+CHECKMAKE        #  2 hits in  1 file: mega-linter-shared.yml
+choco            # 10 hits in  1 file: workflows/debug-matrix.yml
+cjson            #  2 hits in  1 file: mega-linter-shared.yml
+consectetur      #  4 hits in  1 file: linters/readme.md
+DEVSKIM          #  6 hits in  1 file: mega-linter-shared.yml
+dism             #  2 hits in  1 file: workflows/debug-matrix.yml
+DISM             #  2 hits in  1 file: workflows/debug-matrix.yml
+elit             #  4 hits in  1 file: linters/readme.md
+fsutil           #  2 hits in  1 file: workflows/debug-matrix.yml
+ghaction         #  4 hits in  1 file: workflows/clean-logs.yml
+gitsubmodule     #  2 hits in  1 file: dependabot.yml
+gocritic         #  2 hits in  1 file: linters/.golangci.yml
+gofmt            #  2 hits in  1 file: linters/.golangci.yml
+gomod            #  4 hits in  1 file: dependabot.yml
+gosimple         #  2 hits in  1 file: linters/.golangci.yml
+govet            #  2 hits in  1 file: linters/.golangci.yml
+htmlhint         #  4 hits in  1 file: linters/readme.md
+ineffassign      #  2 hits in  1 file: linters/.golangci.yml
+innounp          #  2 hits in  1 file: workflows/debug-matrix.yml
+ipinfo           #  2 hits in  1 file: readme.md
+iregex           #  2 hits in  1 file: workflows/debug-matrix.yml
+Joblint          #  4 hits in  1 file: linters/.vale.ini
+JSONLINT         #  2 hits in  1 file: mega-linter-shared.yml
+KICS             #  2 hits in  1 file: mega-linter-shared.yml
+lessmsi          #  2 hits in  1 file: workflows/debug-matrix.yml
+logicaldisk      #  2 hits in  1 file: workflows/debug-matrix.yml
+ludeeus          #  2 hits in  1 file: workflows/shellcheck.yml
+luizm            #  4 hits in  1 file: workflows/shellcheck.yml
+Mattraks         #  4 hits in  1 file: workflows/clean-logs.yml
+Minoru           #  4 hits in  1 file: workflows/debug-matrix.yml
+modtimes         # 10 hits in  1 file: readme.md
+mountvol         #  2 hits in  1 file: workflows/debug-matrix.yml
+msixbundle       #  6 hits in  1 file: workflows/debug-matrix.yml
+NNTFS            #  2 hits in  1 file: workflows/debug-matrix.yml
+nullary          #  2 hits in  1 file: workflows/shellcheck.yml
+OEXFAT           #  2 hits in  1 file: workflows/debug-matrix.yml
+PFAT             #  2 hits in  1 file: workflows/debug-matrix.yml
+pkgs             #  2 hits in  1 file: workflows/debug-matrix.yml
+psscriptanalyzer #  2 hits in  1 file: linters/readme.md
+pullrequest      # 10 hits in  1 file: workflows/clean-logs.yml
+pylints          #  2 hits in  1 file: linters/.pylintrc
+pyversion        #  4 hits in  1 file: workflows/debug-matrix.yml
+QFAT             #  2 hits in  1 file: workflows/debug-matrix.yml
+rcfile           #  2 hits in  1 file: linters/.pylintrc
+regextype        #  2 hits in  1 file: workflows/debug-matrix.yml
+RREFS            #  2 hits in  1 file: workflows/debug-matrix.yml
+Sekine           #  4 hits in  1 file: workflows/debug-matrix.yml
+showmanual       #  2 hits in  1 file: workflows/debug-matrix.yml
+stefanzweifel    #  8 hits in  4 files
+Termux           #  2 hits in  1 file: readme.md
+textlint         # 14 hits in  2 files
+TSQLLINT         #  2 hits in  1 file: mega-linter-shared.yml
+tsuyoshicho      #  2 hits in  1 file: workflows/shellcheck.yml
+unclone          #  6 hits in  1 file: readme.md
+unshim           #  6 hits in  1 file: readme.md
+vhdfile          # 10 hits in  1 file: scripts/create-vhdx.ps1
+vimlint          #  2 hits in  1 file: workflows/shellcheck.yml
+vimlparser       #  2 hits in  1 file: workflows/shellcheck.yml
+vimrc            #  4 hits in  1 file: readme.md
+wekyb            #  2 hits in  1 file: workflows/debug-matrix.yml
+winget           # 10 hits in  1 file: workflows/debug-matrix.yml
+xlarge           #  8 hits in  1 file: workflows/debug-matrix.yml
+yadm             # 12 hits in  2 files
+yadm's           #  2 hits in  1 file: readme.md
+# adipiscing      :  4 hits in  1 file
 #   linters/readme.md: 4 hits
-# amet         :  4 hits in  1 file
+# amet            :  4 hits in  1 file
 #   linters/readme.md: 4 hits
-# awalsh       :  4 hits in  1 file
+# Autobuild       :  4 hits in  1 file
+#   workflows/codeql.yml: 4 hits
+# autobuild       :  2 hits in  1 file
+#   workflows/codeql.yml: 2 hits
+# awalsh          :  4 hits in  1 file
 #   workflows/shfmt.yml: 4 hits
-# bbwe         :  2 hits in  1 file
+# bbwe            :  2 hits in  1 file
 #   workflows/debug-matrix.yml: 2 hits
-# bootstrapper :  6 hits in  2 files
+# bootstrapper    :  8 hits in  2 files
 #   readme.md: 2 hits
-#   sync.yml: 4 hits
-# checkbashisms:  4 hits in  1 file
+#   sync.yml: 6 hits
+# checkbashisms   :  4 hits in  1 file
 #   workflows/shellcheck.yml: 4 hits
-# choco        : 10 hits in  1 file
+# CHECKMAKE       :  2 hits in  1 file
+#   mega-linter-shared.yml: 2 hits
+# choco           : 10 hits in  1 file
 #   workflows/debug-matrix.yml: 10 hits
-# consectetur  :  4 hits in  1 file
+# cjson           :  2 hits in  1 file
+#   mega-linter-shared.yml: 2 hits
+# consectetur     :  4 hits in  1 file
 #   linters/readme.md: 4 hits
-# DEVSKIM      :  6 hits in  1 file
+# DEVSKIM         :  6 hits in  1 file
 #   mega-linter-shared.yml: 6 hits
-# dism         :  2 hits in  1 file
+# dism            :  2 hits in  1 file
 #   workflows/debug-matrix.yml: 2 hits
-# DISM         :  2 hits in  1 file
+# DISM            :  2 hits in  1 file
 #   workflows/debug-matrix.yml: 2 hits
-# elit         :  4 hits in  1 file
+# elit            :  4 hits in  1 file
 #   linters/readme.md: 4 hits
-# ghaction     :  4 hits in  1 file
+# fsutil          :  2 hits in  1 file
+#   workflows/debug-matrix.yml: 2 hits
+# ghaction        :  4 hits in  1 file
 #   workflows/clean-logs.yml: 4 hits
-# gocritic     :  2 hits in  1 file
+# gitsubmodule    :  2 hits in  1 file
+#   dependabot.yml: 2 hits
+# gocritic        :  2 hits in  1 file
 #   linters/.golangci.yml: 2 hits
-# gofmt        :  2 hits in  1 file
+# gofmt           :  2 hits in  1 file
 #   linters/.golangci.yml: 2 hits
-# gomod        :  4 hits in  1 file
+# gomod           :  4 hits in  1 file
 #   dependabot.yml: 4 hits
-# gosimple     :  2 hits in  1 file
+# gosimple        :  2 hits in  1 file
 #   linters/.golangci.yml: 2 hits
-# govet        :  2 hits in  1 file
+# govet           :  2 hits in  1 file
 #   linters/.golangci.yml: 2 hits
-# ineffassign  :  2 hits in  1 file
+# htmlhint        :  4 hits in  1 file
+#   linters/readme.md: 4 hits
+# ineffassign     :  2 hits in  1 file
 #   linters/.golangci.yml: 2 hits
-# innounp      :  2 hits in  1 file
+# innounp         :  2 hits in  1 file
 #   workflows/debug-matrix.yml: 2 hits
-# Joblint      :  4 hits in  1 file
+# ipinfo          :  2 hits in  1 file
+#   readme.md: 2 hits
+# iregex          :  2 hits in  1 file
+#   workflows/debug-matrix.yml: 2 hits
+# Joblint         :  4 hits in  1 file
 #   linters/.vale.ini: 4 hits
-# JSONLINT     :  2 hits in  1 file
+# JSONLINT        :  2 hits in  1 file
 #   mega-linter-shared.yml: 2 hits
-# KICS         :  2 hits in  1 file
+# KICS            :  2 hits in  1 file
 #   mega-linter-shared.yml: 2 hits
-# lessmsi      :  2 hits in  1 file
+# lessmsi         :  2 hits in  1 file
 #   workflows/debug-matrix.yml: 2 hits
-# ludeeus      :  2 hits in  1 file
+# logicaldisk     :  2 hits in  1 file
+#   workflows/debug-matrix.yml: 2 hits
+# ludeeus         :  2 hits in  1 file
 #   workflows/shellcheck.yml: 2 hits
-# luizm        :  4 hits in  1 file
+# luizm           :  4 hits in  1 file
 #   workflows/shellcheck.yml: 4 hits
-# Mattraks     :  4 hits in  1 file
+# Mattraks        :  4 hits in  1 file
 #   workflows/clean-logs.yml: 4 hits
-# Minoru       :  4 hits in  1 file
+# Minoru          :  4 hits in  1 file
 #   workflows/debug-matrix.yml: 4 hits
-# msixbundle   :  6 hits in  1 file
+# modtimes        : 10 hits in  1 file
+#   readme.md: 10 hits
+# mountvol        :  2 hits in  1 file
+#   workflows/debug-matrix.yml: 2 hits
+# msixbundle      :  6 hits in  1 file
 #   workflows/debug-matrix.yml: 6 hits
-# NNTFS        :  2 hits in  1 file
+# NNTFS           :  2 hits in  1 file
 #   workflows/debug-matrix.yml: 2 hits
-# nullary      :  2 hits in  1 file
+# nullary         :  2 hits in  1 file
 #   workflows/shellcheck.yml: 2 hits
-# OEXFAT       :  2 hits in  1 file
+# OEXFAT          :  2 hits in  1 file
 #   workflows/debug-matrix.yml: 2 hits
-# pylints      :  2 hits in  1 file
+# PFAT            :  2 hits in  1 file
+#   workflows/debug-matrix.yml: 2 hits
+# pkgs            :  2 hits in  1 file
+#   workflows/debug-matrix.yml: 2 hits
+# psscriptanalyzer:  2 hits in  1 file
+#   linters/readme.md: 2 hits
+# pullrequest     : 10 hits in  1 file
+#   workflows/clean-logs.yml: 10 hits
+# pylints         :  2 hits in  1 file
 #   linters/.pylintrc: 2 hits
-# QFAT         :  2 hits in  1 file
-#   workflows/debug-matrix.yml: 2 hits
-# rcfile       :  2 hits in  1 file
-#   linters/.pylintrc: 2 hits
-# RREFS        :  2 hits in  1 file
-#   workflows/debug-matrix.yml: 2 hits
-# Sekine       :  4 hits in  1 file
+# pyversion       :  4 hits in  1 file
 #   workflows/debug-matrix.yml: 4 hits
-# stefanzweifel:  8 hits in  4 files
+# QFAT            :  2 hits in  1 file
+#   workflows/debug-matrix.yml: 2 hits
+# rcfile          :  2 hits in  1 file
+#   linters/.pylintrc: 2 hits
+# regextype       :  2 hits in  1 file
+#   workflows/debug-matrix.yml: 2 hits
+# RREFS           :  2 hits in  1 file
+#   workflows/debug-matrix.yml: 2 hits
+# Sekine          :  4 hits in  1 file
+#   workflows/debug-matrix.yml: 4 hits
+# showmanual      :  2 hits in  1 file
+#   workflows/debug-matrix.yml: 2 hits
+# stefanzweifel   :  8 hits in  4 files
 #   workflows/black.yml: 2 hits
 #   workflows/mega-linter.yml: 2 hits
 #   workflows/shfmt.yml: 2 hits
 #   workflows/toc.yml: 2 hits
-# Termux       :  2 hits in  1 file
+# Termux          :  2 hits in  1 file
 #   readme.md: 2 hits
-# textlint     : 14 hits in  2 files
+# textlint        : 14 hits in  2 files
 #   linters/readme.md: 10 hits
 #   readme.md: 4 hits
-# TSQLLINT     :  2 hits in  1 file
+# TSQLLINT        :  2 hits in  1 file
 #   mega-linter-shared.yml: 2 hits
-# tsuyoshicho  :  2 hits in  1 file
+# tsuyoshicho     :  2 hits in  1 file
 #   workflows/shellcheck.yml: 2 hits
-# unshim       :  6 hits in  1 file
+# unclone         :  6 hits in  1 file
 #   readme.md: 6 hits
-# vhdfile      : 10 hits in  1 file
+# unshim          :  6 hits in  1 file
+#   readme.md: 6 hits
+# vhdfile         : 10 hits in  1 file
 #   scripts/create-vhdx.ps1: 10 hits
-# vimlint      :  2 hits in  1 file
+# vimlint         :  2 hits in  1 file
 #   workflows/shellcheck.yml: 2 hits
-# vimlparser   :  2 hits in  1 file
+# vimlparser      :  2 hits in  1 file
 #   workflows/shellcheck.yml: 2 hits
-# vimrc        :  4 hits in  1 file
+# vimrc           :  4 hits in  1 file
 #   readme.md: 4 hits
-# wekyb        :  2 hits in  1 file
+# wekyb           :  2 hits in  1 file
 #   workflows/debug-matrix.yml: 2 hits
-# xlarge       :  8 hits in  1 file
+# winget          : 10 hits in  1 file
+#   workflows/debug-matrix.yml: 10 hits
+# xlarge          :  8 hits in  1 file
 #   workflows/debug-matrix.yml: 8 hits
-# yadm         : 12 hits in  2 files
+# yadm            : 12 hits in  2 files
 #   readme.md: 10 hits
 #   workflows/shfmt.yml: 2 hits
-# yadm's       :  2 hits in  1 file
+# yadm's          :  2 hits in  1 file
 #   readme.md: 2 hits
