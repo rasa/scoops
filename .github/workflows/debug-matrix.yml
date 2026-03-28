@@ -59,6 +59,7 @@ jobs:
           # waiting on https://github.com/rhysd/actionlint/pull/542
           # only for public repos:
           # - windows-11-arm
+          - macos-26
           # aka macos-15-xlarge (arm64)
           - macos-15
           # amd64:
@@ -602,13 +603,13 @@ jobs:
         shell: pwsh
         continue-on-error: true
 
-      - run: |
-          where.exe /q wmic.exe && exit 0
-          DISM.exe /Online /Add-Capability /CapabilityName:WMIC~~~~
-        if: false # runner.os == 'Windows'
-        # takes ~20 minutes on windows-2025 runner
-        shell: cmd
-        continue-on-error: true
+      # - run: |
+      #     where.exe /q wmic.exe && exit 0
+      #     DISM.exe /Online /Add-Capability /CapabilityName:WMIC~~~~
+      #   if: false # runner.os == 'Windows'
+      #   # takes ~20 minutes on windows-2025 runner
+      #   shell: cmd
+      #   continue-on-error: true
 
       - run:
           where.exe /q wmic.exe || exit 0
