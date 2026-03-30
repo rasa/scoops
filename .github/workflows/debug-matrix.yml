@@ -227,8 +227,8 @@ jobs:
         run: |
           # bash ./.github/scripts/debug*.bash
           set +e
-          mapfile -t < <(find ./.github/scripts -name 'debug*.bash') || true
-          for script in "${MAPFILE[@]}"; do
+          # mapfile -t < <(find ./.github/scripts -name 'debug*.bash') || true
+          for script in $(find ./.github/scripts -name 'debug*.bash'); do
             "${script}" "$0" "$@" || :
           done
 
@@ -239,8 +239,8 @@ jobs:
         run: |
           # bash ./.github/scripts/debug*.bash
           set +e
-          mapfile -t < <(find ./.github/scripts -name 'debug*.bash') || true
-          for script in "${MAPFILE[@]}"; do
+          # mapfile -t < <(find ./.github/scripts -name 'debug*.bash') || true
+          for script in $(find ./.github/scripts -name 'debug*.bash'); do
             "${script}" "$0" "$@" || :
           done
 
