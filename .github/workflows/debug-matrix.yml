@@ -88,8 +88,11 @@ jobs:
           apt list --installed | sort
           # echo "apt-mark:"
           # apt-mark showmanual
-          echo "snap list:"
-          snap list | sort
+          # slim is mising on ubuntu-slim
+          if command -v snap &>/dev/null; then
+            echo "snap list:"
+            snap list | sort
+          fi
 
       - name: List installed pkgutil/brew packages (macOS)
         if: runner.os == 'macOS'
