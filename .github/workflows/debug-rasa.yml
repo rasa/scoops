@@ -58,5 +58,5 @@ jobs:
           echo "WORKFLOW_USER=${{ inputs.workflow_user || env.WORKFLOW_USER }}" >>"${GITHUB_ENV}"
           echo "WORKFLOW_REPO=${{ inputs.workflow_repo || env.WORKFLOW_REPO }}" >>"${GITHUB_ENV}"
 
-      - uses: crazy-max/ghaction-dump-context@v2.3.0
+      - uses: crazy-max/ghaction-dump-context@v3.0.0
 
