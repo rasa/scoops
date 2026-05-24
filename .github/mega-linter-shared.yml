@@ -42,6 +42,7 @@ SQL_TSQLLINT_DISABLE_ERRORS: true
 # Could not find a schema to validate: .github/linters/*
 YAML_V8R_DISABLE_ERRORS: true
 
+
 ##### PRE_COMMANDS #####
 
 # https://megalinter.io/latest/config-precommands/
@@ -133,6 +134,9 @@ YAML_V8R_FILTER_REGEX_EXCLUDE: >-
   )
 
 ##### GLOBAL SETTINGS #####
+
+ACTION_ZIZMOR_UNSECURED_ENV_VARIABLES:
+  - GITHUB_TOKEN
 
 # When active, APPLY_FIXES must also be defined as environment variable (in github/workflows/mega-linter.yml or other CI)
 APPLY_FIXES: all # default: none
