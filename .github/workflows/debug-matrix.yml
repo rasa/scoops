@@ -91,7 +91,7 @@ jobs:
           apt list --installed | sort
           # echo "apt-mark:"
           # apt-mark showmanual
-          # slim is mising on ubuntu-slim
+          # snap is missing on ubuntu-slim
           if command -v snap &>/dev/null; then
             echo "snap list:"
             snap list | sort
