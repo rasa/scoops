@@ -138,7 +138,7 @@ jobs:
       # Node.js 16 actions are deprecated. Please update the following actions to use Node.js 20: actions/github-script@v6.
       # - name: rasa/ghaction-dump-context@master
       #   uses: rasa/ghaction-dump-context@master
-      - uses: crazy-max/ghaction-dump-context@v2.3.0
+      - uses: crazy-max/ghaction-dump-context@v3.0.0
 
       - name: Run rasa/delete-workflow-runs@main (Scheduled run)
         if: github.event_name == 'schedule'
