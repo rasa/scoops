@@ -1,0 +1,39 @@
+# ~/.github/linters/zizmor.yml
+rules:
+  unpinned-uses:
+    config:
+      policies:
+        # Allow normal tag/branch refs for trusted GitHub-owned actions.
+        actions/*: ref-pin
+        github/*: ref-pin
+        dependabot/*: ref-pin
+
+        # Allow your own action to use @main.
+        rasa/delete-workflow-runs: ref-pin
+
+        # Allow this third-party action to use a version tag.
+        crazy-max/ghaction-dump-context: ref-pin
+        MinoruSekine/setup-scoop: ref-pin
+
+        # Everything else still requires SHA pinning.
+        "*": hash-pin
+
+  artipacked:
+    ignore:
+      - .github/workflows/debug-matrix.yml:208
+
+  misfeature:
+    ignore:
+      - .github/workflows/debug-matrix.yml:120
+      - .github/workflows/debug-matrix.yml:275
+      - .github/workflows/debug-matrix.yml:580
+      - .github/workflows/debug-matrix.yml:585
+      - .github/workflows/debug-matrix.yml:590
+      - .github/workflows/debug-matrix.yml:624
+      - .github/workflows/debug-matrix.yml:629
+      - .github/workflows/debug-matrix.yml:634
+      - .github/workflows/debug-matrix.yml:641
+
+  excessive-permissions:
+    ignore:
+      - .github/workflows/debug-matrix.yml
