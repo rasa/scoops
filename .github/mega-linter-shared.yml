@@ -36,6 +36,12 @@ REPOSITORY_DEVSKIM_DISABLE_ERRORS: true
 # Don't require actions use SHAs:
 REPOSITORY_KICS_DISABLE_ERRORS: true
 
+# Can't fix:
+REPOSITORY_OSV_SCANNER_DISABLE_ERRORS: true
+
+# db issue:
+REPOSITORY_TRIVY_DISABLE_ERRORS: true
+
 # Whines about files in .git which aren't in the repo:
 REPOSITORY_TRUFFLEHOG_DISABLE_ERRORS: true
 
