@@ -16,17 +16,14 @@
 ## whenever this file is regenerated.
 ##
 
-artipacked
-zizmor
-BETTERLEAKS
-ZIZMOR
-
 adipiscing       #  4 hits in  1 file: linters/readme.md
 amet             #  4 hits in  1 file: linters/readme.md
+artipacked       #  2 hits in  1 file: linters/zizmor.yml
 Autobuild        #  4 hits in  1 file: workflows/codeql.yml
 autobuild        #  2 hits in  1 file: workflows/codeql.yml
 awalsh           #  4 hits in  1 file: workflows/shfmt.yml
 bbwe             #  2 hits in  1 file: workflows/debug-matrix.yml
+BETTERLEAKS      #  2 hits in  1 file: mega-linter-shared.yml
 bootstrapper     #  8 hits in  2 files
 checkbashisms    #  4 hits in  1 file: workflows/shellcheck.yml
 CHECKMAKE        #  2 hits in  1 file: mega-linter-shared.yml
@@ -38,7 +35,7 @@ dism             #  2 hits in  1 file: workflows/debug-matrix.yml
 DISM             #  2 hits in  1 file: workflows/debug-matrix.yml
 elit             #  4 hits in  1 file: linters/readme.md
 fsutil           #  2 hits in  1 file: workflows/debug-matrix.yml
-ghaction         #  4 hits in  1 file: workflows/clean-logs.yml
+ghaction         #  6 hits in  2 files
 gitsubmodule     #  2 hits in  1 file: dependabot.yml
 gocritic         #  2 hits in  1 file: linters/.golangci.yml
 gofmt            #  2 hits in  1 file: linters/.golangci.yml
@@ -58,7 +55,7 @@ logicaldisk      #  2 hits in  1 file: workflows/debug-matrix.yml
 ludeeus          #  2 hits in  1 file: workflows/shellcheck.yml
 luizm            #  4 hits in  1 file: workflows/shellcheck.yml
 Mattraks         #  4 hits in  1 file: workflows/clean-logs.yml
-Minoru           #  4 hits in  1 file: workflows/debug-matrix.yml
+Minoru           #  6 hits in  2 files
 modtimes         # 10 hits in  1 file: readme.md
 mountvol         #  2 hits in  1 file: workflows/debug-matrix.yml
 msixbundle       #  6 hits in  1 file: workflows/debug-matrix.yml
@@ -75,7 +72,7 @@ QFAT             #  2 hits in  1 file: workflows/debug-matrix.yml
 rcfile           #  2 hits in  1 file: linters/.pylintrc
 regextype        #  2 hits in  1 file: workflows/debug-matrix.yml
 RREFS            #  2 hits in  1 file: workflows/debug-matrix.yml
-Sekine           #  4 hits in  1 file: workflows/debug-matrix.yml
+Sekine           #  6 hits in  2 files
 showmanual       #  2 hits in  1 file: workflows/debug-matrix.yml
 stefanzweifel    #  8 hits in  4 files
 Termux           #  2 hits in  1 file: readme.md
@@ -97,6 +94,8 @@ yadm's           #  2 hits in  1 file: readme.md
 #   linters/readme.md: 4 hits
 # amet            :  4 hits in  1 file
 #   linters/readme.md: 4 hits
+# artipacked      :  2 hits in  1 file
+#   linters/zizmor.yml: 2 hits
 # Autobuild       :  4 hits in  1 file
 #   workflows/codeql.yml: 4 hits
 # autobuild       :  2 hits in  1 file
@@ -105,6 +104,8 @@ yadm's           #  2 hits in  1 file: readme.md
 #   workflows/shfmt.yml: 4 hits
 # bbwe            :  2 hits in  1 file
 #   workflows/debug-matrix.yml: 2 hits
+# BETTERLEAKS     :  2 hits in  1 file
+#   mega-linter-shared.yml: 2 hits
 # bootstrapper    :  8 hits in  2 files
 #   readme.md: 2 hits
 #   sync.yml: 6 hits
@@ -128,7 +129,8 @@ yadm's           #  2 hits in  1 file: readme.md
 #   linters/readme.md: 4 hits
 # fsutil          :  2 hits in  1 file
 #   workflows/debug-matrix.yml: 2 hits
-# ghaction        :  4 hits in  1 file
+# ghaction        :  6 hits in  2 files
+#   linters/zizmor.yml: 2 hits
 #   workflows/clean-logs.yml: 4 hits
 # gitsubmodule    :  2 hits in  1 file
 #   dependabot.yml: 2 hits
@@ -168,7 +170,8 @@ yadm's           #  2 hits in  1 file: readme.md
 #   workflows/shellcheck.yml: 4 hits
 # Mattraks        :  4 hits in  1 file
 #   workflows/clean-logs.yml: 4 hits
-# Minoru          :  4 hits in  1 file
+# Minoru          :  6 hits in  2 files
+#   linters/zizmor.yml: 2 hits
 #   workflows/debug-matrix.yml: 4 hits
 # modtimes        : 10 hits in  1 file
 #   readme.md: 10 hits
@@ -202,7 +205,8 @@ yadm's           #  2 hits in  1 file: readme.md
 #   workflows/debug-matrix.yml: 2 hits
 # RREFS           :  2 hits in  1 file
 #   workflows/debug-matrix.yml: 2 hits
-# Sekine          :  4 hits in  1 file
+# Sekine          :  6 hits in  2 files
+#   linters/zizmor.yml: 2 hits
 #   workflows/debug-matrix.yml: 4 hits
 # showmanual      :  2 hits in  1 file
 #   workflows/debug-matrix.yml: 2 hits
