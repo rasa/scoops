@@ -16,6 +16,11 @@
 ## whenever this file is regenerated.
 ##
 
+artipacked
+zizmor
+BETTERLEAKS
+ZIZMOR
+
 adipiscing       #  4 hits in  1 file: linters/readme.md
 amet             #  4 hits in  1 file: linters/readme.md
 Autobuild        #  4 hits in  1 file: workflows/codeql.yml
