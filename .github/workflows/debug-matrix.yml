@@ -43,6 +43,8 @@ jobs:
       # Docs: https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#choosing-github-hosted-runners
       matrix:
         os:
+          - ubuntu-26.04
+          - ubuntu-26.04-arm
           # aka ubuntu-latest:
           - ubuntu-24.04
           - ubuntu-slim
