@@ -233,6 +233,7 @@ jobs:
           # bash ./.github/scripts/debug*.bash
           set +e
           # mapfile -t < <(find ./.github/scripts -name 'debug*.bash') || true
+          # shellcheck disable=SC2044 # For loops over find output are fragile. Use find -exec or a while read loop
           for script in $(find ./.github/scripts -name 'debug*.bash'); do
             "${script}" "$0" "$@" || :
           done
@@ -245,6 +246,7 @@ jobs:
           # bash ./.github/scripts/debug*.bash
           set +e
           # mapfile -t < <(find ./.github/scripts -name 'debug*.bash') || true
+          # shellcheck disable=SC2044 # For loops over find output are fragile. Use find -exec or a while read loop
           for script in $(find ./.github/scripts -name 'debug*.bash'); do
             "${script}" "$0" "$@" || :
           done
