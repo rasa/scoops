@@ -25,6 +25,9 @@ COPYPASTE_JSCPD_DISABLE_ERRORS: true
 JSON_V8R_DISABLE_ERRORS: true
 
 # Produces too many false positives:
+REPOSITORY_BETTERLEAKS_DISABLE_ERRORS: true
+
+# Produces too many false positives:
 REPOSITORY_DEVSKIM_DISABLE_ERRORS: true
 
 # Don't require actions use SHAs:
