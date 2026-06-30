@@ -126,5 +126,9 @@ trim_trailing_whitespace = unset
 [*wmic-*.txt]
 charset = unset
 
+# ignore asciichr.tcl
+[asciichr.tcl]
+charset = unset
+
 # cspell:ignore diskpart, ecrc, jsonlint, Makefiles, mylogin, sqbpro, Televideo
 # cspell:ignore textlintrc, toprc, vcproj, VCPROJ, vcprops, VCPROPS
