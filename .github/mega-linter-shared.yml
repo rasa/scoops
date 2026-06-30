@@ -33,6 +33,9 @@ REPOSITORY_BETTERLEAKS_DISABLE_ERRORS: true
 # Produces too many false positives:
 REPOSITORY_DEVSKIM_DISABLE_ERRORS: true
 
+# [0062] ERROR failed to load vulnerability db: database does not exist
+REPOSITORY_GRYPE_DISABLE_ERRORS: true
+
 # Don't require actions use SHAs:
 REPOSITORY_KICS_DISABLE_ERRORS: true
 
