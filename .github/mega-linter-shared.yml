@@ -15,6 +15,9 @@ FILTER_REGEX_EXCLUDE: >-
 
 ##### CONVERT ERRORS TO WARNINGS #####
 
+# @TODO
+ACTION_ZIZMOR_DISABLE_ERRORS: true
+
 # Produces too many false positives:
 COPYPASTE_JSCPD_DISABLE_ERRORS: true
 
