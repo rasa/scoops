@@ -12,5 +12,7 @@ golangci
 jsonlintrc
 pydeps
 pylintrc
+pyrightconfig
 textlintrc
 vhdx
+zizmor

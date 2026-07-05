@@ -22,6 +22,9 @@ on: # yamllint disable-line rule:truthy
   workflow_call: # Required so this workflow can be called from another workflow
   workflow_dispatch: # Allows you to run this workflow manually from the Actions tab
 
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24:  true
+
 concurrency:
   group: ${{ github.workflow }}
   cancel-in-progress: true
@@ -40,8 +43,11 @@ jobs:
       # Docs: https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#choosing-github-hosted-runners
       matrix:
         os:
+          - ubuntu-26.04
+          - ubuntu-26.04-arm
           # aka ubuntu-latest:
           - ubuntu-24.04
+          - ubuntu-slim
           # only for public repos:
           # - ubuntu-24.04-arm
           # not available yet:
@@ -53,10 +59,12 @@ jobs:
           # - ubuntu-22.04-arm
           # aka windows-latest:
           - windows-2025
+          - windows-2025-vs2026
           - windows-2022
           # waiting on https://github.com/rhysd/actionlint/pull/542
           # only for public repos:
           # - windows-11-arm
+          - macos-26
           # aka macos-15-xlarge (arm64)
           - macos-15
           # amd64:
@@ -72,7 +80,7 @@ jobs:
           # Gone on 30-Jun-25 per https://github.com/actions/runner-images/issues/12045
           # - windows-2019
     steps:
-      - uses: crazy-max/ghaction-dump-context@v2.3.0
+      - uses: crazy-max/ghaction-dump-context@v3.0.0
 
       - name: List installed apt/snap packages (Linux)
         if: runner.os == 'Linux'
@@ -85,8 +93,11 @@ jobs:
           apt list --installed | sort
           # echo "apt-mark:"
           # apt-mark showmanual
-          echo "snap list:"
-          snap list | sort
+          # snap is missing on ubuntu-slim
+          if command -v snap &>/dev/null; then
+            echo "snap list:"
+            snap list | sort
+          fi
 
       - name: List installed pkgutil/brew packages (macOS)
         if: runner.os == 'macOS'
@@ -221,8 +232,9 @@ jobs:
         run: |
           # bash ./.github/scripts/debug*.bash
           set +e
-          mapfile -t < <(find ./.github/scripts -name 'debug*.bash') || true
-          for script in "${MAPFILE[@]}"; do
+          # mapfile -t < <(find ./.github/scripts -name 'debug*.bash') || true
+          # shellcheck disable=SC2044 # For loops over find output are fragile. Use find -exec or a while read loop
+          for script in $(find ./.github/scripts -name 'debug*.bash'); do
             "${script}" "$0" "$@" || :
           done
 
@@ -233,8 +245,9 @@ jobs:
         run: |
           # bash ./.github/scripts/debug*.bash
           set +e
-          mapfile -t < <(find ./.github/scripts -name 'debug*.bash') || true
-          for script in "${MAPFILE[@]}"; do
+          # mapfile -t < <(find ./.github/scripts -name 'debug*.bash') || true
+          # shellcheck disable=SC2044 # For loops over find output are fragile. Use find -exec or a while read loop
+          for script in $(find ./.github/scripts -name 'debug*.bash'); do
             "${script}" "$0" "$@" || :
           done
 
@@ -600,13 +613,13 @@ jobs:
         shell: pwsh
         continue-on-error: true
 
-      - run: |
-          where.exe /q wmic.exe && exit 0
-          DISM.exe /Online /Add-Capability /CapabilityName:WMIC~~~~
-        if: false # runner.os == 'Windows'
-        # takes ~20 minutes on windows-2025 runner
-        shell: cmd
-        continue-on-error: true
+      # - run: |
+      #     where.exe /q wmic.exe && exit 0
+      #     DISM.exe /Online /Add-Capability /CapabilityName:WMIC~~~~
+      #   if: false # runner.os == 'Windows'
+      #   # takes ~20 minutes on windows-2025 runner
+      #   shell: cmd
+      #   continue-on-error: true
 
       - run:
           where.exe /q wmic.exe || exit 0
