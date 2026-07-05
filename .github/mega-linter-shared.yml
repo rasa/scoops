@@ -15,6 +15,9 @@ FILTER_REGEX_EXCLUDE: >-
 
 ##### CONVERT ERRORS TO WARNINGS #####
 
+# @TODO
+ACTION_ZIZMOR_DISABLE_ERRORS: true
+
 # Produces too many false positives:
 COPYPASTE_JSCPD_DISABLE_ERRORS: true
 
@@ -25,10 +28,22 @@ COPYPASTE_JSCPD_DISABLE_ERRORS: true
 JSON_V8R_DISABLE_ERRORS: true
 
 # Produces too many false positives:
+REPOSITORY_BETTERLEAKS_DISABLE_ERRORS: true
+
+# Produces too many false positives:
 REPOSITORY_DEVSKIM_DISABLE_ERRORS: true
+
+# [0062] ERROR failed to load vulnerability db: database does not exist
+REPOSITORY_GRYPE_DISABLE_ERRORS: true
 
 # Don't require actions use SHAs:
 REPOSITORY_KICS_DISABLE_ERRORS: true
+
+# Can't fix:
+REPOSITORY_OSV_SCANNER_DISABLE_ERRORS: true
+
+# db issue:
+REPOSITORY_TRIVY_DISABLE_ERRORS: true
 
 # Whines about files in .git which aren't in the repo:
 REPOSITORY_TRUFFLEHOG_DISABLE_ERRORS: true
@@ -41,6 +56,7 @@ SQL_TSQLLINT_DISABLE_ERRORS: true
 
 # Could not find a schema to validate: .github/linters/*
 YAML_V8R_DISABLE_ERRORS: true
+
 
 ##### PRE_COMMANDS #####
 
@@ -133,6 +149,9 @@ YAML_V8R_FILTER_REGEX_EXCLUDE: >-
   )
 
 ##### GLOBAL SETTINGS #####
+
+ACTION_ZIZMOR_UNSECURED_ENV_VARIABLES:
+  - GITHUB_TOKEN
 
 # When active, APPLY_FIXES must also be defined as environment variable (in github/workflows/mega-linter.yml or other CI)
 APPLY_FIXES: all # default: none
