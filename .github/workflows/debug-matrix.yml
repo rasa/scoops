@@ -12,13 +12,13 @@ on: # yamllint disable-line rule:truthy
   # pull_request:
   #   branches:
   #     - main
-  push:
-    branches:
-      - main
-      - master # @TODO remove
-    paths:
-      - .github/scripts/*
-      - .github/workflows/debug-matrix.yml
+  # push:
+  #   branches:
+  #     - main
+  #     - master # @TODO remove
+  #   paths:
+  #     - .github/scripts/*
+  #     - .github/workflows/debug-matrix.yml
   workflow_call: # Required so this workflow can be called from another workflow
   workflow_dispatch: # Allows you to run this workflow manually from the Actions tab
 
@@ -80,7 +80,7 @@ jobs:
           # Gone on 30-Jun-25 per https://github.com/actions/runner-images/issues/12045
           # - windows-2019
     steps:
-      - uses: crazy-max/ghaction-dump-context@v3.0.0
+      - uses: crazy-max/ghaction-dump-context@v2.3.0
 
       - name: List installed apt/snap packages (Linux)
         if: runner.os == 'Linux'
