@@ -153,7 +153,7 @@ jobs:
 
       # Upload MegaLinter artifacts
       - name: Archive production artifacts
-        uses: actions/upload-artifact@v7.0.1 # changed from v3 by @rasa
+        uses: actions/upload-artifact@v7.0.0 # changed from v3 by @rasa
         if: success() || failure() # changed by @rasa: was ${{ success() }} || ${{ failure() }}
         with:
           name: MegaLinter reports
@@ -209,7 +209,7 @@ jobs:
       # Create pull request if applicable
       # (for now works only on PR from same repository, not from forks)
       - name: Create Pull Request with applied fixes
-        uses: peter-evans/create-pull-request@v8.1.1 # changed from v5 by @rasa
+        uses: peter-evans/create-pull-request@v8.1.0 # changed from v5 by @rasa
         id: cpr
         if: env.APPLY_FIXES_IF_PR == 'true'
         with:
