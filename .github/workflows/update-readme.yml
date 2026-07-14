@@ -20,7 +20,7 @@ jobs:
         # unused:
         # cache: 'pip' # caching pip dependencies
 
-    - uses: actions/checkout@v6
+    - uses: actions/checkout@v7
     - run: |
         python makeindex.py
 
