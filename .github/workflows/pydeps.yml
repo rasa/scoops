@@ -71,7 +71,7 @@ jobs:
           # - '3.12'
           - '3.13'
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
         with:
           show-progress: false
 
