@@ -7,5 +7,15 @@
 
 line-length = 132 # default = 88
 
-# Assume Python 3.11
-target-version = "py311"
+# Assume Python 3.12
+target-version = "py312"
+
+[lint]
+ignore = [
+	"LOG015",
+	"BLE001",
+	"SIM012",
+	"RUF012",
+	"DTZ004",
+	"EXE001"
+]
