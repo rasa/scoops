@@ -108,7 +108,7 @@ jobs:
           token: ${{ secrets.PAT || secrets.GITHUB_TOKEN }}
           persist-credentials: false # Comment this line and uncomment the next one if you use APPLY_FIXES
           # persist-credentials: true # zizmor: ignore[artipacked]
-          
+
           # If you use VALIDATE_ALL_CODEBASE = true, you can remove this line to
           # improve performance
           fetch-depth: ${{ inputs.fetch_depth }} # added by @rasa
