@@ -18,7 +18,7 @@
 
 adipiscing       #  4 hits in  1 file: linters/readme.md
 amet             #  4 hits in  1 file: linters/readme.md
-artipacked       #  2 hits in  1 file: linters/zizmor.yml
+artipacked       #  4 hits in  2 files
 Autobuild        #  4 hits in  1 file: workflows/codeql.yml
 autobuild        #  2 hits in  1 file: workflows/codeql.yml
 awalsh           #  4 hits in  1 file: workflows/shfmt.yml
@@ -94,8 +94,9 @@ yadm's           #  2 hits in  1 file: readme.md
 #   linters/readme.md: 4 hits
 # amet            :  4 hits in  1 file
 #   linters/readme.md: 4 hits
-# artipacked      :  2 hits in  1 file
+# artipacked      :  4 hits in  2 files
 #   linters/zizmor.yml: 2 hits
+#   workflows/mega-linter.yml: 2 hits
 # Autobuild       :  4 hits in  1 file
 #   workflows/codeql.yml: 4 hits
 # autobuild       :  2 hits in  1 file
