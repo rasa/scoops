@@ -32,7 +32,7 @@ jobs:
     env:
       GH_TOC_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
-      - uses: actions/checkout@v7
+      - uses: actions/checkout@v6
         with:
           fetch-depth: 1
           show-progress: false
@@ -54,6 +54,6 @@ jobs:
           source "${tmp1}" --indent 0 --no-backup --hide-footer --skip-header "${MAPFILE[@]}"
           rm -fr "${tmp1}"
 
-      - uses: stefanzweifel/git-auto-commit-action@v7.2.0
+      - uses: stefanzweifel/git-auto-commit-action@v7.1.0
         with:
           commit_message: "docs: auto update table-of-contents in *.md files"
