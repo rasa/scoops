@@ -12,10 +12,10 @@ target-version = "py312"
 
 [lint]
 ignore = [
-	"LOG015",
-	"BLE001",
-	"SIM012",
-	"RUF012",
-	"DTZ004",
-	"EXE001"
+    "LOG015",
+    "BLE001",
+    "SIM102",
+    "RUF012",
+    "DTZ004",
+    "EXE001"
 ]
