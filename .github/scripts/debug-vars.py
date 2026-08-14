@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 """
 Copied from: rasa/dotfiles/.github/scripts/debug-vars.py
 
