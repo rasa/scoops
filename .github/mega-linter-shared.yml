@@ -115,8 +115,8 @@ PYTHON_PYRIGHT_ARGUMENTS: "-p .github/linters/.pyrightconfig-loose.json"
 REPOSITORY_CHECKOV_ARGUMENTS: "--skip-check CKV2_GHA_1,CKV_DOCKER_2,CKV_DOCKER_7"
 
 # Skip .mypy_cache (as it doesn't work when .mypy_cache is included in FILTER_REGEX_EXCLUDE):
-REPOSITORY_DEVSKIM_ARGUMENTS:
-  ["--ignore-globs", "**/megalinter-reports/**,**/.git/**,**/.mypy_cache/**"]
+# REPOSITORY_DEVSKIM_ARGUMENTS:
+#  ["--ignore-globs", "**/megalinter-reports/**,**/.git/**,**/.mypy_cache/**"]
 # megalinter already passes `--skip-git-ignored-files`:
 # https://github.com/oxsecurity/megalinter/blob/43943881/megalinter/descriptors/repository.megalinter-descriptor.yml#L78
 
