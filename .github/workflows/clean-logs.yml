@@ -54,15 +54,18 @@ on: # yamllint disable-line rule:truthy
         # Days-worth of runs to keep for each workflow
         required: true
         default: "30"
+        type: string
       # checkov:skip=CKV_GHA_7
       keep_minimum_runs:
         description: Runs to keep
         # Minimum runs to keep for each workflow
         required: true
         default: "6"
+        type: string
       # checkov:skip=CKV_GHA_7
       delete_workflow_pattern:
         description: "Workflow name/filename (optional)"
+        type: string
         # Name or filename of the workflow (if not set, all workflows are targeted)
       # checkov:skip=CKV_GHA_7
       delete_workflow_by_state_pattern:
