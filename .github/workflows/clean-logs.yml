@@ -9,7 +9,7 @@
 
 name: clean-logs
 
-on: # yamllint disable-line rule:truthy
+"on":
   schedule:
     # runs at 20:02 UTC (12:02 PST) every day.
     - cron: "02 20 * * *"
