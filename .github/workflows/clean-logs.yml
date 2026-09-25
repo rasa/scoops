@@ -134,14 +134,9 @@ permissions: write-all
 jobs:
   clean-logs:
     name: clean-logs
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     steps:
-      # Was crazy-max/ghaction-dump-context@v2.1.0
-      # but it reports a deprecation error:
-      # Node.js 16 actions are deprecated. Please update the following actions to use Node.js 20: actions/github-script@v6.
-      # - name: rasa/ghaction-dump-context@master
-      #   uses: rasa/ghaction-dump-context@master
-      - uses: crazy-max/ghaction-dump-context@v2.3.0
+      - uses: crazy-max/ghaction-dump-context@v3
 
       - name: Run rasa/delete-workflow-runs@main (Scheduled run)
         if: github.event_name == 'schedule'
