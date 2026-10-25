@@ -9,7 +9,7 @@
 
 name: clean-logs
 
-on: # yamllint disable-line rule:truthy
+"on":
   schedule:
     # runs at 20:02 UTC (12:02 PST) every day.
     - cron: "02 20 * * *"
@@ -54,15 +54,18 @@ on: # yamllint disable-line rule:truthy
         # Days-worth of runs to keep for each workflow
         required: true
         default: "30"
+        type: string
       # checkov:skip=CKV_GHA_7
       keep_minimum_runs:
         description: Runs to keep
         # Minimum runs to keep for each workflow
         required: true
         default: "6"
+        type: string
       # checkov:skip=CKV_GHA_7
       delete_workflow_pattern:
         description: "Workflow name/filename (optional)"
+        type: string
         # Name or filename of the workflow (if not set, all workflows are targeted)
       # checkov:skip=CKV_GHA_7
       delete_workflow_by_state_pattern:
@@ -131,13 +134,8 @@ permissions: write-all
 jobs:
   clean-logs:
     name: clean-logs
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     steps:
-      # Was crazy-max/ghaction-dump-context@v2.1.0
-      # but it reports a deprecation error:
-      # Node.js 16 actions are deprecated. Please update the following actions to use Node.js 20: actions/github-script@v6.
-      # - name: rasa/ghaction-dump-context@master
-      #   uses: rasa/ghaction-dump-context@master
       - uses: crazy-max/ghaction-dump-context@v3.1.0
 
       - name: Run rasa/delete-workflow-runs@main (Scheduled run)

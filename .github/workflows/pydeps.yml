@@ -64,14 +64,15 @@ jobs:
         os:
           - ubuntu-24.04
           # - windows-2025
-          # - macos-15
+          # - macos-26
           # - windows-latest
           # - macos-latest
         python-version:
           # - '3.12'
           - '3.13'
+          # - '3.14'
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
         with:
           show-progress: false
 
@@ -125,7 +126,7 @@ jobs:
           fi
           exit 0
 
-      - uses: actions/setup-python@v6.2.0
+      - uses: actions/setup-python@v7
         if: success()
         with:
           python-version: ${{ matrix.python-version }}

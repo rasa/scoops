@@ -8,7 +8,9 @@
 
 name: debug-matrix
 
-on: # yamllint disable-line rule:truthy
+"on":
+  workflow_call: # Required so this workflow can be called from another workflow
+  workflow_dispatch: # Allows you to run this workflow manually from the Actions tab
   # pull_request:
   #   branches:
   #     - main
@@ -19,8 +21,6 @@ on: # yamllint disable-line rule:truthy
   #   paths:
   #     - .github/scripts/*
   #     - .github/workflows/debug-matrix.yml
-  workflow_call: # Required so this workflow can be called from another workflow
-  workflow_dispatch: # Allows you to run this workflow manually from the Actions tab
 
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24:  true

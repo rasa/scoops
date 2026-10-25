@@ -28,7 +28,7 @@ max_line_length = 132
 end_of_line = crlf
 max_line_length = 132
 
-[{go.mod,go.sum,*.go}]
+[{*.go,go*.mod,go*.sum}]
 indent_style = tab
 indent_size = 8
 
