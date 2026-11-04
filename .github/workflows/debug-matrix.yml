@@ -43,6 +43,7 @@ jobs:
       # Docs: https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#choosing-github-hosted-runners
       matrix:
         os:
+          # https://github.com/actions/runner-images/tree/main#available-images
           - ubuntu-26.04
           - ubuntu-26.04-arm
           # aka ubuntu-latest:
@@ -53,34 +54,20 @@ jobs:
           # not available yet:
           # - ubuntu-24.04-s390x
           # - ubuntu-24.04-ppc64le
-          # https://github.com/actions/runner-images/tree/main#available-images
-          # https://docs.github.com/en/actions/using-github-hosted-runners/about-github-hosted-runners/about-github-hosted-runners#supported-runners-and-hardware-resources
-          # - ubuntu-22.04
-          # - ubuntu-22.04-arm
-          # aka windows-latest:
+          # aka windows-latest, aka windows-2025-vs2026:
           - windows-2025
-          - windows-2025-vs2026
           - windows-2022
           # waiting on https://github.com/rhysd/actionlint/pull/542
           # only for public repos:
+          # aka windows-11-vs2026-arm:
           # - windows-11-arm
           - macos-26
           # aka macos-15-xlarge (arm64)
           - macos-15
           # amd64:
           - macos-15-large
-          # aka macos-latest, macos-latest-xlarge or macos-14-xlarge (arm64):
-          # - macos-14
-          # aka macos-latest-large (amd64) (NOT FREE):
-          # - macos-14-large
-          # (arm64) (NOT FREE):
-          # - macos-13-xlarge
-          # aka macos-13-large (amd64):
-          # - macos-13
-          # Gone on 30-Jun-25 per https://github.com/actions/runner-images/issues/12045
-          # - windows-2019
     steps:
-      - uses: crazy-max/ghaction-dump-context@v2.3.0
+      - uses: crazy-max/ghaction-dump-context@v3.1.0
 
       - name: List installed apt/snap packages (Linux)
         if: runner.os == 'Linux'
