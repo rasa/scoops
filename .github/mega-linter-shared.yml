@@ -4,8 +4,6 @@
 # yamllint disable rule:line-length
 # $schema https://raw.githubusercontent.com/megalinter/megalinter/main/megalinter/descriptors/schemas/megalinter-configuration.jsonschema.json
 
-DISABLE_LINTERS:
-  - GO_REVIVE # contained in golangci-lint
 
 ##### FILTERS #####
 
@@ -15,6 +13,7 @@ FILTER_REGEX_EXCLUDE: >-
     (^|/)megalinter-reports(/|$) |
     mega-linter\.log$
   )
+
 
 ##### CONVERT ERRORS TO WARNINGS #####
 
@@ -69,6 +68,7 @@ YAML_V8R_DISABLE_ERRORS: true
 # REPOSITORY_DEVSKIM_PRE_COMMANDS:
 #  - command: git config --global --add safe.directory '*'
 #    cwd: "workspace"
+
 
 ##### COMMAND ARGUMENTS #####
 
@@ -142,6 +142,7 @@ YAML_V8R_FILTER_REGEX_EXCLUDE: >-
     \.trivyignore
   )
 
+
 ##### GLOBAL SETTINGS #####
 
 ACTION_ZIZMOR_UNSECURED_ENV_VARIABLES:
@@ -149,6 +150,13 @@ ACTION_ZIZMOR_UNSECURED_ENV_VARIABLES:
 
 # When active, APPLY_FIXES must also be defined as environment variable (in github/workflows/mega-linter.yml or other CI)
 APPLY_FIXES: all # default: none
+
+APPLY_FIXES_EVENT: all
+
+APPLY_FIXES_MODE: pull_request
+
+DISABLE_LINTERS:
+  - GO_REVIVE # contained in golangci-lint
 
 # Don't print logo
 PRINT_ALPACA: false # default: true
