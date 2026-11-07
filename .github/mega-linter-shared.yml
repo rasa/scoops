@@ -4,6 +4,9 @@
 # yamllint disable rule:line-length
 # $schema https://raw.githubusercontent.com/megalinter/megalinter/main/megalinter/descriptors/schemas/megalinter-configuration.jsonschema.json
 
+DISABLE_LINTERS:
+  - GO_REVIVE # contained in golangci-lint
+
 ##### FILTERS #####
 
 FILTER_REGEX_EXCLUDE: >-
@@ -21,9 +24,6 @@ ACTION_ZIZMOR_DISABLE_ERRORS: true
 # Produces too many false positives:
 COPYPASTE_JSCPD_DISABLE_ERRORS: true
 
-# go.mod requires go >= 1.22.2 (running go 1.21.10; GOTOOLCHAIN=local)
-# GO_GOLANGCI_LINT_DISABLE_ERRORS: true
-
 # Fails if schema isn't found:
 JSON_V8R_DISABLE_ERRORS: true
 
@@ -36,10 +36,6 @@ REPOSITORY_DEVSKIM_DISABLE_ERRORS: true
 # [0062] ERROR failed to load vulnerability db: database does not exist
 REPOSITORY_GRYPE_DISABLE_ERRORS: true
 
-# Don't require actions use SHAs:
-# Discontinued:
-# REPOSITORY_KICS_DISABLE_ERRORS: true
-
 # Can't fix:
 REPOSITORY_OSV_SCANNER_DISABLE_ERRORS: true
 
@@ -51,10 +47,6 @@ REPOSITORY_TRUFFLEHOG_DISABLE_ERRORS: true
 
 # Don't fail if a site is down, or their cert has expired:
 SPELL_LYCHEE_DISABLE_ERRORS: true
-
-# SQL files are sqlite, not TSQL.
-# Discontinued:
-# SQL_TSQLLINT_DISABLE_ERRORS: true
 
 # Could not find a schema to validate: .github/linters/*
 YAML_V8R_DISABLE_ERRORS: true
