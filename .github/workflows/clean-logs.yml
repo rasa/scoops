@@ -136,7 +136,7 @@ jobs:
     name: clean-logs
     runs-on: ubuntu-26.04
     steps:
-      - uses: crazy-max/ghaction-dump-context@v3
+      - uses: crazy-max/ghaction-dump-context@v3.1.0
 
       - name: Run rasa/delete-workflow-runs@main (Scheduled run)
         if: github.event_name == 'schedule'
