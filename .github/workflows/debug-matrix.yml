@@ -275,16 +275,27 @@ jobs:
         continue-on-error: true
         run: |
           # List executables (Linux)
+          # slim is missing column
+          if command -v column &>/dev/null; then
+            column=(column -ts $'\t')
+          else
+            column=(cat)
+          fi
           IFS=: read -r -a paths <<<"${PATH}"
           find "${paths[@]}" -maxdepth 1 -type f,l -executable -printf '%P\t%h\n' | \
             LC_COLLATE=C sort --ignore-case -u | \
-            column -ts $'\t' || true
+            "${column[@]}" || true
 
       - name: List executables (macOS)
         if: runner.os == 'macOS'
         continue-on-error: true
         run: |
           # List executables (macOS)
+          if command -v column &>/dev/null; then
+            column=(column -ts $'\t')
+          else
+            column=(cat)
+          fi
           which bash
           which sh
           IFS=: read -r -a paths <<<"${PATH}"
