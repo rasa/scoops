@@ -12,11 +12,14 @@ target-version = "py312"
 
 [lint]
 ignore = [
-    "I001",
     "BLE001",
     "DTZ004",
-    "EXE001"
+    "EXE001",
     "LOG015",
     "RUF012",
-    "SIM102",
+    "RUF100",
+    "SIM102"
 ]
+
+# extend-unfixable = ["RUF100"]
+
