@@ -23,7 +23,7 @@ name: debug-matrix
   #     - .github/workflows/debug-matrix.yml
 
 env:
-  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24:  true
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
 concurrency:
   group: ${{ github.workflow }}
@@ -619,8 +619,7 @@ jobs:
       #   shell: cmd
       #   continue-on-error: true
 
-      - run:
-          where.exe /q wmic.exe || exit 0
+      - run: where.exe /q wmic.exe || exit 0
           wmic.exe logicaldisk get DeviceID, VolumeName, Description, ProviderName, FileSystem, DriveType
         if: runner.os == 'Windows'
         shell: cmd
