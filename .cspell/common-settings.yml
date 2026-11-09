@@ -27,32 +27,32 @@ dictionaries:
   # - public-licenses
   # - softwareTerms
   ## overrides:
-  - 'bash' # in cli, but not in vscode
-  - 'computing-acronyms' # in cli, but not in vscode
+  - "bash" # in cli, but not in vscode
+  - "computing-acronyms" # in cli, but not in vscode
   # - '!django' # icontains is misspelled on github?
-  - 'docker'
-  - 'html'
-  - 'k8s' # in vscode, but not cli
-  - 'php'
-  - 'powershell' # icontains is misspelled on github?
-  - 'python'
-  - 'python-common'
-  - 'web-services' # in cli, but not in vscode
+  - "docker"
+  - "html"
+  - "k8s" # in vscode, but not cli
+  - "php"
+  - "powershell" # icontains is misspelled on github?
+  - "python"
+  - "python-common"
+  - "web-services" # in cli, but not in vscode
   ## original list:
-  - 'cpp'
-  - 'cpp-legacy'
+  - "cpp"
+  - "cpp-legacy"
   # - '!csharp'
-  - 'css'
-  - 'fonts'
-  - 'go'
-  - 'golang'
+  - "css"
+  - "fonts"
+  - "go"
+  - "golang"
   # - '!latex'
-  - '!lorem-ipsum'
-  - 'makefile' # missing in vscode's extension 3.0.1
+  - "!lorem-ipsum"
+  - "makefile" # missing in vscode's extension 3.0.1
   # - '!node'
   # - '!scala'
-  - 'softwareTerms' # missing on GitHub?
-  - 'typescript'
+  - "softwareTerms" # missing on GitHub?
+  - "typescript"
 enableFiletypes:
   ## cli defaults:
   # - 'dart'
@@ -61,55 +61,55 @@ enableFiletypes:
   # - 'sql'
   # - 'svelte'
   # our overrides:
-  - 'apacheconf'
-  - 'autoit'
-  - 'awk'
-  - 'bat'
-  - '!dart'
-  - 'dockerfile'
-  - 'editorconfig'
-  - 'ignore'
-  - '!fsharp'
-  - '!makefile' # Added after vscode's extension's release
-  - 'pip-requirements'
-  - 'postscript'
-  - 'powershell'
-  - '!r'
-  - 'reg'
-  - 'shellcheckrc'
-  - 'shellscript'
-  - 'sql'
-  - '!svelte'
+  - "apacheconf"
+  - "autoit"
+  - "awk"
+  - "bat"
+  - "!dart"
+  - "dockerfile"
+  - "editorconfig"
+  - "ignore"
+  - "!fsharp"
+  - "!makefile" # Added after vscode's extension's release
+  - "pip-requirements"
+  - "postscript"
+  - "powershell"
+  - "!r"
+  - "reg"
+  - "shellcheckrc"
+  - "shellscript"
+  - "sql"
+  - "!svelte"
 # Check filenames that begin with a period:
 enableGlobDot: true
 ignorePaths:
-  - '**/.git/**'
-  - '**/.cspell.json'
-  - '**/.cspell/**'
-  - '**/*.csv'
-  - '**/*.db'
-  - '**/*.diff'
-  - '**/*.doc'
-  - '**/*.docx'
-  - '**/*.json'
-  - '**/*.log'
-  - '**/*.lst'
-  - '**/*.orig'
-  - '**/*.patch'
-  - '**/*.pdf'
-  - '**/*.pem'
-  - '**/*.ps'
-  - '**/*.reg'
-  - '**/*.rej'
-  - '**/*.sed'
-  - '**/*.tcl'
-  - '**/*.tsv'
-  - '**/*.wip'
-  - '**/*.xls'
-  - '**/*.xlsx'
-  - '**/*.xml'
-language: 'en'
+  - "**/.git/**"
+  - "**/.cspell.json"
+  - "**/.cspell/**"
+  - "**/*.csv"
+  - "**/*.db"
+  - "**/*.diff"
+  - "**/*.doc"
+  - "**/*.docx"
+  - "**/*.json"
+  - "**/*.log"
+  - "**/*.lst"
+  - "**/*.orig"
+  - "**/*.patch"
+  - "**/*.pdf"
+  - "**/*.pem"
+  - "**/*.ps"
+  - "**/*.reg"
+  - "**/*.rej"
+  - "**/*.sed"
+  - "**/*.tcl"
+  - "**/*.tsv"
+  - "**/*.wip"
+  - "**/*.xls"
+  - "**/*.xlsx"
+  - "**/*.xml"
+language: "en"
 maxNumberOfProblems: 1000
 noConfigSearch: true
 useGitignore: true
-version: '0.2'
+version: "0.2"
