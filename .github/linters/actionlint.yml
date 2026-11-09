@@ -15,4 +15,4 @@ paths:
     ignore:
       # Ignore undocumented option repository_visibility.
       # PR to fix is at https://github.com/rhysd/actionlint/pull/489 .
-      - 'repository_visibility'
+      - "repository_visibility"

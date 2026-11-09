@@ -25,10 +25,6 @@
     "**/*.yml",
     "**/*.zip"
   ],
-  "reporters": [
-    "html",
-    "markdown",
-    "consoleFull"
-  ],
+  "reporters": ["html", "markdown", "consoleFull"],
   "threshold": 0.5
 }
