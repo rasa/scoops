@@ -23,7 +23,7 @@ on: # yamllint disable-line rule:truthy
     #   - main
     #   - master # @TODO remove
 
-# <@rasa>
+  # <@rasa>
   workflow_call: # Required so this workflow can be called from another workflow
     inputs:
       # checkov:skip=CKV_GHA_7
@@ -135,7 +135,6 @@ jobs:
         # All available variables are described in documentation
         # https://megalinter.io/configuration/
         env:
-
           # Validates all source when push on main, else just the git diff with
           # main. Override with true if you always want to lint all sources
           #
