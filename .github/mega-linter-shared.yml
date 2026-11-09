@@ -4,7 +4,6 @@
 # yamllint disable rule:line-length
 # $schema https://raw.githubusercontent.com/megalinter/megalinter/main/megalinter/descriptors/schemas/megalinter-configuration.jsonschema.json
 
-
 ##### FILTERS #####
 
 FILTER_REGEX_EXCLUDE: >-
@@ -13,7 +12,6 @@ FILTER_REGEX_EXCLUDE: >-
     (^|/)megalinter-reports(/|$) |
     mega-linter\.log$
   )
-
 
 ##### CONVERT ERRORS TO WARNINGS #####
 
@@ -50,7 +48,6 @@ SPELL_LYCHEE_DISABLE_ERRORS: true
 # Could not find a schema to validate: .github/linters/*
 YAML_V8R_DISABLE_ERRORS: true
 
-
 ##### PRE_COMMANDS #####
 
 # https://megalinter.io/latest/config-precommands/
@@ -68,7 +65,6 @@ YAML_V8R_DISABLE_ERRORS: true
 # REPOSITORY_DEVSKIM_PRE_COMMANDS:
 #  - command: git config --global --add safe.directory '*'
 #    cwd: "workspace"
-
 
 ##### COMMAND ARGUMENTS #####
 
@@ -142,7 +138,6 @@ YAML_V8R_FILTER_REGEX_EXCLUDE: >-
     \.trivyignore
   )
 
-
 ##### GLOBAL SETTINGS #####
 
 ACTION_ZIZMOR_UNSECURED_ENV_VARIABLES:
@@ -191,6 +186,7 @@ PRINT_ALPACA: false # default: true
 
 # Include total elapsed time:
 SHOW_ELAPSED_TIME: true # default: false
+
 
 ###############################################################################################
 ## COMMENTED OUT ##
