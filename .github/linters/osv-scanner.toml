@@ -1,0 +1,7 @@
+# osv-scanner.toml
+[[PackageOverrides]]
+name = "requirements-all.txt"
+# ecosystem = "Python"
+nameIsRegex = false
+ignore = true
+reason = "File contains Windows specific paths"
