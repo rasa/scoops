@@ -11,7 +11,7 @@ name: mega-linter
 
 # Trigger mega-linter at every push. Action will also be visible from Pull
 # Requests to main
-on: # yamllint disable-line rule:truthy
+"on":
   # Comment this line to trigger action only on pull-requests
   # (not recommended if you don't pay for GH Actions)
   # push:
@@ -106,8 +106,8 @@ jobs:
           #   - Push another commit on the branch to trigger workflows again.
           # Only define `secrets.PAT` if you fully understand the trade-off.
           token: ${{ secrets.PAT || secrets.GITHUB_TOKEN }}
-          persist-credentials: false # Comment this line and uncomment the next one if you use APPLY_FIXES
-          # persist-credentials: true # zizmor: ignore[artipacked]
+          # persist-credentials: false # Comment this line and uncomment the next one if you use APPLY_FIXES
+          persist-credentials: true # zizmor: ignore[artipacked]
 
           # If you use VALIDATE_ALL_CODEBASE = true, you can remove this line to
           # improve performance
@@ -128,7 +128,7 @@ jobs:
         # You can override MegaLinter flavor used to have faster performances
         # More info at https://megalinter.io/flavors/
         # MAJOR-RELEASE-IMPACTED
-        uses: oxsecurity/megalinter@v10
+        uses: oxsecurity/megalinter/flavors/python@v10
 
         id: ml
 
@@ -179,8 +179,8 @@ jobs:
           sudo chown -Rc "${UID}" megalinter-reports mega-linter.log || true
           sudo chmod a+w megalinter-reports mega-linter.log || true
           sudo rm -fr megalinter-reports mega-linter.log || true
-      # - name: USES crazy-max/ghaction-dump-context@v2.1.0
-      #   uses: crazy-max/ghaction-dump-context@v2.1.0
+      # - name: USES crazy-max/ghaction-dump-context@v3
+      #   uses: crazy-max/ghaction-dump-context@v3
 
       - name: output debug vars
         run: |
