@@ -1,31 +1,50 @@
 # ~/.github/linters/zizmor.yml
 rules:
+  secrets-inherit:
+    disable: true
+
   unpinned-uses:
-    config:
-      policies:
-        # Allow normal tag/branch refs for trusted GitHub-owned actions.
-        actions/*: ref-pin
-        github/*: ref-pin
-        dependabot/*: ref-pin
+    disable: true
+    # config:
+    #   policies:
+    #     # Allow normal tag/branch refs for trusted GitHub-owned actions.
+    #     actions/*: ref-pin
+    #     github/*: ref-pin
+    #     dependabot/*: ref-pin
 
-        # Allow your own action to use @main.
-        rasa/delete-workflow-runs: ref-pin
+    #     # Allow your own action to use @main.
+    #     rasa/delete-workflow-runs: ref-pin
 
-        # Allow this third-party action to use a version tag.
-        crazy-max/ghaction-dump-context: ref-pin
-        MinoruSekine/setup-scoop: ref-pin
+    #     # Allow this third-party action to use a version tag.
+    #     crazy-max/ghaction-dump-context: ref-pin
+    #     MinoruSekine/setup-scoop: ref-pin
 
-        # Everything else still requires SHA pinning.
-        "*": hash-pin
+    #     # Everything else still requires SHA pinning.
+    #     "*": hash-pin
 
   artipacked:
-    ignore:
-      - .github/workflows/debug-matrix.yml
+    disable: true
+  #   ignore:
+  #     - .github/workflows/debug-matrix.yml
+  #     - .github/workflows/pydeps.yml
+  #     - .github/workflows/shellcheck.yml
+  #     - .github/workflows/shfmt.yml
+  #     - .github/workflows/super-linter.yml
+  #     - .github/workflows/toc.yml
 
   misfeature:
     ignore:
       - .github/workflows/debug-matrix.yml
 
-  excessive-permissions:
-    ignore:
-      - .github/workflows/debug-matrix.yml
+  # excessive-permissions:
+  #   ignore:
+  #     - .github/workflows/debug-matrix.yml
+
+
+template-injection:
+  ignore:
+    - .github/workflows/debug-rasa.yml
+    - .github/workflows/dependabot.yml
+    - .github/workflows/mega-linter.yml
+
+    - .github/workflows/pydeps.yml

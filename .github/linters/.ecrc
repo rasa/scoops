@@ -1,7 +1,7 @@
 {
+  "$schema": "https://raw.githubusercontent.com/editorconfig-checker/editorconfig-checker/v4.0.2/.editorconfig-checker.schema.json",
   "$comment": "Copied from: rasa/dotfiles/.github/linters/.ecrc",
   "$comment2": "EDIT THE ABOVE FILE, NOT THIS COPY, OR YOUR CHANGES WILL BE LOST!",
-  "Version": "v3.2.1",
   "Verbose": false,
   "Debug": false,
   "IgnoreDefaults": false,
@@ -14,11 +14,12 @@
   "AllowedContentTypes": [],
   "PassedFiles": [],
   "Disable": {
+    "Charset": false,
     "EndOfLine": false,
     "Indentation": false,
-    "InsertFinalNewline": false,
-    "TrimTrailingWhitespace": false,
     "IndentSize": false,
-    "MaxLineLength": false
+    "InsertFinalNewline": false,
+    "MaxLineLength": false,
+    "TrimTrailingWhitespace": false
   }
 }
