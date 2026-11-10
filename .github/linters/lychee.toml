@@ -7,15 +7,20 @@
 # Example: https://github.com/lycheeverse/lychee/blob/master/lychee.example.toml
 # Example: https://github.com/oxsecurity/megalinter/blob/main/.lycheeignore
 
-insecure = false
-
-scheme = ["https", "http"]
-
-# show redirects?
-verbose = "debug"
-
 # Exclude checking all private IPs:
 exclude_all_private = true
+
+# Don't scan email addresss
+include_mail = false
+
+# Ignore self-signed https cert issues
+insecure = false
+
+# Don't scan mailto" and file: schemes
+scheme = ["https", "http"]
+
+# Show redirects
+verbose = "debug"
 
 # Exclude URLs and mail addresses from checking (supports regex).
 exclude = [
@@ -24,7 +29,7 @@ exclude = [
     "https://zeustracker.abuse.ch/blocklist.php\\?download=domainblocklist",
     # addresses false positive:
     #   Invalid: Email doesn't exist or is syntactically incorrect
-    W "'\\w+@\\w+\\.com",
+    # "'\\w+@\\w+\\.com",
     # "account_email='\\w+@.*\\.com",
     # "root@[\\w.]+",
     # "file:///.*",
