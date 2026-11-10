@@ -5,7 +5,7 @@
 
 name: toc
 
-on: # yamllint disable-line rule:truthy
+"on":
   pull_request:
     paths:
       - "**/*.md"
@@ -14,10 +14,6 @@ on: # yamllint disable-line rule:truthy
       - "**/*.md"
   workflow_call:
   workflow_dispatch: # Allows you to run this workflow manually from the Actions tab
-
-concurrency:
-  group: ${{ github.workflow }}
-  cancel-in-progress: true
 
 env:
   TOC_URL: https://raw.githubusercontent.com/ekalinin/github-markdown-toc/HEAD/gh-md-toc
@@ -57,3 +53,7 @@ jobs:
       - uses: stefanzweifel/git-auto-commit-action@v7
         with:
           commit_message: "docs: auto update table-of-contents in *.md files"
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
