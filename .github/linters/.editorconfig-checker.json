@@ -1,6 +1,6 @@
 {
   "$schema": "https://raw.githubusercontent.com/editorconfig-checker/editorconfig-checker/v4.0.2/.editorconfig-checker.schema.json",
-  "$comment": "Copied from: rasa/dotfiles/.github/linters/.ecrc",
+  "$comment": "Copied from: rasa/dotfiles/.github/linters/.editorconfig-checker.json",
   "$comment2": "EDIT THE ABOVE FILE, NOT THIS COPY, OR YOUR CHANGES WILL BE LOST!",
   "Verbose": false,
   "Debug": false,
