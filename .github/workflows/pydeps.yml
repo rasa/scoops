@@ -11,7 +11,7 @@ name: pydeps
 env:
   DEFAULT_MASK: "**/*requirements*.txt"
 
-on: # yamllint disable-line rule:truthy
+"on":
   # schedule:
   #   # run every day at 15:17 UTC (07:17 PST/08:17 PDT)
   #   - cron: "17 15 * * *"
@@ -42,10 +42,6 @@ on: # yamllint disable-line rule:truthy
         default: "**/*requirements*.txt"
         description: "File mask for requirements*.txt file(s)"
 
-concurrency:
-  group: ${{ github.workflow }}
-  cancel-in-progress: true
-
 jobs:
   pydeps:
     runs-on: ${{ matrix.os }}
@@ -62,7 +58,7 @@ jobs:
       # https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#choosing-github-hosted-runners
       matrix:
         os:
-          - ubuntu-24.04
+          - ubuntu-26.04
           # - windows-2025
           # - macos-26
           # - windows-latest
@@ -126,7 +122,7 @@ jobs:
           fi
           exit 0
 
-      - uses: actions/setup-python@v7.1.0
+      - uses: actions/setup-python@v7
         if: success()
         with:
           python-version: ${{ matrix.python-version }}
@@ -215,5 +211,12 @@ jobs:
 
       - run: pipdeptree --freeze --warn silence | grep -E '^[a-zA-Z0-9\-]+' || true
         if: success()
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
 
 # cspell:ignore pipreqs
