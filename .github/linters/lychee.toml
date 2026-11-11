@@ -10,7 +10,7 @@
 # Exclude checking all private IPs:
 exclude_all_private = true
 
-# Don't scan email addresss
+# Don't scan email addresses
 include_mail = false
 
 # Ignore self-signed https cert issues
