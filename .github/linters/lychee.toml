@@ -20,17 +20,4 @@ insecure = false
 scheme = ["https", "http"]
 
 # Show redirects
-verbose = "debug"
-
-# Exclude URLs and mail addresses from checking (supports regex).
-exclude = [
-    "https://oxsecurity.github.io/megalinter/configuration/",
-    "https://github/",
-    "https://zeustracker.abuse.ch/blocklist.php\\?download=domainblocklist",
-    # addresses false positive:
-    #   Invalid: Email doesn't exist or is syntactically incorrect
-    # "'\\w+@\\w+\\.com",
-    # "account_email='\\w+@.*\\.com",
-    # "root@[\\w.]+",
-    # "file:///.*",
-]
+# verbose = "debug"
