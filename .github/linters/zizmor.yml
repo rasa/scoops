@@ -40,11 +40,10 @@ rules:
   #   ignore:
   #     - .github/workflows/debug-matrix.yml
 
+  template-injection:
+    ignore:
+      - .github/workflows/debug-rasa.yml
+      - .github/workflows/dependabot.yml
+      - .github/workflows/mega-linter.yml
 
-template-injection:
-  ignore:
-    - .github/workflows/debug-rasa.yml
-    - .github/workflows/dependabot.yml
-    - .github/workflows/mega-linter.yml
-
-    - .github/workflows/pydeps.yml
+      - .github/workflows/pydeps.yml
