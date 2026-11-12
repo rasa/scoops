@@ -7,10 +7,7 @@
   "IgnoreDefaults": false,
   "SpacesAfterTabs": false,
   "NoColor": true,
-  "Exclude": [
-    "go.mod",
-    "go sum"
-  ],
+  "Exclude": ["go.mod", "go sum"],
   "AllowedContentTypes": [],
   "PassedFiles": [],
   "Disable": {
